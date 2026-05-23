@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { url } from '../../utils/links';
+
+const articles = [
+  {
+    title: 'Cómo reclamar una negligencia médica en Barcelona',
+    description: 'Guía completa con los tres elementos necesarios para reclamar (lex artis, nexo causal y daño), los plazos de prescripción y las vías disponibles: civil, penal y contencioso-administrativa.',
+    href: url('/blog/como-reclamar-negligencia-medica-barcelona'),
+    category: 'Negligencia Médica',
+    date: '10 mayo 2026',
+    readingTime: '11',
+  },
+  {
+    title: 'Perito médico en incapacidad permanente: guía completa',
+    description: 'Todo lo que necesita saber sobre el informe pericial médico en los procesos de incapacidad permanente ante el INSS: grados, proceso de reclamación paso a paso y cuándo actuar.',
+    href: url('/blog/perito-medico-incapacidad-permanente'),
+    category: 'Incapacidad Permanente',
+    date: '5 mayo 2026',
+    readingTime: '10',
+  },
+  {
+    title: '¿Cuánto cuesta un perito médico en Barcelona?',
+    description: 'Guía de precios actualizada: rangos según el tipo de informe, factores que influyen en el coste y si puede recuperar ese gasto si gana el juicio.',
+    href: url('/blog/cuanto-cuesta-perito-medico-barcelona'),
+    category: 'Guía de precios',
+    date: '1 mayo 2026',
+    readingTime: '8',
+  },
+];
+---
+
+<Layout
+  title="Blog sobre Peritaje Médico | Perito Médico Barcelona"
+  description="Artículos informativos sobre peritaje médico, negligencias médicas, incapacidad permanente y valoración del daño corporal en Barcelona. Guías y consejos de nuestros peritos."
+>
+  <section class="bg-primary-950 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Blog sobre Peritaje Médico
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Artículos informativos sobre peritaje médico, negligencias médicas, incapacidad permanente y valoración del daño corporal. Guías prácticas para entender sus derechos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-8">
+        {articles.map(article => (
+          <article class="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-lg hover:border-primary-100 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-block bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">{article.category}</span>
+              <span class="text-xs text-gray-400">{article.date}</span>
+              <span class="text-xs text-gray-400">·</span>
+              <span class="text-xs text-gray-400">{article.readingTime} min</span>
+            </div>
+            <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">
+              <a href={article.href} class="hover:text-accent-600 transition-colors">{article.title}</a>
+            </h2>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">{article.description}</p>
+            <a href={article.href} class="inline-flex items-center text-sm font-semibold text-accent-600 hover:text-accent-700 transition-colors">
+              Leer artículo
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>

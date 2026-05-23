@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const situaciones = [
+  'El INSS le ha denegado la incapacidad permanente',
+  'Le han reconocido un grado inferior (IPP o IPT) pero su estado es peor',
+  'La Mutua no le reconoce el origen laboral de su enfermedad',
+  'Le han dado el alta de incapacidad temporal pero no puede trabajar',
+  'Tiene varias enfermedades que juntas le impiden trabajar',
+  'Su médico de cabecera o especialista apoya su incapacidad pero el INSS no',
+];
+
+const faqs = [
+  {
+    question: '¿La consulta es realmente gratuita y sin compromiso?',
+    answer: 'Sí. El asesoramiento inicial, el análisis de su expediente y la valoración de las posibilidades de su caso son completamente gratuitos. Solo tiene coste la elaboración del informe pericial, que se presupuesta antes de comenzar y solo si usted decide contratar el servicio.',
+  },
+  {
+    question: '¿Qué documentos necesito para la consulta gratuita?',
+    answer: 'Lo más útil es la resolución del INSS (la carta que le deniega o le asigna el grado), los informes de sus médicos especialistas y, si puede, el informe del Equipo de Valoración de Incapacidades (EVI). Si no tiene toda la documentación, puede consultarnos igualmente y le orientamos.',
+  },
+  {
+    question: '¿Cuánto tiempo tengo para recurrir si el INSS me ha denegado?',
+    answer: 'Desde la notificación de la resolución tiene 30 días para presentar la reclamación previa ante el INSS. Si la reclamación es denegada, tiene 30 días para interponer la demanda ante el Juzgado de lo Social. Le recomendamos contactarnos cuanto antes para no perder estos plazos.',
+  },
+  {
+    question: '¿El perito médico puede ayudarme aunque ya tenga abogado?',
+    answer: 'Sí. De hecho, la combinación de abogado laboralista y perito médico independiente es la más efectiva en los procesos de incapacidad permanente. El abogado se ocupa de la parte jurídica y procesal; el perito aporta la prueba técnica médica que el magistrado necesita para valorar el caso.',
+  },
+  {
+    question: '¿Merece la pena contratar un perito para incapacidad permanente?',
+    answer: 'En la mayoría de casos, sí. Obtener la incapacidad permanente total puede suponer entre 600 y 1.200 euros mensuales (o más) de por vida. El coste del informe pericial queda completamente amortizado con unos pocos meses de prestación. Además, en muchos casos el coste del perito puede recuperarse en el propio procedimiento.',
+  },
+];
+---
+
+<Layout
+  title="Consulta Gratuita Incapacidad Permanente Barcelona | Perito Médico INSS"
+  description="Asesoramiento gratuito sobre incapacidad permanente en Barcelona. Si el INSS le ha denegado la incapacidad, un perito médico analiza su caso sin coste. Respuesta en 24 h."
+>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
+        Asesoramiento Gratuito
+      </span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        Consulta Gratuita sobre <span class="text-accent-300">Incapacidad Permanente</span> en Barcelona
+      </h1>
+      <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
+        ¿El INSS le ha denegado la incapacidad o le ha reconocido un grado inferior? Un perito médico analiza su expediente sin coste y le dice si puede revertir la resolución.
+      </p>
+      <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
+        Solicitar asesoramiento gratuito
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en menos de 24 h</p>
+    </div>
+  </section>
+
+  <!-- ¿Se encuentra en esta situación? -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-4 text-center">¿Se encuentra en alguna de estas situaciones?</h2>
+      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">Si es así, puede tener posibilidades de impugnar la resolución del INSS. La consulta gratuita le aclara si su caso tiene base.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {situaciones.map(s => (
+          <div class="flex items-start gap-3 bg-white rounded-xl p-5 border border-gray-100">
+            <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <span class="text-sm text-gray-700 leading-relaxed">{s}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
+          Me identifico con esto, quiero consultarlo gratis
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué puede ganar -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-12 text-center">¿Qué puede obtener si consigue la incapacidad permanente?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="bg-gray-50 rounded-2xl p-6 text-center">
+          <div class="font-heading text-3xl font-bold text-primary-900 mb-2">55%</div>
+          <div class="text-sm font-semibold text-primary-800 mb-2">Incapacidad Permanente Total</div>
+          <div class="text-xs text-gray-500">De la base reguladora mensual. 75% si tiene más de 55 años.</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6 text-center">
+          <div class="font-heading text-3xl font-bold text-primary-900 mb-2">100%</div>
+          <div class="text-sm font-semibold text-primary-800 mb-2">Incapacidad Permanente Absoluta</div>
+          <div class="text-xs text-gray-500">De la base reguladora. Compatible con actividades marginales.</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6 text-center">
+          <div class="font-heading text-3xl font-bold text-primary-900 mb-2">+45%</div>
+          <div class="text-sm font-semibold text-primary-800 mb-2">Gran Invalidez</div>
+          <div class="text-xs text-gray-500">Complemento adicional sobre la IPA para costear la asistencia de tercera persona.</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6 text-center">
+          <div class="font-heading text-3xl font-bold text-accent-600 mb-2">Exenta</div>
+          <div class="text-sm font-semibold text-primary-800 mb-2">IPA y GI en IRPF</div>
+          <div class="text-xs text-gray-500">La incapacidad permanente absoluta y gran invalidez están exentas de tributar en el IRPF.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="py-16 bg-primary-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-10 text-center">Proceso tras la consulta gratuita</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">01</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Análisis del expediente</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Revisamos la resolución del INSS y sus informes médicos. Le decimos si tiene base para impugnar.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">02</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Informe pericial</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Si decide continuar, elaboramos el informe pericial que rebate el criterio del EVI del INSS con argumentación médica sólida.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">03</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Ratificación en juicio</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Nuestro perito comparece en el Juzgado de lo Social para defender el informe ante el magistrado.</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href={url('/servicios/perito-seguridad-social')} class="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors">
+          Ver el servicio completo de incapacidad permanente
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes</h2>
+      <div class="space-y-3">
+        {faqs.map(faq => (
+          <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
+            <summary class="flex justify-between items-center cursor-pointer px-7 py-5 text-primary-900 font-medium hover:bg-gray-50 transition-colors">
+              <span class="text-left pr-4 text-sm">{faq.question}</span>
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-7 pb-5 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection title="¿Le han denegado la incapacidad permanente?" subtitle="Cuéntenos su situación. La valoración es completamente gratuita y le respondemos en menos de 24 horas." />
+</Layout>

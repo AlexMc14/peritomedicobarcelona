@@ -1,0 +1,126 @@
+---
+import Layout from './Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+interface Props {
+  title: string;
+  pageTitle: string;
+  description: string;
+  intro: string;
+  whatWeDo: string;
+  steps: { title: string; description: string }[];
+  faqs: { question: string; answer: string }[];
+}
+
+const { title, pageTitle, description, intro, whatWeDo, steps, faqs } = Astro.props;
+---
+
+<Layout title={pageTitle} description={description}>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <a href={url('/#servicios')} class="hover:text-primary-200 transition-colors">Servicios</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">{title}</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          {title}
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          {intro}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <!-- Main content -->
+        <div class="lg:col-span-2 space-y-12">
+          <!-- Qué hacemos -->
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">¿Qué hacemos?</h2>
+            <div class="text-gray-600 leading-relaxed space-y-4">
+              <p>{whatWeDo}</p>
+            </div>
+          </div>
+
+          <!-- Proceso -->
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8">¿Cómo trabajamos?</h2>
+            <div class="space-y-6">
+              {steps.map((step, i) => (
+                <div class="flex gap-5">
+                  <div class="w-10 h-10 bg-primary-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span class="text-accent-300 font-bold text-sm">{String(i + 1).padStart(2, '0')}</span>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-primary-900 mb-1">{step.title}</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- FAQ del servicio -->
+          {faqs.length > 0 && (
+            <div>
+              <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Preguntas frecuentes</h2>
+              <div class="space-y-3">
+                {faqs.map(faq => (
+                  <details class="group bg-gray-50 rounded-xl overflow-hidden">
+                    <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-primary-900 font-medium text-sm hover:bg-gray-100 transition-colors">
+                      <span class="text-left pr-4">{faq.question}</span>
+                      <svg class="w-4 h-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <div class="bg-accent-50 rounded-2xl p-7 border border-accent-100">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Valoración gratuita</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-5">
+              Analizamos su caso sin coste ni compromiso. Le responderemos en menos de 24 horas.
+            </p>
+            <a href={url('/contacto')} class="block w-full text-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
+              Solicitar valoración
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-gray-100">
+            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Otros servicios</h3>
+            <ul class="space-y-2.5">
+              <li><a href={url('/servicios/informes-periciales-medicos')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Informes Periciales</a></li>
+              <li><a href={url('/servicios/negligencia-medica')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Negligencia Médica</a></li>
+              <li><a href={url('/servicios/valoracion-dano-corporal')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Valoración del Daño Corporal</a></li>
+              <li><a href={url('/servicios/incapacidad-laboral')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Incapacidad Laboral</a></li>
+              <li><a href={url('/servicios/impugnacion-alta-medica')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Impugnación de Alta Médica</a></li>
+              <li><a href={url('/servicios/discapacidad')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Discapacidad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>

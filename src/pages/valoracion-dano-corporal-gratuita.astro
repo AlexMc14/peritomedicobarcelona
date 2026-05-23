@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const incluye = [
+  'Análisis de su caso por un perito médico especializado',
+  'Valoración de las lesiones y secuelas descritas',
+  'Estimación orientativa de la indemnización que podría corresponderle',
+  'Opinión sobre la viabilidad médico-legal de su reclamación',
+  'Respuesta en menos de 24 horas laborables',
+  'Sin compromiso de contratación posterior',
+];
+
+const faqs = [
+  {
+    question: '¿De verdad es gratuita la valoración?',
+    answer: 'Sí, completamente. La consulta telefónica o por correo electrónico, el análisis inicial de su caso y el asesoramiento sobre las posibilidades de su reclamación no tienen ningún coste. Lo que tiene coste es la elaboración del informe pericial completo, que solo se inicia si usted decide contratar el servicio tras conocer el presupuesto.',
+  },
+  {
+    question: '¿Qué necesito para la consulta gratuita?',
+    answer: 'Con una descripción del accidente o situación, la fecha en que ocurrió y, si los tiene, los informes médicos de urgencias o de su médico, es suficiente para hacer una primera valoración. No necesita tener toda la documentación desde el principio.',
+  },
+  {
+    question: '¿Cuánto tiempo tarda en responderme?',
+    answer: 'Nos comprometemos a responder en menos de 24 horas laborables. En muchos casos la respuesta es el mismo día. Para casos urgentes con juicio próximo, puede indicarlo y lo atendemos de forma prioritaria.',
+  },
+  {
+    question: '¿Qué pasa si después no quiero contratar el informe?',
+    answer: 'No pasa nada. La consulta no crea ninguna obligación. Si tras recibir nuestra valoración decide no seguir adelante, simplemente no hay contrato ni cargo alguno.',
+  },
+  {
+    question: '¿En qué casos es más importante contratar un perito para el daño corporal?',
+    answer: 'Siempre que haya secuelas que puedan ser permanentes (limitación de movilidad, dolor crónico, cicatrices, déficit funcional) o cuando la aseguradora le ha ofrecido una indemnización que considera baja. En estos casos, la diferencia entre aceptar la oferta de la aseguradora y contratar un perito independiente puede ser de miles de euros.',
+  },
+];
+---
+
+<Layout
+  title="Valoración del Daño Corporal Gratuita Barcelona | Perito Médico"
+  description="Primera consulta gratuita y sin compromiso para valorar su caso de daño corporal en Barcelona. Estimación de indemnización y análisis médico-legal. Respuesta en menos de 24 horas."
+>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
+        Consulta 100% Gratuita
+      </span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        Valoración del Daño Corporal <span class="text-accent-300">Gratuita</span> en Barcelona
+      </h1>
+      <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
+        Le decimos cuánto vale su caso sin coste ni compromiso. Análisis de sus lesiones y secuelas por un perito médico especializado. Respuesta en menos de 24 horas.
+      </p>
+      <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
+        Solicitar valoración gratuita
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en 24 h</p>
+    </div>
+  </section>
+
+  <!-- Qué es gratis y qué no -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Lo que es GRATIS -->
+        <div class="bg-white rounded-2xl p-8 border border-green-100 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <h2 class="font-heading text-xl font-bold text-primary-900">¿Qué incluye la consulta gratuita?</h2>
+          </div>
+          <ul class="space-y-3">
+            {incluye.map(item => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-gray-600 text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Lo que tiene coste -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h2 class="font-heading text-xl font-bold text-primary-900">¿Qué tiene coste?</h2>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">
+            Somos transparentes: la elaboración del <strong class="text-primary-900">informe pericial médico completo</strong> tiene un coste que le comunicamos antes de comenzar. Nunca iniciamos ningún trabajo sin su autorización expresa y conocimiento previo del presupuesto.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              <span class="text-gray-600 text-sm">Elaboración del informe pericial médico (previo presupuesto)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              <span class="text-gray-600 text-sm">Exploración médica presencial (si el caso lo requiere)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              <span class="text-gray-600 text-sm">Ratificación judicial del informe en sala (si es necesaria)</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-accent-50 rounded-xl">
+            <p class="text-sm text-accent-800 leading-relaxed">
+              <strong>Importante:</strong> en muchos casos, el coste del informe se recupera incluido en las costas del juicio o en la indemnización obtenida.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿Cómo funciona la consulta gratuita?</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">Solo necesita tres minutos para contarnos su caso. Nosotros hacemos el resto.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="text-accent-300 font-heading font-bold text-xl">01</span>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Nos cuenta su caso</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">A través del formulario o por teléfono: qué pasó, cuándo y qué lesiones tiene o tuvo. Con la documentación que tenga disponible.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="text-accent-300 font-heading font-bold text-xl">02</span>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Analizamos en 24 h</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Un perito médico especializado revisa su caso y evalúa las posibilidades de reclamación y la estimación de la indemnización que podría corresponderle.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="text-accent-300 font-heading font-bold text-xl">03</span>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Recibe nuestra valoración</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Le enviamos nuestra opinión honesta sobre el caso y, si procede, el presupuesto del informe pericial. Usted decide si continúa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué pedir la valoración gratuita -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">¿Por qué solicitar la valoración gratuita antes de aceptar la oferta de la aseguradora?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-gray-100">
+            <h3 class="font-semibold text-primary-900 mb-3">Las aseguradoras tienen sus propios peritos</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">El médico que le valora la aseguradora trabaja para ella, no para usted. Su objetivo es minimizar la indemnización. Un perito independiente actúa únicamente en su interés.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100">
+            <h3 class="font-semibold text-primary-900 mb-3">La diferencia puede ser enorme</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">La brecha entre lo que ofrece la aseguradora y lo que corresponde por baremo puede ser de miles de euros. Un informe pericial independiente documenta con precisión todas las secuelas.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100">
+            <h3 class="font-semibold text-primary-900 mb-3">Secuelas que se olvidan</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Muchas secuelas —dolor crónico, limitación de movilidad, cicatrices, perjuicio estético, secuelas psicológicas— son ignoradas en las ofertas iniciales de las aseguradoras. El perito las documenta todas.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100">
+            <h3 class="font-semibold text-primary-900 mb-3">Sin coste si decide no seguir</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">La valoración gratuita no le compromete a nada. Si tras conocer nuestra opinión decide aceptar la oferta de la aseguradora o no seguir con la reclamación, no hay ningún cargo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes sobre la consulta gratuita</h2>
+      <div class="space-y-3">
+        {faqs.map(faq => (
+          <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
+            <summary class="flex justify-between items-center cursor-pointer px-7 py-5 text-primary-900 font-medium hover:bg-gray-50 transition-colors">
+              <span class="text-left pr-4 text-sm">{faq.question}</span>
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-7 pb-5 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios relacionados -->
+  <section class="py-12 bg-gray-50/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm text-gray-500 mb-6">Servicios relacionados con la valoración del daño corporal</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href={url('/servicios/valoracion-dano-corporal')} class="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 hover:border-primary-300 hover:text-primary-900 transition-colors">Valoración del Daño Corporal</a>
+        <a href={url('/accidentes-de-trafico')} class="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 hover:border-primary-300 hover:text-primary-900 transition-colors">Accidentes de Tráfico</a>
+        <a href={url('/servicios/informes-periciales-medicos')} class="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 hover:border-primary-300 hover:text-primary-900 transition-colors">Informes Periciales</a>
+        <a href={url('/especialidades/traumatologia')} class="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 hover:border-primary-300 hover:text-primary-900 transition-colors">Perito en Traumatología</a>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection title="¿Quiere saber cuánto vale su caso?" subtitle="Solicite ahora la valoración gratuita. Sin coste, sin compromiso y con respuesta en menos de 24 horas." />
+</Layout>

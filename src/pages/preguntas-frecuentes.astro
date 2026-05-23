@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const categorias = [
+  {
+    titulo: 'Sobre el peritaje médico',
+    preguntas: [
+      {
+        pregunta: '¿Qué es un perito médico?',
+        respuesta: 'Un perito médico es un médico con formación especializada en medicina legal y forense que actúa como experto independiente en procesos judiciales y extrajudiciales. Su función es analizar situaciones clínicas y emitir una opinión técnica fundamentada que sirva de prueba para jueces, abogados y partes en un procedimiento.'
+      },
+      {
+        pregunta: '¿Qué diferencia hay entre un perito médico y un médico forense?',
+        respuesta: 'El médico forense trabaja para la administración de justicia (Instituto de Medicina Legal) y auxilia directamente a los juzgados. El perito médico es contratado por las partes —demandante, demandado o compañía aseguradora— para elaborar un informe que defienda los intereses de quien le encarga el trabajo. Ambos pueden comparecer en juicio, pero con roles distintos.'
+      },
+      {
+        pregunta: '¿Qué contiene un informe pericial médico?',
+        respuesta: 'Un informe pericial médico contiene: datos del perito y su titulación, objeto del encargo, resumen de la documentación estudiada, exploración médica si se ha realizado, análisis técnico de los hechos, conclusiones fundamentadas y la firma del perito bajo juramento de decir la verdad. Debe ser claro, objetivo y reproducible.'
+      },
+      {
+        pregunta: '¿Cuánto tarda en elaborarse un informe pericial médico?',
+        respuesta: 'El plazo habitual es de 7 a 15 días hábiles desde la recepción de toda la documentación. En casos urgentes podemos reducir este plazo previa consulta. La primera valoración del caso se realiza de forma gratuita en 24-48 horas.'
+      },
+    ]
+  },
+  {
+    titulo: 'Costes y honorarios',
+    preguntas: [
+      {
+        pregunta: '¿Cuánto cuesta un informe pericial médico en Barcelona?',
+        respuesta: 'El coste varía según la complejidad del caso, el número de especialidades implicadas y si es necesaria exploración presencial. Realizamos una valoración gratuita del caso antes de facilitar presupuesto. En muchos supuestos, el gasto pericial puede recuperarse como parte de la indemnización o las costas del proceso.'
+      },
+      {
+        pregunta: '¿La primera consulta es gratuita?',
+        respuesta: 'Sí. Realizamos un estudio de viabilidad gratuito y sin compromiso para valorar las posibilidades médico-legales de su caso. Le responderemos en un plazo máximo de 24-48 horas.'
+      },
+      {
+        pregunta: '¿El coste del perito puede reclamarse al contrario?',
+        respuesta: 'En los procesos judiciales, los honorarios del perito médico pueden incluirse en las costas del procedimiento y ser repercutidos a la parte contraria si la sentencia es favorable. También pueden reclamarse como daño emergente en reclamaciones de responsabilidad civil. Su abogado puede orientarle sobre la estrategia más adecuada.'
+      },
+    ]
+  },
+  {
+    titulo: 'Negligencia médica y mala praxis',
+    preguntas: [
+      {
+        pregunta: '¿Cómo sé si he sufrido una negligencia médica?',
+        respuesta: 'Existe negligencia médica cuando un profesional sanitario actúa por debajo del estándar de buena práctica exigible (lex artis) y ese apartamiento causa un daño al paciente. Los indicios pueden ser: complicaciones no informadas, errores de diagnóstico o tratamiento, ausencia de consentimiento informado o resultados claramente desfavorables e inesperados. El primer paso es solicitar nuestro estudio de viabilidad gratuito.'
+      },
+      {
+        pregunta: '¿Qué plazo tengo para reclamar una negligencia médica?',
+        respuesta: 'En vía civil el plazo general es de un año desde que el perjudicado tuvo conocimiento del daño y de su autor. En vía penal puede alcanzar los cinco años. En reclamaciones contra la administración sanitaria (sanidad pública) el plazo es de un año. Dada la brevedad de los plazos, le recomendamos actuar con la mayor celeridad posible.'
+      },
+      {
+        pregunta: '¿Puedo reclamar contra un hospital público?',
+        respuesta: 'Sí. La responsabilidad patrimonial de la Administración permite reclamar daños causados por la sanidad pública. El procedimiento es diferente al de la sanidad privada: se inicia con una reclamación ante la propia administración y, si se desestima, puede acudirse a la vía contencioso-administrativa. Un informe pericial independiente es igualmente necesario.'
+      },
+    ]
+  },
+  {
+    titulo: 'Incapacidad laboral y seguros',
+    preguntas: [
+      {
+        pregunta: '¿Puedo impugnar la resolución del INSS sobre mi incapacidad?',
+        respuesta: 'Sí. Si el INSS le deniega la incapacidad permanente o le reconoce un grado inferior al que corresponde a su situación clínica, puede impugnar la resolución mediante reclamación previa y, posteriormente, ante el Juzgado de lo Social. Un informe pericial médico es la prueba fundamental para acreditar la severidad de sus limitaciones.'
+      },
+      {
+        pregunta: '¿Qué hago si la Mutua me da un alta médica con la que no estoy de acuerdo?',
+        respuesta: 'Puede impugnar el alta ante el INSS en el plazo de 11 días hábiles desde la notificación. Es fundamental contar con un informe pericial médico independiente que acredite que no está en condiciones de reincorporarse al trabajo. Actuamos con carácter urgente en estos casos.'
+      },
+      {
+        pregunta: '¿Qué grados de incapacidad permanente existen?',
+        respuesta: 'La legislación española reconoce cuatro grados: incapacidad permanente parcial (reduce en un tercio el rendimiento), incapacidad permanente total (impide ejercer la profesión habitual), incapacidad permanente absoluta (impide cualquier trabajo) y gran invalidez (requiere asistencia de tercera persona). Cada grado conlleva distintas prestaciones económicas.'
+      },
+    ]
+  },
+  {
+    titulo: 'Procedimiento y ratificación judicial',
+    preguntas: [
+      {
+        pregunta: '¿Qué es la ratificación judicial del informe pericial?',
+        respuesta: 'La ratificación judicial es el acto en que el perito comparece en el juicio oral para defender el contenido del informe ante el juez y las partes. Es habitual que el perito de la parte contraria y los abogados formulen preguntas. Nuestros peritos tienen amplia experiencia en ratificaciones en juzgados de Barcelona y de toda España.'
+      },
+      {
+        pregunta: '¿En qué juzgados de Barcelona trabajan?',
+        respuesta: 'Acudimos a cualquier órgano jurisdiccional que lo requiera: Juzgados de Primera Instancia, Juzgados de lo Social, Juzgados de lo Penal, Audiencia Provincial de Barcelona y Tribunales Superiores. También actuamos en procedimientos arbitrales y en mediaciones.'
+      },
+      {
+        pregunta: '¿Pueden actuar como peritos judiciales nombrados por el juzgado?',
+        respuesta: 'Sí. Además de actuar como peritos de parte, estamos inscritos en las listas de peritos judiciales para ser designados directamente por el juzgado. En este caso, el perito actúa con plena imparcialidad entre las partes y el informe tiene especial valor probatorio.'
+      },
+    ]
+  },
+];
+
+const allFaqs = categorias.flatMap(cat => cat.preguntas);
+---
+
+<Layout
+  title="Preguntas Frecuentes sobre Peritos Médicos en Barcelona | FAQ"
+  description="Resolvemos todas las dudas sobre peritaje médico en Barcelona: costes, plazos, negligencias médicas, incapacidad laboral, accidentes de tráfico y ratificación judicial."
+>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Preguntas Frecuentes</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Preguntas Frecuentes sobre Peritaje Médico en Barcelona
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Resolvemos las dudas más habituales sobre informes periciales médicos, negligencias, incapacidad laboral, accidentes de tráfico y el proceso judicial en Barcelona.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ por categorías -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
+        {categorias.map(categoria => (
+          <div>
+            <h2 class="font-heading text-xl font-bold text-primary-900 mb-6 pb-3 border-b border-gray-200">
+              {categoria.titulo}
+            </h2>
+            <div class="space-y-3">
+              {categoria.preguntas.map(faq => (
+                <details class="group bg-gray-50 rounded-xl overflow-hidden">
+                  <summary class="flex justify-between items-center cursor-pointer px-6 py-5 text-primary-900 font-medium hover:bg-gray-100 transition-colors">
+                    <span class="text-left pr-4">{faq.pregunta}</span>
+                    <svg class="w-5 h-5 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                    {faq.respuesta}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA intermedio -->
+      <div class="mt-16 bg-accent-50 rounded-2xl p-8 border border-accent-100 text-center">
+        <h3 class="font-heading text-xl font-semibold text-primary-900 mb-3">¿No ha encontrado respuesta a su pregunta?</h3>
+        <p class="text-gray-600 text-sm mb-6 max-w-lg mx-auto">
+          Contáctenos sin compromiso. Analizamos su caso de forma gratuita y le respondemos en menos de 24 horas.
+        </p>
+        <a href={url('/contacto')} class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
+          Consultar mi caso gratis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+
+  <!-- FAQPage Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": allFaqs.map(f => ({
+      "@type": "Question",
+      "name": f.pregunta,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.respuesta
+      }
+    }))
+  })} />
+</Layout>

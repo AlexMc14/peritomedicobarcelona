@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { url } from '../utils/links';
+---
+
+<Layout title="Mensaje Enviado | Perito Médico Barcelona" description="Su consulta ha sido enviada correctamente.">
+  <section class="py-32 lg:py-44">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-20 h-20 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-8">
+        <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold text-primary-900 mb-5">
+        Consulta enviada correctamente
+      </h1>
+      <p class="text-lg text-gray-500 mb-10">
+        Hemos recibido su mensaje. Nos pondremos en contacto con usted en menos de 24 horas.
+      </p>
+      <a href={url('/')} class="inline-flex items-center px-6 py-3 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
+        Volver al inicio
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

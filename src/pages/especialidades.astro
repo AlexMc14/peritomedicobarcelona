@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const especialidades = [
+  {
+    id: 'traumatologia',
+    name: 'Traumatología',
+    description: 'Valoración pericial de lesiones traumáticas, fracturas, esguinces, luxaciones y secuelas del aparato locomotor derivadas de accidentes o agresiones.',
+    cases: ['Accidentes de tráfico', 'Accidentes laborales', 'Caídas y traumatismos', 'Secuelas de fracturas'],
+    href: '/especialidades/traumatologia',
+  },
+  {
+    id: 'neurologia',
+    name: 'Neurología',
+    description: 'Peritaje médico en patologías del sistema nervioso central y periférico, incluyendo traumatismos craneoencefálicos, lesiones medulares y neuropatías.',
+    cases: ['Traumatismos craneoencefálicos', 'Lesiones medulares', 'Epilepsia postraumática', 'Neuropatías'],
+    href: '/especialidades/neurologia',
+  },
+  {
+    id: 'psiquiatria',
+    name: 'Psiquiatría',
+    description: 'Valoración pericial de trastornos psiquiátricos, estrés postraumático, secuelas psicológicas de accidentes y capacidad mental.',
+    cases: ['Estrés postraumático', 'Depresión reactiva', 'Trastornos de ansiedad', 'Valoración de capacidad'],
+    href: '/especialidades/psiquiatria',
+  },
+  {
+    id: 'medicina-trabajo',
+    name: 'Medicina del Trabajo',
+    description: 'Peritaje especializado en enfermedades profesionales, accidentes de trabajo, incapacidades laborales y determinación de contingencia.',
+    cases: ['Enfermedades profesionales', 'Accidentes de trabajo', 'Incapacidad laboral', 'Determinación de contingencia'],
+    href: '/servicios/accidente-trabajo',
+  },
+  {
+    id: 'rehabilitacion',
+    name: 'Rehabilitación',
+    description: 'Valoración funcional y de secuelas desde la perspectiva rehabilitadora, evaluando la capacidad funcional residual y las necesidades de tratamiento.',
+    cases: ['Valoración funcional', 'Secuelas motoras', 'Necesidades rehabilitadoras', 'Capacidad funcional residual'],
+    href: null,
+  },
+  {
+    id: 'ginecologia',
+    name: 'Ginecología y Obstetricia',
+    description: 'Peritaje en casos relacionados con la atención ginecológica y obstétrica, incluyendo complicaciones del parto y negligencias en seguimiento del embarazo.',
+    cases: ['Complicaciones del parto', 'Negligencia obstétrica', 'Daño neonatal', 'Seguimiento del embarazo'],
+    href: null,
+  },
+  {
+    id: 'cirugia',
+    name: 'Cirugía',
+    description: 'Valoración pericial de intervenciones quirúrgicas, complicaciones postoperatorias, consentimiento informado y estándares de práctica quirúrgica.',
+    cases: ['Complicaciones quirúrgicas', 'Consentimiento informado', 'Infecciones nosocomiales', 'Secuelas postquirúrgicas'],
+    href: null,
+  },
+  {
+    id: 'urgencias',
+    name: 'Urgencias',
+    description: 'Peritaje en la atención de urgencias y emergencias, evaluando diagnósticos de urgencia, tiempos de respuesta y protocolos de actuación.',
+    cases: ['Retraso diagnóstico', 'Altas prematuras', 'Errores de triaje', 'Protocolos de urgencia'],
+    href: null,
+  },
+  {
+    id: 'medicina-interna',
+    name: 'Medicina Interna',
+    description: 'Valoración pericial integral en patologías de medicina interna, diagnósticos complejos y seguimiento de enfermedades crónicas.',
+    cases: ['Errores diagnósticos', 'Enfermedades crónicas', 'Interacciones medicamentosas', 'Seguimiento inadecuado'],
+    href: null,
+  },
+];
+---
+
+<Layout title="Especialidades Periciales | Perito Médico Barcelona" description="Peritaje médico en todas las especialidades: traumatología, neurología, psiquiatría, medicina del trabajo y más. Perito médico en Barcelona.">
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Especialidades</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Especialidades Periciales
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Contamos con un equipo multidisciplinar de peritos médicos que cubre todas las especialidades necesarias para abordar cualquier caso con el máximo rigor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Especialidades -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-8">
+        {especialidades.map((esp, i) => (
+          <div id={esp.id} class="bg-white rounded-2xl border border-gray-100 p-8 lg:p-10 hover:shadow-lg hover:border-primary-100 transition-all scroll-mt-24">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div class="lg:col-span-2">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-12 h-12 bg-primary-900 rounded-xl flex items-center justify-center">
+                    <span class="text-accent-300 font-heading font-bold text-sm">{String(i + 1).padStart(2, '0')}</span>
+                  </div>
+                  <h2 class="font-heading text-2xl font-bold text-primary-900">{esp.name}</h2>
+                </div>
+                <p class="text-gray-600 leading-relaxed">{esp.description}</p>
+                {esp.href && (
+                  <a href={url(esp.href)} class="inline-flex items-center mt-4 text-sm font-semibold text-accent-600 hover:text-accent-700 transition-colors">
+                    Ver página de {esp.name}
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  </a>
+                )}
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-primary-800 uppercase tracking-wider mb-3">Casos habituales</h3>
+                <ul class="space-y-2">
+                  {esp.cases.map(c => (
+                    <li class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class="w-4 h-4 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection title="¿Necesita un perito en alguna especialidad?" subtitle="Contacte con nosotros y le asignaremos el especialista más adecuado para su caso." />
+</Layout>

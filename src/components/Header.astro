@@ -1,0 +1,214 @@
+---
+import { url } from '../utils/links';
+
+const servicios = [
+  { name: 'Informes Periciales Médicos', href: url('/servicios/informes-periciales-medicos') },
+  { name: 'Negligencia Médica', href: url('/servicios/negligencia-medica') },
+  { name: 'Valoración del Daño Corporal', href: url('/servicios/valoracion-dano-corporal') },
+  { name: 'Incapacidad Laboral', href: url('/servicios/incapacidad-laboral') },
+  { name: 'Impugnación de Alta Médica', href: url('/servicios/impugnacion-alta-medica') },
+  { name: 'Accidentes de Tráfico', href: url('/accidentes-de-trafico') },
+  { name: 'Accidentes Laborales', href: url('/accidente-laboral') },
+  { name: 'Reclamaciones a Seguros', href: url('/perito-medico-para-seguros') },
+  { name: 'Discapacidad', href: url('/servicios/discapacidad') },
+  { name: 'Curatela y Medidas de Apoyo', href: url('/servicios/curatela-medidas-apoyo') },
+  { name: 'Determinación de Contingencia', href: url('/servicios/determinacion-contingencia') },
+  { name: 'Segunda Opinión Médico-Legal', href: url('/servicios/segunda-opinion-medico-legal') },
+  { name: 'Estudio de Viabilidad del Caso', href: url('/servicios/estudio-viabilidad') },
+];
+
+const especialidades = [
+  { name: 'Traumatología', href: url('/especialidades#traumatologia') },
+  { name: 'Neurología', href: url('/especialidades#neurologia') },
+  { name: 'Psiquiatría', href: url('/especialidades#psiquiatria') },
+  { name: 'Medicina del Trabajo', href: url('/especialidades#medicina-trabajo') },
+  { name: 'Rehabilitación', href: url('/especialidades#rehabilitacion') },
+  { name: 'Ginecología y Obstetricia', href: url('/especialidades#ginecologia') },
+  { name: 'Cirugía', href: url('/especialidades#cirugia') },
+  { name: 'Urgencias', href: url('/especialidades#urgencias') },
+  { name: 'Medicina Interna', href: url('/especialidades#medicina-interna') },
+];
+
+const paraAbogados = [
+  { name: 'Asesoramiento Técnico', href: url('/para-abogados/asesoramiento-tecnico') },
+  { name: 'Ratificación Judicial', href: url('/para-abogados/ratificacion-judicial') },
+  { name: 'Revisión de Informes Periciales', href: url('/para-abogados/revision-informes') },
+  { name: 'Contrainforme Pericial', href: url('/para-abogados/contrainforme-pericial') },
+];
+
+const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href={url('/')} class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-primary-900 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-accent-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-3-3v6m-7 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-heading text-xl font-bold text-primary-900 block leading-tight">Perito Médico</span>
+          <span class="text-xs text-primary-600 tracking-wider uppercase">Barcelona</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-1">
+        <a href={url('/')} class:list={['px-4 py-2 rounded-lg text-sm font-medium transition-colors', currentPath === base + '/' || currentPath === base ? 'text-primary-900 bg-primary-50' : 'text-gray-600 hover:text-primary-900 hover:bg-gray-50']}>
+          Inicio
+        </a>
+
+        <!-- Servicios Dropdown -->
+        <div class="relative group">
+          <button class:list={['px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1', currentPath.includes('/servicios') ? 'text-primary-900 bg-primary-50' : 'text-gray-600 hover:text-primary-900 hover:bg-gray-50']}>
+            Servicios
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-3 w-72">
+              {servicios.map(s => (
+                <a href={s.href} class="block px-5 py-2.5 text-sm text-gray-600 hover:text-primary-900 hover:bg-primary-50 transition-colors">
+                  {s.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Especialidades Dropdown -->
+        <div class="relative group">
+          <button class:list={['px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1', currentPath.includes('/especialidades') ? 'text-primary-900 bg-primary-50' : 'text-gray-600 hover:text-primary-900 hover:bg-gray-50']}>
+            Especialidades
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-3 w-64">
+              {especialidades.map(e => (
+                <a href={e.href} class="block px-5 py-2.5 text-sm text-gray-600 hover:text-primary-900 hover:bg-primary-50 transition-colors">
+                  {e.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Para Abogados Dropdown -->
+        <div class="relative group">
+          <button class:list={['px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1', currentPath.includes('/para-abogados') ? 'text-primary-900 bg-primary-50' : 'text-gray-600 hover:text-primary-900 hover:bg-gray-50']}>
+            Para Abogados
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-3 w-64">
+              {paraAbogados.map(a => (
+                <a href={a.href} class="block px-5 py-2.5 text-sm text-gray-600 hover:text-primary-900 hover:bg-primary-50 transition-colors">
+                  {a.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <a href={url('/sobre-nosotros')} class:list={['px-4 py-2 rounded-lg text-sm font-medium transition-colors', currentPath.includes('/sobre-nosotros') ? 'text-primary-900 bg-primary-50' : 'text-gray-600 hover:text-primary-900 hover:bg-gray-50']}>
+          Sobre Nosotros
+        </a>
+
+        <a href={url('/blog')} class:list={['px-4 py-2 rounded-lg text-sm font-medium transition-colors', currentPath.includes('/blog') ? 'text-primary-900 bg-primary-50' : 'text-gray-600 hover:text-primary-900 hover:bg-gray-50']}>
+          Blog
+        </a>
+
+        <a href={url('/contacto')} class:list={['px-4 py-2 rounded-lg text-sm font-medium transition-colors', currentPath.includes('/contacto') ? 'text-primary-900 bg-primary-50' : 'text-gray-600 hover:text-primary-900 hover:bg-gray-50']}>
+          Contacto
+        </a>
+
+        <!-- CTA Button -->
+        <a href={url('/contacto')} class="ml-4 px-6 py-2.5 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-lg transition-colors shadow-sm">
+          Consulta Gratuita
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" aria-label="Abrir menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden pb-6">
+      <div class="space-y-1 pt-4 border-t border-gray-100">
+        <a href={url('/')} class="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-900 rounded-lg">Inicio</a>
+
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-primary-50 rounded-lg">
+            Servicios
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="mobile-dropdown-content hidden pl-4">
+            {servicios.map(s => (
+              <a href={s.href} class="block px-4 py-2 text-sm text-gray-600 hover:text-primary-900">{s.name}</a>
+            ))}
+          </div>
+        </div>
+
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-primary-50 rounded-lg">
+            Especialidades
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="mobile-dropdown-content hidden pl-4">
+            {especialidades.map(e => (
+              <a href={e.href} class="block px-4 py-2 text-sm text-gray-600 hover:text-primary-900">{e.name}</a>
+            ))}
+          </div>
+        </div>
+
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-primary-50 rounded-lg">
+            Para Abogados
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="mobile-dropdown-content hidden pl-4">
+            {paraAbogados.map(a => (
+              <a href={a.href} class="block px-4 py-2 text-sm text-gray-600 hover:text-primary-900">{a.name}</a>
+            ))}
+          </div>
+        </div>
+
+        <a href={url('/sobre-nosotros')} class="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-900 rounded-lg">Sobre Nosotros</a>
+        <a href={url('/preguntas-frecuentes')} class="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-900 rounded-lg">Preguntas Frecuentes</a>
+        <a href={url('/blog')} class="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-900 rounded-lg">Blog</a>
+        <a href={url('/contacto')} class="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-900 rounded-lg">Contacto</a>
+
+        <div class="pt-3">
+          <a href={url('/contacto')} class="block mx-4 px-6 py-3 bg-accent-500 text-white text-sm font-semibold rounded-lg text-center">
+            Consulta Gratuita
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('svg');
+      content?.classList.toggle('hidden');
+      icon?.classList.toggle('rotate-180');
+    });
+  });
+</script>

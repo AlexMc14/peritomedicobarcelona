@@ -1,0 +1,92 @@
+---
+import { url } from '../utils/links';
+
+const servicios = [
+  { name: 'Informes Periciales', href: url('/servicios/informes-periciales-medicos') },
+  { name: 'Negligencia Médica', href: url('/servicios/negligencia-medica') },
+  { name: 'Valoración del Daño Corporal', href: url('/servicios/valoracion-dano-corporal') },
+  { name: 'Incapacidad Laboral', href: url('/servicios/incapacidad-laboral') },
+  { name: 'Impugnación de Alta', href: url('/servicios/impugnacion-alta-medica') },
+  { name: 'Accidentes de Tráfico', href: url('/accidentes-de-trafico') },
+  { name: 'Accidentes Laborales', href: url('/accidente-laboral') },
+  { name: 'Reclamaciones a Seguros', href: url('/perito-medico-para-seguros') },
+];
+
+const empresa = [
+  { name: 'Sobre Nosotros', href: url('/sobre-nosotros') },
+  { name: 'Especialidades', href: url('/especialidades') },
+  { name: 'Para Abogados', href: url('/para-abogados/asesoramiento-tecnico') },
+  { name: 'Preguntas Frecuentes', href: url('/preguntas-frecuentes') },
+  { name: 'Blog', href: url('/blog') },
+  { name: 'Contacto', href: url('/contacto') },
+];
+---
+
+<footer class="bg-primary-950 text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 bg-primary-800 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-accent-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-3-3v6m-7 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <span class="font-heading text-lg font-bold text-white block leading-tight">Perito Médico</span>
+            <span class="text-xs text-primary-400 tracking-wider uppercase">Barcelona</span>
+          </div>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Servicio de peritaje médico profesional en Barcelona. Informes periciales rigurosos para la defensa de tus derechos.
+        </p>
+      </div>
+
+      <!-- Servicios -->
+      <div>
+        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-5">Servicios</h3>
+        <ul class="space-y-3">
+          {servicios.map(s => (
+            <li>
+              <a href={s.href} class="text-sm text-gray-400 hover:text-accent-300 transition-colors">{s.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Empresa -->
+      <div>
+        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-5">Empresa</h3>
+        <ul class="space-y-3">
+          {empresa.map(e => (
+            <li>
+              <a href={e.href} class="text-sm text-gray-400 hover:text-accent-300 transition-colors">{e.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div>
+        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-5">Contacto</h3>
+        <p class="text-sm text-gray-400 mb-6">
+          Solicite una valoración gratuita de su caso sin compromiso.
+        </p>
+        <a href={url('/contacto')} class="inline-block px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-lg transition-colors">
+          Consulta Gratuita
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="mt-14 pt-8 border-t border-primary-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-gray-500">&copy; {new Date().getFullYear()} Perito Médico Barcelona. Todos los derechos reservados.</p>
+      <div class="flex gap-6">
+        <a href={url('/politica-privacidad')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Política de Privacidad</a>
+        <a href={url('/aviso-legal')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Aviso Legal</a>
+        <a href={url('/cookies')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>

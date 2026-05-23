@@ -1,0 +1,159 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+---
+
+<BlogPostLayout
+  title="Perito médico en incapacidad permanente: guía completa"
+  pageTitle="Perito Médico en Incapacidad Permanente | Guía Completa Barcelona 2026"
+  description="Todo lo que necesita saber sobre el informe pericial médico en los procesos de incapacidad permanente ante el INSS en Barcelona. Grados, proceso y cómo puede ayudarle un perito."
+  date="2026-05-05"
+  readingTime="10"
+  category="Incapacidad Permanente"
+  faqs={[
+    { question: '¿Qué hace exactamente el perito médico en un juicio de incapacidad permanente?', answer: 'El perito médico de parte evalúa clínicamente al paciente, revisa toda la documentación médica y elabora un informe técnico independiente que rebate el dictamen del EVI del INSS. En el juicio oral, comparece como testigo experto para defender las conclusiones ante el magistrado y responder a las preguntas del letrado de la Seguridad Social.' },
+    { question: '¿Puedo presentar el informe pericial sin abogado?', answer: 'Puede, pero no es recomendable. Los procedimientos ante el Juzgado de lo Social son técnicamente complejos y la representación por letrado especializado aumenta significativamente las posibilidades de éxito. El perito médico y el abogado laboralista forman un equipo complementario.' },
+    { question: '¿Cuánto tarda el proceso desde que se presenta la demanda hasta el juicio?', answer: 'En Barcelona, el plazo habitual desde la presentación de la demanda hasta la celebración del juicio oral es de entre 6 y 18 meses, dependiendo de la carga de trabajo del Juzgado de lo Social. El perito debe tener el informe listo antes del juicio para poder aportarlo como prueba.' },
+    { question: '¿Qué ocurre si el juez no acepta el informe pericial?', answer: 'El juez puede no dar credibilidad al informe pericial, pero esto es infrecuente si el informe es técnicamente sólido. Si la sentencia es desfavorable, puede recurrirse ante el Tribunal Superior de Justicia de Cataluña y, en su caso, ante el Tribunal Supremo.' },
+    { question: '¿El informe pericial sirve también para la revisión del grado de incapacidad?', answer: 'Sí. Si su estado de salud ha empeorado y quiere solicitar la revisión de grado (pasar de IPT a IPA o Gran Invalidez, por ejemplo), un informe pericial médico actualizado acredita ese empeoramiento ante el INSS o ante el Juzgado de lo Social.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Cada año, miles de personas en España ven denegada su incapacidad permanente por el INSS o reconocida en un grado inferior al que les corresponde. Un informe pericial médico independiente es la herramienta más eficaz para revertir esa situación. En esta guía explicamos cómo funciona el proceso y qué papel juega el perito médico.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">¿Qué es la incapacidad permanente?</h2>
+  <p class="text-gray-600 leading-relaxed mb-4">
+    La incapacidad permanente es la situación en la que el trabajador presenta, después de haber estado sometido al tratamiento prescrito y de haber sido dado de alta médicamente, reducciones anatómicas o funcionales graves que disminuyen o anulan su capacidad laboral de forma presumiblemente definitiva.
+  </p>
+  <p class="text-gray-600 leading-relaxed mb-4">
+    El reconocimiento de la incapacidad permanente es competencia del Instituto Nacional de la Seguridad Social (INSS), que actúa a través de su Equipo de Valoración de Incapacidades (EVI). Sin embargo, la resolución del INSS no siempre refleja la realidad clínica del paciente, y puede ser impugnada judicialmente.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">Grados de incapacidad permanente en España</h2>
+  <p class="text-gray-600 leading-relaxed mb-4">La legislación española reconoce cuatro grados de incapacidad permanente:</p>
+  <div class="space-y-4 mb-8">
+    <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary-300">
+      <h3 class="font-semibold text-primary-900 mb-1">Incapacidad Permanente Parcial (IPP)</h3>
+      <p class="text-sm text-gray-600">Ocasiona al trabajador una disminución no inferior al 33% en el rendimiento normal para su profesión habitual, sin impedirle la realización de las tareas fundamentales.</p>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary-400">
+      <h3 class="font-semibold text-primary-900 mb-1">Incapacidad Permanente Total (IPT)</h3>
+      <p class="text-sm text-gray-600">Inhabilita al trabajador para la realización de todas o de las fundamentales tareas de su profesión habitual, siempre que pueda dedicarse a otra distinta. Representa el 55% de la base reguladora (o el 75% a partir de los 55 años).</p>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary-600">
+      <h3 class="font-semibold text-primary-900 mb-1">Incapacidad Permanente Absoluta (IPA)</h3>
+      <p class="text-sm text-gray-600">Inhabilita al trabajador para toda profesión u oficio. La prestación equivale al 100% de la base reguladora y es compatible con actividades lucrativas marginales.</p>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-accent-500">
+      <h3 class="font-semibold text-primary-900 mb-1">Gran Invalidez (GI)</h3>
+      <p class="text-sm text-gray-600">La persona, además de la IPA, necesita asistencia de otra persona para los actos esenciales de la vida (asearse, comer, desplazarse). Supone un complemento adicional para costear la asistencia de esa tercera persona.</p>
+    </div>
+  </div>
+
+  <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">El papel del perito médico en un juicio de incapacidad permanente</h2>
+  <p class="text-gray-600 leading-relaxed mb-4">
+    El Juzgado de lo Social es el órgano competente para revisar las resoluciones del INSS sobre incapacidad permanente. En el juicio oral, el magistrado valora la prueba médica disponible, que incluye:
+  </p>
+  <ul class="space-y-3 mb-6">
+    <li class="flex items-start gap-3 text-gray-600">
+      <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>El dictamen del EVI del INSS (favorable a la Seguridad Social).</span>
+    </li>
+    <li class="flex items-start gap-3 text-gray-600">
+      <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>Los informes de los médicos especialistas del paciente.</span>
+    </li>
+    <li class="flex items-start gap-3 text-gray-600">
+      <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>El <strong class="text-primary-900">informe pericial médico de parte</strong> (el perito contratado por el trabajador o su abogado).</span>
+    </li>
+    <li class="flex items-start gap-3 text-gray-600">
+      <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>Un eventual perito judicial designado por el juez (si lo considera necesario).</span>
+    </li>
+  </ul>
+  <p class="text-gray-600 leading-relaxed mb-4">
+    El informe pericial médico de parte tiene un peso probatorio muy significativo. El magistrado frecuentemente se apoya en él para contrarrestar el criterio del EVI cuando el informe es técnicamente sólido, está bien fundamentado y su autor lo defiende convincentemente en sala.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">¿Cuándo es necesario un informe pericial médico?</h2>
+  <ul class="space-y-3 mb-6">
+    <li class="flex items-start gap-3 text-gray-600">
+      <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>El INSS le ha denegado la incapacidad permanente en cualquier grado.</span>
+    </li>
+    <li class="flex items-start gap-3 text-gray-600">
+      <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>Le han reconocido un grado (IPP o IPT) pero su estado clínico corresponde a uno superior.</span>
+    </li>
+    <li class="flex items-start gap-3 text-gray-600">
+      <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>Su abogado laboralista le ha recomendado acompañar la demanda con un informe pericial médico.</span>
+    </li>
+    <li class="flex items-start gap-3 text-gray-600">
+      <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>Su estado de salud ha empeorado y quiere solicitar la revisión del grado al alza.</span>
+    </li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">El proceso de reclamación de incapacidad permanente paso a paso</h2>
+  <div class="space-y-4 mb-8">
+    <div class="flex gap-4">
+      <div class="w-9 h-9 bg-primary-900 rounded-xl flex items-center justify-center flex-shrink-0">
+        <span class="text-accent-300 font-bold text-sm">01</span>
+      </div>
+      <div>
+        <h3 class="font-semibold text-primary-900 mb-1">Resolución denegatoria del INSS</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">El INSS emite su resolución denegando o reconociendo un grado de incapacidad. Desde este momento tiene 30 días para presentar la reclamación previa.</p>
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <div class="w-9 h-9 bg-primary-900 rounded-xl flex items-center justify-center flex-shrink-0">
+        <span class="text-accent-300 font-bold text-sm">02</span>
+      </div>
+      <div>
+        <h3 class="font-semibold text-primary-900 mb-1">Reclamación previa ante el INSS</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Trámite obligatorio previo a la demanda judicial. El INSS tiene 45 días para resolver. Si no responde o deniega, queda abierta la vía judicial.</p>
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <div class="w-9 h-9 bg-primary-900 rounded-xl flex items-center justify-center flex-shrink-0">
+        <span class="text-accent-300 font-bold text-sm">03</span>
+      </div>
+      <div>
+        <h3 class="font-semibold text-primary-900 mb-1">Contacto con el perito médico</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">En este momento (o incluso antes) es cuando debe contactar con nosotros. Analizamos su expediente, realizamos la exploración médica y elaboramos el informe pericial.</p>
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <div class="w-9 h-9 bg-primary-900 rounded-xl flex items-center justify-center flex-shrink-0">
+        <span class="text-accent-300 font-bold text-sm">04</span>
+      </div>
+      <div>
+        <h3 class="font-semibold text-primary-900 mb-1">Demanda ante el Juzgado de lo Social</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Su abogado interpone la demanda, adjuntando el informe pericial como prueba documental.</p>
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <div class="w-9 h-9 bg-primary-900 rounded-xl flex items-center justify-center flex-shrink-0">
+        <span class="text-accent-300 font-bold text-sm">05</span>
+      </div>
+      <div>
+        <h3 class="font-semibold text-primary-900 mb-1">Juicio oral y ratificación pericial</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Nuestro perito comparece en el juicio oral para ratificar el informe y defender las conclusiones médicas ante el magistrado.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-accent-50 rounded-xl p-6 border border-accent-100 mt-8">
+    <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">¿Le han denegado la incapacidad permanente?</h3>
+    <p class="text-sm text-gray-600 leading-relaxed mb-4">
+      Solicite nuestra valoración gratuita y analizamos su expediente para determinar si tiene posibilidades reales de éxito. Le responderemos en menos de 24 horas.
+    </p>
+    <a href={url('/servicios/perito-seguridad-social')} class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
+      Ver servicio de incapacidad permanente
+      <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </a>
+  </div>
+</BlogPostLayout>

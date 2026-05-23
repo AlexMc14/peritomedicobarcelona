@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const valores = [
+  {
+    titulo: 'Independencia',
+    descripcion: 'No tenemos ninguna vinculación con compañías aseguradoras, entidades médicas ni organismos de la Administración. Nuestros informes reflejan únicamente la realidad clínica del caso.',
+    icono: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`
+  },
+  {
+    titulo: 'Rigor científico',
+    descripcion: 'Aplicamos metodología basada en la evidencia médica, los protocolos de valoración vigentes y la jurisprudencia aplicable para fundamentar sólidamente cada informe.',
+    icono: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />`
+  },
+  {
+    titulo: 'Experiencia judicial',
+    descripcion: 'Nuestros peritos han ratificado sus informes en cientos de juicios en Barcelona y toda España, con pleno dominio del lenguaje jurídico y de la dinámica del proceso.',
+    icono: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />`
+  },
+  {
+    titulo: 'Equipo multidisciplinar',
+    descripcion: 'Contamos con una red de especialistas en traumatología, psiquiatría, neurología, medicina del trabajo, oncología y otras especialidades para cubrir cualquier caso.',
+    icono: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />`
+  },
+];
+
+const cifras = [
+  { valor: '+500', etiqueta: 'Informes periciales elaborados' },
+  { valor: '+200', etiqueta: 'Ratificaciones judiciales' },
+  { valor: '+15', etiqueta: 'Años de experiencia' },
+  { valor: '24h', etiqueta: 'Respuesta a primera consulta' },
+];
+
+const especialidades = [
+  'Medicina Legal y Forense',
+  'Traumatología y Cirugía Ortopédica',
+  'Neurología y Neurocirugía',
+  'Psiquiatría y Psicología Clínica',
+  'Medicina del Trabajo',
+  'Cardiología',
+  'Oncología',
+  'Ginecología y Obstetricia',
+  'Cirugía General',
+  'Oftalmología',
+  'Otorrinolaringología',
+  'Rehabilitación y Medicina Física',
+];
+---
+
+<Layout
+  title="Sobre Nosotros | Perito Médico Barcelona — Equipo y Trayectoria"
+  description="Equipo de peritos médicos especializados en medicina legal en Barcelona. Más de 15 años de experiencia, +500 informes periciales y +200 ratificaciones judiciales. Independencia y rigor científico."
+>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Sobre Nosotros</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Peritos Médicos en Barcelona con Experiencia y Rigor
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Somos un equipo de médicos especialistas en medicina legal y forense con más de 15 años de experiencia en la elaboración de informes periciales para procesos judiciales y extrajudiciales en Barcelona y toda España.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cifras -->
+  <section class="py-12 bg-accent-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {cifras.map(c => (
+          <div class="text-center text-white">
+            <div class="font-heading text-4xl font-bold mb-1">{c.valor}</div>
+            <div class="text-accent-100 text-sm">{c.etiqueta}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiénes somos -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-accent-600 font-semibold text-sm tracking-wider uppercase">Quiénes somos</span>
+          <h2 class="font-heading text-3xl font-bold text-primary-900 mt-3 mb-6">
+            Medicina legal al servicio de la justicia en Barcelona
+          </h2>
+          <div class="space-y-5 text-gray-600 leading-relaxed">
+            <p>
+              Perito Médico Barcelona nace con la misión de ofrecer informes periciales médicos de la máxima calidad científica, elaborados con total independencia y orientados a la defensa de los derechos de quienes han sufrido un daño.
+            </p>
+            <p>
+              Nuestro equipo está formado por médicos especializados en medicina legal y forense, con formación posgrado específica en valoración del daño corporal, medicina del trabajo y peritaje judicial. Trabajamos con abogados, particulares y empresas en toda clase de procedimientos civiles, penales, laborales y contencioso-administrativos.
+            </p>
+            <p>
+              Estamos ubicados en Barcelona y realizamos exploraciones presenciales en nuestro centro, con cobertura de casos para toda Cataluña y el resto de España mediante desplazamiento o documentación remota.
+            </p>
+          </div>
+        </div>
+
+        <!-- Valores -->
+        <div class="grid grid-cols-1 gap-5">
+          {valores.map(valor => (
+            <div class="flex gap-4 bg-gray-50 rounded-xl p-5">
+              <div class="w-10 h-10 bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={valor.icono} />
+              </div>
+              <div>
+                <h3 class="font-semibold text-primary-900 mb-1">{valor.titulo}</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">{valor.descripcion}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Especialidades -->
+  <section class="py-16 lg:py-24 bg-gray-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-accent-600 font-semibold text-sm tracking-wider uppercase">Cobertura</span>
+        <h2 class="font-heading text-3xl font-bold text-primary-900 mt-3 mb-4">
+          Especialidades médicas que cubrimos
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">
+          Contamos con una red de especialistas para elaborar informes periciales en cualquier área de la medicina.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        {especialidades.map(esp => (
+          <div class="bg-white rounded-xl px-5 py-4 border border-gray-100 flex items-center gap-3">
+            <div class="w-2 h-2 bg-accent-500 rounded-full flex-shrink-0"></div>
+            <span class="text-sm text-gray-700 font-medium">{esp}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Área de actuación -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-primary-900 rounded-3xl p-10 lg:p-16 text-white">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="text-accent-400 font-semibold text-sm tracking-wider uppercase">Área de actuación</span>
+            <h2 class="font-heading text-3xl font-bold mt-3 mb-6">
+              Barcelona y toda Cataluña
+            </h2>
+            <div class="space-y-4 text-primary-200 leading-relaxed">
+              <p>
+                Nuestro despacho está situado en Barcelona, desde donde damos servicio a particulares, abogados y empresas de toda la región metropolitana y el resto de Cataluña.
+              </p>
+              <p>
+                Realizamos exploraciones presenciales en Barcelona y nos desplazamos cuando el caso lo requiere. Para casos de otras comunidades autónomas, trabajamos con la documentación médica disponible y coordinamos exploraciones locales si es necesario.
+              </p>
+              <p>
+                Actuamos habitualmente en los Juzgados de Barcelona, el Tribunal Superior de Justicia de Cataluña, la Audiencia Provincial de Barcelona y juzgados de partido judicial de toda Cataluña.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {['Barcelona', 'L\'Hospitalet de Llobregat', 'Badalona', 'Terrassa', 'Sabadell', 'Mataró', 'Lleida', 'Girona', 'Tarragona', 'Manresa'].map(ciudad => (
+              <div class="bg-primary-800 rounded-xl px-4 py-3 flex items-center gap-2">
+                <svg class="w-4 h-4 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <span class="text-sm text-primary-100">{ciudad}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+
+  <!-- LocalBusiness Schema adicional con más detalles -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Perito Médico Barcelona",
+    "description": "Equipo de peritos médicos especializados en medicina legal en Barcelona con más de 15 años de experiencia.",
+    "url": "https://peritomedicobarcelona.es",
+    "areaServed": [
+      { "@type": "City", "name": "Barcelona" },
+      { "@type": "City", "name": "Hospitalet de Llobregat" },
+      { "@type": "City", "name": "Badalona" },
+      { "@type": "AdministrativeArea", "name": "Cataluña" }
+    ],
+    "knowsAbout": [
+      "Medicina Legal",
+      "Valoración del Daño Corporal",
+      "Negligencia Médica",
+      "Incapacidad Laboral",
+      "Accidentes de Tráfico",
+      "Accidentes Laborales",
+      "Peritaje Médico Judicial"
+    ]
+  })} />
+</Layout>

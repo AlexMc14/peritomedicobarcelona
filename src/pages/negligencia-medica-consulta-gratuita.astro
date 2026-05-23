@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const senales = [
+  'Una complicación ocurrió justo después de un procedimiento médico',
+  'El médico no le informó de los riesgos antes de la operación',
+  'El diagnóstico tardó mucho más de lo razonable y eso empeoró su estado',
+  'Le dieron el alta médica demasiado pronto y tuvo que reingresar',
+  'El resultado de la cirugía fue muy diferente al esperado sin explicación',
+  'Le administraron un medicamento incorrecto o en dosis errónea',
+  'Tiene una secuela que el médico no le advirtió que era posible',
+];
+
+const faqs = [
+  {
+    question: '¿Cómo sé si lo que me pasó fue realmente una negligencia médica?',
+    answer: 'Esa es exactamente la duda más habitual. No toda complicación es negligencia: la medicina no garantiza resultados. Pero si el médico no actuó conforme al estándar de cuidado exigible (lex artis) y eso le causó un daño, puede haber negligencia. En la consulta gratuita analizamos su caso y le decimos con honestidad si existen indicios.',
+  },
+  {
+    question: '¿Puedo reclamar aunque haya pasado más de un año?',
+    answer: 'Depende de la vía. La vía civil tiene un plazo de prescripción de 5 años desde que tuvo conocimiento del daño. La vía penal también 5 años. La reclamación frente a la sanidad pública tiene solo 1 año. Por eso es importante consultarnos cuanto antes para no perder derechos.',
+  },
+  {
+    question: '¿La consulta gratuita me compromete a contratar el informe?',
+    answer: 'No. La consulta gratuita no crea ninguna obligación. Si tras escuchar nuestra valoración decide no seguir adelante, no hay ningún cargo. Si decide continuar, le facilitamos un presupuesto del informe pericial antes de iniciar cualquier trabajo.',
+  },
+  {
+    question: '¿Pueden valorar negligencias de la sanidad pública?',
+    answer: 'Sí. Tanto la sanidad pública (hospitales del sistema público catalán, CatSalut) como la privada (clínicas, médicos privados) pueden ser objeto de reclamación por negligencia médica. El procedimiento varía, pero en ambos casos el informe pericial es la prueba clave.',
+  },
+  {
+    question: '¿Qué documentación necesito para la consulta gratuita?',
+    answer: 'Con la historia clínica del proceso en cuestión (informes de alta, resultados de pruebas, consentimiento informado si lo tiene) es suficiente para iniciar la valoración. Si no dispone de toda la documentación, podemos orientarle sobre cómo solicitarla al centro médico.',
+  },
+];
+---
+
+<Layout
+  title="Consulta Gratuita Negligencia Médica Barcelona | Perito Médico"
+  description="Consulta gratuita y sin compromiso sobre negligencia médica en Barcelona. Un perito médico analiza su caso, evalúa la lex artis y le dice si tiene posibilidades de reclamar. Respuesta en 24 h."
+>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
+        Consulta 100% Gratuita
+      </span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        Consulta Gratuita sobre <span class="text-accent-300">Negligencia Médica</span> en Barcelona
+      </h1>
+      <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
+        ¿Cree que fue víctima de una negligencia médica? Le analizamos el caso sin coste. Un perito médico especializado evalúa si hubo mala praxis y si tiene posibilidades reales de reclamar.
+      </p>
+      <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
+        Solicitar consulta gratuita
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en menos de 24 h</p>
+    </div>
+  </section>
+
+  <!-- Señales de posible negligencia -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-4 text-center">¿Ha vivido alguna de estas situaciones?</h2>
+      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">Si reconoce alguna de estas situaciones, puede tener derecho a reclamar. Consúltenos sin coste.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {senales.map(senal => (
+          <div class="flex items-start gap-3 bg-white rounded-xl p-5 border border-gray-100">
+            <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <span class="text-sm text-gray-700 leading-relaxed">{senal}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
+          Consultar mi caso gratis
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-12 text-center">¿Qué ocurre tras la consulta gratuita?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">01</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Nos cuenta su caso</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Describe lo que pasó y nos envía la documentación médica disponible.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">02</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Valoración médica</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Un perito médico analiza si la actuación médica se ajustó a la lex artis y si hay nexo causal con el daño.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">03</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Le comunicamos la valoración</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Le decimos honestamente si hay indicios de negligencia y qué posibilidades tiene el caso. Sin adornos.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">04</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Usted decide</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Si quiere continuar, le facilitamos el presupuesto del informe pericial. Sin presión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enlace al servicio principal -->
+  <section class="py-12 bg-primary-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+        <div>
+          <h3 class="font-heading text-xl font-bold text-primary-900 mb-2">¿Quiere saber más sobre el peritaje en negligencia médica?</h3>
+          <p class="text-sm text-gray-600">Conozca en detalle cómo trabajamos y qué incluye un informe pericial de negligencia médica.</p>
+        </div>
+        <a href={url('/servicios/negligencia-medica')} class="flex-shrink-0 inline-flex items-center px-6 py-3 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
+          Ver servicio completo
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes</h2>
+      <div class="space-y-3">
+        {faqs.map(faq => (
+          <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
+            <summary class="flex justify-between items-center cursor-pointer px-7 py-5 text-primary-900 font-medium hover:bg-gray-50 transition-colors">
+              <span class="text-left pr-4 text-sm">{faq.question}</span>
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-7 pb-5 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection title="¿Le ocurrió algo así? Cuéntenos su caso" subtitle="La consulta es completamente gratuita. Le damos una valoración honesta en menos de 24 horas." />
+</Layout>
