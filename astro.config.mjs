@@ -3,6 +3,5 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://alexmc14.github.io',
-  base: '/peritomedicobarcelona',
+  site: 'https://peritomedicobarcelona.com',
 });
