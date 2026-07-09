@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+---
+
+<Layout
+  title="Perito Médico para el Juzgado de lo Social de Barcelona | Informes Periciales"
+  description="Informes periciales médicos para el Juzgado de lo Social de Barcelona. Incapacidad permanente, accidente de trabajo, impugnación de alta médica. Peritos con experiencia en ratificación judicial."
+>
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Perito Médico Juzgado Social Barcelona</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Perito Médico para el Juzgado de lo Social de Barcelona
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Informes periciales médicos con plena validez ante el Juzgado de lo Social de Barcelona. Incapacidad permanente, accidente de trabajo, determinación de contingencia e impugnación de alta médica. Peritos con amplia experiencia en ratificación judicial.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="lg:col-span-2 space-y-12">
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">¿Para qué casos necesita un perito médico ante el Juzgado de lo Social?</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              El orden jurisdiccional social es el que resuelve los conflictos entre trabajadores, empresas, mutuas y la Seguridad Social. En la gran mayoría de estos procedimientos, la cuestión central es médica: si el trabajador está incapacitado, si la lesión es laboral, si el alta fue prematura. El juez no es médico, por lo que el informe pericial es la prueba decisiva.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Los Juzgados de lo Social de Barcelona tienen sede en la calle Almogàvers y agrupan a decenas de juzgados que resuelven miles de procedimientos laborales cada año. Nuestros peritos tienen experiencia compareciendo ante estos juzgados y conocen los estándares de rigor que exigen tanto los jueces como los abogados de las partes contrarias.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Tipos de informe para el Juzgado de lo Social</h2>
+            <div class="space-y-4">
+              {[
+                {
+                  title: 'Informe pericial de incapacidad permanente',
+                  desc: 'Acredita que las limitaciones funcionales del trabajador son incompatibles con su profesión habitual o con cualquier trabajo. Es la prueba central en los procedimientos de impugnación de resolución del INSS.',
+                  href: '/servicios/incapacidad-laboral',
+                },
+                {
+                  title: 'Informe de accidente de trabajo / determinación de contingencia',
+                  desc: 'Establece el nexo causal entre la lesión y la actividad laboral, permitiendo recalificar una contingencia común a accidente de trabajo con todo lo que ello implica en términos de prestaciones y responsabilidades.',
+                  href: '/servicios/accidente-trabajo',
+                },
+                {
+                  title: 'Informe de impugnación del alta médica',
+                  desc: 'Acredita que el trabajador no ha recuperado la capacidad laboral cuando la mutua o el INSS emiten el alta de forma prematura. Plazo máximo para impugnar: 11 días hábiles.',
+                  href: '/servicios/impugnacion-alta-medica',
+                },
+                {
+                  title: 'Informe de determinación de contingencia (enfermedad profesional)',
+                  desc: 'Demuestra que una patología crónica tiene origen laboral —exposición a ruido, agentes químicos, sobrecarga postural— y debe reconocerse como enfermedad profesional.',
+                  href: '/servicios/determinacion-contingencia',
+                },
+              ].map(item => (
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                  <h3 class="font-semibold text-primary-900 mb-2">{item.title}</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                  <a href={url(item.href)} class="text-xs font-semibold text-accent-600 hover:text-accent-700 transition-colors">Ver servicio →</a>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Ratificación judicial ante el Juzgado de lo Social de Barcelona</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              En los procedimientos laborales, el perito médico suele ser llamado a ratificar su informe en el acto del juicio oral. La ratificación consiste en la comparecencia del perito en sala para defender su informe ante el juez y las partes contrarias, que pueden interrogarle sobre su metodología, conclusiones y cualquier aspecto técnico del informe.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              La calidad de la ratificación es tan importante como la del informe escrito. Un perito que se contradice en sala o que no sabe responder con solidez a las preguntas de la parte contraria puede comprometer el resultado del procedimiento. Nuestros peritos tienen experiencia acreditada en ratificaciones ante los Juzgados de lo Social de Barcelona y saben cómo defender sus conclusiones con rigor y claridad.
+            </p>
+            <div class="bg-primary-50 rounded-xl p-5 border-l-4 border-primary-500">
+              <p class="text-sm text-primary-800 leading-relaxed">
+                <strong>Para abogados:</strong> si necesita un perito de confianza para un procedimiento en el Juzgado de lo Social de Barcelona, contacte con nosotros con la mayor antelación posible. Cuanto antes recibamos la documentación, mejor podemos preparar el informe y la ratificación.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Preguntas frecuentes</h2>
+            <div class="space-y-3">
+              {[
+                {
+                  q: '¿El juez del Juzgado de lo Social está obligado a seguir el informe pericial?',
+                  a: 'No. El juez valora la prueba pericial según las reglas de la sana crítica y puede apartarse de las conclusiones del perito si motiva suficientemente su decisión. Sin embargo, en la práctica, un informe pericial bien fundamentado es la prueba que más influye en la decisión judicial en procedimientos donde la cuestión central es médica.'
+                },
+                {
+                  q: '¿Puedo presentar el informe pericial en cualquier momento del procedimiento?',
+                  a: 'No. El informe pericial debe aportarse con la demanda o, en algunos casos, en el acto del juicio como prueba propuesta. Si se presenta fuera de plazo, el juez puede no admitirlo. Es fundamental contactar con el perito tan pronto como sea posible una vez recibida la resolución que se quiere impugnar.'
+                },
+                {
+                  q: '¿Cuánto cuesta la ratificación judicial ante el Juzgado de lo Social de Barcelona?',
+                  a: 'Los honorarios por ratificación judicial en los Juzgados de lo Social de Barcelona oscilan entre 300 y 600 € por comparecencia, según la duración del juicio y la complejidad del caso. Se presupuestan por separado del informe pericial.'
+                },
+                {
+                  q: '¿Trabajan con abogados laboralistas de Barcelona?',
+                  a: 'Sí. Colaboramos habitualmente con despachos de abogados especializados en derecho laboral de Barcelona. Si es abogado y necesita un perito médico de confianza para sus procedimientos en el Juzgado de lo Social, contacte con nosotros para conocer las condiciones de colaboración.'
+                },
+              ].map(faq => (
+                <details class="group bg-gray-50 rounded-xl overflow-hidden">
+                  <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-primary-900 font-medium text-sm hover:bg-gray-100 transition-colors">
+                    <span class="text-left pr-4">{faq.q}</span>
+                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-accent-50 rounded-2xl p-7 border border-accent-100 sticky top-8">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">¿Tiene juicio en el Juzgado Social?</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-5">
+              Cuéntenos su caso. Le indicamos qué informe necesita, el plazo y el coste. Respuesta en menos de 24 horas.
+            </p>
+            <a href={url('/contacto')} class="block w-full text-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
+              Consulta gratuita
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-gray-100">
+            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Servicios para el orden social</h3>
+            <ul class="space-y-2.5">
+              <li><a href={url('/servicios/incapacidad-laboral')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Incapacidad permanente</a></li>
+              <li><a href={url('/servicios/accidente-trabajo')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Accidente de trabajo</a></li>
+              <li><a href={url('/servicios/impugnacion-alta-medica')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Impugnación de alta médica</a></li>
+              <li><a href={url('/servicios/determinacion-contingencia')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Determinación de contingencia</a></li>
+              <li><a href={url('/para-abogados/ratificacion-judicial')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Ratificación judicial</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>

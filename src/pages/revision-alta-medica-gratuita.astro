@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const revisamos = [
+  'Si el alta se ajusta a su estado clínico real o fue prematura',
+  'Si persisten limitaciones funcionales que impiden su reincorporación',
+  'Si la evolución de su patología justifica continuar de baja',
+  'Qué vía de impugnación le corresponde según quién emitió el alta',
+  'Si el plazo para impugnar sigue abierto en su caso',
+];
+
+const plazos = [
+  { titulo: 'Alta del Servicio Público de Salud', dato: '4 días hábiles', desc: 'Plazo para presentar la disconformidad ante la Inspección Médica.' },
+  { titulo: 'Alta del INSS', dato: '11 días hábiles', desc: 'Plazo para la reclamación previa ante el Instituto Nacional de la Seguridad Social.' },
+  { titulo: 'Alta de la Mutua', dato: '11 días hábiles', desc: 'Mismo plazo que el alta del INSS al tratarse de contingencia profesional.' },
+];
+
+const faqs = [
+  {
+    question: '¿Merece la pena impugnar un alta médica?',
+    answer: 'En la mayoría de casos en los que persisten síntomas o limitaciones objetivables, sí. Si el alta era prematura y usted se reincorpora sin estar realmente recuperado, puede sufrir una recaída que perjudique tanto su salud como su situación laboral. La revisión gratuita le dice si su caso tiene base médica para impugnar.',
+  },
+  {
+    question: '¿Cuánto tiempo tengo para impugnar el alta?',
+    answer: 'Depende de quién la emita: 4 días hábiles si es del Servicio Público de Salud (disconformidad ante la Inspección Médica) y 11 días hábiles si es del INSS o de la Mutua (reclamación previa). Son plazos muy cortos, por lo que conviene actuar el mismo día que recibe la notificación.',
+  },
+  {
+    question: '¿La revisión gratuita es realmente en 24 horas?',
+    answer: 'Sí. Dada la brevedad de los plazos legales, priorizamos estos casos y le damos una primera valoración en menos de 24 horas laborables desde que nos envía la documentación del alta y su historial médico reciente.',
+  },
+  {
+    question: '¿Qué pasa si dejo pasar el plazo sin impugnar?',
+    answer: 'El alta deviene firme y debe reincorporarse a su puesto de trabajo. Si posteriormente su estado empeora, podría solicitar una nueva baja a su médico de cabecera, pero habrá perdido la vía de impugnación directa del alta original.',
+  },
+  {
+    question: '¿Necesito ya un informe pericial o basta con la revisión gratuita?',
+    answer: 'La revisión gratuita solo valora si su caso tiene fundamento médico para impugnar; no sustituye al informe pericial, que es el documento que se presenta ante la Inspección Médica, el INSS o el Juzgado de lo Social. Si la revisión es favorable, le presupuestamos el informe antes de empezar.',
+  },
+];
+---
+
+<Layout
+  title="Revisión Gratuita del Alta Médica en 24h Barcelona | Perito Médico"
+  description="¿Le han dado el alta médica y no está de acuerdo? Revisión gratuita en 24 horas. Un perito médico analiza si el alta del INSS o la Mutua es correcta y los plazos para impugnarla."
+>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
+        Revisión Gratuita en 24h
+      </span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        ¿Le han dado el <span class="text-accent-300">alta médica</span> y no está de acuerdo?
+      </h1>
+      <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
+        Los plazos para impugnar un alta son muy cortos. Envíenos su caso y le decimos, en menos de 24 horas, si el alta es médicamente correcta y qué puede hacer.
+      </p>
+      <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
+        Solicitar revisión urgente
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en menos de 24 h</p>
+    </div>
+  </section>
+
+  <!-- Plazos: la urgencia -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-4 text-center">Los plazos para impugnar son muy cortos</h2>
+      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">Cuanto antes nos contacte, más opciones tiene. Estos son los plazos legales según quién haya emitido el alta.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {plazos.map(p => (
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 text-center">
+            <div class="font-heading text-3xl font-bold text-accent-600 mb-2">{p.dato}</div>
+            <div class="text-sm font-semibold text-primary-900 mb-2">{p.titulo}</div>
+            <div class="text-xs text-gray-500 leading-relaxed">{p.desc}</div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
+          No quiero perder el plazo, quiero consultarlo ya
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué revisamos -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">¿Qué revisa el perito médico?</h2>
+      <ul class="space-y-3">
+        {revisamos.map(r => (
+          <li class="flex items-start gap-3 bg-gray-50 rounded-xl p-5 border border-gray-100">
+            <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <span class="text-sm text-gray-700 leading-relaxed">{r}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-8 text-center">
+        <a href={url('/servicios/impugnacion-alta-medica')} class="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors">
+          Ver el servicio completo de impugnación de alta médica
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes</h2>
+      <div class="space-y-3">
+        {faqs.map(faq => (
+          <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
+            <summary class="flex justify-between items-center cursor-pointer px-7 py-5 text-primary-900 font-medium hover:bg-gray-50 transition-colors">
+              <span class="text-left pr-4 text-sm">{faq.question}</span>
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-7 pb-5 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection title="¿Le han dado el alta y cree que es demasiado pronto?" subtitle="No deje pasar el plazo. Cuéntenos su caso y le respondemos en menos de 24 horas." />
+</Layout>

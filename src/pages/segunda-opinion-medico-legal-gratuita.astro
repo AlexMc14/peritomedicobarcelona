@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const situaciones = [
+  'Ha recibido el informe pericial de la aseguradora, la Mutua o la parte contraria y le genera dudas',
+  'Su abogado le ha pedido una valoración independiente antes de decidir la estrategia del caso',
+  'No sabe si el informe forense de su procedimiento es correcto o tiene fallos',
+  'Quiere saber si merece la pena impugnar un dictamen pericial antes de gastar en un contrainforme',
+  'Simplemente quiere entender, en lenguaje claro, qué dice realmente el informe que ha recibido',
+];
+
+const faqs = [
+  {
+    question: '¿Tengo que decidir ya si quiero un contrainforme?',
+    answer: 'No. La consulta gratuita es precisamente para eso: darle una primera lectura crítica del informe recibido sin ningún compromiso. Si tras la valoración considera que merece la pena impugnarlo con un contrainforme pericial, le presupuestamos ese trabajo por separado.',
+  },
+  {
+    question: '¿Qué diferencia hay entre esta consulta gratuita y un contrainforme pericial?',
+    answer: 'La consulta gratuita es una primera lectura orientativa: le decimos si el informe que ha recibido presenta debilidades aparentes. El contrainforme pericial, que tiene coste, es un documento formal con conclusiones propias, pensado para presentarse en el procedimiento judicial o administrativo.',
+  },
+  {
+    question: '¿Puedo consultar sobre un informe forense, no solo de un perito de parte?',
+    answer: 'Sí. Cualquier dictamen pericial médico, sea de la aseguradora, de la Mutua, de otro perito o del médico forense, puede ser objeto de esta consulta gratuita.',
+  },
+  {
+    question: '¿Cuánto tarda la respuesta?',
+    answer: 'La primera valoración orientativa se responde en menos de 24 horas laborables. Si decide encargar el contrainforme completo, el plazo habitual de elaboración es de 7 a 10 días hábiles, que puede acortarse en casos urgentes con plazo procesal inminente.',
+  },
+];
+---
+
+<Layout
+  title="Segunda Opinión Médico-Legal Gratuita Barcelona | Revisión de Informes Periciales"
+  description="Consulta gratuita para revisar un informe pericial médico de la parte contraria, la aseguradora o el forense. Le decimos sin compromiso si presenta debilidades. Respuesta en 24 h."
+>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
+        Consulta 100% Gratuita
+      </span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        Segunda Opinión <span class="text-accent-300">Médico-Legal</span> Gratuita
+      </h1>
+      <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
+        ¿Ha recibido un informe pericial que no le convence? Un perito médico independiente le da una primera lectura crítica sin coste, antes de que decida nada.
+      </p>
+      <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
+        Solicitar segunda opinión gratuita
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en menos de 24 h</p>
+    </div>
+  </section>
+
+  <!-- ¿Se encuentra en esta situación? -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-4 text-center">¿Le suena alguna de estas situaciones?</h2>
+      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">No necesita tener ya un procedimiento abierto ni haber decidido nada. Solo entender, con claridad, lo que dice el informe.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {situaciones.map(s => (
+          <div class="flex items-start gap-3 bg-white rounded-xl p-5 border border-gray-100">
+            <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <span class="text-sm text-gray-700 leading-relaxed">{s}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
+          Quiero que revisen mi informe gratis
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-12 text-center">¿Qué ocurre tras la consulta gratuita?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">01</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Nos envía el informe</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">El dictamen pericial que quiere que revisemos, junto con la documentación médica del caso.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">02</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Primera lectura crítica</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Identificamos si hay debilidades metodológicas, baremos mal aplicados o conclusiones poco fundamentadas.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-accent-300 font-heading font-bold text-lg">03</span>
+          </div>
+          <h3 class="font-semibold text-primary-900 mb-2 text-sm">Usted decide</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Si quiere ir más allá, le presupuestamos el contrainforme pericial completo. Sin presión.</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href={url('/servicios/segunda-opinion-medico-legal')} class="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors">
+          Ver el servicio completo de segunda opinión médico-legal
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes</h2>
+      <div class="space-y-3">
+        {faqs.map(faq => (
+          <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
+            <summary class="flex justify-between items-center cursor-pointer px-7 py-5 text-primary-900 font-medium hover:bg-gray-50 transition-colors">
+              <span class="text-left pr-4 text-sm">{faq.question}</span>
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-7 pb-5 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection title="¿No está seguro de si el informe que tiene es correcto?" subtitle="Envíenoslo. La primera lectura es completamente gratuita y le respondemos en menos de 24 horas." />
+</Layout>

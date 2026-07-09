@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+---
+
+<Layout
+  title="Informe Pericial Médico Urgente en Barcelona | Entrega en 24-72h"
+  description="Informe pericial médico urgente en Barcelona. Entrega en 24 a 72 horas para impugnación de alta médica, juicio inminente o plazo procesal próximo. Contacte ahora — respondemos hoy."
+>
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Informe Pericial Urgente Barcelona</span>
+        </nav>
+        <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wider">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          Servicio urgente
+        </div>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Informe Pericial Médico Urgente en Barcelona
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Si tiene un plazo procesal inminente, un juicio próximo o acaba de recibir un alta médica que no debería haberse emitido, contacte ahora. Elaboramos informes periciales médicos urgentes en Barcelona con entrega en 24 a 72 horas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="lg:col-span-2 space-y-12">
+
+          <div class="bg-red-50 rounded-2xl p-6 border border-red-100">
+            <h2 class="font-heading text-lg font-bold text-red-900 mb-3">¿Ha recibido el alta médica y no está recuperado?</h2>
+            <p class="text-red-800 text-sm leading-relaxed mb-3">
+              El plazo para impugnar un alta médica de la mutua ante la Inspección Médica es de <strong>11 días hábiles</strong> desde la notificación. Si ese plazo vence sin que usted actúe, perderá el derecho a recurrir.
+            </p>
+            <p class="text-red-800 text-sm leading-relaxed">
+              No espere. Contacte hoy mismo y gestionamos la exploración médica y el informe pericial en el menor tiempo posible.
+            </p>
+            <a href={url('/contacto')} class="inline-flex items-center mt-4 px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-colors text-sm">
+              Contactar ahora
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </a>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">¿En qué situaciones necesita un informe urgente?</h2>
+            <div class="space-y-4">
+              {[
+                {
+                  title: 'Impugnación de alta médica (plazo: 11 días hábiles)',
+                  desc: 'La mutua o el INSS han emitido el alta pero usted no está recuperado. El plazo para recurrir es muy corto. Elaboramos el informe en 3 a 5 días hábiles tras la exploración médica.',
+                  urgent: true,
+                },
+                {
+                  title: 'Juicio oral en menos de 10 días',
+                  desc: 'Tiene la vista señalada en los próximos días y necesita el informe pericial antes de la fecha. Contacte de inmediato con la documentación disponible y le informamos de la viabilidad.',
+                  urgent: true,
+                },
+                {
+                  title: 'Plazo de presentación de demanda próximo',
+                  desc: 'Debe interponer la demanda en breve plazo (reclamación previa a punto de vencer, plazos de prescripción) y el informe pericial es necesario para fundamentarla.',
+                  urgent: false,
+                },
+                {
+                  title: 'Oferta de la aseguradora con plazo de aceptación',
+                  desc: 'La aseguradora le presiona para aceptar una oferta económica y usted quiere saber si refleja el daño real antes de decidir. Un informe de valoración urgente puede evitar que acepte menos de lo que le corresponde.',
+                  urgent: false,
+                },
+                {
+                  title: 'Contrainforme ante el informe de la parte contraria',
+                  desc: 'Ha recibido el informe pericial de la aseguradora o del demandado y necesita rebatirlo antes del juicio. El contrainforme urgente analiza el informe contrario e identifica sus puntos débiles.',
+                  urgent: false,
+                },
+              ].map(item => (
+                <div class={`rounded-xl p-5 border ${item.urgent ? 'bg-red-50 border-red-100' : 'bg-gray-50 border-gray-100'}`}>
+                  <div class="flex items-start gap-3">
+                    {item.urgent && (
+                      <span class="inline-flex items-center gap-1 bg-red-100 text-red-700 text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Urgente
+                      </span>
+                    )}
+                    <div>
+                      <h3 class="font-semibold text-primary-900 mb-1">{item.title}</h3>
+                      <p class="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Plazos de entrega para informes urgentes</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { plazo: '24 – 48 h', tipo: 'Contrainforme o valoración documental sin exploración', color: 'bg-orange-50 border-orange-100 text-orange-700' },
+                { plazo: '48 – 72 h', tipo: 'Impugnación de alta médica con exploración urgente', color: 'bg-amber-50 border-amber-100 text-amber-700' },
+                { plazo: '5 – 7 días', tipo: 'Valoración del daño corporal o incapacidad urgente', color: 'bg-yellow-50 border-yellow-100 text-yellow-700' },
+              ].map(item => (
+                <div class={`rounded-xl p-5 border text-center ${item.color}`}>
+                  <p class="text-2xl font-bold mb-2">{item.plazo}</p>
+                  <p class="text-xs leading-relaxed">{item.tipo}</p>
+                </div>
+              ))}
+            </div>
+            <p class="text-sm text-gray-500 mt-4">Los plazos son orientativos y dependen de la documentación disponible en el momento del contacto. Cuanta más documentación aporte desde el inicio, más rápido podemos actuar.</p>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Cómo funciona el proceso urgente</h2>
+            <div class="space-y-5">
+              {[
+                { n: '01', title: 'Contacte ahora', desc: 'Llámenos o escríbanos indicando la fecha límite y el tipo de caso. Le respondemos en el mismo día.' },
+                { n: '02', title: 'Enviamos la documentación necesaria', desc: 'Le indicamos exactamente qué documentación necesitamos para empezar. Cuanto antes la recibamos, antes empezamos.' },
+                { n: '03', title: 'Exploración urgente (si procede)', desc: 'Para impugnaciones de alta médica u otros informes que requieran exploración presencial, coordinamos una cita urgente en nuestra consulta de Barcelona.' },
+                { n: '04', title: 'Entrega del informe', desc: 'Entregamos el informe en formato digital firmado, listo para presentar en el juzgado o a la Inspección Médica.' },
+              ].map(step => (
+                <div class="flex gap-5">
+                  <div class="w-10 h-10 bg-primary-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span class="text-accent-300 font-bold text-sm">{step.n}</span>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-primary-900 mb-1">{step.title}</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Preguntas frecuentes sobre informes urgentes</h2>
+            <div class="space-y-3">
+              {[
+                {
+                  q: '¿Los informes urgentes tienen la misma calidad que los estándar?',
+                  a: 'Sí. La urgencia implica una dedicación intensiva en menos tiempo, no una reducción de la calidad ni del rigor científico. El informe urgente pasa exactamente el mismo proceso de elaboración y revisión que uno estándar. La diferencia es que priorizamos el caso y trabajamos en él de forma inmediata.'
+                },
+                {
+                  q: '¿Tiene sobrecoste el informe urgente?',
+                  a: 'Depende del plazo y del tipo de informe. Algunos informes urgentes pueden tener un suplemento sobre el precio estándar, que le comunicamos antes de empezar. En cualquier caso, el coste adicional es marginal comparado con lo que está en juego (la prestación, la indemnización o el plazo procesal).'
+                },
+                {
+                  q: '¿Pueden hacer la exploración médica fuera del horario habitual?',
+                  a: 'En casos de alta urgencia (alta médica con plazo inminente), podemos flexibilizar el horario de exploración para garantizar que el informe esté listo a tiempo. Consúltenos con la mayor antelación posible.'
+                },
+                {
+                  q: '¿Qué pasa si no tengo toda la documentación?',
+                  a: 'Podemos empezar con la documentación disponible e incorporar la que falte a medida que la obtenga. En casos urgentes, iniciamos el análisis con lo que hay y completamos el informe cuando llegue el resto. Le indicamos exactamente qué documentación es imprescindible y cuál es complementaria.'
+                },
+              ].map(faq => (
+                <details class="group bg-gray-50 rounded-xl overflow-hidden">
+                  <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-primary-900 font-medium text-sm hover:bg-gray-100 transition-colors">
+                    <span class="text-left pr-4">{faq.q}</span>
+                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-red-50 rounded-2xl p-7 border border-red-100 sticky top-8">
+            <div class="flex items-center gap-2 mb-3">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <h3 class="font-heading text-lg font-semibold text-primary-900">Contacte ahora</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed mb-5">
+              Indíquenos la fecha límite y el tipo de caso. Respondemos hoy mismo.
+            </p>
+            <a href={url('/contacto')} class="block w-full text-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-colors text-sm">
+              Solicitar informe urgente
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-gray-100">
+            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Servicios urgentes frecuentes</h3>
+            <ul class="space-y-2.5">
+              <li><a href={url('/servicios/impugnacion-alta-medica')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Impugnación de alta médica</a></li>
+              <li><a href={url('/para-abogados/contrainforme-pericial')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Contrainforme pericial</a></li>
+              <li><a href={url('/servicios/valoracion-dano-corporal')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Valoración del daño corporal</a></li>
+              <li><a href={url('/servicios/incapacidad-laboral')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Incapacidad permanente</a></li>
+              <li><a href={url('/informes/precios-plazos-informe-pericial-2026')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Precios y plazos 2026</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>

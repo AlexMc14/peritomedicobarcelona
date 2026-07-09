@@ -1,0 +1,161 @@
+---
+import Layout from './Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+interface Props {
+  pageTitle: string;
+  description: string;
+  city: string;
+  cityShort: string;
+  intro: string;
+  localContext: string;
+  hospitals: string[];
+  courts: string;
+  faqs: { question: string; answer: string }[];
+}
+
+const { pageTitle, description, city, cityShort, intro, localContext, hospitals, courts, faqs } = Astro.props;
+---
+
+<Layout title={pageTitle} description={description}>
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Perito Médico {cityShort}</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Perito Médico en {city}
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">{intro}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="lg:col-span-2 space-y-12">
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Servicio de peritaje médico en {city}</h2>
+            <p class="text-gray-600 leading-relaxed">{localContext}</p>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Servicios disponibles para residentes en {cityShort}</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { label: 'Informe de valoración del daño corporal', href: '/servicios/valoracion-dano-corporal' },
+                { label: 'Informe pericial de negligencia médica', href: '/servicios/negligencia-medica' },
+                { label: 'Informe de incapacidad permanente', href: '/servicios/incapacidad-laboral' },
+                { label: 'Impugnación del alta médica', href: '/servicios/impugnacion-alta-medica' },
+                { label: 'Accidente de trabajo y contingencia', href: '/servicios/accidente-trabajo' },
+                { label: 'Contrainforme pericial', href: '/para-abogados/contrainforme-pericial' },
+              ].map(s => (
+                <a href={url(s.href)} class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50 transition-colors group">
+                  <svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm font-medium text-primary-900 group-hover:text-accent-600 transition-colors">{s.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Hospitales y centros de referencia en {cityShort}</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Trabajamos habitualmente con documentación proveniente de los principales centros sanitarios de {cityShort} y su entorno. Conocemos los protocolos y los formatos de historia clínica de los centros más frecuentes, lo que agiliza el análisis del caso:
+            </p>
+            <ul class="space-y-2">
+              {hospitals.map(h => (
+                <li class="flex items-start gap-3 text-gray-600">
+                  <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                  <span class="text-sm">{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Juzgados competentes</h2>
+            <p class="text-gray-600 leading-relaxed">{courts}</p>
+          </div>
+
+          {faqs.length > 0 && (
+            <div>
+              <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Preguntas frecuentes</h2>
+              <div class="space-y-3">
+                {faqs.map(faq => (
+                  <details class="group bg-gray-50 rounded-xl overflow-hidden">
+                    <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-primary-900 font-medium text-sm hover:bg-gray-100 transition-colors">
+                      <span class="text-left pr-4">{faq.question}</span>
+                      <svg class="w-4 h-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-accent-50 rounded-2xl p-7 border border-accent-100 sticky top-8">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Valoración gratuita</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-5">
+              Atendemos casos de toda el área metropolitana de Barcelona. Consulta gratuita y respuesta en menos de 24 horas.
+            </p>
+            <a href={url('/contacto')} class="block w-full text-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
+              Solicitar valoración
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-gray-100">
+            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Guías de interés</h3>
+            <ul class="space-y-2.5">
+              <li><a href={url('/perito-medico-area-metropolitana')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Otras zonas que atendemos</a></li>
+              <li><a href={url('/informes/tipos-informe-pericial-medico-2026')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Tipos de informe pericial 2026</a></li>
+              <li><a href={url('/informes/precios-plazos-informe-pericial-2026')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Precios y plazos 2026</a></li>
+              <li><a href={url('/blog/cuanto-cuesta-perito-medico-barcelona')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">¿Cuánto cuesta un perito médico?</a></li>
+              <li><a href={url('/preguntas-frecuentes')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Perito Médico Barcelona",
+    "description": `Servicio de peritaje médico en ${city} y área metropolitana de Barcelona`,
+    "url": "https://www.peritomedicobarcelona.com",
+    "areaServed": [city, "Barcelona"],
+    "serviceType": "Peritaje médico",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Barcelona",
+      "addressRegion": "Cataluña",
+      "addressCountry": "ES"
+    }
+  })} />
+
+  <CTASection />
+</Layout>

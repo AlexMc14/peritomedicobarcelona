@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const servicios = [
+  { label: 'Contrainforme pericial', href: '/para-abogados/contrainforme-pericial' },
+  { label: 'Ratificación judicial', href: '/para-abogados/ratificacion-judicial' },
+  { label: 'Valoración del daño corporal', href: '/servicios/valoracion-dano-corporal' },
+  { label: 'Negligencia médica', href: '/servicios/negligencia-medica' },
+  { label: 'Incapacidad permanente', href: '/servicios/incapacidad-laboral' },
+  { label: 'Segunda opinión médico-legal', href: '/servicios/segunda-opinion-medico-legal' },
+];
+
+const faqs = [
+  {
+    question: '¿Trabajan habitualmente con despachos de abogados del Eixample?',
+    answer: 'Sí. El Eixample concentra una parte importante de los despachos de derecho civil, laboral y de seguros de Barcelona, y es la zona desde la que recibimos más encargos de contrainforme pericial y ratificación judicial. Nos adaptamos a los plazos procesales del despacho.',
+  },
+  {
+    question: '¿Pueden emitir un contrainforme sobre el dictamen del perito de la aseguradora?',
+    answer: 'Sí. Es uno de los encargos más habituales que recibimos de abogados con sede en el Eixample: analizar el informe pericial de la parte contraria (aseguradora, mutua, otro perito) e identificar sus errores metodológicos o de valoración, con un contrainforme fundamentado.',
+  },
+  {
+    question: '¿Su consulta está cerca de los juzgados y de las principales aseguradoras?',
+    answer: 'Sí, la ubicación facilita tanto la coordinación con despachos y aseguradoras con sede en el Eixample como el desplazamiento a los juzgados de Barcelona para las ratificaciones periciales.',
+  },
+  {
+    question: '¿Cómo se establece la colaboración con un despacho?',
+    answer: 'Contacte con nosotros indicando el tipo de caso y el plazo procesal. Le confirmamos disponibilidad y presupuesto en 24 horas. Para colaboraciones recurrentes, establecemos condiciones y tiempos de respuesta preferentes.',
+  },
+];
+---
+
+<Layout
+  title="Perito Médico en el Eixample, Barcelona | Informes Periciales para Despachos"
+  description="Perito médico en el Eixample de Barcelona. Contrainforme pericial, ratificación judicial y valoración del daño corporal para despachos de abogados y aseguradoras de la zona."
+>
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Perito Médico Eixample</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Perito Médico en el Eixample
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          El Eixample concentra buena parte de los despachos de abogados y las delegaciones de aseguradoras de Barcelona. Prestamos servicio de peritaje médico ágil para esta zona: contrainforme pericial, ratificación judicial y valoración del daño corporal con los plazos que exige el litigio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="lg:col-span-2 space-y-12">
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Peritaje médico para despachos y aseguradoras del Eixample</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Gran parte de los despachos de derecho civil, laboral y de seguros de Barcelona tienen su sede en el Eixample, junto con las delegaciones de las principales aseguradoras. Trabajamos con regularidad para estos profesionales, tanto elaborando el informe pericial de parte como emitiendo contrainformes sobre el dictamen de la aseguradora o de otro perito.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              La cercanía a los Juzgados de Barcelona y a las sedes de los despachos facilita la coordinación en casos con plazos ajustados y la comparecencia en ratificación judicial cuando el procedimiento lo requiere.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Servicios más solicitados desde el Eixample</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {servicios.map(s => (
+                <a href={url(s.href)} class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50 transition-colors group">
+                  <svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm font-medium text-primary-900 group-hover:text-accent-600 transition-colors">{s.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Preguntas frecuentes</h2>
+            <div class="space-y-3">
+              {faqs.map(faq => (
+                <details class="group bg-gray-50 rounded-xl overflow-hidden">
+                  <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-primary-900 font-medium text-sm hover:bg-gray-100 transition-colors">
+                    <span class="text-left pr-4">{faq.question}</span>
+                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-accent-50 rounded-2xl p-7 border border-accent-100 sticky top-8">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Para despachos y aseguradoras</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-5">
+              Indíquenos el tipo de caso y el plazo procesal. Le confirmamos disponibilidad y presupuesto en 24 horas.
+            </p>
+            <a href={url('/contacto')} class="block w-full text-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
+              Solicitar presupuesto
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-gray-100">
+            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Para abogados</h3>
+            <ul class="space-y-2.5">
+              <li><a href={url('/para-abogados/contrainforme-pericial')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Contrainforme pericial</a></li>
+              <li><a href={url('/para-abogados/ratificacion-judicial')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Ratificación judicial</a></li>
+              <li><a href={url('/perito-medico-para-seguros')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Perito médico para seguros</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection />
+</Layout>

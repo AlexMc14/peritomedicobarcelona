@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const ciudadesConPagina = [
+  { name: "L'Hospitalet de Llobregat", href: '/perito-medico-hospitalet' },
+  { name: 'Badalona', href: '/perito-medico-badalona' },
+  { name: 'Sabadell', href: '/perito-medico-sabadell' },
+  { name: 'Terrassa', href: '/perito-medico-terrassa' },
+  { name: 'Cornellà de Llobregat', href: '/perito-medico-cornella' },
+  { name: 'Mataró y el Maresme', href: '/perito-medico-mataro' },
+  { name: 'Sant Cugat del Vallès', href: '/perito-medico-sant-cugat' },
+  { name: 'Sant Boi de Llobregat', href: '/perito-medico-sant-boi' },
+  { name: 'El Prat de Llobregat', href: '/perito-medico-el-prat' },
+  { name: 'Viladecans', href: '/perito-medico-viladecans' },
+  { name: 'Granollers', href: '/perito-medico-granollers' },
+  { name: 'Mollet del Vallès', href: '/perito-medico-mollet' },
+];
+
+const ciudadesSinPagina = [
+  'Rubí',
+  'Castelldefels',
+  'Gavà',
+  'Vilanova i la Geltrú',
+  'Sant Feliu de Llobregat',
+  'Resto de Cataluña',
+];
+
+const faqs = [
+  {
+    question: '¿Trabajáis fuera de Barcelona ciudad?',
+    answer: 'Sí. Atendemos casos de toda el área metropolitana de Barcelona y, en general, de toda Cataluña. La ubicación del cliente no afecta ni al precio ni a la calidad del informe pericial.',
+  },
+  {
+    question: '¿Tengo que desplazarme a Barcelona para que me hagan el informe?',
+    answer: 'La valoración inicial, el envío de documentación y el seguimiento del caso se hacen por teléfono o correo electrónico desde cualquier punto. Solo la exploración médica presencial, cuando el caso la requiere, implica una cita; si el desplazamiento es complicado, lo estudiamos caso por caso.',
+  },
+  {
+    question: '¿El informe tiene validez si mi juicio es en un juzgado fuera de Barcelona?',
+    answer: 'Sí. Nuestros informes periciales tienen plena validez ante cualquier juzgado de Cataluña. Nuestros peritos pueden comparecer en ratificación judicial en el juzgado que corresponda al procedimiento, sea o no el de Barcelona.',
+  },
+  {
+    question: '¿Mi ciudad no está en la lista, puedo consultar igualmente?',
+    answer: 'Sí, sin ningún problema. Las páginas de ciudad son solo información adicional sobre hospitales y juzgados locales; el servicio de peritaje lo prestamos igual en toda Cataluña, tenga o no su municipio una página propia.',
+  },
+];
+---
+
+<Layout
+  title="Perito Médico en el Área Metropolitana de Barcelona | Todas las Ciudades"
+  description="Servicio de perito médico en toda el área metropolitana de Barcelona: L'Hospitalet, Badalona, Sabadell, Terrassa, Cornellà, Mataró y el resto de Cataluña. Consulta gratuita."
+>
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Área Metropolitana</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Perito Médico en el Área Metropolitana de Barcelona
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          "¿Trabajáis fuera de Barcelona ciudad?" es una de las preguntas que más nos hacen. La respuesta es sí: atendemos con la misma calidad y en los mismos plazos a clientes de toda el área metropolitana y del resto de Cataluña.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="lg:col-span-2 space-y-12">
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Ciudades con página propia</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Para las poblaciones con mayor volumen de casos hemos preparado información específica: hospitales de referencia, juzgados competentes y preguntas frecuentes propias de la zona.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {ciudadesConPagina.map(c => (
+                <a href={url(c.href)} class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50 transition-colors group">
+                  <svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm font-medium text-primary-900 group-hover:text-accent-600 transition-colors">Perito Médico en {c.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Otras poblaciones que atendemos</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              También atendemos con regularidad casos de estas y otras poblaciones, aunque todavía no tengan una página propia. El servicio y las condiciones son exactamente los mismos:
+            </p>
+            <div class="flex flex-wrap gap-3">
+              {ciudadesSinPagina.map(c => (
+                <span class="px-4 py-2 bg-gray-50 border border-gray-100 rounded-lg text-sm text-gray-700">{c}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Cómo funciona si no vive en Barcelona ciudad</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              El proceso es el mismo con independencia de dónde viva: valoración gratuita del caso por teléfono o correo, presupuesto en 24 horas y elaboración del informe pericial. La única parte que en ocasiones requiere presencia física es la exploración médica, cuando el tipo de informe la exige; en ese caso coordinamos la cita en nuestra consulta con la mayor flexibilidad posible para quien viene de fuera de la ciudad.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Del mismo modo, si el procedimiento requiere ratificación judicial, nuestros peritos comparecen ante el juzgado que corresponda territorialmente al caso, no solo ante los de Barcelona capital.
+            </p>
+          </div>
+
+          {faqs.length > 0 && (
+            <div>
+              <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Preguntas frecuentes</h2>
+              <div class="space-y-3">
+                {faqs.map(faq => (
+                  <details class="group bg-gray-50 rounded-xl overflow-hidden">
+                    <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-primary-900 font-medium text-sm hover:bg-gray-100 transition-colors">
+                      <span class="text-left pr-4">{faq.question}</span>
+                      <svg class="w-4 h-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-accent-50 rounded-2xl p-7 border border-accent-100 sticky top-8">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Valoración gratuita</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-5">
+              Sea de donde sea, cuéntenos su caso. Consulta gratuita y respuesta en menos de 24 horas.
+            </p>
+            <a href={url('/contacto')} class="block w-full text-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
+              Solicitar valoración
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-gray-100">
+            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Guías de interés</h3>
+            <ul class="space-y-2.5">
+              <li><a href={url('/informes/tipos-informe-pericial-medico-2026')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Tipos de informe pericial 2026</a></li>
+              <li><a href={url('/informes/precios-plazos-informe-pericial-2026')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Precios y plazos 2026</a></li>
+              <li><a href={url('/preguntas-frecuentes')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection />
+</Layout>

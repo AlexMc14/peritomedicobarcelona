@@ -19,17 +19,26 @@ const { title, description = 'Perito Médico en Barcelona. Informes periciales m
     <meta name="geo.region" content="ES-CT" />
     <meta name="geo.placename" content="Barcelona" />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <!-- Schema.org LocalBusiness -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "name": "Perito Médico Barcelona",
       "description": description,
-      "url": "https://peritomedicobarcelona.com",
+      "url": "https://www.peritomedicobarcelona.com",
       "telephone": "+34 93 000 0000",
       "email": "info@peritomedicobarcelona.com",
       "address": {
@@ -76,7 +85,7 @@ const { title, description = 'Perito Médico en Barcelona. Informes periciales m
         ]
       },
       "sameAs": [
-        "https://peritomedicobarcelona.com"
+        "https://www.peritomedicobarcelona.com"
       ]
     })} />
   </head>

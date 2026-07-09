@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const casos = [
+  'Tiene una hernia discal, tendinopatía o síndrome del túnel carpiano por sobrecarga en el trabajo, calificada como contingencia común',
+  'Padece hipoacusia, patología respiratoria u otra dolencia por exposición a ruido, polvo o sustancias químicas en su puesto',
+  'Le han diagnosticado un trastorno psiquiátrico relacionado con estrés laboral o acoso, y la Mutua no lo reconoce como profesional',
+  'Ya le han dado el alta de incapacidad temporal, pero considera que el origen de la baja era laboral, no común',
+];
+
+const faqs = [
+  {
+    question: '¿Merece la pena reclamar el cambio de contingencia común a profesional?',
+    answer: 'En la mayoría de casos, sí. Las prestaciones por contingencia profesional son más favorables: mayor cuantía, no se exigen periodos mínimos de cotización previa y la asistencia sanitaria corre a cargo de la Mutua. La consulta gratuita le dice si su patología tiene indicios razonables de origen laboral.',
+  },
+  {
+    question: '¿Puedo reclamar la determinación de contingencia si ya me han dado el alta?',
+    answer: 'Sí. Puede solicitarla ante el INSS en cualquier momento, incluso después del alta de incapacidad temporal. Si se reconoce el cambio a contingencia profesional, puede tener efectos retroactivos sobre las prestaciones ya percibidas.',
+  },
+  {
+    question: '¿Qué necesito para la consulta gratuita?',
+    answer: 'Con su historial médico del proceso, la evaluación de riesgos de su puesto (si la tiene) y la resolución de la Mutua o el INSS sobre la contingencia, es suficiente para una primera valoración. Si no dispone de todo, puede consultarnos igualmente.',
+  },
+  {
+    question: '¿Qué enfermedades se benefician más de este tipo de informe?',
+    answer: 'Las patologías musculoesqueléticas por sobrecarga, las derivadas de exposición a agentes físicos o químicos, y los trastornos psiquiátricos por estrés laboral o acoso son las que con más frecuencia logran el reconocimiento de origen profesional con un informe pericial bien fundamentado.',
+  },
+];
+---
+
+<Layout
+  title="Determinación de Contingencia Gratuita Barcelona | Perito Médico"
+  description="¿Le han calificado su baja como contingencia común y cree que es de origen laboral? Consulta gratuita para valorar si puede reclamar el cambio a contingencia profesional ante el INSS."
+>
+  <!-- Hero -->
+  <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
+        Consulta 100% Gratuita
+      </span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        ¿Le han calificado su baja como <span class="text-accent-300">contingencia común</span> por error?
+      </h1>
+      <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
+        Si cree que su enfermedad o lesión tiene origen laboral, un perito médico analiza su caso sin coste y le dice si tiene base para reclamar el cambio a contingencia profesional.
+      </p>
+      <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
+        Solicitar valoración gratuita
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en menos de 24 h</p>
+    </div>
+  </section>
+
+  <!-- ¿Se encuentra en esta situación? -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-4 text-center">¿Se encuentra en alguna de estas situaciones?</h2>
+      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">La correcta calificación de la contingencia afecta directamente a la cuantía de su prestación.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {casos.map(c => (
+          <div class="flex items-start gap-3 bg-white rounded-xl p-5 border border-gray-100">
+            <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <span class="text-sm text-gray-700 leading-relaxed">{c}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
+          Me identifico con esto, quiero consultarlo gratis
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué importa -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">¿Por qué importa tanto la contingencia?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+          <h3 class="font-semibold text-primary-900 mb-3">Mayor cuantía de la prestación</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Las prestaciones por contingencia profesional se calculan de forma más favorable que las de contingencia común.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+          <h3 class="font-semibold text-primary-900 mb-3">Sin periodo mínimo de cotización</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Para contingencia profesional no se exige el periodo mínimo de cotización previa que sí se requiere en contingencia común.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+          <h3 class="font-semibold text-primary-900 mb-3">La paga la Mutua, no usted</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">La asistencia sanitaria y el subsidio de contingencia profesional corren a cargo de la Mutua desde el primer día, sin descuentos.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+          <h3 class="font-semibold text-primary-900 mb-3">Efectos retroactivos</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Si se reconoce el cambio de contingencia, puede recuperar la diferencia de las prestaciones ya percibidas.</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href={url('/servicios/determinacion-contingencia')} class="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors">
+          Ver el servicio completo de determinación de contingencia
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20 bg-gray-50/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes</h2>
+      <div class="space-y-3">
+        {faqs.map(faq => (
+          <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
+            <summary class="flex justify-between items-center cursor-pointer px-7 py-5 text-primary-900 font-medium hover:bg-gray-50 transition-colors">
+              <span class="text-left pr-4 text-sm">{faq.question}</span>
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-7 pb-5 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection title="¿Cree que su baja debería ser contingencia profesional?" subtitle="Cuéntenos su caso. La valoración es completamente gratuita y le respondemos en menos de 24 horas." />
+</Layout>

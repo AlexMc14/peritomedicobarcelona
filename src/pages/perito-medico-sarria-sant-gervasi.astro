@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+import { url } from '../utils/links';
+
+const servicios = [
+  { label: 'Valoración del daño corporal', href: '/servicios/valoracion-dano-corporal' },
+  { label: 'Negligencia médica', href: '/servicios/negligencia-medica' },
+  { label: 'Discapacidad', href: '/servicios/discapacidad' },
+  { label: 'Segunda opinión médico-legal', href: '/servicios/segunda-opinion-medico-legal' },
+  { label: 'Curatela y medidas de apoyo', href: '/servicios/curatela-medidas-apoyo' },
+  { label: 'Incapacidad permanente', href: '/servicios/incapacidad-laboral' },
+];
+
+const faqs = [
+  {
+    question: '¿Atienden casos de negligencia médica en clínicas privadas?',
+    answer: 'Sí. Sarrià-Sant Gervasi tiene una alta concentración de centros médicos privados, y una parte de los casos que recibimos de la zona se refieren precisamente a la atención recibida en ese ámbito. Analizamos la historia clínica privada con el mismo rigor que la pública.',
+  },
+  {
+    question: '¿La consulta y todo el proceso son confidenciales?',
+    answer: 'Sí. Toda la documentación médica y el análisis del caso se tratan con estricta confidencialidad. Solo se comparte la información necesaria con las partes del procedimiento (abogado, juzgado, aseguradora) cuando usted lo autoriza.',
+  },
+  {
+    question: '¿Puedo solicitar una segunda opinión médico-legal sin que exista todavía un litigio?',
+    answer: 'Sí. Muchos clientes particulares nos consultan antes de decidir si iniciar cualquier reclamación, simplemente para entender con claridad su situación médica y sus opciones. No es necesario tener ya un procedimiento abierto.',
+  },
+  {
+    question: '¿Cómo es la atención para un cliente particular de la zona?',
+    answer: 'Igual que para cualquier cliente: valoración gratuita inicial, presupuesto claro antes de empezar y trato directo con el perito que lleva su caso, sin intermediarios. La exploración médica, si es necesaria, se realiza en nuestra consulta.',
+  },
+];
+---
+
+<Layout
+  title="Perito Médico en Sarrià-Sant Gervasi, Barcelona | Consulta Particular"
+  description="Perito médico en Sarrià-Sant Gervasi, Barcelona. Valoración del daño corporal, negligencia médica y discapacidad para particulares. Atención confidencial y consulta gratuita."
+>
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Perito Médico Sarrià-Sant Gervasi</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+          Perito Médico en Sarrià-Sant Gervasi
+        </h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Atendemos a residentes de Sarrià-Sant Gervasi que necesitan la opinión de un perito médico independiente: para valorar el daño corporal de un accidente, revisar la actuación de un centro médico privado, o simplemente entender con claridad su situación antes de decidir si reclamar. Trato directo y confidencial.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="lg:col-span-2 space-y-12">
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Peritaje médico para particulares en Sarrià-Sant Gervasi</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Sarrià-Sant Gervasi concentra un número elevado de clínicas y centros médicos privados, además de ser una de las zonas de Barcelona con mayor proporción de residentes que recurren a la sanidad privada. Esto se traduce en un perfil de caso particular: revisión de la atención recibida en un centro privado, valoración del daño corporal tras un accidente, o solicitud de una segunda opinión médico-legal antes de tomar una decisión.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              A diferencia de los casos que llegan a través de un despacho de abogados, muchos de nuestros clientes particulares de la zona nos consultan directamente, sin que exista todavía un procedimiento abierto. Nuestro papel en esa primera fase es dar una opinión médica clara y honesta que le permita decidir con información, no presionarle hacia una reclamación.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Servicios más solicitados por particulares</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {servicios.map(s => (
+                <a href={url(s.href)} class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50 transition-colors group">
+                  <svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm font-medium text-primary-900 group-hover:text-accent-600 transition-colors">{s.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">Preguntas frecuentes</h2>
+            <div class="space-y-3">
+              {faqs.map(faq => (
+                <details class="group bg-gray-50 rounded-xl overflow-hidden">
+                  <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-primary-900 font-medium text-sm hover:bg-gray-100 transition-colors">
+                    <span class="text-left pr-4">{faq.question}</span>
+                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">{faq.answer}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-accent-50 rounded-2xl p-7 border border-accent-100 sticky top-8">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Consulta confidencial</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-5">
+              Cuéntenos su situación sin compromiso. Respuesta clara y en menos de 24 horas.
+            </p>
+            <a href={url('/contacto')} class="block w-full text-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
+              Solicitar consulta
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-gray-100">
+            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Guías de interés</h3>
+            <ul class="space-y-2.5">
+              <li><a href={url('/valoracion-dano-corporal-gratuita')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Valoración del daño corporal gratuita</a></li>
+              <li><a href={url('/negligencia-medica-consulta-gratuita')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Consulta gratuita negligencia médica</a></li>
+              <li><a href={url('/preguntas-frecuentes')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <CTASection />
+</Layout>
