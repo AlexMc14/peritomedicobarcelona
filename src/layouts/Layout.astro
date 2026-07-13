@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ContactModal from '../components/ContactModal.astro';
 
 interface Props {
   title: string;
@@ -95,6 +96,7 @@ const { title, description = 'Perito Médico en Barcelona. Informes periciales m
       <slot />
     </main>
     <Footer />
+    <ContactModal />
     <a
       href="https://wa.me/34692366104"
       target="_blank"
