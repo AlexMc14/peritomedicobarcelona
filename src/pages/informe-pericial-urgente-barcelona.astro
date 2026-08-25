@@ -5,8 +5,8 @@ import { url } from '../utils/links';
 ---
 
 <Layout
-  title="Informe Pericial Médico Urgente en Barcelona | Entrega en 24-72h"
-  description="Informe pericial médico urgente en Barcelona. Entrega en 24 a 72 horas para impugnación de alta médica, juicio inminente o plazo procesal próximo. Contacte ahora — respondemos hoy."
+  title="Informe Pericial Médico Urgente en Barcelona"
+  description="Informe pericial médico urgente en Barcelona para impugnación de alta médica, juicio inminente o plazo procesal próximo. Contacte ahora — respondemos hoy."
 >
   <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
     <div class="absolute inset-0 opacity-5">
@@ -27,7 +27,7 @@ import { url } from '../utils/links';
           Informe Pericial Médico Urgente en Barcelona
         </h1>
         <p class="text-lg text-primary-200 leading-relaxed">
-          Si tiene un plazo procesal inminente, un juicio próximo o acaba de recibir un alta médica que no debería haberse emitido, contacte ahora. Elaboramos informes periciales médicos urgentes en Barcelona con entrega en 24 a 72 horas.
+          Si tiene un plazo procesal inminente, un juicio próximo o acaba de recibir un alta médica que no debería haberse emitido, contacte ahora. Elaboramos informes periciales médicos urgentes en Barcelona con la máxima prioridad.
         </p>
       </div>
     </div>
@@ -104,9 +104,9 @@ import { url } from '../utils/links';
             <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Plazos de entrega para informes urgentes</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { plazo: '24 – 48 h', tipo: 'Contrainforme o valoración documental sin exploración', color: 'bg-orange-50 border-orange-100 text-orange-700' },
-                { plazo: '48 – 72 h', tipo: 'Impugnación de alta médica con exploración urgente', color: 'bg-amber-50 border-amber-100 text-amber-700' },
-                { plazo: '5 – 7 días', tipo: 'Valoración del daño corporal o incapacidad urgente', color: 'bg-yellow-50 border-yellow-100 text-yellow-700' },
+                { plazo: 'Prioridad máxima', tipo: 'Contrainforme o valoración documental sin exploración', color: 'bg-orange-50 border-orange-100 text-orange-700' },
+                { plazo: 'Urgente', tipo: 'Impugnación de alta médica con exploración urgente', color: 'bg-amber-50 border-amber-100 text-amber-700' },
+                { plazo: 'Preferente', tipo: 'Valoración del daño corporal o incapacidad urgente', color: 'bg-yellow-50 border-yellow-100 text-yellow-700' },
               ].map(item => (
                 <div class={`rounded-xl p-5 border text-center ${item.color}`}>
                   <p class="text-2xl font-bold mb-2">{item.plazo}</p>
@@ -114,7 +114,7 @@ import { url } from '../utils/links';
                 </div>
               ))}
             </div>
-            <p class="text-sm text-gray-500 mt-4">Los plazos son orientativos y dependen de la documentación disponible en el momento del contacto. Cuanta más documentación aporte desde el inicio, más rápido podemos actuar.</p>
+            <p class="text-sm text-gray-500 mt-4">El nivel de prioridad depende de la documentación disponible en el momento del contacto y de la urgencia real del caso. Cuanta más documentación aporte desde el inicio, más rápido podemos actuar.</p>
           </div>
 
           <div>

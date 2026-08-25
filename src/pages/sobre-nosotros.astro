@@ -30,7 +30,6 @@ const cifras = [
   { valor: '+500', etiqueta: 'Informes periciales elaborados' },
   { valor: '+200', etiqueta: 'Ratificaciones judiciales' },
   { valor: '+15', etiqueta: 'Años de experiencia' },
-  { valor: '24h', etiqueta: 'Respuesta a primera consulta' },
 ];
 
 const especialidades = [
@@ -78,7 +77,7 @@ const especialidades = [
   <!-- Cifras -->
   <section class="py-12 bg-accent-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-3 gap-8">
         {cifras.map(c => (
           <div class="text-center text-white">
             <div class="font-heading text-4xl font-bold mb-1">{c.valor}</div>

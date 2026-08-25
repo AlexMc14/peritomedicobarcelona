@@ -21,7 +21,7 @@ const categorias = [
       },
       {
         pregunta: '¿Cuánto tarda en elaborarse un informe pericial médico?',
-        respuesta: 'El plazo habitual es de 7 a 15 días hábiles desde la recepción de toda la documentación. En casos urgentes podemos reducir este plazo previa consulta. La primera valoración del caso se realiza de forma gratuita en 24-48 horas.'
+        respuesta: 'El plazo habitual es de 7 a 15 días hábiles desde la recepción de toda la documentación. En casos urgentes podemos reducir este plazo previa consulta. La primera valoración del caso se realiza de forma gratuita.'
       },
     ]
   },
@@ -30,11 +30,11 @@ const categorias = [
     preguntas: [
       {
         pregunta: '¿Cuánto cuesta un informe pericial médico en Barcelona?',
-        respuesta: 'El coste varía según la complejidad del caso, el número de especialidades implicadas y si es necesaria exploración presencial. Realizamos una valoración gratuita del caso antes de facilitar presupuesto. En muchos supuestos, el gasto pericial puede recuperarse como parte de la indemnización o las costas del proceso.'
+        respuesta: 'El coste varía según la complejidad del caso, el número de especialidades implicadas y si es necesaria exploración presencial. Realizamos una valoración telefónica gratuita del caso antes de facilitar presupuesto. En muchos supuestos, el gasto pericial puede recuperarse como parte de la indemnización o las costas del proceso.'
       },
       {
         pregunta: '¿La primera consulta es gratuita?',
-        respuesta: 'Sí. Realizamos un estudio de viabilidad gratuito y sin compromiso para valorar las posibilidades médico-legales de su caso. Le responderemos en un plazo máximo de 24-48 horas.'
+        respuesta: 'Sí. Realizamos un estudio de viabilidad gratuito y sin compromiso para valorar las posibilidades médico-legales de su caso.'
       },
       {
         pregunta: '¿El coste del perito puede reclamarse al contrario?',
@@ -154,7 +154,7 @@ const allFaqs = categorias.flatMap(cat => cat.preguntas);
       <div class="mt-16 bg-accent-50 rounded-2xl p-8 border border-accent-100 text-center">
         <h3 class="font-heading text-xl font-semibold text-primary-900 mb-3">¿No ha encontrado respuesta a su pregunta?</h3>
         <p class="text-gray-600 text-sm mb-6 max-w-lg mx-auto">
-          Contáctenos sin compromiso. Analizamos su caso de forma gratuita y le respondemos en menos de 24 horas.
+          Contáctenos sin compromiso. Analizamos su caso de forma gratuita.
         </p>
         <a href={url('/contacto')} class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
           Consultar mi caso gratis

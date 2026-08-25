@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Perito Médico en Barcelona. Informes periciales médicos, valoración del daño corporal, negligencias médicas e incapacidad laboral. Consulta gratuita.' } = Astro.props;
+const { title, description = 'Perito Médico en Barcelona. Informes periciales médicos, valoración del daño corporal, negligencias médicas e incapacidad laboral. Consulta telefónica gratuita.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -82,7 +82,7 @@ const { title, description = 'Perito Médico en Barcelona. Informes periciales m
         "@type": "OfferCatalog",
         "name": "Servicios de Peritaje Médico",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Valoración gratuita del caso" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Valoración telefónica gratuita del caso" } }
         ]
       },
       "sameAs": [
