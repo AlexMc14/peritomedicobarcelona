@@ -27,8 +27,8 @@ const faqs = [
     answer: 'Depende de quién la emita: 4 días hábiles si es del Servicio Público de Salud (disconformidad ante la Inspección Médica) y 11 días hábiles si es del INSS o de la Mutua (reclamación previa). Son plazos muy cortos, por lo que conviene actuar el mismo día que recibe la notificación.',
   },
   {
-    question: '¿La revisión gratuita es realmente en 24 horas?',
-    answer: 'Sí. Dada la brevedad de los plazos legales, priorizamos estos casos y le damos una primera valoración en menos de 24 horas laborables desde que nos envía la documentación del alta y su historial médico reciente.',
+    question: '¿Cómo es el proceso de la revisión gratuita?',
+    answer: 'Dada la brevedad de los plazos legales, priorizamos estos casos y le damos una primera valoración desde que nos envía la documentación del alta y su historial médico reciente.',
   },
   {
     question: '¿Qué pasa si dejo pasar el plazo sin impugnar?',
@@ -42,8 +42,8 @@ const faqs = [
 ---
 
 <Layout
-  title="Revisión Gratuita del Alta Médica en 24h Barcelona | Perito Médico"
-  description="¿Le han dado el alta médica y no está de acuerdo? Revisión gratuita en 24 horas. Un perito médico analiza si el alta del INSS o la Mutua es correcta y los plazos para impugnarla."
+  title="Revisión Gratuita del Alta Médica Barcelona | Perito Médico"
+  description="¿Le han dado el alta médica y no está de acuerdo? Revisión gratuita. Un perito médico analiza si el alta del INSS o la Mutua es correcta y los plazos para impugnarla."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -52,19 +52,19 @@ const faqs = [
     </div>
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
-        Revisión Gratuita en 24h
+        Revisión Gratuita
       </span>
       <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
         ¿Le han dado el <span class="text-accent-300">alta médica</span> y no está de acuerdo?
       </h1>
       <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
-        Los plazos para impugnar un alta son muy cortos. Envíenos su caso y le decimos, en menos de 24 horas, si el alta es médicamente correcta y qué puede hacer.
+        Los plazos para impugnar un alta son muy cortos. Envíenos su caso y le decimos si el alta es médicamente correcta y qué puede hacer.
       </p>
       <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
         Solicitar revisión urgente
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en menos de 24 h</p>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
     </div>
   </section>
 
@@ -140,5 +140,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="¿Le han dado el alta y cree que es demasiado pronto?" subtitle="No deje pasar el plazo. Cuéntenos su caso y le respondemos en menos de 24 horas." />
+  <CTASection title="¿Le han dado el alta y cree que es demasiado pronto?" subtitle="No deje pasar el plazo. Cuéntenos su caso." />
 </Layout>

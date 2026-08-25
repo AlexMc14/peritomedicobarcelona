@@ -7,7 +7,7 @@ interface Props {
 }
 const {
   title = '¿Necesita un informe pericial médico?',
-  subtitle = 'Solicite una valoración gratuita de su caso. Le responderemos en menos de 24 horas.'
+  subtitle = 'Solicite una valoración telefónica gratuita de su caso.'
 } = Astro.props;
 ---
 
@@ -24,7 +24,7 @@ const {
       {subtitle}
     </p>
     <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 text-base">
-      Solicitar Valoración Gratuita
+      Solicitar Valoración Telefónica Gratuita
       <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
     </a>
   </div>

@@ -8,7 +8,6 @@ const incluye = [
   'Valoración de las lesiones y secuelas descritas',
   'Estimación orientativa de la indemnización que podría corresponderle',
   'Opinión sobre la viabilidad médico-legal de su reclamación',
-  'Respuesta en menos de 24 horas laborables',
   'Sin compromiso de contratación posterior',
 ];
 
@@ -18,12 +17,12 @@ const faqs = [
     answer: 'Sí, completamente. La consulta telefónica o por correo electrónico, el análisis inicial de su caso y el asesoramiento sobre las posibilidades de su reclamación no tienen ningún coste. Lo que tiene coste es la elaboración del informe pericial completo, que solo se inicia si usted decide contratar el servicio tras conocer el presupuesto.',
   },
   {
-    question: '¿Qué necesito para la consulta gratuita?',
+    question: '¿Qué necesito para la consulta telefónica gratuita?',
     answer: 'Con una descripción del accidente o situación, la fecha en que ocurrió y, si los tiene, los informes médicos de urgencias o de su médico, es suficiente para hacer una primera valoración. No necesita tener toda la documentación desde el principio.',
   },
   {
     question: '¿Cuánto tiempo tarda en responderme?',
-    answer: 'Nos comprometemos a responder en menos de 24 horas laborables. En muchos casos la respuesta es el mismo día. Para casos urgentes con juicio próximo, puede indicarlo y lo atendemos de forma prioritaria.',
+    answer: 'En muchos casos la respuesta es el mismo día. Para casos urgentes con juicio próximo, puede indicarlo y lo atendemos de forma prioritaria.',
   },
   {
     question: '¿Qué pasa si después no quiero contratar el informe?',
@@ -38,7 +37,7 @@ const faqs = [
 
 <Layout
   title="Valoración del Daño Corporal Gratuita Barcelona | Perito Médico"
-  description="Primera consulta gratuita y sin compromiso para valorar su caso de daño corporal en Barcelona. Estimación de indemnización y análisis médico-legal. Respuesta en menos de 24 horas."
+  description="Primera consulta telefónica gratuita y sin compromiso para valorar su caso de daño corporal en Barcelona. Estimación de indemnización y análisis médico-legal."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -53,13 +52,13 @@ const faqs = [
         Valoración del Daño Corporal <span class="text-accent-300">Gratuita</span> en Barcelona
       </h1>
       <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
-        Le decimos cuánto vale su caso sin coste ni compromiso. Análisis de sus lesiones y secuelas por un perito médico especializado. Respuesta en menos de 24 horas.
+        Le decimos cuánto vale su caso sin coste ni compromiso. Análisis de sus lesiones y secuelas por un perito médico especializado.
       </p>
       <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
-        Solicitar valoración gratuita
+        Solicitar valoración telefónica gratuita
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en 24 h</p>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
     </div>
   </section>
 
@@ -73,7 +72,7 @@ const faqs = [
             <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
               <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
             </div>
-            <h2 class="font-heading text-xl font-bold text-primary-900">¿Qué incluye la consulta gratuita?</h2>
+            <h2 class="font-heading text-xl font-bold text-primary-900">¿Qué incluye la consulta telefónica gratuita?</h2>
           </div>
           <ul class="space-y-3">
             {incluye.map(item => (
@@ -124,7 +123,7 @@ const faqs = [
   <section class="py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿Cómo funciona la consulta gratuita?</h2>
+        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿Cómo funciona la consulta telefónica gratuita?</h2>
         <p class="text-gray-500 max-w-xl mx-auto">Solo necesita tres minutos para contarnos su caso. Nosotros hacemos el resto.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -139,7 +138,7 @@ const faqs = [
           <div class="w-16 h-16 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-5">
             <span class="text-accent-300 font-heading font-bold text-xl">02</span>
           </div>
-          <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Analizamos en 24 h</h3>
+          <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Analizamos su caso</h3>
           <p class="text-sm text-gray-500 leading-relaxed">Un perito médico especializado revisa su caso y evalúa las posibilidades de reclamación y la estimación de la indemnización que podría corresponderle.</p>
         </div>
         <div class="text-center">
@@ -153,11 +152,11 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Por qué pedir la valoración gratuita -->
+  <!-- Por qué pedir la valoración telefónica gratuita -->
   <section class="py-16 lg:py-20 bg-gray-50/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">¿Por qué solicitar la valoración gratuita antes de aceptar la oferta de la aseguradora?</h2>
+        <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">¿Por qué solicitar la valoración telefónica gratuita antes de aceptar la oferta de la aseguradora?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-white rounded-xl p-6 border border-gray-100">
             <h3 class="font-semibold text-primary-900 mb-3">Las aseguradoras tienen sus propios peritos</h3>
@@ -173,7 +172,7 @@ const faqs = [
           </div>
           <div class="bg-white rounded-xl p-6 border border-gray-100">
             <h3 class="font-semibold text-primary-900 mb-3">Sin coste si decide no seguir</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">La valoración gratuita no le compromete a nada. Si tras conocer nuestra opinión decide aceptar la oferta de la aseguradora o no seguir con la reclamación, no hay ningún cargo.</p>
+            <p class="text-sm text-gray-600 leading-relaxed">La valoración telefónica gratuita no le compromete a nada. Si tras conocer nuestra opinión decide aceptar la oferta de la aseguradora o no seguir con la reclamación, no hay ningún cargo.</p>
           </div>
         </div>
       </div>
@@ -183,7 +182,7 @@ const faqs = [
   <!-- FAQ -->
   <section class="py-16 lg:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes sobre la consulta gratuita</h2>
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes sobre la consulta telefónica gratuita</h2>
       <div class="space-y-3">
         {faqs.map(faq => (
           <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
@@ -221,5 +220,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="¿Quiere saber cuánto vale su caso?" subtitle="Solicite ahora la valoración gratuita. Sin coste, sin compromiso y con respuesta en menos de 24 horas." />
+  <CTASection title="¿Quiere saber cuánto vale su caso?" subtitle="Solicite ahora la valoración telefónica gratuita. Sin coste, sin compromiso." />
 </Layout>

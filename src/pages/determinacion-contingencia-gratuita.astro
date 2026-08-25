@@ -13,14 +13,14 @@ const casos = [
 const faqs = [
   {
     question: '¿Merece la pena reclamar el cambio de contingencia común a profesional?',
-    answer: 'En la mayoría de casos, sí. Las prestaciones por contingencia profesional son más favorables: mayor cuantía, no se exigen periodos mínimos de cotización previa y la asistencia sanitaria corre a cargo de la Mutua. La consulta gratuita le dice si su patología tiene indicios razonables de origen laboral.',
+    answer: 'En la mayoría de casos, sí. Las prestaciones por contingencia profesional son más favorables: mayor cuantía, no se exigen periodos mínimos de cotización previa y la asistencia sanitaria corre a cargo de la Mutua. La consulta telefónica gratuita le dice si su patología tiene indicios razonables de origen laboral.',
   },
   {
     question: '¿Puedo reclamar la determinación de contingencia si ya me han dado el alta?',
     answer: 'Sí. Puede solicitarla ante el INSS en cualquier momento, incluso después del alta de incapacidad temporal. Si se reconoce el cambio a contingencia profesional, puede tener efectos retroactivos sobre las prestaciones ya percibidas.',
   },
   {
-    question: '¿Qué necesito para la consulta gratuita?',
+    question: '¿Qué necesito para la consulta telefónica gratuita?',
     answer: 'Con su historial médico del proceso, la evaluación de riesgos de su puesto (si la tiene) y la resolución de la Mutua o el INSS sobre la contingencia, es suficiente para una primera valoración. Si no dispone de todo, puede consultarnos igualmente.',
   },
   {
@@ -32,7 +32,7 @@ const faqs = [
 
 <Layout
   title="Determinación de Contingencia Gratuita Barcelona | Perito Médico"
-  description="¿Le han calificado su baja como contingencia común y cree que es de origen laboral? Consulta gratuita para valorar si puede reclamar el cambio a contingencia profesional ante el INSS."
+  description="¿Le han calificado su baja como contingencia común y cree que es de origen laboral? Consulta telefónica gratuita para valorar si puede reclamar el cambio a contingencia profesional ante el INSS."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -50,10 +50,10 @@ const faqs = [
         Si cree que su enfermedad o lesión tiene origen laboral, un perito médico analiza su caso sin coste y le dice si tiene base para reclamar el cambio a contingencia profesional.
       </p>
       <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
-        Solicitar valoración gratuita
+        Solicitar valoración telefónica gratuita
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en menos de 24 h</p>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
     </div>
   </section>
 
@@ -140,5 +140,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="¿Cree que su baja debería ser contingencia profesional?" subtitle="Cuéntenos su caso. La valoración es completamente gratuita y le respondemos en menos de 24 horas." />
+  <CTASection title="¿Cree que su baja debería ser contingencia profesional?" subtitle="Cuéntenos su caso. La valoración es completamente gratuita." />
 </Layout>

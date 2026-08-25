@@ -18,7 +18,7 @@ const faqs = [
     answer: 'Sí. El análisis inicial de su expediente y una estimación orientativa del grado de discapacidad que podría corresponderle son completamente gratuitos. Solo tiene coste la elaboración del informe pericial completo, que se presupuesta antes de empezar y solo si usted decide contratarlo.',
   },
   {
-    question: '¿Qué documentos necesito para la valoración gratuita?',
+    question: '¿Qué documentos necesito para la valoración telefónica gratuita?',
     answer: 'Lo más útil es la resolución del centro EVO (si ya tiene una), sus informes médicos de especialistas y cualquier prueba diagnóstica relevante. Si no dispone de toda la documentación, puede consultarnos igualmente y le orientamos sobre cómo obtenerla.',
   },
   {
@@ -31,14 +31,14 @@ const faqs = [
   },
   {
     question: '¿Merece la pena reclamar o pedir la revisión del grado?',
-    answer: 'En muchos casos sí, especialmente si el reconocimiento le da acceso a un umbral relevante (33% o 65%) que actualmente no alcanza. En la valoración gratuita le damos una opinión honesta: si vemos que el caso tiene pocas posibilidades, se lo decimos igual, sin coste ni compromiso.',
+    answer: 'En muchos casos sí, especialmente si el reconocimiento le da acceso a un umbral relevante (33% o 65%) que actualmente no alcanza. En la valoración telefónica gratuita le damos una opinión honesta: si vemos que el caso tiene pocas posibilidades, se lo decimos igual, sin coste ni compromiso.',
   },
 ];
 ---
 
 <Layout
-  title="Valoración Gratuita del Grado de Discapacidad Barcelona | Perito Médico"
-  description="Valoración gratuita y sin compromiso de su grado de discapacidad en Barcelona. Un perito médico analiza su expediente y le orienta sobre si merece la pena reclamar o recurrir."
+  title="Valoración Telefónica Gratuita del Grado de Discapacidad Barcelona | Perito Médico"
+  description="Valoración telefónica gratuita y sin compromiso de su grado de discapacidad en Barcelona. Un perito médico analiza su expediente y le orienta sobre si merece la pena reclamar o recurrir."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -50,16 +50,16 @@ const faqs = [
         Valoración 100% Gratuita
       </span>
       <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-        Valoración Gratuita de su <span class="text-accent-300">Grado de Discapacidad</span>
+        Valoración Telefónica Gratuita de su <span class="text-accent-300">Grado de Discapacidad</span>
       </h1>
       <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
         ¿Le han denegado la discapacidad o no está de acuerdo con el grado reconocido? Un perito médico analiza su expediente sin coste y le dice, con honestidad, si merece la pena reclamar.
       </p>
       <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
-        Solicitar valoración gratuita
+        Solicitar valoración telefónica gratuita
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso · Respuesta en menos de 24 h</p>
+      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
     </div>
   </section>
 
@@ -67,7 +67,7 @@ const faqs = [
   <section class="py-16 lg:py-20 bg-gray-50/50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading text-2xl font-bold text-primary-900 mb-4 text-center">¿Le podemos ayudar en alguno de estos casos?</h2>
-      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">La valoración gratuita le aclara si su caso tiene base para reclamar, revisar o recurrir.</p>
+      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">La valoración telefónica gratuita le aclara si su caso tiene base para reclamar, revisar o recurrir.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {situaciones.map(s => (
           <div class="flex items-start gap-3 bg-white rounded-xl p-5 border border-gray-100">
@@ -90,7 +90,7 @@ const faqs = [
   <!-- Qué incluye -->
   <section class="py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-12 text-center">¿Qué incluye la valoración gratuita?</h2>
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-12 text-center">¿Qué incluye la valoración telefónica gratuita?</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
         <div class="text-center">
           <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -151,5 +151,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="¿Le han denegado la discapacidad o no está de acuerdo con el grado?" subtitle="Cuéntenos su situación. La valoración es completamente gratuita y le respondemos en menos de 24 horas." />
+  <CTASection title="¿Le han denegado la discapacidad o no está de acuerdo con el grado?" subtitle="Cuéntenos su situación. La valoración es completamente gratuita." />
 </Layout>
