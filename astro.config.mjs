@@ -5,4 +5,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   integrations: [tailwind(), sitemap()],
   site: 'https://www.peritomedicobarcelona.com',
+  trailingSlash: 'always',
+  build: {
+    format: 'directory',
+  },
 });
