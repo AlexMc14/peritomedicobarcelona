@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { url } from '../utils/links';
+---
+
+<Layout
+  title="Aviso Legal | Perito Médico Barcelona"
+  description="Aviso legal y condiciones de uso del sitio web peritomedicobarcelona.com."
+>
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Aviso Legal</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">Aviso Legal</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-gray-600 leading-relaxed text-sm">
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">1. Datos identificativos</h2>
+        <p>
+          En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la
+          Información y de Comercio Electrónico (LSSI-CE), se informa de los siguientes datos: el titular de este
+          sitio web es <strong>[Nombre o razón social del titular]</strong>, con NIF/CIF <strong>[NIF/CIF]</strong>,
+          domicilio en <strong>[Dirección completa, código postal, Barcelona]</strong> y correo de contacto
+          <a href="mailto:info@peritomedicobarcelona.com" class="text-accent-600 hover:underline">info@peritomedicobarcelona.com</a>.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">2. Objeto</h2>
+        <p>
+          El presente sitio web tiene por objeto informar sobre los servicios de peritaje médico ofrecidos por el
+          titular (informes periciales médicos, valoración del daño corporal, negligencia médica, incapacidad
+          laboral y servicios relacionados) y facilitar el contacto de los usuarios interesados.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">3. Condiciones de uso</h2>
+        <p>
+          El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación de las
+          condiciones incluidas en este Aviso Legal. El usuario se compromete a hacer un uso adecuado y lícito del
+          sitio web, de conformidad con la legislación aplicable, la buena fe y el orden público, absteniéndose de
+          cualquier conducta que pudiera dañar la imagen, los intereses o los derechos del titular o de terceros.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">4. Propiedad intelectual e industrial</h2>
+        <p>
+          Todos los contenidos del sitio web (textos, imágenes, marcas, logotipos, diseño y código fuente) son
+          titularidad del titular del sitio o de terceros que han autorizado su uso, y están protegidos por la
+          normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución o
+          comunicación pública total o parcial sin autorización previa y por escrito.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">5. Exclusión de responsabilidad</h2>
+        <p>
+          Los contenidos de este sitio web tienen carácter meramente informativo y no constituyen asesoramiento
+          jurídico ni médico-legal sobre ningún caso concreto. El titular no garantiza la ausencia de errores en
+          el acceso al sitio web ni que su contenido esté siempre actualizado, sin perjuicio de adoptar las medidas
+          necesarias para evitarlo y, en su caso, subsanarlo con la mayor brevedad posible.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">6. Legislación aplicable y jurisdicción</h2>
+        <p>
+          Las presentes condiciones se rigen por la legislación española. Para la resolución de cualquier
+          controversia, las partes se someten a los Juzgados y Tribunales de Barcelona, salvo que la normativa de
+          consumidores y usuarios establezca otro fuero.
+        </p>
+      </div>
+
+      <p class="text-xs text-gray-400">Última actualización: [fecha].</p>
+    </div>
+  </section>
+</Layout>

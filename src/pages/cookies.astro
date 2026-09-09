@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { url } from '../utils/links';
+---
+
+<Layout
+  title="Política de Cookies | Perito Médico Barcelona"
+  description="Política de cookies del sitio web peritomedicobarcelona.com."
+>
+  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
+          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <span class="text-primary-200">Política de Cookies</span>
+        </nav>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">Política de Cookies</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-gray-600 leading-relaxed text-sm">
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">1. ¿Qué son las cookies?</h2>
+        <p>
+          Las cookies son pequeños archivos de texto que un sitio web almacena en el navegador del usuario para
+          recordar información sobre su visita, como sus preferencias o datos de sesión.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">2. Cookies utilizadas en este sitio</h2>
+        <p>
+          Este sitio web utiliza únicamente cookies técnicas, estrictamente necesarias para su funcionamiento
+          (por ejemplo, para recordar preferencias básicas de navegación). Actualmente no se utilizan cookies de
+          análisis, publicidad o de terceros. <strong>[Si en el futuro se incorporan herramientas de analítica web,
+          publicidad o vídeo embebido, esta sección debe actualizarse con el detalle de cada cookie, su finalidad,
+          duración y proveedor.]</strong>
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">3. Cómo gestionar o eliminar las cookies</h2>
+        <p>
+          El usuario puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la
+          configuración de su navegador. A continuación se indican los enlaces de ayuda de los navegadores más
+          habituales:
+        </p>
+        <ul class="list-disc pl-5 mt-3 space-y-1">
+          <li>Google Chrome</li>
+          <li>Mozilla Firefox</li>
+          <li>Safari</li>
+          <li>Microsoft Edge</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">4. Más información</h2>
+        <p>
+          Para más información sobre el tratamiento de sus datos personales, puede consultar nuestra
+          <a href={url('/politica-privacidad')} class="text-accent-600 hover:underline">Política de Privacidad</a>.
+        </p>
+      </div>
+
+      <p class="text-xs text-gray-400">Última actualización: [fecha].</p>
+    </div>
+  </section>
+</Layout>
