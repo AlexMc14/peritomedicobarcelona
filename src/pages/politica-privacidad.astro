@@ -2,6 +2,7 @@
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Layout from '../layouts/Layout.astro';
 import { url } from '../utils/links';
+import { SITE, telHref } from '../data/site';
 ---
 
 <Layout
@@ -26,7 +27,7 @@ import { url } from '../utils/links';
           <strong>[Dirección completa, código postal, Barcelona]</strong>, es el responsable del tratamiento de los
           datos personales que el usuario facilite a través de este sitio web. Puede contactar con nosotros en
           <a href="mailto:info@peritomedicobarcelona.com" class="text-accent-600 hover:underline">info@peritomedicobarcelona.com</a>
-          o en el teléfono <a href="tel:+34692366104" class="text-accent-600 hover:underline">+34 692 36 61 04</a>.
+          o en el teléfono <a href={telHref} class="text-accent-600 hover:underline">{SITE.telefono}</a>.
         </p>
       </div>
 

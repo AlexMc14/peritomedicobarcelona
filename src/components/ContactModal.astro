@@ -1,16 +1,6 @@
 ---
-// Botón flotante + modal de contacto. Envía por mailto (sitio estático, sin backend).
+// Modal de contacto (lo abre #contact-fab de BotonesFlotantes). Envía por mailto (sitio estático, sin backend).
 ---
-<button
-  id="contact-fab"
-  aria-label="Enviar consulta por correo"
-  class="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary-900 text-white shadow-lg transition-transform hover:scale-110"
->
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-7 w-7" aria-hidden="true">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-  </svg>
-</button>
-
 <dialog id="contact-modal" class="w-full max-w-md rounded-xl p-0 shadow-2xl backdrop:bg-black/50">
   <form id="contact-form" method="dialog" class="p-6">
     <div class="mb-4 flex items-center justify-between">
