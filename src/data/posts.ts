@@ -58,6 +58,33 @@ export const posts: Post[] = [
     lectura: '8',
     servicio: '/servicios/informes-periciales-medicos/',
   },
+  {
+    titulo: 'Tribunal médico de Barcelona (ICAM): qué es y cómo preparar la cita',
+    href: '/blog/tribunal-medico-icam-barcelona/',
+    descripcion: 'Qué es el ICAM (hoy SGAM), para qué le citan, qué llevar a la cita y qué hacer si le dan el alta o le deniegan la incapacidad permanente.',
+    categoria: 'Incapacidad Laboral',
+    fecha: '2026-10-31',
+    lectura: '7',
+    servicio: '/servicios/incapacidad-laboral/',
+  },
+  {
+    titulo: 'La mutua me da el alta pero no estoy bien: qué hacer y en qué plazo',
+    href: '/blog/mutua-me-da-el-alta-sin-estar-bien/',
+    descripcion: 'Plazos y pasos para pedir al INSS la revisión del alta de la mutua, y qué cambia si la baja es por enfermedad común o si el alta la da el INSS.',
+    categoria: 'Alta Médica',
+    fecha: '2026-10-31',
+    lectura: '7',
+    servicio: '/servicios/impugnacion-alta-medica/',
+  },
+  {
+    titulo: 'Incapacidad permanente denegada: qué hacer en Barcelona',
+    href: '/blog/incapacidad-permanente-denegada-que-hacer/',
+    descripcion: 'Reclamación previa, demanda y juicio en los Juzgados de lo Social de Barcelona: plazos de la Ley 36/2011 y qué aportar en cada paso.',
+    categoria: 'Incapacidad Permanente',
+    fecha: '2026-10-31',
+    lectura: '7',
+    servicio: '/servicios/incapacidad-laboral/',
+  },
 ];
 
 export const postPorHref = (href: string) => posts.find((p) => p.href === href);
