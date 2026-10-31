@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTASection from '../../components/CTASection.astro';
+import { url } from '../../utils/links';
+import { abogados } from '../../data/servicios';
+---
+
+<Layout
+  title="Perito Médico para Abogados en Barcelona | Perito Médico Barcelona"
+  description="Servicios de peritaje médico para despachos de abogados en Barcelona: asesoramiento técnico, revisión de informes, contrainforme pericial y ratificación judicial."
+>
+  <section class="bg-primary-950 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <Breadcrumb migas={[{ nombre: 'Para Abogados' }]} />
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">Perito médico para abogados</h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Damos soporte médico-legal a despachos de abogados en Barcelona y Cataluña: valoramos la viabilidad médica del caso antes de demandar, revisamos el informe de la parte contraria, redactamos contrainformes y el perito ratifica el informe en sala.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {abogados.map((a) => <ServiceCard title={a.nombre} description={a.descripcion} href={url(a.href)} />)}
+      </div>
+      <p class="mt-10 text-gray-600">
+        Para encargos de un tipo concreto, consulte también el <a href={url('/servicios/')} class="text-accent-600 hover:underline">listado completo de servicios</a> o el servicio de <a href={url('/perito-medico-juzgado-social-barcelona/')} class="text-accent-600 hover:underline">perito ante el Juzgado de lo Social de Barcelona</a>.
+      </p>
+    </div>
+  </section>
+
+  <CTASection title="¿Tiene un procedimiento en marcha?" subtitle="Indíquenos el tipo de caso y el plazo procesal y le confirmamos disponibilidad." />
+</Layout>

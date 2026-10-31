@@ -1,7 +1,10 @@
 ---
 import Layout from './Layout.astro';
 import CTASection from '../components/CTASection.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { url } from '../utils/links';
+import { servicios, servicioPorHref } from '../data/servicios';
+import { posts } from '../data/posts';
 
 interface Props {
   title: string;
@@ -14,6 +17,16 @@ interface Props {
 }
 
 const { title, pageTitle, description, intro, whatWeDo, steps, faqs } = Astro.props;
+
+const ruta = Astro.url.pathname;
+const padre = ruta.startsWith('/especialidades/')
+  ? { nombre: 'Especialidades', href: '/especialidades/' }
+  : ruta.startsWith('/para-abogados/')
+    ? { nombre: 'Para Abogados', href: '/para-abogados/' }
+    : { nombre: 'Servicios', href: '/servicios/' };
+const landing = servicioPorHref(ruta)?.landing;
+const otros = servicios.filter((s) => s.href !== ruta);
+const guias = posts.filter((p) => p.servicio === ruta);
 ---
 
 <Layout title={pageTitle} description={description}>
@@ -24,13 +37,7 @@ const { title, pageTitle, description, intro, whatWeDo, steps, faqs } = Astro.pr
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
-          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <a href={url('/#servicios')} class="hover:text-primary-200 transition-colors">Servicios</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <span class="text-primary-200">{title}</span>
-        </nav>
+        <Breadcrumb migas={[padre, { nombre: title }]} />
         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
           {title}
         </h1>
@@ -96,6 +103,13 @@ const { title, pageTitle, description, intro, whatWeDo, steps, faqs } = Astro.pr
 
         <!-- Sidebar -->
         <div class="space-y-6">
+          {landing && (
+            <div class="bg-primary-50 rounded-2xl p-7 border border-primary-100">
+              <h3 class="font-heading text-base font-semibold text-primary-900 mb-2">¿Prefiere una respuesta rápida?</h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">Cuéntenos su caso por teléfono y le decimos si tiene recorrido.</p>
+              <a href={url(landing.href)} class="text-sm font-semibold text-accent-600 hover:text-accent-700">{landing.nombre} →</a>
+            </div>
+          )}
           <div class="bg-accent-50 rounded-2xl p-7 border border-accent-100">
             <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Valoración telefónica gratuita</h3>
             <p class="text-sm text-gray-600 leading-relaxed mb-5">
@@ -106,15 +120,23 @@ const { title, pageTitle, description, intro, whatWeDo, steps, faqs } = Astro.pr
             </a>
           </div>
 
+          {guias.length > 0 && (
+            <div class="bg-white rounded-2xl p-7 border border-gray-100">
+              <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Guías paso a paso</h3>
+              <ul class="space-y-2.5">
+                {guias.map((g) => (
+                  <li><a href={url(g.href)} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">{g.titulo}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <div class="bg-white rounded-2xl p-7 border border-gray-100">
             <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Otros servicios</h3>
             <ul class="space-y-2.5">
-              <li><a href={url('/servicios/informes-periciales-medicos')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Informes Periciales</a></li>
-              <li><a href={url('/servicios/negligencia-medica')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Negligencia Médica</a></li>
-              <li><a href={url('/servicios/valoracion-dano-corporal')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Valoración del Daño Corporal</a></li>
-              <li><a href={url('/servicios/incapacidad-laboral')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Incapacidad Laboral</a></li>
-              <li><a href={url('/servicios/impugnacion-alta-medica')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Impugnación de Alta Médica</a></li>
-              <li><a href={url('/servicios/discapacidad')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Discapacidad</a></li>
+              {otros.map((s) => (
+                <li><a href={url(s.href)} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">{s.nombre}</a></li>
+              ))}
             </ul>
           </div>
         </div>

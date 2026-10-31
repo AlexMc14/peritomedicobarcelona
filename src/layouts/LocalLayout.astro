@@ -1,7 +1,9 @@
 ---
 import Layout from './Layout.astro';
 import CTASection from '../components/CTASection.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { url } from '../utils/links';
+import { zonas, HUB_ZONAS } from '../data/zonas';
 
 interface Props {
   pageTitle: string;
@@ -16,6 +18,7 @@ interface Props {
 }
 
 const { pageTitle, description, city, cityShort, intro, localContext, hospitals, courts, faqs } = Astro.props;
+const otrasZonas = zonas.filter((z) => z.href !== Astro.url.pathname);
 ---
 
 <Layout title={pageTitle} description={description}>
@@ -25,11 +28,7 @@ const { pageTitle, description, city, cityShort, intro, localContext, hospitals,
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
-          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <span class="text-primary-200">Perito Médico {cityShort}</span>
-        </nav>
+        <Breadcrumb migas={[{ nombre: 'Área Metropolitana', href: HUB_ZONAS }, { nombre: `Perito Médico ${cityShort}` }]} />
         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
           Perito Médico en {city}
         </h1>
@@ -103,6 +102,15 @@ const { pageTitle, description, city, cityShort, intro, localContext, hospitals,
               </div>
             </div>
           )}
+
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">Otras zonas que atendemos</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {otrasZonas.map((z) => (
+                <li><a href={url(z.href)} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Perito médico en {z.nombre}</a></li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div class="space-y-6">

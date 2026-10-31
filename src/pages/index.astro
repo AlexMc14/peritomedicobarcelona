@@ -4,59 +4,10 @@ import HeroSection from '../components/HeroSection.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import CTASection from '../components/CTASection.astro';
 import { url } from '../utils/links';
+import { servicios as listaServicios } from '../data/servicios';
+import { zonas, HUB_ZONAS } from '../data/zonas';
 
-const servicios = [
-  {
-    title: 'Informes Periciales Médicos',
-    description: 'Elaboración de informes periciales médicos detallados y fundamentados para procesos judiciales y extrajudiciales.',
-    href: url('/servicios/informes-periciales-medicos'),
-  },
-  {
-    title: 'Negligencia Médica',
-    description: 'Evaluación experta de posibles casos de mala praxis médica con análisis de la lex artis y nexo causal.',
-    href: url('/servicios/negligencia-medica'),
-  },
-  {
-    title: 'Valoración del Daño Corporal',
-    description: 'Cuantificación médico-legal de las lesiones y secuelas conforme al baremo vigente.',
-    href: url('/servicios/valoracion-dano-corporal'),
-  },
-  {
-    title: 'Incapacidad Laboral',
-    description: 'Valoración de la capacidad funcional para procesos de incapacidad permanente en cualquier grado.',
-    href: url('/servicios/incapacidad-laboral'),
-  },
-  {
-    title: 'Impugnación de Alta Médica',
-    description: 'Análisis médico-pericial para impugnar altas médicas indebidas ante el INSS o Mutuas.',
-    href: url('/servicios/impugnacion-alta-medica'),
-  },
-  {
-    title: 'Discapacidad',
-    description: 'Valoración del grado de discapacidad y asesoramiento para su reconocimiento administrativo.',
-    href: url('/servicios/discapacidad'),
-  },
-  {
-    title: 'Curatela y Medidas de Apoyo',
-    description: 'Informes periciales para procedimientos de determinación de capacidad y medidas de apoyo.',
-    href: url('/servicios/curatela-medidas-apoyo'),
-  },
-  {
-    title: 'Determinación de Contingencia',
-    description: 'Análisis pericial para determinar el origen laboral o común de una patología.',
-    href: url('/servicios/determinacion-contingencia'),
-  },
-  {
-    title: 'Segunda Opinión Médico-Legal',
-    description: 'Revisión independiente de informes periciales existentes con análisis crítico y fundamentado.',
-    href: url('/servicios/segunda-opinion-medico-legal'),
-  },
-  {
-    title: 'Estudio de Viabilidad del Caso',
-    description: 'Análisis preliminar gratuito para evaluar las posibilidades médico-legales de su caso.',
-    href: url('/servicios/estudio-viabilidad'),
-  },
-];
+const servicios = listaServicios.map((s) => ({ title: s.nombre, description: s.descripcion, href: url(s.href) }));
 
 const proceso = [
   {
@@ -134,6 +85,27 @@ const faqs = [
           />
         ))}
       </div>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={url('/servicios/')} class="inline-flex items-center justify-center px-6 py-3 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">Ver todos los servicios</a>
+        <a href={url('/perito-medico-consulta-gratuita/')} class="inline-flex items-center justify-center px-6 py-3 border-2 border-primary-900 text-primary-900 hover:bg-primary-50 font-semibold rounded-xl transition-colors text-sm">¿No sabe qué necesita? Consúltenos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zonas -->
+  <section class="py-20 lg:py-28" id="zonas">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-accent-600 font-semibold text-sm tracking-wider uppercase">Zonas</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-primary-900 mt-3 mb-5">Perito médico en Barcelona y su área metropolitana</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg">Información específica de hospitales y juzgados de cada zona.</p>
+      </div>
+      <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        {zonas.map((z) => (
+          <li><a href={url(z.href)} class="block px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl text-sm font-medium text-primary-900 hover:bg-primary-50 hover:border-primary-200 transition-colors">{z.nombre}</a></li>
+        ))}
+      </ul>
+      <p class="text-center mt-8"><a href={url(HUB_ZONAS)} class="text-sm font-semibold text-accent-600 hover:text-accent-700">Ver todas las zonas que atendemos →</a></p>
     </div>
   </section>
 
@@ -270,7 +242,7 @@ const faqs = [
                 Contrainformes periciales fundamentados
               </li>
             </ul>
-            <a href={url('/para-abogados/asesoramiento-tecnico')} class="inline-flex items-center px-6 py-3 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
+            <a href={url('/para-abogados/')} class="inline-flex items-center px-6 py-3 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
               Ver servicios para abogados
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
             </a>

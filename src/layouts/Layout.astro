@@ -6,9 +6,10 @@ import ContactModal from '../components/ContactModal.astro';
 interface Props {
   title: string;
   description?: string;
+  noindex?: boolean;
 }
 
-const { title, description = 'Perito Médico en Barcelona. Informes periciales médicos, valoración del daño corporal, negligencias médicas e incapacidad laboral. Consulta telefónica gratuita.' } = Astro.props;
+const { title, noindex = false, description = 'Perito Médico en Barcelona. Informes periciales médicos, valoración del daño corporal, negligencias médicas e incapacidad laboral. Consulta telefónica gratuita.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,6 +21,7 @@ const { title, description = 'Perito Médico en Barcelona. Informes periciales m
     <meta name="geo.region" content="ES-CT" />
     <meta name="geo.placename" content="Barcelona" />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
