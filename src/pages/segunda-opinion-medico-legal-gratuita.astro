@@ -15,26 +15,26 @@ const situaciones = [
 const faqs = [
   {
     question: '¿Tengo que decidir ya si quiero un contrainforme?',
-    answer: 'No. La consulta gratuita es precisamente para eso: darle una primera lectura crítica del informe recibido sin ningún compromiso. Si tras la valoración considera que merece la pena impugnarlo con un contrainforme pericial, le presupuestamos ese trabajo por separado.',
+    answer: 'No. La consulta es precisamente para eso: darle una primera lectura crítica del informe recibido sin ningún compromiso. Si tras la valoración considera que merece la pena impugnarlo con un contrainforme pericial, le explicamos en qué consiste ese trabajo.',
   },
   {
-    question: '¿Qué diferencia hay entre esta consulta gratuita y un contrainforme pericial?',
-    answer: 'La consulta gratuita es una primera lectura orientativa: le decimos si el informe que ha recibido presenta debilidades aparentes. El contrainforme pericial, que tiene coste, es un documento formal con conclusiones propias, pensado para presentarse en el procedimiento judicial o administrativo.',
+    question: '¿Qué diferencia hay entre esta consulta y un contrainforme pericial?',
+    answer: 'La consulta es una primera lectura orientativa: le decimos si el informe que ha recibido presenta debilidades aparentes. El contrainforme pericial es un documento formal con conclusiones propias, pensado para presentarse en el procedimiento judicial o administrativo.',
   },
   {
     question: '¿Puedo consultar sobre un informe forense, no solo de un perito de parte?',
-    answer: 'Sí. Cualquier dictamen pericial médico, sea de la aseguradora, de la Mutua, de otro perito o del médico forense, puede ser objeto de esta consulta gratuita.',
+    answer: 'Sí. Cualquier dictamen pericial médico, sea de la aseguradora, de la Mutua, de otro perito o del médico forense, puede ser objeto de esta consulta.',
   },
   {
-    question: '¿Cuánto tarda la respuesta?',
-    answer: 'La primera valoración orientativa es gratuita. Si decide encargar el contrainforme completo, el plazo habitual de elaboración es de 7 a 10 días hábiles, que puede acortarse en casos urgentes con plazo procesal inminente.',
+    question: '¿Qué ocurre si decido encargar el contrainforme?',
+    answer: 'Le indicamos el plazo de entrega al valorar su caso, teniendo en cuenta la fecha del juicio o el plazo procesal que tenga pendiente.',
   },
 ];
 ---
 
 <Layout
   title="Consulta de Segunda Opinión Médico-Legal en Barcelona"
-  description="Consulta gratuita para revisar un informe pericial médico de la parte contraria, la aseguradora o el forense. Le decimos sin compromiso si presenta debilidades."
+  description="Consulta para revisar un informe pericial médico de la parte contraria, la aseguradora o el forense. Le decimos sin compromiso si presenta debilidades."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -44,19 +44,19 @@ const faqs = [
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <Breadcrumb migas={[{ nombre: 'Segunda Opinión Médico-Legal', href: '/servicios/segunda-opinion-medico-legal/' }, { nombre: 'Consulta telefónica' }]} class="justify-center" />
       <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
-        Consulta 100% Gratuita
+        Consulta telefónica
       </span>
       <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-        Segunda Opinión <span class="text-accent-300">Médico-Legal</span> Gratuita
+        Segunda Opinión <span class="text-accent-300">Médico-Legal</span>
       </h1>
       <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
-        ¿Ha recibido un informe pericial que no le convence? Un perito médico independiente le da una primera lectura crítica sin coste, antes de que decida nada.
+        ¿Ha recibido un informe pericial que no le convence? Un perito médico independiente le da una primera lectura crítica, antes de que decida nada.
       </p>
       <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
-        Solicitar segunda opinión gratuita
+        Solicitar segunda opinión
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
+      <p class="mt-4 text-sm text-primary-400">Sin compromiso</p>
     </div>
   </section>
 
@@ -77,7 +77,7 @@ const faqs = [
       </div>
       <div class="mt-8 text-center">
         <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
-          Quiero una revisión gratuita de mi informe
+          Quiero una revisión de mi informe
           <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
         </a>
       </div>
@@ -87,7 +87,7 @@ const faqs = [
   <!-- Cómo funciona -->
   <section class="py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-12 text-center">¿Qué ocurre tras la consulta gratuita?</h2>
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-12 text-center">¿Qué ocurre tras la consulta?</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
         <div class="text-center">
           <div class="w-14 h-14 bg-primary-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -148,5 +148,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="¿No está seguro de si el informe que tiene es correcto?" subtitle="Envíenoslo. La primera lectura es completamente gratuita." />
+  <CTASection title="¿No está seguro de si el informe que tiene es correcto?" subtitle="Envíenoslo. Le damos una valoración honesta." />
 </Layout>

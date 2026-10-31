@@ -21,7 +21,7 @@ import { url } from '../../utils/links';
     },
     {
       question: '¿Cuántos tipos de informe pericial puede necesitar un mismo caso?',
-      answer: 'Puede necesitar más de uno. Por ejemplo, un accidente de trabajo grave puede requerir un informe de determinación de contingencia (para acreditar que fue accidente laboral), un informe de valoración de secuelas y, si el INSS deniega la incapacidad, un informe pericial de incapacidad permanente. Lo habitual es empezar con una valoración telefónica gratuita del caso para determinar qué informes son necesarios.'
+      answer: 'Puede necesitar más de uno. Por ejemplo, un accidente de trabajo grave puede requerir un informe de determinación de contingencia (para acreditar que fue accidente laboral), un informe de valoración de secuelas y, si el INSS deniega la incapacidad, un informe pericial de incapacidad permanente. Lo habitual es empezar con una valoración telefónica del caso para determinar qué informes son necesarios.'
     },
     {
       question: '¿El informe pericial tiene la misma validez en todos los juzgados?',
@@ -36,13 +36,6 @@ import { url } from '../../utils/links';
   <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
     No todos los informes periciales médicos son iguales. Cada tipo responde a una situación jurídica distinta, se presenta ante un órgano diferente y requiere una estructura específica. Esta guía explica los principales tipos de informe pericial médico que existen en 2026, para qué sirve cada uno y cuándo solicitarlo.
   </p>
-
-  <div class="bg-primary-50 rounded-xl p-5 border-l-4 border-primary-500 mb-10">
-    <p class="text-sm text-primary-800 leading-relaxed">
-      <strong>Actualización 2026:</strong> el baremo de accidentes de tráfico ha subido un 2,9% respecto a 2025 y el baremo de Seguridad Social mantiene los criterios de 2025. Los informes elaborados este año deben reflejar los valores actualizados.
-    </p>
-  </div>
-
   <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">1. Informe pericial de valoración del daño corporal</h2>
   <p class="text-gray-600 leading-relaxed mb-4">
     Es el informe más habitual. Su objetivo es cuantificar con precisión las lesiones y secuelas que ha sufrido una persona como consecuencia de un accidente o una agresión, y traducirlas a puntos de baremo o a una descripción médico-legal que el juez pueda valorar económicamente.
@@ -62,7 +55,7 @@ import { url } from '../../utils/links';
     </li>
   </ul>
   <p class="text-gray-600 leading-relaxed mb-6">
-    En 2026, con la actualización del baremo de tráfico (+2,9%), la diferencia entre una valoración de la aseguradora y la de un perito independiente puede ser de varios miles de euros. El informe pericial es la herramienta para acreditar esa diferencia ante el tribunal.
+    La diferencia entre la valoración de la aseguradora y la de un perito independiente puede ser importante. El informe pericial es la herramienta para acreditar esa diferencia ante el tribunal.
   </p>
   <p class="mb-8">
     <a href={url('/servicios/valoracion-dano-corporal')} class="text-accent-600 hover:text-accent-700 font-medium text-sm underline underline-offset-2">Ver servicio de valoración del daño corporal →</a>
@@ -101,7 +94,7 @@ import { url } from '../../utils/links';
     </li>
     <li class="flex items-start gap-3">
       <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-      <span><strong class="text-primary-900">Cuándo pedirlo:</strong> tras recibir la resolución denegatoria del INSS o del tribunal médico, antes de que venza el plazo para recurrir (generalmente 30 días hábiles).</span>
+      <span><strong class="text-primary-900">Cuándo pedirlo:</strong> tras recibir la resolución denegatoria del INSS o del tribunal médico, antes de que venza el plazo para recurrir (30 días desde la notificación para la reclamación previa, según el artículo 71.2 de la Ley 36/2011).</span>
     </li>
     <li class="flex items-start gap-3">
       <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
@@ -132,7 +125,7 @@ import { url } from '../../utils/links';
 
   <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">5. Informe pericial de impugnación del alta médica</h2>
   <p class="text-gray-600 leading-relaxed mb-4">
-    Cuando la mutua o el INSS emiten un alta médica que el trabajador considera prematura —porque aún no está en condiciones de volver al trabajo—, el informe pericial de impugnación acredita que las lesiones no han curado o que las secuelas impiden la reincorporación. Es especialmente urgente: el plazo para impugnar el alta es de 11 días hábiles.
+    Cuando la mutua o el INSS emiten un alta médica que el trabajador considera prematura —porque aún no está en condiciones de volver al trabajo—, el informe pericial de impugnación acredita que las lesiones no han curado o que las secuelas impiden la reincorporación. Es especialmente urgente: según quién dé el alta, el plazo para reclamar va de 4 días naturales a 11 días hábiles (vea la <a href={url('/blog/mutua-me-da-el-alta-sin-estar-bien/')} class="text-primary-700 underline">tabla de plazos del alta médica</a>).
   </p>
   <ul class="space-y-2 mb-4 text-gray-600">
     <li class="flex items-start gap-3">
@@ -141,7 +134,7 @@ import { url } from '../../utils/links';
     </li>
     <li class="flex items-start gap-3">
       <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-      <span><strong class="text-primary-900">Urgencia:</strong> este es el informe con el plazo más corto. Si ha recibido el alta y no está recuperado, contacte inmediatamente con un perito médico.</span>
+      <span><strong class="text-primary-900">Urgencia:</strong> este es el informe con el plazo más corto. Si ha recibido el alta y no está recuperado, contacte cuanto antes con un perito médico.</span>
     </li>
   </ul>
   <p class="mb-8">
@@ -186,16 +179,16 @@ import { url } from '../../utils/links';
 
   <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">¿Qué tipo de informe necesita su caso?</h2>
   <p class="text-gray-600 leading-relaxed mb-4">
-    La mayoría de los clientes que nos contactan no saben de antemano qué tipo de informe necesitan. Es normal: esa es precisamente la primera labor del perito médico. En la valoración telefónica gratuita inicial analizamos la documentación disponible y le indicamos qué informe es más adecuado, cuánto costará y en qué plazo podemos entregarlo.
+    La mayoría de los clientes que nos contactan no saben de antemano qué tipo de informe necesitan. Es normal: esa es precisamente la primera labor del perito médico. En la valoración telefónica inicial analizamos la documentación disponible y le indicamos qué informe es más adecuado, cuánto costará y en qué plazo podemos entregarlo.
   </p>
 
   <div class="bg-accent-50 rounded-xl p-6 border border-accent-100 mt-8">
-    <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Consulta telefónica gratuita: le orientamos sin compromiso</h3>
+    <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">Consulta telefónica: le orientamos sin compromiso</h3>
     <p class="text-sm text-gray-600 leading-relaxed mb-4">
       Explíquenos su situación y le diremos qué tipo de informe pericial necesita, el plazo de elaboración y el coste estimado.
     </p>
     <a href={url('/contacto')} class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
-      Solicitar orientación gratuita
+      Solicitar orientación
       <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
     </a>
   </div>
