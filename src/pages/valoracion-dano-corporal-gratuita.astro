@@ -14,16 +14,12 @@ const incluye = [
 
 const faqs = [
   {
-    question: '¿De verdad es gratuita la valoración?',
-    answer: 'Sí, completamente. La consulta telefónica o por correo electrónico, el análisis inicial de su caso y el asesoramiento sobre las posibilidades de su reclamación no tienen ningún coste. Lo que tiene coste es la elaboración del informe pericial completo, que solo se inicia si usted decide contratar el servicio tras conocer el presupuesto.',
-  },
-  {
-    question: '¿Qué necesito para la consulta telefónica gratuita?',
+    question: '¿Qué necesito para la consulta telefónica?',
     answer: 'Con una descripción del accidente o situación, la fecha en que ocurrió y, si los tiene, los informes médicos de urgencias o de su médico, es suficiente para hacer una primera valoración. No necesita tener toda la documentación desde el principio.',
   },
   {
     question: '¿Cuánto tiempo tarda en responderme?',
-    answer: 'En muchos casos la respuesta es el mismo día. Para casos urgentes con juicio próximo, puede indicarlo y lo atendemos de forma prioritaria.',
+    answer: 'Le respondemos lo antes posible. Si tiene un juicio próximo, indíquelo al contactar.',
   },
   {
     question: '¿Qué pasa si después no quiero contratar el informe?',
@@ -31,14 +27,14 @@ const faqs = [
   },
   {
     question: '¿En qué casos es más importante contratar un perito para el daño corporal?',
-    answer: 'Siempre que haya secuelas que puedan ser permanentes (limitación de movilidad, dolor crónico, cicatrices, déficit funcional) o cuando la aseguradora le ha ofrecido una indemnización que considera baja. En estos casos, la diferencia entre aceptar la oferta de la aseguradora y contratar un perito independiente puede ser de miles de euros.',
+    answer: 'Siempre que haya secuelas que puedan ser permanentes (limitación de movilidad, dolor crónico, cicatrices, déficit funcional) o cuando la aseguradora le ha ofrecido una indemnización que considera baja. En estos casos, la diferencia entre aceptar la oferta de la aseguradora y contratar un perito independiente puede ser importante.',
   },
 ];
 ---
 
 <Layout
-  title="Valoración del Daño Corporal Gratuita Barcelona | Perito Médico"
-  description="Primera consulta telefónica gratuita y sin compromiso para valorar su caso de daño corporal en Barcelona. Estimación de indemnización y análisis médico-legal."
+  title="Valoración del Daño Corporal Barcelona | Perito Médico"
+  description="Primera consulta telefónica sin compromiso para valorar su caso de daño corporal en Barcelona. Estimación de indemnización y análisis médico-legal."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -48,33 +44,33 @@ const faqs = [
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <Breadcrumb migas={[{ nombre: 'Valoración del Daño Corporal', href: '/servicios/valoracion-dano-corporal/' }, { nombre: 'Valoración telefónica' }]} class="justify-center" />
       <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
-        Consulta 100% Gratuita
+        Consulta telefónica
       </span>
       <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-        Valoración del Daño Corporal <span class="text-accent-300">Gratuita</span> en Barcelona
+        Valoración del Daño Corporal en Barcelona
       </h1>
       <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
-        Le decimos cuánto vale su caso sin coste ni compromiso. Análisis de sus lesiones y secuelas por un perito médico especializado.
+        Le decimos cuánto vale su caso sin compromiso. Análisis de sus lesiones y secuelas por un perito médico especializado.
       </p>
       <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
-        Solicitar valoración telefónica gratuita
+        Solicitar valoración telefónica
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
+      <p class="mt-4 text-sm text-primary-400">Sin compromiso</p>
     </div>
   </section>
 
-  <!-- Qué es gratis y qué no -->
+  <!-- Qué incluye -->
   <section class="py-16 lg:py-20 bg-gray-50/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <!-- Lo que es GRATIS -->
+        <!-- Qué incluye -->
         <div class="bg-white rounded-2xl p-8 border border-green-100 shadow-sm">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
               <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
             </div>
-            <h2 class="font-heading text-xl font-bold text-primary-900">¿Qué incluye la consulta telefónica gratuita?</h2>
+            <h2 class="font-heading text-xl font-bold text-primary-900">¿Qué incluye la consulta telefónica?</h2>
           </div>
           <ul class="space-y-3">
             {incluye.map(item => (
@@ -86,21 +82,21 @@ const faqs = [
           </ul>
         </div>
 
-        <!-- Lo que tiene coste -->
+        <!-- Si decide seguir -->
         <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
               <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </div>
-            <h2 class="font-heading text-xl font-bold text-primary-900">¿Qué tiene coste?</h2>
+            <h2 class="font-heading text-xl font-bold text-primary-900">Si decide seguir adelante</h2>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed mb-5">
-            Somos transparentes: la elaboración del <strong class="text-primary-900">informe pericial médico completo</strong> tiene un coste que le comunicamos antes de comenzar. Nunca iniciamos ningún trabajo sin su autorización expresa y conocimiento previo del presupuesto.
+            Si el caso tiene recorrido, el siguiente paso es el <strong class="text-primary-900">informe pericial médico completo</strong>. No empezamos ningún trabajo sin su autorización expresa.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
               <svg class="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-              <span class="text-gray-600 text-sm">Elaboración del informe pericial médico (previo presupuesto)</span>
+              <span class="text-gray-600 text-sm">Elaboración del informe pericial médico</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
@@ -111,11 +107,6 @@ const faqs = [
               <span class="text-gray-600 text-sm">Ratificación judicial del informe en sala (si es necesaria)</span>
             </li>
           </ul>
-          <div class="mt-6 p-4 bg-accent-50 rounded-xl">
-            <p class="text-sm text-accent-800 leading-relaxed">
-              <strong>Importante:</strong> en muchos casos, el coste del informe se recupera incluido en las costas del juicio o en la indemnización obtenida.
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -125,7 +116,7 @@ const faqs = [
   <section class="py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿Cómo funciona la consulta telefónica gratuita?</h2>
+        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿Cómo funciona la consulta telefónica?</h2>
         <p class="text-gray-500 max-w-xl mx-auto">Solo necesita tres minutos para contarnos su caso. Nosotros hacemos el resto.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -154,11 +145,11 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Por qué pedir la valoración telefónica gratuita -->
+  <!-- Por qué pedir la valoración telefónica -->
   <section class="py-16 lg:py-20 bg-gray-50/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">¿Por qué solicitar la valoración telefónica gratuita antes de aceptar la oferta de la aseguradora?</h2>
+        <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">¿Por qué solicitar la valoración telefónica antes de aceptar la oferta de la aseguradora?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-white rounded-xl p-6 border border-gray-100">
             <h3 class="font-semibold text-primary-900 mb-3">Las aseguradoras tienen sus propios peritos</h3>
@@ -166,15 +157,15 @@ const faqs = [
           </div>
           <div class="bg-white rounded-xl p-6 border border-gray-100">
             <h3 class="font-semibold text-primary-900 mb-3">La diferencia puede ser enorme</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">La brecha entre lo que ofrece la aseguradora y lo que corresponde por baremo puede ser de miles de euros. Un informe pericial independiente documenta con precisión todas las secuelas.</p>
+            <p class="text-sm text-gray-600 leading-relaxed">La brecha entre lo que ofrece la aseguradora y lo que corresponde por baremo puede ser importante. Un informe pericial independiente documenta con precisión todas las secuelas.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-gray-100">
             <h3 class="font-semibold text-primary-900 mb-3">Secuelas que se olvidan</h3>
             <p class="text-sm text-gray-600 leading-relaxed">Muchas secuelas —dolor crónico, limitación de movilidad, cicatrices, perjuicio estético, secuelas psicológicas— son ignoradas en las ofertas iniciales de las aseguradoras. El perito las documenta todas.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-gray-100">
-            <h3 class="font-semibold text-primary-900 mb-3">Sin coste si decide no seguir</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">La valoración telefónica gratuita no le compromete a nada. Si tras conocer nuestra opinión decide aceptar la oferta de la aseguradora o no seguir con la reclamación, no hay ningún cargo.</p>
+            <h3 class="font-semibold text-primary-900 mb-3">Sin compromiso si decide no seguir</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">La valoración telefónica no le compromete a nada. Si tras conocer nuestra opinión decide aceptar la oferta de la aseguradora o no seguir con la reclamación, la decisión es suya.</p>
           </div>
         </div>
       </div>
@@ -184,7 +175,7 @@ const faqs = [
   <!-- FAQ -->
   <section class="py-16 lg:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes sobre la consulta telefónica gratuita</h2>
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas frecuentes sobre la consulta telefónica</h2>
       <div class="space-y-3">
         {faqs.map(faq => (
           <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
@@ -222,5 +213,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="¿Quiere saber cuánto vale su caso?" subtitle="Solicite ahora la valoración telefónica gratuita. Sin coste, sin compromiso." />
+  <CTASection title="¿Quiere saber cuánto vale su caso?" subtitle="Solicite ahora la valoración telefónica. Sin compromiso." />
 </Layout>

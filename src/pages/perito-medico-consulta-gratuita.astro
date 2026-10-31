@@ -18,31 +18,27 @@ const servicios = [
 
 const faqs = [
   {
-    question: '¿La consulta es realmente gratuita?',
-    answer: 'Sí. La consulta inicial, el asesoramiento sobre su caso y la valoración de la viabilidad médico-legal son completamente gratuitas y sin compromiso. Solo tiene coste la elaboración del informe pericial completo, que se presupuesta antes de iniciar cualquier trabajo.',
-  },
-  {
     question: '¿Qué información necesito para la consulta?',
     answer: 'Con una descripción básica del caso es suficiente para empezar: qué ocurrió, cuándo y qué consecuencias médicas ha tenido. Si dispone de informes médicos, parte de accidente o documentación clínica, puede adjuntarlos, pero no es imprescindible para la primera valoración.',
   },
   {
-    question: '¿Cómo es la consulta telefónica gratuita?',
+    question: '¿Cómo es la consulta telefónica?',
     answer: 'Le llamamos para conocer los detalles de su caso y hacer una primera valoración directamente por teléfono. Es la forma más rápida de analizar su situación y orientarle sobre los siguientes pasos.',
   },
   {
     question: '¿En cuánto tiempo recibo respuesta?',
-    answer: 'En muchos casos la respuesta es el mismo día. Si tiene un juicio inminente o una fecha límite, indíquenoslo y lo trataremos de forma urgente.',
+    answer: 'Le respondemos lo antes posible. Si tiene un juicio próximo o una fecha límite, indíquelo al contactar.',
   },
   {
     question: '¿Pueden asesorarme aunque no sea de Barcelona?',
-    answer: 'Sí. Realizamos consultas y elaboramos informes periciales para toda España. La exploración médica presencial se realiza en Barcelona, pero la consulta gratuita, el asesoramiento y la elaboración del informe pueden hacerse a distancia para clientes de toda Cataluña y el resto del país.',
+    answer: 'Sí. Atendemos casos de Barcelona, su área metropolitana y el resto de Cataluña. La exploración presencial se hace en Barcelona; para casos de otras comunidades, consúltenos. La consulta y el estudio de la documentación pueden hacerse a distancia.',
   },
 ];
 ---
 
 <Layout
-  title="Consulta Telefónica Gratuita con Perito Médico Barcelona | Sin Compromiso"
-  description="Primera consulta telefónica gratuita con perito médico en Barcelona. Asesoramiento médico-legal sin coste para cualquier tipo de caso: daño corporal, negligencia, incapacidad, accidentes."
+  title="Consulta Telefónica con Perito Médico Barcelona | Sin Compromiso"
+  description="Primera consulta telefónica con perito médico en Barcelona. Asesoramiento médico-legal para cualquier tipo de caso: daño corporal, negligencia, incapacidad, accidentes."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -52,21 +48,21 @@ const faqs = [
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <Breadcrumb migas={[{ nombre: 'Servicios', href: '/servicios/' }, { nombre: 'Consulta telefónica' }]} class="justify-center" />
       <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
-        Primera Consulta Telefónica Gratuita
+        Primera Consulta Telefónica
       </span>
       <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-        Consulta Telefónica <span class="text-accent-300">Gratuita</span> con Perito Médico en Barcelona
+        Consulta Telefónica con Perito Médico en Barcelona
       </h1>
       <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
-        Le asesoramos sin coste sobre cualquier caso médico-legal. Negligencia médica, accidentes, incapacidad permanente, daño corporal... Cuéntenos su caso.
+        Le asesoramos sobre cualquier caso médico-legal. Negligencia médica, accidentes, incapacidad permanente, daño corporal... Cuéntenos su caso.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href={url('/contacto')} class="inline-flex items-center justify-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
-          Pedir consulta telefónica gratuita
+          Pedir consulta telefónica
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
       </div>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
+      <p class="mt-4 text-sm text-primary-400">Sin compromiso</p>
     </div>
   </section>
 
@@ -74,8 +70,8 @@ const faqs = [
   <section class="py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿Qué incluye la consulta telefónica gratuita?</h2>
-        <p class="text-gray-500 max-w-xl mx-auto">La consulta telefónica gratuita es una valoración real de su caso por un perito médico especializado, no una simple respuesta automática.</p>
+        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿Qué incluye la consulta telefónica?</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">La consulta telefónica es una valoración real de su caso por un perito médico especializado, no una simple respuesta automática.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <div class="bg-gray-50 rounded-2xl p-7 text-center">
@@ -107,8 +103,8 @@ const faqs = [
   <section class="py-16 lg:py-20 bg-gray-50/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿En qué casos puede consultarnos gratis?</h2>
-        <p class="text-gray-500 max-w-xl mx-auto">Ofrecemos consulta telefónica gratuita para cualquier caso que requiera peritaje médico.</p>
+        <h2 class="font-heading text-3xl font-bold text-primary-900 mb-4">¿En qué casos puede consultarnos?</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">Ofrecemos consulta telefónica para cualquier caso que requiera peritaje médico.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
         {servicios.map(s => (
@@ -135,7 +131,7 @@ const faqs = [
   <!-- FAQ -->
   <section class="py-16 lg:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas sobre la consulta telefónica gratuita</h2>
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-8 text-center">Preguntas sobre la consulta telefónica</h2>
       <div class="space-y-3">
         {faqs.map(faq => (
           <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden">
@@ -160,5 +156,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="Cuéntenos su caso ahora, es gratis" subtitle="Sin coste, sin compromiso. Le responderemos con una valoración honesta." />
+  <CTASection title="Cuéntenos su caso ahora" subtitle="Le responderemos con una valoración honesta." />
 </Layout>

@@ -15,12 +15,8 @@ const situaciones = [
 
 const faqs = [
   {
-    question: '¿La valoración telefónica gratuita del accidente de trabajo tiene algún coste oculto?',
-    answer: 'No. El análisis inicial del parte de accidente, el informe de urgencias y la documentación de la Mutua es completamente gratuito. Solo tiene coste la elaboración del informe pericial completo, que se presupuesta antes de empezar y solo si usted decide contratarlo.',
-  },
-  {
     question: '¿Puedo impugnar el alta que me ha dado la Mutua?',
-    answer: 'Sí, si el alta es médicamente prematura. Dispone de 11 días hábiles desde la notificación para presentar la reclamación previa ante el INSS. Un informe pericial que acredite que las lesiones no estaban curadas es la prueba clave para revertir esa decisión.',
+    answer: 'Sí, si el alta es médicamente prematura. Si el alta la da la mutua en una baja por accidente de trabajo, dispone de 10 días hábiles desde la notificación para pedir al INSS su revisión (Real Decreto 1430/2009, art. 4). Un informe pericial que acredite que las lesiones no estaban curadas es la prueba clave para revertir esa decisión.',
   },
   {
     question: '¿Qué diferencia hay entre contingencia común y contingencia profesional en mi caso?',
@@ -31,7 +27,7 @@ const faqs = [
     answer: 'Sí, si el accidente se debió a un incumplimiento de las medidas de prevención de riesgos laborales por parte de la empresa, puede reclamar una indemnización adicional por responsabilidad civil o penal, al margen de las prestaciones que ya perciba de la Mutua o el INSS.',
   },
   {
-    question: '¿Qué necesito para la valoración telefónica gratuita?',
+    question: '¿Qué necesito para la valoración telefónica?',
     answer: 'Con el parte de accidente de trabajo, el informe de urgencias y, si los tiene, los informes de seguimiento de la Mutua, es suficiente para una primera valoración. Si no dispone de toda la documentación, puede consultarnos igualmente.',
   },
 ];
@@ -39,7 +35,7 @@ const faqs = [
 
 <Layout
   title="Consulta por Accidente de Trabajo en Barcelona | Perito Médico"
-  description="Consulta telefónica gratuita sobre su accidente de trabajo en Barcelona. Un perito médico valora sus secuelas, si el alta de la Mutua es correcta y si la contingencia es laboral."
+  description="Consulta telefónica sobre su accidente de trabajo en Barcelona. Un perito médico valora sus secuelas, si el alta de la Mutua es correcta y si la contingencia es laboral."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -49,19 +45,19 @@ const faqs = [
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <Breadcrumb migas={[{ nombre: 'Accidente de Trabajo', href: '/servicios/accidente-trabajo/' }, { nombre: 'Consulta telefónica' }]} class="justify-center" />
       <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
-        Consulta 100% Gratuita
+        Consulta telefónica
       </span>
       <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-        Consulta Telefónica Gratuita sobre su <span class="text-accent-300">Accidente de Trabajo</span>
+        Consulta Telefónica sobre su <span class="text-accent-300">Accidente de Trabajo</span>
       </h1>
       <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
-        ¿Ha tenido un accidente laboral? Un perito médico analiza sin coste sus secuelas, si el alta de la Mutua es correcta y qué indemnización podría corresponderle.
+        ¿Ha tenido un accidente laboral? Un perito médico analiza sus secuelas, si el alta de la Mutua es correcta y qué indemnización podría corresponderle.
       </p>
       <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
-        Solicitar consulta telefónica gratuita
+        Solicitar consulta telefónica
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
+      <p class="mt-4 text-sm text-primary-400">Sin compromiso</p>
     </div>
   </section>
 
@@ -69,7 +65,7 @@ const faqs = [
   <section class="py-16 lg:py-20 bg-gray-50/50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading text-2xl font-bold text-primary-900 mb-4 text-center">¿Se encuentra en alguna de estas situaciones?</h2>
-      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">La consulta telefónica gratuita le aclara si su caso tiene base para reclamar o impugnar.</p>
+      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">La consulta telefónica le aclara si su caso tiene base para reclamar o impugnar.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {situaciones.map(s => (
           <div class="flex items-start gap-3 bg-white rounded-xl p-5 border border-gray-100">
@@ -82,7 +78,7 @@ const faqs = [
       </div>
       <div class="mt-8 text-center">
         <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
-          Me identifico con esto, quiero consultarlo gratis
+          Me identifico con esto, quiero consultarlo
           <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
         </a>
       </div>
@@ -153,5 +149,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="¿Ha tenido un accidente de trabajo?" subtitle="Cuéntenos qué pasó. La valoración es completamente gratuita." />
+  <CTASection title="¿Ha tenido un accidente de trabajo?" subtitle="Cuéntenos qué pasó. Le damos una valoración honesta." />
 </Layout>
