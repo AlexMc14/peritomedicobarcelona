@@ -47,7 +47,7 @@ const categorias = [
       },
       {
         pregunta: '¿Cuánto tarda en elaborarse un informe pericial médico?',
-        respuesta: 'El plazo habitual es de 7 a 15 días hábiles desde la recepción de toda la documentación. En casos urgentes podemos reducir este plazo previa consulta. La primera valoración del caso se realiza de forma gratuita.'
+        respuesta: 'Depende de la complejidad del caso y de que la documentación esté completa. Le indicamos el plazo al valorar su caso, teniendo en cuenta la fecha del juicio o el plazo legal pendiente.'
       },
     ]
   },
@@ -56,15 +56,11 @@ const categorias = [
     preguntas: [
       {
         pregunta: '¿Cuánto cuesta un informe pericial médico en Barcelona?',
-        respuesta: 'El coste varía según la complejidad del caso, el número de especialidades implicadas y si es necesaria exploración presencial. Realizamos una valoración telefónica gratuita del caso antes de facilitar presupuesto. En muchos supuestos, el gasto pericial puede recuperarse como parte de la indemnización o las costas del proceso.'
-      },
-      {
-        pregunta: '¿La primera consulta es gratuita?',
-        respuesta: 'Sí. Realizamos un estudio de viabilidad gratuito y sin compromiso para valorar las posibilidades médico-legales de su caso.'
+        respuesta: 'El coste varía según la complejidad del caso, el número de especialidades implicadas y si es necesaria exploración presencial. Le explicamos qué informe necesita al valorar su caso.'
       },
       {
         pregunta: '¿El coste del perito puede reclamarse al contrario?',
-        respuesta: 'En los procesos judiciales, los honorarios del perito médico pueden incluirse en las costas del procedimiento y ser repercutidos a la parte contraria si la sentencia es favorable. También pueden reclamarse como daño emergente en reclamaciones de responsabilidad civil. Su abogado puede orientarle sobre la estrategia más adecuada.'
+        respuesta: 'En los procesos judiciales, los honorarios del perito médico pueden incluirse en las costas del procedimiento y ser repercutidos a la parte contraria si la sentencia es favorable. Su abogado puede orientarle sobre la estrategia más adecuada.'
       },
     ]
   },
@@ -73,11 +69,11 @@ const categorias = [
     preguntas: [
       {
         pregunta: '¿Cómo sé si he sufrido una negligencia médica?',
-        respuesta: 'Existe negligencia médica cuando un profesional sanitario actúa por debajo del estándar de buena práctica exigible (lex artis) y ese apartamiento causa un daño al paciente. Los indicios pueden ser: complicaciones no informadas, errores de diagnóstico o tratamiento, ausencia de consentimiento informado o resultados claramente desfavorables e inesperados. El primer paso es solicitar nuestro estudio de viabilidad gratuito.'
+        respuesta: 'Existe negligencia médica cuando un profesional sanitario actúa por debajo del estándar de buena práctica exigible (lex artis) y ese apartamiento causa un daño al paciente. Los indicios pueden ser: complicaciones no informadas, errores de diagnóstico o tratamiento, ausencia de consentimiento informado o resultados claramente desfavorables e inesperados. El primer paso es solicitar nuestro estudio de viabilidad.'
       },
       {
         pregunta: '¿Qué plazo tengo para reclamar una negligencia médica?',
-        respuesta: 'En vía civil el plazo general es de un año desde que el perjudicado tuvo conocimiento del daño y de su autor. En vía penal puede alcanzar los cinco años. En reclamaciones contra la administración sanitaria (sanidad pública) el plazo es de un año. Dada la brevedad de los plazos, le recomendamos actuar con la mayor celeridad posible.'
+        respuesta: 'Depende de la vía: 1 año frente a la sanidad pública, contado desde la curación o desde que se determina el alcance de las secuelas (Ley 39/2015, art. 67.1); en vía civil, en Cataluña, 3 años si la responsabilidad es extracontractual y 10 si es contractual (Código civil de Cataluña, arts. 121-21.d y 121-20); y 5 años en vía penal para las lesiones por imprudencia grave (Código Penal, art. 131). Conviene que un abogado confirme cuanto antes el plazo de su caso.'
       },
       {
         pregunta: '¿Puedo reclamar contra un hospital público?',
@@ -94,7 +90,7 @@ const categorias = [
       },
       {
         pregunta: '¿Qué hago si la Mutua me da un alta médica con la que no estoy de acuerdo?',
-        respuesta: 'Puede impugnar el alta ante el INSS en el plazo de 11 días hábiles desde la notificación. Es fundamental contar con un informe pericial médico independiente que acredite que no está en condiciones de reincorporarse al trabajo. Actuamos con carácter urgente en estos casos.'
+        respuesta: 'Puede pedir al INSS la revisión del alta en los 10 días hábiles siguientes a la notificación (Real Decreto 1430/2009, art. 4). Es fundamental contar con un informe pericial médico independiente que acredite que no está en condiciones de reincorporarse al trabajo.'
       },
       {
         pregunta: '¿Qué grados de incapacidad permanente existen?',
@@ -107,15 +103,15 @@ const categorias = [
     preguntas: [
       {
         pregunta: '¿Qué es la ratificación judicial del informe pericial?',
-        respuesta: 'La ratificación judicial es el acto en que el perito comparece en el juicio oral para defender el contenido del informe ante el juez y las partes. Es habitual que el perito de la parte contraria y los abogados formulen preguntas. Nuestros peritos tienen amplia experiencia en ratificaciones en juzgados de Barcelona y de toda España.'
+        respuesta: 'La ratificación judicial es el acto en que el perito comparece en el juicio oral para defender el contenido del informe ante el juez y las partes. Es habitual que el perito de la parte contraria y los abogados formulen preguntas. El perito que firma el informe es quien lo defiende en el juicio.'
       },
       {
         pregunta: '¿En qué juzgados de Barcelona trabajan?',
         respuesta: 'Acudimos a cualquier órgano jurisdiccional que lo requiera: Juzgados de Primera Instancia, Juzgados de lo Social, Juzgados de lo Penal, Audiencia Provincial de Barcelona y Tribunales Superiores. También actuamos en procedimientos arbitrales y en mediaciones.'
       },
       {
-        pregunta: '¿Pueden actuar como peritos judiciales nombrados por el juzgado?',
-        respuesta: 'Sí. Además de actuar como peritos de parte, estamos inscritos en las listas de peritos judiciales para ser designados directamente por el juzgado. En este caso, el perito actúa con plena imparcialidad entre las partes y el informe tiene especial valor probatorio.'
+        pregunta: '¿Qué diferencia hay entre un perito de parte y un perito judicial?',
+        respuesta: 'El perito de parte lo elige una de las partes, que aporta su dictamen con la demanda o la contestación (Ley de Enjuiciamiento Civil, art. 336). El perito judicial lo designa el tribunal a partir de las listas que remiten cada año los colegios profesionales (arts. 339 y 341). El juez valora todos los dictámenes según las reglas de la sana crítica (art. 348).'
       },
     ]
   },
@@ -176,10 +172,10 @@ const allFaqs = categorias.flatMap(cat => cat.preguntas);
       <div class="mt-16 bg-accent-50 rounded-2xl p-8 border border-accent-100 text-center">
         <h3 class="font-heading text-xl font-semibold text-primary-900 mb-3">¿No ha encontrado respuesta a su pregunta?</h3>
         <p class="text-gray-600 text-sm mb-6 max-w-lg mx-auto">
-          Contáctenos sin compromiso. Analizamos su caso de forma gratuita.
+          Contáctenos sin compromiso. Analizamos su caso.
         </p>
         <a href={url('/contacto')} class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
-          Consultar mi caso gratis
+          Consultar mi caso
         </a>
       </div>
     </div>

@@ -13,38 +13,38 @@ const revisamos = [
 ];
 
 const plazos = [
-  { titulo: 'Alta del Servicio Público de Salud', dato: '4 días hábiles', desc: 'Plazo para presentar la disconformidad ante la Inspección Médica.' },
-  { titulo: 'Alta del INSS', dato: '11 días hábiles', desc: 'Plazo para la reclamación previa ante el Instituto Nacional de la Seguridad Social.' },
-  { titulo: 'Alta de la Mutua', dato: '11 días hábiles', desc: 'Mismo plazo que el alta del INSS al tratarse de contingencia profesional.' },
+  { titulo: 'Alta del médico de familia o del ICAM (enfermedad común)', dato: '11 días hábiles', desc: 'Reclamación previa (Ley 36/2011, art. 71.2; en Cataluña, según Canal Salut).' },
+  { titulo: 'Alta del INSS a los 365 días', dato: '4 días naturales', desc: 'Disconformidad ante la inspección médica del servicio público de salud (Real Decreto 1430/2009, art. 3).' },
+  { titulo: 'Alta de la mutua (accidente de trabajo o enfermedad profesional)', dato: '10 días hábiles', desc: 'Solicitud de revisión del alta ante el INSS (Real Decreto 1430/2009, art. 4).' },
 ];
 
 const faqs = [
   {
     question: '¿Merece la pena impugnar un alta médica?',
-    answer: 'En la mayoría de casos en los que persisten síntomas o limitaciones objetivables, sí. Si el alta era prematura y usted se reincorpora sin estar realmente recuperado, puede sufrir una recaída que perjudique tanto su salud como su situación laboral. La revisión gratuita le dice si su caso tiene base médica para impugnar.',
+    answer: 'En la mayoría de casos en los que persisten síntomas o limitaciones objetivables, sí. Si el alta era prematura y usted se reincorpora sin estar realmente recuperado, puede sufrir una recaída que perjudique tanto su salud como su situación laboral. La revisión le dice si su caso tiene base médica para impugnar.',
   },
   {
     question: '¿Cuánto tiempo tengo para impugnar el alta?',
-    answer: 'Depende de quién la emita: 4 días hábiles si es del Servicio Público de Salud (disconformidad ante la Inspección Médica) y 11 días hábiles si es del INSS o de la Mutua (reclamación previa). Son plazos muy cortos, por lo que conviene actuar el mismo día que recibe la notificación.',
+    answer: 'Depende de quién dé el alta: 10 días hábiles para pedir al INSS la revisión de un alta de la mutua en una baja por accidente de trabajo o enfermedad profesional (Real Decreto 1430/2009, art. 4); 4 días naturales para manifestar disconformidad con un alta del INSS al llegar a los 365 días de baja (Real Decreto 1430/2009, art. 3); y, en Cataluña, 11 días hábiles para la reclamación previa si el alta la da el médico de familia o el ICAM en una baja por enfermedad común (Ley 36/2011, art. 71.2, y Canal Salut). Son plazos muy cortos: conviene actuar en cuanto reciba la notificación.',
   },
   {
-    question: '¿Cómo es el proceso de la revisión gratuita?',
-    answer: 'Dada la brevedad de los plazos legales, priorizamos estos casos y le damos una primera valoración desde que nos envía la documentación del alta y su historial médico reciente.',
+    question: '¿Cómo es el proceso de la revisión?',
+    answer: 'Dada la brevedad de los plazos legales, le damos una primera valoración en cuanto nos envía la documentación del alta y su historial médico reciente.',
   },
   {
     question: '¿Qué pasa si dejo pasar el plazo sin impugnar?',
     answer: 'El alta deviene firme y debe reincorporarse a su puesto de trabajo. Si posteriormente su estado empeora, podría solicitar una nueva baja a su médico de cabecera, pero habrá perdido la vía de impugnación directa del alta original.',
   },
   {
-    question: '¿Necesito ya un informe pericial o basta con la revisión gratuita?',
-    answer: 'La revisión gratuita solo valora si su caso tiene fundamento médico para impugnar; no sustituye al informe pericial, que es el documento que se presenta ante la Inspección Médica, el INSS o el Juzgado de lo Social. Si la revisión es favorable, le presupuestamos el informe antes de empezar.',
+    question: '¿Necesito ya un informe pericial o basta con la revisión?',
+    answer: 'La revisión solo valora si su caso tiene fundamento médico para impugnar; no sustituye al informe pericial, que es el documento que se presenta ante la Inspección Médica, el INSS o el Juzgado de lo Social.',
   },
 ];
 ---
 
 <Layout
-  title="Revisión Gratuita del Alta Médica Barcelona | Perito Médico"
-  description="¿Le han dado el alta médica y no está de acuerdo? Revisión gratuita. Un perito médico analiza si el alta del INSS o la Mutua es correcta y los plazos para impugnarla."
+  title="Revisión del Alta Médica Barcelona | Perito Médico"
+  description="¿Le han dado el alta médica y no está de acuerdo? Un perito médico analiza si el alta del INSS o la Mutua es correcta y los plazos para impugnarla."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -54,7 +54,7 @@ const faqs = [
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <Breadcrumb migas={[{ nombre: 'Impugnación de Alta Médica', href: '/servicios/impugnacion-alta-medica/' }, { nombre: 'Revisión del alta' }]} class="justify-center" />
       <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
-        Revisión Gratuita
+        Revisión
       </span>
       <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
         ¿Le han dado el <span class="text-accent-300">alta médica</span> y no está de acuerdo?
@@ -66,7 +66,7 @@ const faqs = [
         Solicitar revisión urgente
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
+      <p class="mt-4 text-sm text-primary-400">Sin compromiso</p>
     </div>
   </section>
 

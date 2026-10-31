@@ -14,14 +14,14 @@ const casos = [
 const faqs = [
   {
     question: '¿Merece la pena reclamar el cambio de contingencia común a profesional?',
-    answer: 'En la mayoría de casos, sí. Las prestaciones por contingencia profesional son más favorables: mayor cuantía, no se exigen periodos mínimos de cotización previa y la asistencia sanitaria corre a cargo de la Mutua. La consulta telefónica gratuita le dice si su patología tiene indicios razonables de origen laboral.',
+    answer: 'En la mayoría de casos, sí. Las prestaciones por contingencia profesional son más favorables: mayor cuantía, no se exigen periodos mínimos de cotización previa y la asistencia sanitaria corre a cargo de la Mutua. La consulta telefónica le dice si su patología tiene indicios razonables de origen laboral.',
   },
   {
     question: '¿Puedo reclamar la determinación de contingencia si ya me han dado el alta?',
     answer: 'Sí. Puede solicitarla ante el INSS en cualquier momento, incluso después del alta de incapacidad temporal. Si se reconoce el cambio a contingencia profesional, puede tener efectos retroactivos sobre las prestaciones ya percibidas.',
   },
   {
-    question: '¿Qué necesito para la consulta telefónica gratuita?',
+    question: '¿Qué necesito para la consulta telefónica?',
     answer: 'Con su historial médico del proceso, la evaluación de riesgos de su puesto (si la tiene) y la resolución de la Mutua o el INSS sobre la contingencia, es suficiente para una primera valoración. Si no dispone de todo, puede consultarnos igualmente.',
   },
   {
@@ -32,8 +32,8 @@ const faqs = [
 ---
 
 <Layout
-  title="Determinación de Contingencia Gratuita Barcelona | Perito Médico"
-  description="¿Le han calificado su baja como contingencia común y cree que es de origen laboral? Consulta telefónica gratuita para valorar si puede reclamar el cambio a contingencia profesional ante el INSS."
+  title="Determinación de Contingencia Barcelona | Perito Médico"
+  description="¿Le han calificado su baja como contingencia común y cree que es de origen laboral? Consulta telefónica para valorar si puede reclamar el cambio a contingencia profesional ante el INSS."
 >
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-24 relative overflow-hidden">
@@ -43,19 +43,19 @@ const faqs = [
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <Breadcrumb migas={[{ nombre: 'Determinación de Contingencia', href: '/servicios/determinacion-contingencia/' }, { nombre: 'Consulta telefónica' }]} class="justify-center" />
       <span class="inline-block bg-accent-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
-        Consulta 100% Gratuita
+        Consulta telefónica
       </span>
       <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
         ¿Le han calificado su baja como <span class="text-accent-300">contingencia común</span> por error?
       </h1>
       <p class="text-xl text-primary-200 leading-relaxed mb-10 max-w-2xl mx-auto">
-        Si cree que su enfermedad o lesión tiene origen laboral, un perito médico analiza su caso sin coste y le dice si tiene base para reclamar el cambio a contingencia profesional.
+        Si cree que su enfermedad o lesión tiene origen laboral, un perito médico analiza su caso y le dice si tiene base para reclamar el cambio a contingencia profesional.
       </p>
       <a href={url('/contacto')} class="inline-flex items-center px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent-500/25 text-lg">
-        Solicitar valoración telefónica gratuita
+        Solicitar valoración telefónica
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <p class="mt-4 text-sm text-primary-400">Sin coste · Sin compromiso</p>
+      <p class="mt-4 text-sm text-primary-400">Sin compromiso</p>
     </div>
   </section>
 
@@ -76,7 +76,7 @@ const faqs = [
       </div>
       <div class="mt-8 text-center">
         <a href={url('/contacto')} class="inline-flex items-center px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-colors text-sm">
-          Me identifico con esto, quiero consultarlo gratis
+          Me identifico con esto, quiero consultarlo
           <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
         </a>
       </div>
@@ -142,5 +142,5 @@ const faqs = [
     }))
   })} />
 
-  <CTASection title="¿Cree que su baja debería ser contingencia profesional?" subtitle="Cuéntenos su caso. La valoración es completamente gratuita." />
+  <CTASection title="¿Cree que su baja debería ser contingencia profesional?" subtitle="Cuéntenos su caso. Le damos una valoración honesta." />
 </Layout>

@@ -1,6 +1,11 @@
 ---
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 import { url } from '../../utils/links';
+
+const a = 'text-primary-700 underline hover:text-primary-900';
+const CCCAT = 'https://www.boe.es/buscar/act.php?id=BOE-A-2003-2410';
+const CP = 'https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444';
+const LPAC = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565';
 ---
 
 <BlogPostLayout
@@ -8,11 +13,12 @@ import { url } from '../../utils/links';
   pageTitle="Cómo Reclamar una Negligencia Médica en Barcelona | Guía 2026"
   description="Guía completa para reclamar una negligencia médica en Barcelona: qué es la lex artis, qué pruebas necesita, plazos de prescripción y vías de reclamación. Informe pericial clave."
   date="2026-05-10"
+  updated="2026-10-31"
   readingTime="11"
   category="Negligencia Médica"
   faqs={[
     { question: '¿Qué porcentaje de casos de negligencia médica llegan a juicio?', answer: 'Una minoría. La mayoría de reclamaciones se resuelven de forma extrajudicial mediante acuerdo con la aseguradora de la clínica u hospital. Un informe pericial médico sólido es el mejor instrumento de negociación para lograr una indemnización justa sin necesidad de llegar a juicio.' },
-    { question: '¿Cuánto tiempo tarda un juicio por negligencia médica?', answer: 'En el orden civil, desde la interposición de la demanda hasta la sentencia en primera instancia, el plazo habitual en Barcelona es de 2 a 4 años. Si se recurre, puede prolongarse varios años más. Por eso se recomienda siempre intentar antes la vía extrajudicial.' },
+    { question: '¿Cuánto tiempo tarda un juicio por negligencia médica?', answer: 'Depende de la vía elegida, de la carga del juzgado y de si se recurre la sentencia; un procedimiento civil puede durar años. Por eso se recomienda siempre intentar antes la vía extrajudicial.' },
     { question: '¿Se puede reclamar contra la Seguridad Social por negligencia médica?', answer: 'Sí. La reclamación contra la sanidad pública (hospitales del sistema público catalán, CatSalut) se tramita en el orden contencioso-administrativo, con un plazo de prescripción de un año. La responsabilidad patrimonial de la Administración requiere acreditar el daño, el funcionamiento anormal del servicio y el nexo causal.' },
     { question: '¿Es necesario un informe pericial para reclamar extrajudicialmente?', answer: 'Sí. Incluso en una reclamación extrajudicial a la aseguradora, el informe pericial médico es imprescindible para justificar la cuantía solicitada y demostrar la existencia de negligencia. Sin él, la aseguradora ofrecerá cantidades muy inferiores o rechazará la reclamación.' },
     { question: '¿Qué ocurre si el médico que me atendió ha fallecido o ya no ejerce?', answer: 'La responsabilidad por negligencia médica no se extingue con el fallecimiento o cese del médico. Se puede reclamar a la clínica u hospital donde se produjo la asistencia, a su aseguradora de responsabilidad civil o a sus herederos. El plazo de prescripción sigue corriendo desde que se conoce el daño.' },
@@ -87,26 +93,26 @@ import { url } from '../../utils/links';
     <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
       <div class="w-24 flex-shrink-0 text-xs font-semibold text-accent-700 uppercase tracking-wider pt-0.5">Civil</div>
       <div>
-        <p class="text-sm text-gray-600"><strong class="text-primary-900">5 años</strong> desde que se tuvo conocimiento del daño y de su relación con el acto médico (art. 1968 CC y Ley 15/2015 de Jurisdicción Voluntaria). Reforma de 2015 amplió el plazo de 1 a 5 años.</p>
+        <p class="text-sm text-gray-600">En Cataluña rige el <a href={CCCAT} target="_blank" rel="noopener" class={a}>Código civil de Cataluña</a>: <strong class="text-primary-900">3 años</strong> si la responsabilidad es extracontractual (art. 121-21.d) y, si la reclamación es contractual (por ejemplo, frente a una clínica privada con la que contrató), el plazo general de <strong class="text-primary-900">10 años</strong> (art. 121-20). Qué plazo se aplica a su caso lo debe valorar su abogado.</p>
       </div>
     </div>
     <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
       <div class="w-24 flex-shrink-0 text-xs font-semibold text-accent-700 uppercase tracking-wider pt-0.5">Penal</div>
       <div>
-        <p class="text-sm text-gray-600"><strong class="text-primary-900">5 años</strong> para el delito de lesiones por imprudencia grave (art. 152 CP). Puede ser la vía más rápida en algunos casos ya que las diligencias del juzgado de instrucción investigan los hechos.</p>
+        <p class="text-sm text-gray-600"><strong class="text-primary-900">5 años</strong> para el delito de lesiones por imprudencia grave, por la pena que le corresponde (<a href={CP} target="_blank" rel="noopener" class={a}>Código Penal, arts. 131 y 152</a>). Puede ser la vía más rápida en algunos casos ya que las diligencias del juzgado de instrucción investigan los hechos.</p>
       </div>
     </div>
     <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
       <div class="w-24 flex-shrink-0 text-xs font-semibold text-accent-700 uppercase tracking-wider pt-0.5">Administrativo</div>
       <div>
-        <p class="text-sm text-gray-600"><strong class="text-primary-900">1 año</strong> para reclamar frente a la sanidad pública (CatSalut, hospital público) por la vía de la responsabilidad patrimonial de la Administración Pública.</p>
+        <p class="text-sm text-gray-600"><strong class="text-primary-900">1 año</strong> para reclamar frente a la sanidad pública (CatSalut, hospital público) por la vía de la responsabilidad patrimonial de la Administración. Si hay daños físicos o psíquicos, el año se cuenta desde la curación o desde que se determina el alcance de las secuelas (<a href={LPAC} target="_blank" rel="noopener" class={a}>Ley 39/2015, art. 67.1</a>).</p>
       </div>
     </div>
   </div>
 
   <div class="bg-primary-50 rounded-xl p-5 border-l-4 border-primary-500 mb-8">
     <p class="text-sm text-primary-800 leading-relaxed">
-      <strong>Importante:</strong> el plazo comienza a correr desde que el paciente tiene conocimiento del daño y de su relación con el acto médico, no necesariamente desde el día del procedimiento. En caso de duda, consulte con un abogado especializado cuanto antes para no perder el derecho a reclamar.
+      <strong>Importante:</strong> el plazo no empieza necesariamente el día de la asistencia: en vía civil cuenta desde que el paciente conoce o puede conocer razonablemente el daño y a quién reclamar (art. 121-23 del Código civil de Cataluña). En caso de duda, consulte con un abogado especializado cuanto antes para no perder el derecho a reclamar.
     </p>
   </div>
 
@@ -119,7 +125,7 @@ import { url } from '../../utils/links';
 
   <h3 class="font-heading text-xl font-semibold text-primary-900 mt-6 mb-3">Vía civil (Juzgado de Primera Instancia)</h3>
   <p class="text-gray-600 leading-relaxed mb-4">
-    Si la vía extrajudicial fracasa, se puede interponer una demanda civil por responsabilidad extracontractual (art. 1902 CC) o contractual (si existe un contrato con la clínica). Es la vía más habitual para reclamar frente a médicos y centros privados. El proceso puede durar de 2 a 4 años en primera instancia.
+    Si la vía extrajudicial fracasa, se puede interponer una demanda civil por responsabilidad extracontractual (art. 1902 CC) o contractual (si existe un contrato con la clínica). Es la vía más habitual para reclamar frente a médicos y centros privados.
   </p>
 
   <h3 class="font-heading text-xl font-semibold text-primary-900 mt-6 mb-3">Vía penal (denuncia por lesiones por imprudencia)</h3>
@@ -129,17 +135,24 @@ import { url } from '../../utils/links';
 
   <h3 class="font-heading text-xl font-semibold text-primary-900 mt-6 mb-3">Vía contencioso-administrativa (sanidad pública)</h3>
   <p class="text-gray-600 leading-relaxed mb-4">
-    Para reclamar frente a un hospital público o centro de la sanidad pública catalana, el procedimiento es la reclamación de responsabilidad patrimonial ante el CatSalut o el Servei Català de la Salut, y posteriormente, si es denegada, la demanda en el orden contencioso-administrativo.
+    Para reclamar frente a un hospital público o centro de la sanidad pública catalana, el procedimiento es la reclamación de responsabilidad patrimonial ante el Servei Català de la Salut (CatSalut) o la administración titular del centro, y posteriormente, si es denegada, la demanda en el orden contencioso-administrativo.
   </p>
 
   <div class="bg-accent-50 rounded-xl p-6 border border-accent-100 mt-8">
     <h3 class="font-heading text-lg font-semibold text-primary-900 mb-3">¿Cree que fue víctima de negligencia médica?</h3>
     <p class="text-sm text-gray-600 leading-relaxed mb-4">
-      El primer paso es obtener una valoración telefónica gratuita del caso. Analizamos la documentación médica y le decimos con honestidad si existen indicios de negligencia y qué posibilidades tiene de éxito.
+      El primer paso es obtener una valoración telefónica del caso. Analizamos la documentación médica y le decimos con honestidad si existen indicios de negligencia y qué recorrido puede tener su reclamación.
     </p>
     <a href={url('/servicios/negligencia-medica')} class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors text-sm">
       Ver servicio de negligencia médica
       <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
     </a>
   </div>
+
+  <h2 class="font-heading text-2xl font-bold text-primary-900 mt-10 mb-4">Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={CCCAT} target="_blank" rel="noopener" class={a}>Ley 29/2002, primera ley del Código civil de Cataluña, arts. 121-20, 121-21 y 121-23</a></li>
+    <li><a href={CP} target="_blank" rel="noopener" class={a}>Ley Orgánica 10/1995, del Código Penal, arts. 131 y 152</a></li>
+    <li><a href={LPAC} target="_blank" rel="noopener" class={a}>Ley 39/2015, del Procedimiento Administrativo Común, art. 67.1</a></li>
+  </ul>
 </BlogPostLayout>
