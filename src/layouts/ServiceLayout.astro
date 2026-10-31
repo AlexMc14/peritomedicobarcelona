@@ -5,6 +5,9 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import { url } from '../utils/links';
 import { servicios, servicioPorHref } from '../data/servicios';
 import { posts } from '../data/posts';
+import { SITE, ORG_ID, REVISION_SERVICIOS } from '../data/site';
+import { FUENTES, type ClaveFuente } from '../data/fuentes';
+import Revision from '../components/Revision.astro';
 
 interface Props {
   title: string;
@@ -14,9 +17,13 @@ interface Props {
   whatWeDo: string;
   steps: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
+  /** Respuesta directa y citable (40-60 palabras) que abre la página */
+  respuesta?: string;
+  /** Fecha ISO de la última revisión del contenido */
+  actualizado?: string;
 }
 
-const { title, pageTitle, description, intro, whatWeDo, steps, faqs } = Astro.props;
+const { title, pageTitle, description, intro, whatWeDo, steps, faqs, respuesta, actualizado = REVISION_SERVICIOS } = Astro.props;
 
 const ruta = Astro.url.pathname;
 const padre = ruta.startsWith('/especialidades/')
@@ -24,12 +31,17 @@ const padre = ruta.startsWith('/especialidades/')
   : ruta.startsWith('/para-abogados/')
     ? { nombre: 'Para Abogados', href: '/para-abogados/' }
     : { nombre: 'Servicios', href: '/servicios/' };
-const landing = servicioPorHref(ruta)?.landing;
+const servicio = servicioPorHref(ruta);
+const landing = servicio?.landing;
+// Fuentes: las del servicio en servicios.ts; especialidades y abogados, las genéricas de su grupo
+const claves: ClaveFuente[] = servicio?.fuentes
+  ?? (ruta.startsWith('/especialidades/') ? ['ley35', 'lgss', 'lec'] : ['lec', 'lrjs', 'cgpj']);
+const fuentes = claves.map((c) => FUENTES[c]);
 const otros = servicios.filter((s) => s.href !== ruta);
 const guias = posts.filter((p) => p.servicio === ruta);
 ---
 
-<Layout title={pageTitle} description={description}>
+<Layout title={pageTitle} description={description} dateModified={actualizado}>
   <!-- Hero -->
   <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
     <div class="absolute inset-0 opacity-5">
@@ -42,7 +54,7 @@ const guias = posts.filter((p) => p.servicio === ruta);
           {title}
         </h1>
         <p class="text-lg text-primary-200 leading-relaxed">
-          {intro}
+          {respuesta ?? intro}
         </p>
       </div>
     </div>
@@ -54,6 +66,7 @@ const guias = posts.filter((p) => p.servicio === ruta);
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
         <!-- Main content -->
         <div class="lg:col-span-2 space-y-12">
+          {respuesta && <p class="text-gray-600 leading-relaxed">{intro}</p>}
           <!-- Qué hacemos -->
           <div>
             <h2 class="font-heading text-2xl font-bold text-primary-900 mb-5">¿Qué hacemos?</h2>
@@ -97,6 +110,15 @@ const guias = posts.filter((p) => p.servicio === ruta);
                   </details>
                 ))}
               </div>
+            </div>
+          )}
+
+          {(
+            <div>
+              <h2 class="font-heading text-xl font-bold text-primary-900 mb-4">Fuentes y normativa</h2>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+                {fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener" class="text-primary-700 underline hover:text-primary-900">{f.nombre}</a></li>)}
+              </ul>
             </div>
           )}
         </div>
@@ -143,6 +165,27 @@ const guias = posts.filter((p) => p.servicio === ruta);
       </div>
     </div>
   </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12"><Revision fecha={actualizado} /></div>
+
+  {faqs.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })),
+    })} />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": title,
+    "description": description,
+    "url": new URL(ruta, SITE.url).href,
+    "serviceType": title,
+    "provider": { "@id": ORG_ID },
+    "areaServed": [{ "@type": "City", "name": "Barcelona" }, { "@type": "AdministrativeArea", "name": "Cataluña" }],
+  })} />
 
   <CTASection />
 </Layout>

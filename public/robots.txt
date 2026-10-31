@@ -1,4 +1,37 @@
+# Buscadores y rastreadores de IA: acceso permitido a todo el sitio.
+# Se nombran los rastreadores de IA de forma explícita para dejar constancia de la política
+# (respuestas citables en AI Overviews, ChatGPT, Perplexity, Gemini y Claude).
 User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://www.peritomedicobarcelona.com/sitemap-index.xml

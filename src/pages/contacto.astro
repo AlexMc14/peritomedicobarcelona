@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { url } from '../utils/links';
+import { SITE, TITULAR, telHref, whatsappHref } from '../data/site';
 ---
 
 <Layout title="Contacto | Perito Médico Barcelona" description="Solicite una valoración gratuita de su caso. Formulario de contacto para peritaje médico en Barcelona.">
@@ -26,8 +27,8 @@ import { url } from '../utils/links';
         <div class="lg:col-span-2">
           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
             <input type="hidden" name="access_key" value="ff6a4d07-d9d3-4092-9bcf-b9aeca9c60cd" />
-            <input type="hidden" name="subject" value="Nueva consulta desde peritomedicobarcelona.es" />
-            <input type="hidden" name="redirect" value="https://alexmc14.github.io/peritomedicobarcelona/gracias" />
+            <input type="hidden" name="subject" value="Nueva consulta desde peritomedicobarcelona.com" />
+            <input type="hidden" name="redirect" value={`${SITE.url}/gracias/`} />
             <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
@@ -55,7 +56,7 @@ import { url } from '../utils/links';
               <input type="checkbox" id="privacidad" name="privacidad" required
                 class="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500" />
               <label for="privacidad" class="text-xs text-gray-500">
-                He leído y acepto la <a href={url('/politica-privacidad')} class="text-primary-700 underline">Política de Privacidad</a>. Sus datos serán tratados con total confidencialidad y no serán cedidos a terceros.
+                He leído y acepto el <a href={url('/aviso-legal')} class="text-primary-700 underline">Aviso legal</a>, la <a href={url('/politica-privacidad')} class="text-primary-700 underline">Política de privacidad</a> y la <a href={url('/cookies')} class="text-primary-700 underline">Política de cookies</a>.
               </label>
             </div>
 
@@ -65,10 +66,25 @@ import { url } from '../utils/links';
               <svg class="w-5 h-5 ml-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </button>
           </form>
+          <p class="mt-6 text-xs text-gray-500 leading-relaxed">
+            <strong>Información básica sobre protección de datos.</strong> Responsable: {TITULAR.razonSocial}. Finalidad: responder a su consulta y, si nos encarga el informe, elaborarlo. Los datos de salud que nos envíe se tratan de forma confidencial y solo para su caso. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad, escribiendo a {TITULAR.email}. Más información en la <a href={url('/politica-privacidad')} class="text-primary-700 underline">política de privacidad</a>.
+          </p>
         </div>
 
         <!-- Sidebar -->
         <div class="space-y-8">
+          <div class="bg-white rounded-2xl p-8 border border-gray-100">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 mb-4">Otras formas de contacto</h3>
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li>Teléfono: <a href={telHref} class="text-primary-700 underline">{SITE.telefono}</a></li>
+              <li>WhatsApp: <a href={whatsappHref} target="_blank" rel="noopener" class="text-primary-700 underline">{SITE.telefono}</a></li>
+              <li>Correo: <a href={`mailto:${SITE.email}`} class="text-primary-700 underline">{SITE.email}</a></li>
+            </ul>
+            <p class="text-sm text-gray-600 leading-relaxed mt-5">
+              <strong class="text-primary-900">Presupuesto:</strong> se lo damos cuando conocemos el caso y antes de empezar ningún trabajo. Así trabajamos: <a href={url('/metodologia/')} class="text-primary-700 underline">cómo trabajamos</a>.
+            </p>
+          </div>
+
           <div class="bg-primary-50 rounded-2xl p-8">
             <h3 class="font-heading text-lg font-semibold text-primary-900 mb-4">Valoración gratuita</h3>
             <p class="text-sm text-gray-600 leading-relaxed mb-4">

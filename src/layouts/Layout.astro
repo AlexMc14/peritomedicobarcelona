@@ -3,15 +3,21 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/ContactModal.astro';
 import BotonesFlotantes from '../components/BotonesFlotantes.astro';
-import { SITE } from '../data/site';
+import { SITE, ORG_ID, TITULAR } from '../data/site';
+import { especialidades } from '../data/servicios';
+import { servicios } from '../data/servicios';
+import { zonas } from '../data/zonas';
 
 interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  /** ISO: fecha de última revisión de la página (WebPage.dateModified) */
+  dateModified?: string;
 }
 
-const { title, noindex = false, description = 'Perito Médico en Barcelona. Informes periciales médicos, valoración del daño corporal, negligencias médicas e incapacidad laboral. Consulta telefónica gratuita.' } = Astro.props;
+const { title, noindex = false, dateModified, description = 'Perito Médico en Barcelona. Informes periciales médicos, valoración del daño corporal, negligencias médicas e incapacidad laboral. Consulta telefónica gratuita.' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <!doctype html>
@@ -37,60 +43,59 @@ const { title, noindex = false, description = 'Perito Médico en Barcelona. Info
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <!-- Schema.org LocalBusiness -->
+    <meta property="og:site_name" content={SITE.nombre} />
+    <!-- JSON-LD global: organización (NAP único desde src/data/site.ts), web y página -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "Perito Médico Barcelona",
-      "description": description,
-      "url": "https://www.peritomedicobarcelona.com",
-      "telephone": SITE.telefono,
-      "email": "info@peritomedicobarcelona.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Barcelona",
-        "addressLocality": "Barcelona",
-        "addressRegion": "Cataluña",
-        "postalCode": "08001",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 41.3851,
-        "longitude": 2.1734
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "09:00",
-          "closes": "19:00"
+          "@type": "ProfessionalService",
+          "@id": ORG_ID,
+          "name": SITE.nombre,
+          "legalName": TITULAR.razonSocial,
+          "url": `${SITE.url}/`,
+          "telephone": SITE.telefono,
+          "email": SITE.email,
+          "description": "Peritaje médico independiente en Barcelona y Cataluña: informes periciales de daño corporal, negligencia médica, incapacidad permanente, altas médicas y discapacidad.",
+          // ponytail: sin calle ni código postal porque el repo no los tiene (aviso legal pendiente); añadirlos aquí cuando existan
+          "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES" },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          }],
+          "areaServed": [
+            { "@type": "City", "name": "Barcelona" },
+            ...zonas.map((z) => ({ "@type": "Place", "name": z.nombre })),
+            { "@type": "AdministrativeArea", "name": "Cataluña" }
+          ],
+          "knowsAbout": ["Medicina legal y forense", "Valoración del daño corporal", "Negligencia médica", "Incapacidad permanente", "Incapacidad temporal", "Discapacidad", "Baremo de tráfico (Ley 35/2015)", ...especialidades.map((e) => e.nombre)],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de peritaje médico",
+            "itemListElement": servicios.map((s) => ({ "@type": "Offer", "itemOffered": { "@type": "Service", "name": s.nombre, "url": new URL(s.href, SITE.url).href } }))
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": `${SITE.url}/#web`,
+          "url": `${SITE.url}/`,
+          "name": SITE.nombre,
+          "inLanguage": "es-ES",
+          "publisher": { "@id": ORG_ID }
+        },
+        {
+          "@type": "WebPage",
+          "@id": canonical,
+          "url": canonical,
+          "name": title,
+          "description": description,
+          "inLanguage": "es-ES",
+          "isPartOf": { "@id": `${SITE.url}/#web` },
+          "about": { "@id": ORG_ID },
+          ...(dateModified ? { "dateModified": dateModified } : {})
         }
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Barcelona" },
-        { "@type": "State", "name": "Cataluña" }
-      ],
-      "serviceType": [
-        "Informes Periciales Médicos",
-        "Valoración del Daño Corporal",
-        "Negligencia Médica",
-        "Incapacidad Laboral",
-        "Peritaje Traumatológico",
-        "Peritaje Neurológico",
-        "Peritaje Psiquiátrico",
-        "Accidente de Trabajo",
-        "Seguridad Social"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios de Peritaje Médico",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Valoración telefónica gratuita del caso" } }
-        ]
-      },
-      "sameAs": [
-        "https://www.peritomedicobarcelona.com"
       ]
     })} />
   </head>

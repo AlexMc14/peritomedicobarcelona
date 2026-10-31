@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { url } from '../utils/links';
+import { SITE, REVISION_SERVICIOS } from '../data/site';
+import { FUENTES } from '../data/fuentes';
+
+const h2 = 'font-heading text-xl font-bold text-primary-900 mb-3';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const fuentes = [FUENTES.lgss, FUENTES.lrjs, FUENTES.ley35, FUENTES.inssIP, FUENTES.salutAvaluacions, FUENTES.cgpj];
+---
+
+<Layout
+  title="Política Editorial | Perito Médico Barcelona"
+  description="Quién redacta y revisa los contenidos de Perito Médico Barcelona, qué fuentes oficiales usamos, cada cuánto se actualizan y cómo comunicarnos un error."
+  dateModified={REVISION_SERVICIOS}
+>
+  <section class="bg-primary-950 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <Breadcrumb migas={[{ nombre: 'Sobre Nosotros', href: '/sobre-nosotros/' }, { nombre: 'Política editorial' }]} />
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">Política editorial</h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Los contenidos de esta web los redacta y revisa el equipo de peritos médicos colegiados de Perito Médico Barcelona. Cada dato legal o médico se comprueba en una fuente oficial, que se enlaza en la propia página, y cada página indica su fecha de revisión.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-gray-600 leading-relaxed">
+      <div>
+        <h2 class={h2}>Quién redacta</h2>
+        <p>El equipo de peritos médicos colegiados de Perito Médico Barcelona. Las guías se firman como equipo: «Revisado por el equipo médico», con la fecha de la última revisión.</p>
+      </div>
+
+      <div>
+        <h2 class={h2}>Cómo se revisa</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Un médico del equipo revisa el contenido médico antes de publicarlo.</li>
+          <li>Los plazos, artículos y requisitos se comprueban en el texto oficial vigente (BOE consolidado, Seguridad Social, Generalitat) y se enlazan en una sección «Fuentes».</li>
+          <li>Las páginas que hablan de un organismo (INSS, ICAM, juzgados, mutuas) enlazan su web oficial para teléfonos, horarios y citas, y aclaran que esta web es independiente.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class={h2}>Fuentes que usamos</h2>
+        <ul class="list-disc pl-5 space-y-1.5">
+          {fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener" class={a}>{f.nombre}</a></li>)}
+        </ul>
+        <p class="mt-3">Y, según el tema, el Departament de Justícia y el Departament de Salut de la Generalitat de Catalunya.</p>
+      </div>
+
+      <div>
+        <h2 class={h2}>Cada cuánto se actualiza</h2>
+        <p>Revisamos cada página al menos una vez al año y siempre que cambia la norma en la que se apoya. La fecha visible de cada página y el dato <code>dateModified</code> de sus datos estructurados recogen la última revisión.</p>
+      </div>
+
+      <div>
+        <h2 class={h2}>Cómo comunicarnos un error</h2>
+        <p>Escríbanos a <a href={`mailto:${SITE.email}`} class={a}>{SITE.email}</a> indicando la página y el dato. Lo comprobamos en la fuente oficial y, si procede, corregimos la página y actualizamos su fecha de revisión.</p>
+      </div>
+
+      <div>
+        <h2 class={h2}>Independencia y alcance</h2>
+        <p>
+          Perito Médico Barcelona es un servicio privado. No pertenece ni representa al INSS, al ICAM/SGAM, a ninguna mutua, aseguradora ni juzgado. La información de esta web es general: no sustituye la valoración individual de su caso ni el asesoramiento de un abogado. Cómo elaboramos los informes: <a href={url('/metodologia/')} class={a}>cómo trabajamos</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

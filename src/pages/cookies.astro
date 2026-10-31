@@ -1,67 +1,47 @@
 ---
-import Breadcrumb from '../components/Breadcrumb.astro';
-import Layout from '../layouts/Layout.astro';
+import PaginaLegal from '../components/PaginaLegal.astro';
 import { url } from '../utils/links';
+import { TITULAR } from '../data/site';
 ---
 
-<Layout
+<PaginaLegal
   title="Política de Cookies | Perito Médico Barcelona"
-  description="Política de cookies del sitio web peritomedicobarcelona.com."
+  description="Política de cookies de peritomedicobarcelona.com: esta web no instala cookies de análisis ni de publicidad. Qué recursos de terceros carga y cómo gestionar las cookies."
+  h1="Política de cookies"
+  actualizado="2026-10-31"
 >
-  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <Breadcrumb migas={[{ nombre: 'Política de Cookies' }]} />
-        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">Política de Cookies</h1>
-      </div>
-    </div>
-  </section>
+  <div>
+    <h2>¿Qué son las cookies?</h2>
+    <p>Las cookies son pequeños archivos de información que el servidor envía al dispositivo de quien accede a una página web y que permiten, por ejemplo, recordar preferencias o recoger datos estadísticos sobre el uso y la navegación del sitio.</p>
+  </div>
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-gray-600 leading-relaxed text-sm">
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">1. ¿Qué son las cookies?</h2>
-        <p>
-          Las cookies son pequeños archivos de texto que un sitio web almacena en el navegador del usuario para
-          recordar información sobre su visita, como sus preferencias o datos de sesión.
-        </p>
-      </div>
+  <div>
+    <h2>¿Qué cookies utiliza esta web?</h2>
+    <p><strong>Ninguna.</strong> Este sitio web, titularidad de {TITULAR.razonSocial}, no instala cookies propias ni de terceros: no utiliza herramientas de análisis (como Google Analytics), ni publicidad, ni redes sociales integradas, ni guarda información en el almacenamiento local de su navegador. Por eso no le mostramos un banner para aceptar o rechazar cookies.</p>
+    <table>
+      <thead><tr><th>Recurso de terceros</th><th>Para qué se usa</th><th>¿Instala cookies?</th></tr></thead>
+      <tbody>
+        <tr><td>Google Fonts (fonts.googleapis.com y fonts.gstatic.com)</td><td>Cargar las tipografías de la web. Al descargarlas, su navegador comunica a Google su dirección IP.</td><td>No</td></tr>
+        <tr><td>Web3Forms (api.web3forms.com)</td><td>Enviar el formulario de contacto, solo cuando usted lo envía.</td><td>No</td></tr>
+        <tr><td>WhatsApp (wa.me)</td><td>Abrir una conversación de WhatsApp, solo si pulsa el botón. Al salir de esta web se aplica la política de WhatsApp.</td><td>No en esta web</td></tr>
+      </tbody>
+    </table>
+    <p>Si en el futuro se incorporan cookies no necesarias (por ejemplo, de análisis), se pedirá su consentimiento previo mediante un aviso y se actualizará esta política con el detalle de cada cookie, su finalidad, su duración y su titular.</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">2. Cookies utilizadas en este sitio</h2>
-        <p>
-          Este sitio web utiliza únicamente cookies técnicas, estrictamente necesarias para su funcionamiento
-          (por ejemplo, para recordar preferencias básicas de navegación). Actualmente no se utilizan cookies de
-          análisis, publicidad o de terceros. <strong>[Si en el futuro se incorporan herramientas de analítica web,
-          publicidad o vídeo embebido, esta sección debe actualizarse con el detalle de cada cookie, su finalidad,
-          duración y proveedor.]</strong>
-        </p>
-      </div>
+  <div>
+    <h2>Cómo gestionar o eliminar las cookies en su navegador</h2>
+    <p>Puede permitir, bloquear o eliminar las cookies instaladas en su equipo, o activar la navegación privada, desde la configuración de su navegador:</p>
+    <ul>
+      <li>Chrome: Configuración → Privacidad y seguridad → Cookies de terceros. <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Ayuda de Google</a>.</li>
+      <li>Firefox: Ajustes → Privacidad &amp; Seguridad → Cookies y datos del sitio. <a href="https://support.mozilla.org/es/kb/Borrar%20cookies" target="_blank" rel="noopener">Ayuda de Mozilla</a>.</li>
+      <li>Safari: Ajustes → Privacidad → Gestionar datos de sitios web. <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Ayuda de Apple</a>.</li>
+      <li>Edge: Configuración → Cookies y permisos del sitio. <a href="https://support.microsoft.com/es-es/microsoft-edge" target="_blank" rel="noopener">Ayuda de Microsoft</a>.</li>
+    </ul>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">3. Cómo gestionar o eliminar las cookies</h2>
-        <p>
-          El usuario puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la
-          configuración de su navegador. A continuación se indican los enlaces de ayuda de los navegadores más
-          habituales:
-        </p>
-        <ul class="list-disc pl-5 mt-3 space-y-1">
-          <li>Google Chrome</li>
-          <li>Mozilla Firefox</li>
-          <li>Safari</li>
-          <li>Microsoft Edge</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">4. Más información</h2>
-        <p>
-          Para más información sobre el tratamiento de sus datos personales, puede consultar nuestra
-          <a href={url('/politica-privacidad')} class="text-accent-600 hover:underline">Política de Privacidad</a>.
-        </p>
-      </div>
-
-      <p class="text-xs text-gray-400">Última actualización: [fecha].</p>
-    </div>
-  </section>
-</Layout>
+  <div>
+    <h2>Más información</h2>
+    <p>Para más información sobre el tratamiento de sus datos personales, consulte la <a href={url('/politica-privacidad')}>Política de privacidad</a> y el <a href={url('/aviso-legal')}>Aviso legal</a>.</p>
+  </div>
+</PaginaLegal>

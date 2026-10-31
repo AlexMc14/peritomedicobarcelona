@@ -149,21 +149,5 @@ const otrasZonas = zonas.filter((z) => z.href !== Astro.url.pathname);
     }))
   })} />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Perito Médico Barcelona",
-    "description": `Servicio de peritaje médico en ${city} y área metropolitana de Barcelona`,
-    "url": "https://www.peritomedicobarcelona.com",
-    "areaServed": [city, "Barcelona"],
-    "serviceType": "Peritaje médico",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Barcelona",
-      "addressRegion": "Cataluña",
-      "addressCountry": "ES"
-    }
-  })} />
-
   <CTASection />
 </Layout>

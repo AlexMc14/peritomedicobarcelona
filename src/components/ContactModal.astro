@@ -1,4 +1,6 @@
 ---
+import { url } from '../utils/links';
+import { TITULAR } from '../data/site';
 // Modal de contacto (lo abre #contact-fab de BotonesFlotantes). Envía por mailto (sitio estático, sin backend).
 ---
 <dialog id="contact-modal" class="w-full max-w-md rounded-xl p-0 shadow-2xl backdrop:bg-black/50">
@@ -23,6 +25,12 @@
       <div>
         <label for="cm-mensaje" class="mb-1 block text-sm font-medium text-gray-700">Mensaje *</label>
         <textarea id="cm-mensaje" name="mensaje" required rows="4" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary-900 focus:outline-none"></textarea>
+      </div>
+      <div class="flex items-start gap-2">
+        <input id="cm-privacidad" name="privacidad" type="checkbox" required class="mt-1 h-4 w-4" />
+        <label for="cm-privacidad" class="text-xs text-gray-600">
+          He leído y acepto el <a href={url('/aviso-legal')} class="underline">Aviso legal</a>, la <a href={url('/politica-privacidad')} class="underline">Política de privacidad</a> y la <a href={url('/cookies')} class="underline">Política de cookies</a>. Responsable: {TITULAR.razonSocial}.
+        </label>
       </div>
       <button type="submit" class="w-full rounded-lg bg-primary-900 py-3 font-semibold text-white transition-colors hover:bg-primary-800">
         Enviar consulta

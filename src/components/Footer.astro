@@ -10,6 +10,8 @@ const servicios = [
 
 const empresa = [
   { name: 'Sobre Nosotros', href: url('/sobre-nosotros') },
+  { name: 'Cómo Trabajamos', href: url('/metodologia') },
+  { name: 'Política Editorial', href: url('/politica-editorial') },
   { name: 'Especialidades', href: url('/especialidades') },
   { name: 'Para Abogados', href: url('/para-abogados/') },
   { name: 'Preguntas Frecuentes', href: url('/preguntas-frecuentes') },
@@ -96,11 +98,11 @@ const local = [
 
     <!-- Bottom -->
     <div class="mt-14 pt-8 border-t border-primary-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-gray-500">&copy; {new Date().getFullYear()} Perito Médico Barcelona. Todos los derechos reservados.</p>
+      <p class="text-xs text-gray-400">&copy; {new Date().getFullYear()} Perito Médico Barcelona. Todos los derechos reservados.</p>
       <div class="flex gap-6">
-        <a href={url('/politica-privacidad')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Política de Privacidad</a>
-        <a href={url('/aviso-legal')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Aviso Legal</a>
-        <a href={url('/cookies')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Cookies</a>
+        <a href={url('/politica-privacidad')} class="text-xs text-gray-400 hover:text-gray-300 transition-colors">Política de Privacidad</a>
+        <a href={url('/aviso-legal')} class="text-xs text-gray-400 hover:text-gray-300 transition-colors">Aviso Legal</a>
+        <a href={url('/cookies')} class="text-xs text-gray-400 hover:text-gray-300 transition-colors">Cookies</a>
       </div>
     </div>
   </div>
