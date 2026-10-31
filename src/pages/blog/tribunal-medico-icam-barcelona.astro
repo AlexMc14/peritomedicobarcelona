@@ -1,0 +1,104 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const CANAL_SALUT = 'https://canalsalut.gencat.cat/ca/salut-a-z/a/avaluacions-mediques';
+---
+
+<BlogPostLayout
+  title="Tribunal médico de Barcelona (ICAM): qué es y cómo preparar la cita"
+  pageTitle="Tribunal Médico de Barcelona (ICAM): Qué Es y Cómo Prepararlo"
+  description="Qué es el tribunal médico de Barcelona (ICAM, hoy SGAM), para qué le citan, qué llevar a la cita y qué hacer si le dan el alta o le deniegan la incapacidad."
+  date="2026-10-31"
+  readingTime="7"
+  category="Incapacidad Laboral"
+  faqs={[
+    { question: '¿El ICAM y el INSS son lo mismo?', answer: 'No. El ICAM (hoy Subdirecció General d\'Avaluacions Mèdiques, SGAM) depende del Departament de Salut de la Generalitat y hace las evaluaciones médicas. El INSS es el organismo estatal que reconoce las prestaciones: en una incapacidad permanente decide el INSS, con un informe médico previo del ICAM.' },
+    { question: '¿Es obligatorio acudir a la cita del ICAM?', answer: 'Sí. Canal Salut indica que la asistencia a las citaciones es obligatoria. Si no puede ir por motivos médicos, puede autorizar a otra persona con un formulario firmado, su documento de identidad y un informe médico, o pedir una nueva fecha aportando documentación médica.' },
+    { question: '¿El informe del ICAM decide mi incapacidad permanente?', answer: 'No por sí solo. Según Canal Salut, el informe del ICAM es preceptivo pero no vinculante: quien resuelve es el INSS, y su resolución se puede reclamar y llevar al Juzgado de lo Social.' },
+    { question: '¿Dónde está el ICAM y cómo pido cita?', answer: 'Las sedes, teléfonos y la cita previa están en la página oficial de Canal Salut (apartado «L\'ICAM al territori»). Esta web es un servicio privado e independiente y no gestiona citas del ICAM.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
+    Lo que en Barcelona se llama «tribunal médico» es el ICAM, hoy Subdirecció General d'Avaluacions Mèdiques (SGAM) del Departament de Salut. Sus médicos evaluadores controlan las bajas por enfermedad común, pueden dar el alta por inspección y emiten el informe médico previo con el que el INSS decide una incapacidad permanente en Cataluña.
+  </p>
+
+  <div class="bg-primary-50 border border-primary-100 rounded-xl p-5 mb-8 text-sm text-gray-700">
+    <strong class="text-primary-900">Aviso:</strong> esta web es un servicio privado de peritaje médico. No pertenece al ICAM/SGAM ni al INSS. Para teléfonos, horarios y cita previa, consulte la
+    <a href={`${CANAL_SALUT}/qui-hi-participa/icam/dades-contacte/`} target="_blank" rel="noopener" class={a}>página oficial de contacto del ICAM en Canal Salut</a>.
+  </div>
+
+  <h2 class={h2}>¿Qué es el ICAM y por qué se le llama «tribunal médico»?</h2>
+  <p class={p}>
+    El Institut Català d'Avaluacions Mèdiques (ICAM) se creó en 2002 como organismo autónomo del Departament de Salut. En 2014 dejó de ser un organismo con personalidad jurídica propia y pasó a ser una subdirección general, que hoy se llama Subdirecció General d'Avaluacions Mèdiques (SGAM). En la calle se sigue usando «ICAM» o «tribunal médico», y la propia web oficial usa los dos nombres.
+  </p>
+  <p class={p}>
+    Tiene unidades territoriales; las que corresponden a Barcelona y su entorno son Barcelona Ciutat, Àrea Metropolitana Nord y Àrea Metropolitana Sud i Catalunya Central (Decret 129/2022, art. 46, según
+    <a href={`${CANAL_SALUT}/qui-hi-participa/icam/`} target="_blank" rel="noopener" class={a}>Canal Salut</a>).
+  </p>
+
+  <h2 class={h2}>¿Para qué le pueden citar en el ICAM?</h2>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Situación</th><th class="p-3 border-b">Qué hace el ICAM</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b">Baja por enfermedad común (incapacidad temporal)</td><td class="p-3 border-b">Control y seguimiento de la baja. Si el evaluador considera que no tiene limitaciones para trabajar, puede darle el <strong>alta por inspección</strong>.</td></tr>
+        <tr><td class="p-3 border-b">La mutua propone su alta (enfermedad común)</td><td class="p-3 border-b">La mutua no puede darle el alta: solo envía una propuesta motivada al ICAM, que tiene hasta 5 días para tramitarla. Su médico de familia recibe la propuesta y puede estar de acuerdo o no.</td></tr>
+        <tr><td class="p-3 border-b">Baja de más de 365 días</td><td class="p-3 border-b">Solo el INSS puede terminarla, con un dictamen previo del ICAM.</td></tr>
+        <tr><td class="p-3">Incapacidad permanente</td><td class="p-3">Emite el informe médico previo. Es preceptivo pero no vinculante: decide el INSS.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-xs text-gray-500 mb-6">
+    Fuente: Canal Salut, <a href={`${CANAL_SALUT}/alta-medica/`} target="_blank" rel="noopener" class={a}>el alta médica</a> e
+    <a href={`${CANAL_SALUT}/incapacitat-permanent-per-treballar/`} target="_blank" rel="noopener" class={a}>incapacidad permanente para trabajar</a>.
+  </p>
+
+  <h2 class={h2}>¿Qué tengo que llevar a la cita?</h2>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-4">
+    <li>Un documento de identidad original y en vigor (DNI, NIE, pasaporte o permiso de conducir).</li>
+    <li>Toda la documentación sanitaria <strong>privada</strong> reciente relacionada con el problema de salud que se evalúa. Lo que consta en la sanidad pública ya está en la historia clínica compartida de Cataluña.</li>
+  </ul>
+  <p class={p}>
+    Un informe pericial médico es documentación privada: si ya lo tiene, llévelo. Ordena en un solo documento las pruebas, la evolución y las limitaciones que el evaluador tiene que valorar en poco tiempo.
+  </p>
+
+  <h2 class={h2}>¿Qué pasa si no puedo ir?</h2>
+  <p class={p}>
+    La asistencia es obligatoria. Si no puede acudir por motivos médicos, Canal Salut contempla dos opciones: autorizar a otra persona (con el formulario firmado, el documento original de quien va, una copia del suyo y un informe médico que explique por qué no puede desplazarse) o pedir una nueva fecha aportando documentación médica
+    (<a href={`${CANAL_SALUT}/baixa-medica/seguiment/cites-control-icam/`} target="_blank" rel="noopener" class={a}>citas de seguimiento y control</a>).
+  </p>
+
+  <h2 class={h2}>¿Qué hago si el ICAM me da el alta y no estoy bien?</h2>
+  <p class={p}>
+    Contra el alta de una baja por enfermedad común en Cataluña, Canal Salut indica una reclamación administrativa previa de <strong>11 días hábiles</strong> dirigida a la Direcció General d'Ordenació i Regulació Sanitària. Si la baja era por accidente de trabajo y el alta la dio la mutua, el procedimiento es otro. Los explicamos en
+    <a href={url('/blog/mutua-me-da-el-alta-sin-estar-bien/')} class={a}>qué hacer si la mutua le da el alta sin estar bien</a>,
+    y puede pedirnos una <a href={url('/revision-alta-medica-gratuita/')} class={a}>revisión de su alta</a>.
+  </p>
+
+  <h2 class={h2}>¿Y si me deniegan la incapacidad permanente?</h2>
+  <p class={p}>
+    El informe del ICAM no es la última palabra. La resolución del INSS se puede recurrir: primero con una reclamación previa y después ante los Juzgados de lo Social. Los pasos y plazos están en
+    <a href={url('/blog/incapacidad-permanente-denegada-que-hacer/')} class={a}>incapacidad permanente denegada: qué hacer</a>.
+  </p>
+
+  <h2 class={h2}>¿Cómo le ayuda un perito médico?</h2>
+  <p class={p}>
+    El evaluador del ICAM trabaja con lo que consta en la historia clínica y con una exploración breve. Un <a href={url('/servicios/incapacidad-laboral/')} class={a}>informe pericial de incapacidad</a> describe con detalle sus limitaciones funcionales y las relaciona con las tareas de su trabajo. Sirve antes de la cita, en la reclamación previa y, si llega el caso, en el
+    <a href={url('/perito-medico-juzgado-social-barcelona/')} class={a}>Juzgado de lo Social</a>, donde el perito lo ratifica.
+    Si duda de si su caso tiene recorrido, pida una <a href={url('/incapacidad-permanente-consulta-gratuita/')} class={a}>consulta sobre incapacidad permanente</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={`${CANAL_SALUT}/qui-hi-participa/icam/`} target="_blank" rel="noopener" class={a}>Canal Salut: la Subdirecció General d'Avaluacions Mèdiques - ICAM</a></li>
+    <li><a href={`${CANAL_SALUT}/alta-medica/`} target="_blank" rel="noopener" class={a}>Canal Salut: el alta médica</a></li>
+    <li><a href={`${CANAL_SALUT}/incapacitat-permanent-per-treballar/`} target="_blank" rel="noopener" class={a}>Canal Salut: incapacidad permanente para trabajar</a></li>
+    <li><a href={`${CANAL_SALUT}/baixa-medica/seguiment/cites-control-icam/`} target="_blank" rel="noopener" class={a}>Canal Salut: citas de seguimiento y control</a></li>
+  </ul>
+</BlogPostLayout>

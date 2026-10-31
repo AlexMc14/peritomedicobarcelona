@@ -1,7 +1,12 @@
 ---
 import Layout from './Layout.astro';
 import CTASection from '../components/CTASection.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { url } from '../utils/links';
+import { servicioPorHref } from '../data/servicios';
+import { posts, postPorHref } from '../data/posts';
+import { SITE, ORG_ID } from '../data/site';
+import Revision from '../components/Revision.astro';
 
 interface Props {
   title: string;
@@ -11,30 +16,27 @@ interface Props {
   readingTime: string;
   category: string;
   faqs?: { question: string; answer: string }[];
+  /** Fecha ISO de la última actualización (por defecto, la de publicación) */
+  updated?: string;
 }
 
-const { title, pageTitle, description, date, readingTime, category, faqs = [] } = Astro.props;
+const { title, pageTitle, description, date, readingTime, category, faqs = [], updated = date } = Astro.props;
+const post = postPorHref(Astro.url.pathname);
+const servicio = post && servicioPorHref(post.servicio);
+const hermanas = post ? posts.filter((p) => p.servicio === post.servicio && p.href !== post.href) : [];
 ---
 
-<Layout title={pageTitle} description={description}>
+<Layout title={pageTitle} description={description} dateModified={updated}>
   <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
     <div class="absolute inset-0 opacity-5">
       <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6" aria-label="Breadcrumb">
-          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <a href={url('/blog')} class="hover:text-primary-200 transition-colors">Blog</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <span class="text-primary-200 truncate">{title}</span>
-        </nav>
+        <Breadcrumb migas={[{ nombre: 'Blog', href: '/blog/' }, { nombre: title }]} class="[&>span]:truncate" />
         <span class="inline-block bg-accent-500/20 text-accent-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 tracking-wider uppercase">{category}</span>
         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">{title}</h1>
         <div class="flex items-center gap-4 text-sm text-primary-400 mt-6">
-          <time datetime={date}>{date}</time>
-          <span>·</span>
           <span>{readingTime} min de lectura</span>
         </div>
       </div>
@@ -45,6 +47,7 @@ const { title, pageTitle, description, date, readingTime, category, faqs = [] } 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
         <div class="lg:col-span-2">
+          <div class="mb-8 pb-6 border-b border-gray-100"><Revision fecha={updated} publicado={date} /></div>
           <slot />
 
           {faqs.length > 0 && (
@@ -77,14 +80,14 @@ const { title, pageTitle, description, date, readingTime, category, faqs = [] } 
           </div>
 
           <div class="bg-white rounded-2xl p-7 border border-gray-100">
-            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Servicios relacionados</h3>
+            <h3 class="font-heading text-base font-semibold text-primary-900 mb-4">Relacionado</h3>
             <ul class="space-y-2.5">
-              <li><a href={url('/servicios/informes-periciales-medicos')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Informes Periciales Médicos</a></li>
-              <li><a href={url('/servicios/negligencia-medica')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Negligencia Médica</a></li>
-              <li><a href={url('/servicios/incapacidad-laboral')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Incapacidad Laboral</a></li>
-              <li><a href={url('/servicios/valoracion-dano-corporal')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Valoración del Daño Corporal</a></li>
-              <li><a href={url('/servicios/impugnacion-alta-medica')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Impugnación de Alta Médica</a></li>
-              <li><a href={url('/servicios/perito-seguridad-social')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Perito Seguridad Social</a></li>
+              {servicio && <li><a href={url(servicio.href)} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">{servicio.nombre}</a></li>}
+              {servicio?.landing && <li><a href={url(servicio.landing.href)} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">{servicio.landing.nombre}</a></li>}
+              {hermanas.map((p) => (
+                <li><a href={url(p.href)} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">{p.titulo}</a></li>
+              ))}
+              <li><a href={url('/blog/')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Todas las guías</a></li>
             </ul>
           </div>
         </aside>
@@ -110,12 +113,11 @@ const { title, pageTitle, description, date, readingTime, category, faqs = [] } 
     "headline": title,
     "description": description,
     "datePublished": date,
-    "inLanguage": "es",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Perito Médico Barcelona",
-      "url": "https://peritomedicobarcelona.com"
-    }
+    "dateModified": updated,
+    "inLanguage": "es-ES",
+    "mainEntityOfPage": new URL(Astro.url.pathname, SITE.url).href,
+    "author": { "@id": ORG_ID },
+    "publisher": { "@id": ORG_ID },
   })} />
 
   <CTASection />

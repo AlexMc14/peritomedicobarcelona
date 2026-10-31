@@ -1,0 +1,94 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LRJS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2011-15936';
+const LGSS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724';
+const IP_CANAL_SALUT = 'https://canalsalut.gencat.cat/ca/salut-a-z/a/avaluacions-mediques/incapacitat-permanent-per-treballar/';
+const EDIFICI_S = 'https://repositori.justicia.gencat.cat/handle/20.500.14226/1002';
+---
+
+<BlogPostLayout
+  title="Incapacidad permanente denegada: qué hacer en Barcelona"
+  pageTitle="Incapacidad Permanente Denegada: Qué Hacer en Barcelona"
+  description="Si el INSS le deniega la incapacidad permanente, tiene 30 días para la reclamación previa y 30 más para demandar. Pasos, plazos y el papel del perito en Barcelona."
+  date="2026-10-31"
+  readingTime="7"
+  category="Incapacidad Permanente"
+  faqs={[
+    { question: '¿Cuánto tiempo tengo para reclamar si me deniegan la incapacidad permanente?', answer: 'Treinta días desde la notificación de la resolución del INSS para presentar la reclamación previa (artículo 71.2 de la Ley 36/2011). Si el INSS la rechaza, o no contesta en 45 días, tiene otros treinta días para presentar la demanda ante el Juzgado de lo Social (artículo 71.6).' },
+    { question: '¿Qué pasa si el INSS no contesta la reclamación previa?', answer: 'Si no contesta en 45 días, la reclamación se entiende denegada por silencio administrativo y desde ese día empieza a contar el plazo de treinta días para la demanda (artículo 71.5 y 71.6 de la Ley 36/2011).' },
+    { question: '¿Necesito abogado para el juicio?', answer: 'En la primera instancia ante el Juzgado de lo Social la ley no lo exige (artículo 21 de la Ley 36/2011), pero es muy recomendable ir con un abogado laboralista o un graduado social. Para recurrir en suplicación sí es obligatorio ir con abogado o con graduado social colegiado.' },
+    { question: '¿Cuándo conviene encargar el informe pericial?', answer: 'Lo ideal es antes de la reclamación previa, para que el INSS lo valore. Si no da tiempo, el informe tiene que estar listo antes del juicio, porque el perito lo ratifica y responde a las preguntas de las partes en la vista.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Si el INSS le deniega la incapacidad permanente, el primer paso es la reclamación previa ante el propio INSS, en el plazo de 30 días desde la notificación. Si la rechaza o no contesta en 45 días, tiene otros 30 días para presentar la demanda ante los Juzgados de lo Social, que en Barcelona están en la Ciutat de la Justícia.
+  </p>
+
+  <h2 class={h2}>Los pasos y sus plazos</h2>
+  <div class="overflow-x-auto mb-4">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Paso</th><th class="p-3 border-b">Ante quién</th><th class="p-3 border-b">Plazo</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b">1. Resolución que deniega la incapacidad</td><td class="p-3 border-b">INSS (en Cataluña, con informe médico previo del ICAM)</td><td class="p-3 border-b">—</td></tr>
+        <tr><td class="p-3 border-b">2. Reclamación previa</td><td class="p-3 border-b">El mismo INSS</td><td class="p-3 border-b">30 días desde la notificación (art. 71.2)</td></tr>
+        <tr><td class="p-3 border-b">3. Respuesta del INSS</td><td class="p-3 border-b">—</td><td class="p-3 border-b">45 días; si no contesta, se entiende denegada (art. 71.5)</td></tr>
+        <tr><td class="p-3 border-b">4. Demanda</td><td class="p-3 border-b">Juzgado de lo Social</td><td class="p-3 border-b">30 días desde la denegación expresa o por silencio (art. 71.6)</td></tr>
+        <tr><td class="p-3">5. Juicio</td><td class="p-3">Juzgado de lo Social: el perito ratifica su informe</td><td class="p-3">Fecha que fije el juzgado</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-xs text-gray-500 mb-6">Artículos de la <a href={LRJS} target="_blank" rel="noopener" class={a}>Ley 36/2011, reguladora de la jurisdicción social</a>. Los plazos son cortos: cuéntelos desde el día siguiente a la notificación y no los apure.</p>
+
+  <h2 class={h2}>¿Por qué deniega el INSS una incapacidad permanente?</h2>
+  <p class={p}>
+    La incapacidad permanente exige que, tras el tratamiento, queden limitaciones graves y previsiblemente definitivas que reduzcan o anulen la capacidad de trabajar (<a href={LGSS} target="_blank" rel="noopener" class={a}>Ley General de la Seguridad Social</a>). La denegación suele apoyarse en que las limitaciones no se consideran bastante graves para su profesión, en que no se ven definitivas porque quedan tratamientos por probar o en que no están bien documentadas. En Cataluña el INSS resuelve con un informe médico previo del ICAM, que es preceptivo pero no vinculante (<a href={IP_CANAL_SALUT} target="_blank" rel="noopener" class={a}>Canal Salut</a>).
+  </p>
+  <p class={p}>
+    Lea la resolución con atención: el motivo de la denegación le dice qué tiene que acreditar en la reclamación. Los grados (parcial, total, absoluta y gran invalidez) los explicamos en la
+    <a href={url('/blog/perito-medico-incapacidad-permanente/')} class={a}>guía del perito médico en incapacidad permanente</a>.
+  </p>
+
+  <h2 class={h2}>Qué aportar en la reclamación previa</h2>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-4">
+    <li>Los informes médicos posteriores a la valoración, sobre todo si su estado ha empeorado o hay pruebas nuevas.</li>
+    <li>Una descripción concreta de las tareas de su profesión habitual: la incapacidad total se valora frente a ellas.</li>
+    <li>Un informe pericial médico que relacione cada limitación con esas tareas y rebata, punto por punto, la valoración del INSS.</li>
+  </ul>
+  <p class={p}>
+    La reclamación previa es también la ocasión de que el INSS rectifique sin llegar a juicio. Una reclamación que solo dice «no estoy de acuerdo» rara vez lo consigue.
+  </p>
+
+  <h2 class={h2}>El juicio en Barcelona</h2>
+  <p class={p}>
+    Los Juzgados de lo Social de Barcelona están en el edificio S de la Ciutat de la Justícia, en la Gran Via de les Corts Catalanes, 111 (<a href={EDIFICI_S} target="_blank" rel="noopener" class={a}>directorio oficial del edificio S</a>). En la vista, el juez valora el expediente del INSS, los informes de sus médicos y el informe pericial de parte. El perito acude a
+    <a href={url('/para-abogados/ratificacion-judicial/')} class={a}>ratificar el informe</a> y responde a las preguntas del abogado de la Seguridad Social y del juez.
+    Más detalles en <a href={url('/perito-medico-juzgado-social-barcelona/')} class={a}>perito médico ante el Juzgado de lo Social de Barcelona</a>.
+  </p>
+
+  <h2 class={h2}>¿Y mientras tanto?</h2>
+  <p class={p}>
+    La denegación no le obliga a dejar de reclamar: puede presentar la reclamación previa y, si hace falta, la demanda. Su situación económica mientras dura el proceso depende de si sigue de baja, si ha agotado la incapacidad temporal o si se ha reincorporado. Consúltelo con su abogado o con el INSS antes de tomar decisiones laborales.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Preparamos el <a href={url('/servicios/incapacidad-laboral/')} class={a}>informe pericial de incapacidad permanente</a> para la reclamación previa o para el juicio, y el perito lo defiende en sala. Si quiere saber primero si su caso tiene recorrido, pida una
+    <a href={url('/incapacidad-permanente-consulta-gratuita/')} class={a}>consulta telefónica sobre incapacidad permanente</a>. Si todavía está de baja y le han citado, lea
+    <a href={url('/blog/tribunal-medico-icam-barcelona/')} class={a}>cómo funciona el tribunal médico de Barcelona</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LRJS} target="_blank" rel="noopener" class={a}>Ley 36/2011, reguladora de la jurisdicción social, arts. 21 y 71</a></li>
+    <li><a href={LGSS} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social</a></li>
+    <li><a href={IP_CANAL_SALUT} target="_blank" rel="noopener" class={a}>Canal Salut: incapacidad permanente para trabajar</a></li>
+    <li><a href={EDIFICI_S} target="_blank" rel="noopener" class={a}>Departament de Justícia: directorio del edificio S de la Ciutat de la Justícia</a></li>
+  </ul>
+</BlogPostLayout>

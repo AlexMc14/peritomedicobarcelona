@@ -1,9 +1,35 @@
 ---
+import Breadcrumb from '../components/Breadcrumb.astro';
 import Layout from '../layouts/Layout.astro';
 import CTASection from '../components/CTASection.astro';
 import { url } from '../utils/links';
 
 const categorias = [
+  {
+    titulo: 'Sobre nuestro servicio',
+    preguntas: [
+      {
+        pregunta: '¿Son independientes de las aseguradoras y las mutuas?',
+        respuesta: 'Sí. No trabajamos para aseguradoras, mutuas, el INSS ni el ICAM, y no tenemos vinculación con ninguna entidad médica. El informe refleja lo que muestran la documentación y la exploración; si el caso no tiene base médica, se lo decimos antes de hacer el informe.'
+      },
+      {
+        pregunta: '¿El informe pericial tiene validez en un juicio?',
+        respuesta: 'Sí. El dictamen de peritos es un medio de prueba: en un proceso civil las partes pueden aportarlo (artículo 335 de la Ley de Enjuiciamiento Civil) y el juez lo valora según las reglas de la sana crítica (artículo 348). Su peso depende de su rigor y de que el perito lo defienda en la vista.'
+      },
+      {
+        pregunta: '¿El perito acude al juicio a ratificar el informe?',
+        respuesta: 'Sí. Si el procedimiento llega a juicio y se cita al perito, acude a ratificar el informe y responde a las preguntas del juez y de las partes, tanto en Barcelona como en otros partidos judiciales de Cataluña.'
+      },
+      {
+        pregunta: '¿Cómo se presupuesta el informe?',
+        respuesta: 'El precio depende del tipo de informe, del volumen de documentación y de si hace falta exploración o ratificación en juicio. Por eso le damos el presupuesto cuando conocemos el caso y siempre antes de empezar ningún trabajo.'
+      },
+      {
+        pregunta: '¿Qué hacen con mis datos médicos?',
+        respuesta: 'Los datos de salud solo se usan para estudiar su caso y elaborar el informe, se tratan de forma confidencial conforme al Reglamento General de Protección de Datos y no se ceden a terceros salvo obligación legal. Puede ejercer sus derechos de acceso, rectificación o supresión en cualquier momento; el detalle está en la política de privacidad.'
+      },
+    ]
+  },
   {
     titulo: 'Sobre el peritaje médico',
     preguntas: [
@@ -109,11 +135,7 @@ const allFaqs = categorias.flatMap(cat => cat.preguntas);
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
-          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <span class="text-primary-200">Preguntas Frecuentes</span>
-        </nav>
+        <Breadcrumb migas={[{ nombre: 'Preguntas Frecuentes' }]} />
         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
           Preguntas Frecuentes sobre Peritaje Médico en Barcelona
         </h1>

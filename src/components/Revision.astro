@@ -1,0 +1,22 @@
+---
+// Línea de revisión (a nombre del equipo, nunca de una persona) con fecha y aviso de que la
+// información es general. Enlaza a la política editorial.
+import { url } from '../utils/links';
+import { AUTORIA } from '../data/site';
+
+interface Props {
+  fecha: string;
+  publicado?: string;
+}
+const { fecha, publicado } = Astro.props;
+const fmt = (iso: string) => new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(iso));
+---
+
+<div class="text-sm text-gray-500 space-y-1">
+  <p>
+    {publicado && <>Publicado el <time datetime={publicado}>{fmt(publicado)}</time> · </>}
+    Revisado por <a href={url('/politica-editorial/')} class="text-primary-700 underline hover:text-primary-900">{AUTORIA}</a>
+    el <time datetime={fecha}>{fmt(fecha)}</time>.
+  </p>
+  <p>Información general: no sustituye la valoración individual de su caso.</p>
+</div>

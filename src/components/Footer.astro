@@ -1,34 +1,27 @@
 ---
 import { url } from '../utils/links';
+import { servicios as listaServicios } from '../data/servicios';
+import { zonas, HUB_ZONAS } from '../data/zonas';
 
 const servicios = [
-  { name: 'Informes Periciales', href: url('/servicios/informes-periciales-medicos') },
-  { name: 'Negligencia Médica', href: url('/servicios/negligencia-medica') },
-  { name: 'Valoración del Daño Corporal', href: url('/servicios/valoracion-dano-corporal') },
-  { name: 'Incapacidad Laboral', href: url('/servicios/incapacidad-laboral') },
-  { name: 'Impugnación de Alta', href: url('/servicios/impugnacion-alta-medica') },
-  { name: 'Accidentes de Tráfico', href: url('/accidentes-de-trafico') },
-  { name: 'Accidentes Laborales', href: url('/accidente-laboral') },
-  { name: 'Reclamaciones a Seguros', href: url('/perito-medico-para-seguros') },
+  ...listaServicios.slice(0, 8).map((s) => ({ name: s.nombre, href: url(s.href) })),
+  { name: 'Todos los servicios', href: url('/servicios/') },
 ];
 
 const empresa = [
   { name: 'Sobre Nosotros', href: url('/sobre-nosotros') },
+  { name: 'Cómo Trabajamos', href: url('/metodologia') },
+  { name: 'Política Editorial', href: url('/politica-editorial') },
   { name: 'Especialidades', href: url('/especialidades') },
-  { name: 'Para Abogados', href: url('/para-abogados/asesoramiento-tecnico') },
+  { name: 'Para Abogados', href: url('/para-abogados/') },
   { name: 'Preguntas Frecuentes', href: url('/preguntas-frecuentes') },
   { name: 'Blog', href: url('/blog') },
   { name: 'Contacto', href: url('/contacto') },
 ];
 
 const local = [
-  { name: 'Área Metropolitana', href: url('/perito-medico-area-metropolitana') },
-  { name: 'Perito Médico L\'Hospitalet', href: url('/perito-medico-hospitalet') },
-  { name: 'Perito Médico Badalona', href: url('/perito-medico-badalona') },
-  { name: 'Perito Médico Sabadell', href: url('/perito-medico-sabadell') },
-  { name: 'Perito Médico Terrassa', href: url('/perito-medico-terrassa') },
-  { name: 'Perito Médico Cornellà', href: url('/perito-medico-cornella') },
-  { name: 'Perito Médico Mataró', href: url('/perito-medico-mataro') },
+  { name: 'Área Metropolitana', href: url(HUB_ZONAS) },
+  ...zonas.map((z) => ({ name: z.nombre, href: url(z.href) })),
   { name: 'Juzgado de lo Social', href: url('/perito-medico-juzgado-social-barcelona') },
   { name: 'Informe Urgente', href: url('/informe-pericial-urgente-barcelona') },
 ];
@@ -70,7 +63,7 @@ const local = [
       <!-- Local -->
       <div>
         <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-5">Área Metropolitana</h3>
-        <ul class="space-y-3">
+        <ul class="space-y-2">
           {local.map(l => (
             <li>
               <a href={l.href} class="text-sm text-gray-400 hover:text-accent-300 transition-colors">{l.name}</a>
@@ -105,11 +98,11 @@ const local = [
 
     <!-- Bottom -->
     <div class="mt-14 pt-8 border-t border-primary-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-gray-500">&copy; {new Date().getFullYear()} Perito Médico Barcelona. Todos los derechos reservados.</p>
+      <p class="text-xs text-gray-400">&copy; {new Date().getFullYear()} Perito Médico Barcelona. Todos los derechos reservados.</p>
       <div class="flex gap-6">
-        <a href={url('/politica-privacidad')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Política de Privacidad</a>
-        <a href={url('/aviso-legal')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Aviso Legal</a>
-        <a href={url('/cookies')} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Cookies</a>
+        <a href={url('/politica-privacidad')} class="text-xs text-gray-400 hover:text-gray-300 transition-colors">Política de Privacidad</a>
+        <a href={url('/aviso-legal')} class="text-xs text-gray-400 hover:text-gray-300 transition-colors">Aviso Legal</a>
+        <a href={url('/cookies')} class="text-xs text-gray-400 hover:text-gray-300 transition-colors">Cookies</a>
       </div>
     </div>
   </div>

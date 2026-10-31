@@ -2,49 +2,19 @@
 import Layout from '../../layouts/Layout.astro';
 import CTASection from '../../components/CTASection.astro';
 import { url } from '../../utils/links';
+import { posts } from '../../data/posts';
 
-const articles = [
-  {
-    title: 'Tipos de informe pericial médico en 2026: guía completa',
-    description: 'Qué es cada tipo de informe pericial médico, para qué sirve y cuándo solicitarlo: valoración del daño corporal, negligencia médica, incapacidad permanente, accidente de trabajo, impugnación de alta y contrainforme.',
-    href: url('/informes/tipos-informe-pericial-medico-2026'),
-    category: 'Guía 2026',
-    date: '1 mayo 2026',
-    readingTime: '10',
-  },
-  {
-    title: 'Precios y plazos del informe pericial médico en 2026',
-    description: 'Desglose pormenorizado de precios y plazos de entrega para cada tipo de informe pericial médico en Barcelona: valoración del daño, negligencia médica, incapacidad permanente, alta médica y más.',
-    href: url('/informes/precios-plazos-informe-pericial-2026'),
-    category: 'Guía de precios 2026',
-    date: '1 mayo 2026',
-    readingTime: '9',
-  },
-  {
-    title: 'Cómo reclamar una negligencia médica en Barcelona',
-    description: 'Guía completa con los tres elementos necesarios para reclamar (lex artis, nexo causal y daño), los plazos de prescripción y las vías disponibles: civil, penal y contencioso-administrativa.',
-    href: url('/blog/como-reclamar-negligencia-medica-barcelona'),
-    category: 'Negligencia Médica',
-    date: '10 mayo 2026',
-    readingTime: '11',
-  },
-  {
-    title: 'Perito médico en incapacidad permanente: guía completa',
-    description: 'Todo lo que necesita saber sobre el informe pericial médico en los procesos de incapacidad permanente ante el INSS: grados, proceso de reclamación paso a paso y cuándo actuar.',
-    href: url('/blog/perito-medico-incapacidad-permanente'),
-    category: 'Incapacidad Permanente',
-    date: '5 mayo 2026',
-    readingTime: '10',
-  },
-  {
-    title: '¿Cuánto cuesta un perito médico en Barcelona?',
-    description: 'Guía de precios actualizada: rangos según el tipo de informe, factores que influyen en el coste y si puede recuperar ese gasto si gana el juicio.',
-    href: url('/blog/cuanto-cuesta-perito-medico-barcelona'),
-    category: 'Guía de precios',
-    date: '1 mayo 2026',
-    readingTime: '8',
-  },
-];
+const fmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+const articles = [...posts]
+  .sort((a, b) => b.fecha.localeCompare(a.fecha))
+  .map((p) => ({
+    title: p.titulo,
+    description: p.descripcion,
+    href: url(p.href),
+    category: p.categoria,
+    date: fmt.format(new Date(p.fecha)),
+    readingTime: p.lectura,
+  }));
 ---
 
 <Layout

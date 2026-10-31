@@ -1,16 +1,8 @@
 ---
-// Botón flotante + modal de contacto. Envía por mailto (sitio estático, sin backend).
+import { url } from '../utils/links';
+import { TITULAR } from '../data/site';
+// Modal de contacto (lo abre #contact-fab de BotonesFlotantes). Envía por mailto (sitio estático, sin backend).
 ---
-<button
-  id="contact-fab"
-  aria-label="Enviar consulta por correo"
-  class="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary-900 text-white shadow-lg transition-transform hover:scale-110"
->
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-7 w-7" aria-hidden="true">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-  </svg>
-</button>
-
 <dialog id="contact-modal" class="w-full max-w-md rounded-xl p-0 shadow-2xl backdrop:bg-black/50">
   <form id="contact-form" method="dialog" class="p-6">
     <div class="mb-4 flex items-center justify-between">
@@ -33,6 +25,12 @@
       <div>
         <label for="cm-mensaje" class="mb-1 block text-sm font-medium text-gray-700">Mensaje *</label>
         <textarea id="cm-mensaje" name="mensaje" required rows="4" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary-900 focus:outline-none"></textarea>
+      </div>
+      <div class="flex items-start gap-2">
+        <input id="cm-privacidad" name="privacidad" type="checkbox" required class="mt-1 h-4 w-4" />
+        <label for="cm-privacidad" class="text-xs text-gray-600">
+          He leído y acepto el <a href={url('/aviso-legal')} class="underline">Aviso legal</a>, la <a href={url('/politica-privacidad')} class="underline">Política de privacidad</a> y la <a href={url('/cookies')} class="underline">Política de cookies</a>. Responsable: {TITULAR.razonSocial}.
+        </label>
       </div>
       <button type="submit" class="w-full rounded-lg bg-primary-900 py-3 font-semibold text-white transition-colors hover:bg-primary-800">
         Enviar consulta

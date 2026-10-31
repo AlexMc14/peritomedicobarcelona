@@ -1,22 +1,11 @@
 ---
+import Breadcrumb from '../components/Breadcrumb.astro';
 import Layout from '../layouts/Layout.astro';
 import CTASection from '../components/CTASection.astro';
 import { url } from '../utils/links';
+import { zonas } from '../data/zonas';
 
-const ciudadesConPagina = [
-  { name: "L'Hospitalet de Llobregat", href: '/perito-medico-hospitalet' },
-  { name: 'Badalona', href: '/perito-medico-badalona' },
-  { name: 'Sabadell', href: '/perito-medico-sabadell' },
-  { name: 'Terrassa', href: '/perito-medico-terrassa' },
-  { name: 'Cornellà de Llobregat', href: '/perito-medico-cornella' },
-  { name: 'Mataró y el Maresme', href: '/perito-medico-mataro' },
-  { name: 'Sant Cugat del Vallès', href: '/perito-medico-sant-cugat' },
-  { name: 'Sant Boi de Llobregat', href: '/perito-medico-sant-boi' },
-  { name: 'El Prat de Llobregat', href: '/perito-medico-el-prat' },
-  { name: 'Viladecans', href: '/perito-medico-viladecans' },
-  { name: 'Granollers', href: '/perito-medico-granollers' },
-  { name: 'Mollet del Vallès', href: '/perito-medico-mollet' },
-];
+const ciudadesConPagina = zonas;
 
 const ciudadesSinPagina = [
   'Rubí',
@@ -57,11 +46,7 @@ const faqs = [
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
-          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <span class="text-primary-200">Área Metropolitana</span>
-        </nav>
+        <Breadcrumb migas={[{ nombre: 'Área Metropolitana' }]} />
         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
           Perito Médico en el Área Metropolitana de Barcelona
         </h1>
@@ -86,7 +71,7 @@ const faqs = [
               {ciudadesConPagina.map(c => (
                 <a href={url(c.href)} class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50 transition-colors group">
                   <svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                  <span class="text-sm font-medium text-primary-900 group-hover:text-accent-600 transition-colors">Perito Médico en {c.name}</span>
+                  <span class="text-sm font-medium text-primary-900 group-hover:text-accent-600 transition-colors">Perito Médico en {c.nombre}</span>
                 </a>
               ))}
             </div>
@@ -149,6 +134,8 @@ const faqs = [
               <li><a href={url('/informes/tipos-informe-pericial-medico-2026')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Tipos de informe pericial 2026</a></li>
               <li><a href={url('/informes/precios-plazos-informe-pericial-2026')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Precios y plazos 2026</a></li>
               <li><a href={url('/preguntas-frecuentes')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Preguntas frecuentes</a></li>
+              <li><a href={url('/perito-medico-juzgado-social-barcelona')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Perito en el Juzgado de lo Social de Barcelona</a></li>
+              <li><a href={url('/informe-pericial-urgente-barcelona')} class="text-sm text-gray-600 hover:text-primary-900 transition-colors">Informe pericial urgente</a></li>
             </ul>
           </div>
         </div>

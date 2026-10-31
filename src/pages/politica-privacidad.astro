@@ -1,96 +1,131 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import PaginaLegal from '../components/PaginaLegal.astro';
 import { url } from '../utils/links';
+import { SITE, TITULAR, telHref } from '../data/site';
 ---
 
-<Layout
+<PaginaLegal
   title="Política de Privacidad | Perito Médico Barcelona"
-  description="Política de privacidad y protección de datos de peritomedicobarcelona.com."
+  description="Cómo trata Lukeraibra SL los datos personales y de salud que nos envía a través de peritomedicobarcelona.com: finalidades, base legal, conservación y derechos."
+  h1="Política de privacidad"
+  actualizado="2026-10-31"
 >
-  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
-          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <span class="text-primary-200">Política de Privacidad</span>
-        </nav>
-        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">Política de Privacidad</h1>
-      </div>
-    </div>
-  </section>
+  <div>
+    <p>Esta política expresa cómo se tratará y protegerá la información personal de todas las personas que se relacionan con {TITULAR.razonSocial} a través de este sitio web ({SITE.nombre}). Antes de utilizar esta web, lea el <a href={url('/aviso-legal')}>Aviso legal</a>, la <a href={url('/cookies')}>Política de cookies</a> y la presente Política de privacidad.</p>
+    <p>De conformidad con lo dispuesto en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016 (RGPD), y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales, {TITULAR.razonSocial} le informa de que, mediante la aceptación de esta Política de privacidad, presta su consentimiento expreso, informado, libre e inequívoco para que los datos que proporciona, y sobre los que se aplican las medidas de seguridad técnicas y organizativas previstas en la normativa vigente, sean tratados por {TITULAR.razonSocial} como responsable del tratamiento.</p>
+    <p>Los datos de carácter personal que pudiésemos recabar directamente de la persona interesada a través de www.peritomedicobarcelona.com serán tratados de forma confidencial y quedarán incorporados a la correspondiente actividad de tratamiento titularidad de {TITULAR.razonSocial}.</p>
+  </div>
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-gray-600 leading-relaxed text-sm">
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">1. Responsable del tratamiento</h2>
-        <p>
-          <strong>[Nombre o razón social del titular]</strong>, con NIF/CIF <strong>[NIF/CIF]</strong> y domicilio en
-          <strong>[Dirección completa, código postal, Barcelona]</strong>, es el responsable del tratamiento de los
-          datos personales que el usuario facilite a través de este sitio web. Puede contactar con nosotros en
-          <a href="mailto:info@peritomedicobarcelona.com" class="text-accent-600 hover:underline">info@peritomedicobarcelona.com</a>
-          o en el teléfono <a href="tel:+34692366104" class="text-accent-600 hover:underline">+34 692 36 61 04</a>.
-        </p>
-      </div>
+  <div>
+    <h2>¿Quién es el responsable de esta web?</h2>
+    <ul>
+      <li>Identidad del responsable: {TITULAR.razonSocial}</li>
+      <li>NIF/CIF: {TITULAR.cif}</li>
+      <li>Dirección: {TITULAR.domicilio}</li>
+      <li>Correo electrónico: <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a></li>
+      <li>Teléfono: <a href={telHref}>{SITE.telefono}</a></li>
+    </ul>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">2. Finalidad del tratamiento</h2>
-        <p>Los datos facilitados a través de los formularios de contacto de este sitio web se utilizan para:</p>
-        <ul class="list-disc pl-5 mt-3 space-y-1">
-          <li>Atender y responder a las consultas planteadas por el usuario.</li>
-          <li>Realizar la valoración previa gratuita del caso que el usuario solicite.</li>
-          <li>Gestionar, en su caso, la relación contractual derivada del encargo de un informe pericial.</li>
-        </ul>
-      </div>
+  <div>
+    <h2>¿Qué datos personales se recogen en esta web?</h2>
+    <ul>
+      <li>Datos identificativos y de contacto: nombre, apellidos, correo electrónico y número de teléfono.</li>
+      <li>Datos que usted decida incluir en su consulta, entre ellos <strong>datos de salud</strong> (informes médicos, diagnósticos, lesiones) necesarios para valorar su caso.</li>
+      <li>Datos contractuales, si nos encarga un informe: datos de facturación y de la operación.</li>
+      <li>Datos de navegación técnicos que cualquier servidor web registra: dirección IP, tipo de navegador y dispositivo, páginas visitadas.</li>
+    </ul>
+    <p>Los datos de salud son una categoría especial de datos (artículo 9 del RGPD). Solo los tratamos con su consentimiento explícito y para la finalidad de estudiar su caso y elaborar el informe pericial que nos encargue.</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">3. Legitimación</h2>
-        <p>
-          La base legal para el tratamiento de los datos es el consentimiento del usuario, prestado al enviar
-          voluntariamente sus datos a través del formulario de contacto, y en su caso la ejecución de un contrato
-          de prestación de servicios periciales.
-        </p>
-      </div>
+  <div>
+    <h2>¿Con qué base legal se tratan esos datos?</h2>
+    <ul>
+      <li>El consentimiento de la persona interesada, para responder a sus consultas y, en el caso de los datos de salud, el consentimiento explícito que presta al enviarlos.</li>
+      <li>La ejecución de un contrato con {TITULAR.razonSocial}, para la prestación de los servicios de peritaje médico que encargue.</li>
+      <li>El interés legítimo del responsable del tratamiento, para proteger la web y a sus usuarios de abusos y fraudes.</li>
+      <li>El cumplimiento de obligaciones legales (por ejemplo, fiscales y contables).</li>
+    </ul>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">4. Conservación de los datos</h2>
-        <p>
-          Los datos se conservarán durante el tiempo necesario para atender la consulta o, en caso de existir
-          relación contractual, durante el tiempo exigido por la legislación aplicable (obligaciones fiscales,
-          mercantiles y de responsabilidad civil).
-        </p>
-      </div>
+  <div>
+    <h2>¿Con qué finalidades trataremos sus datos?</h2>
+    <ul>
+      <li><strong>Formulario de contacto y formulario de consulta:</strong> los datos se usan para responder a su consulta, valorar su caso y enviarle la información que solicite.</li>
+      <li><strong>Teléfono, WhatsApp y correo electrónico:</strong> si nos contacta por estos medios, usamos los datos que nos facilite con la misma finalidad. WhatsApp es un servicio de un tercero que trata los datos conforme a su propia política de privacidad.</li>
+      <li><strong>Encargo de un informe:</strong> gestionar el servicio contratado, elaborar el informe pericial, la facturación y, en su caso, la ratificación en juicio.</li>
+    </ul>
+    <p>No utilizamos sus datos para enviar comunicaciones comerciales ni elaboramos perfiles.</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">5. Destinatarios</h2>
-        <p>
-          No se cederán datos a terceros salvo obligación legal. Podrán tener acceso a los datos los proveedores
-          tecnológicos que prestan servicios de hosting, correo electrónico o gestión de formularios necesarios
-          para el funcionamiento del sitio web, en calidad de encargados del tratamiento.
-        </p>
-      </div>
+  <div>
+    <h2>Tiempo de conservación de los datos personales</h2>
+    <p>Los datos personales facilitados se conservarán durante el menor tiempo posible teniendo en cuenta los motivos por los que se necesita el tratamiento, así como las obligaciones legales de conservarlos durante un tiempo determinado (legislación fiscal o de lucha contra el fraude) o mientras la persona interesada no retire su consentimiento. Posteriormente, los datos serán suprimidos conforme a lo dispuesto en la normativa de protección de datos, lo que implica su bloqueo, estando disponibles tan solo a solicitud de jueces y tribunales, el Ministerio Fiscal o las Administraciones Públicas competentes durante el plazo de prescripción de las acciones que pudieran derivar y, transcurrido este, serán eliminados por completo.</p>
+    <p>Datos de clientes: el periodo de conservación variará en función del servicio contratado. En cualquier caso, será el mínimo necesario, pudiendo mantenerse hasta:</p>
+    <ul>
+      <li>4 años: artículos 66 y siguientes de la Ley General Tributaria.</li>
+      <li>5 años: artículo 1964 del Código Civil (acciones personales sin plazo especial).</li>
+      <li>6 años: artículo 30 del Código de Comercio (libros de contabilidad, facturas…).</li>
+      <li>10 años: artículo 25 de la Ley de Prevención del Blanqueo de Capitales y de la Financiación del Terrorismo.</li>
+    </ul>
+    <p>Consultas que no se convierten en encargo: se conservan el tiempo necesario para atenderlas y se suprimen después.</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">6. Derechos de los interesados</h2>
-        <p>
-          El usuario puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación del
-          tratamiento y portabilidad de los datos dirigiéndose por escrito a
-          <a href="mailto:info@peritomedicobarcelona.com" class="text-accent-600 hover:underline">info@peritomedicobarcelona.com</a>,
-          adjuntando copia de un documento que acredite su identidad. Asimismo, tiene derecho a presentar una
-          reclamación ante la Agencia Española de Protección de Datos (www.aepd.es) si considera que el
-          tratamiento no se ajusta a la normativa vigente.
-        </p>
-      </div>
+  <div>
+    <h2>¿Cuáles son sus derechos?</h2>
+    <p>Cualquier persona tiene derecho a obtener confirmación sobre si en {TITULAR.razonSocial} estamos tratando datos personales que le conciernen. Las personas interesadas tienen derecho a:</p>
+    <ul>
+      <li>Solicitar el acceso a sus datos personales.</li>
+      <li>Solicitar su rectificación o supresión.</li>
+      <li>Solicitar la limitación de su tratamiento.</li>
+      <li>Oponerse al tratamiento.</li>
+      <li>Solicitar la portabilidad de los datos.</li>
+    </ul>
+    <p>Si ha otorgado su consentimiento para alguna finalidad concreta, tiene derecho a retirarlo en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada.</p>
+    <p>Para ejercitar estos derechos, puede escribir a <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a> o enviar una carta a {TITULAR.domicilio}. En caso de que actúe a través de representación legal, deberá aportar además el DNI y el documento acreditativo de la representación. Será necesario aportar copia del DNI o documento equivalente cuando el responsable tenga dudas sobre su identidad.</p>
+    <p>Si considera vulnerados sus derechos, especialmente cuando no haya obtenido satisfacción en su ejercicio, puede presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es/" target="_blank" rel="noopener">www.aepd.es</a>).</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">7. Medidas de seguridad</h2>
-        <p>
-          Se han adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los
-          datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado.
-        </p>
-      </div>
+  <div>
+    <h2>Notificación y declaración de brechas</h2>
+    <p>{TITULAR.razonSocial} adopta medidas de seguridad adecuadas al nivel de riesgo para proteger la información personal contra la pérdida, el uso indebido y el acceso no autorizado, su divulgación, alteración y destrucción, teniendo en cuenta los riesgos que conlleva el tratamiento y la naturaleza de la información personal, en especial de los datos de salud. No obstante, si {TITULAR.razonSocial} determina que los datos personales que trata han sido malversados, se han visto expuestos por una brecha de seguridad o adquiridos de forma incorrecta por un tercero, actuará de forma inmediata teniendo en cuenta lo establecido por el RGPD y las autoridades de protección de datos competentes.</p>
+  </div>
 
-      <p class="text-xs text-gray-400">Última actualización: [fecha].</p>
-    </div>
-  </section>
-</Layout>
+  <div>
+    <h2>¿A qué destinatarios se comunicarán sus datos?</h2>
+    <p>Sus datos no se ceden a terceros salvo obligación legal. Para tareas estrictamente necesarias para la actividad, {TITULAR.razonSocial} se apoya en proveedores que actúan como encargados del tratamiento:</p>
+    <ul>
+      <li>Alojamiento de la web: Vercel Inc.</li>
+      <li>Envío del formulario de contacto: Web3Forms, que reenvía su consulta por correo electrónico.</li>
+      <li>Proveedores de correo electrónico, gestión contable y fiscal.</li>
+    </ul>
+    <p>Todos ellos están obligados por contrato a mantener el mismo nivel de privacidad que se aplica a los tratamientos realizados en esta web. Algunos de estos proveedores pueden estar situados fuera del Espacio Económico Europeo; en ese caso, la transferencia se ampara en las garantías previstas en el RGPD.</p>
+    <p>Si el caso lo requiere y usted lo autoriza, el informe pericial se entrega a su abogado o se aporta al procedimiento judicial o administrativo correspondiente.</p>
+  </div>
+
+  <div>
+    <h2>Secreto y seguridad de los datos</h2>
+    <p>{TITULAR.razonSocial} se compromete al uso y tratamiento de los datos personales respetando su confidencialidad y de acuerdo con su finalidad, así como a cumplir su obligación de guardarlos y adoptar todas las medidas para evitar su alteración, pérdida, tratamiento o acceso no autorizado, de conformidad con la normativa vigente de protección de datos. {TITULAR.razonSocial} no puede garantizar la absoluta inexpugnabilidad de Internet ni, por tanto, la violación de los datos mediante accesos fraudulentos por parte de terceros.</p>
+    <p>Con respecto a la confidencialidad del tratamiento, {TITULAR.razonSocial} se asegurará de que cualquier persona autorizada para tratar los datos (incluido su personal, colaboradores y prestadores) se encuentre bajo la debida obligación de confidencialidad, ya sea contractual o legal. Los médicos que intervienen están sujetos, además, al secreto profesional.</p>
+  </div>
+
+  <div>
+    <h2>Exactitud y veracidad de los datos</h2>
+    <p>Como usuario, es el único responsable de la veracidad y corrección de los datos que nos remita, exonerando a {TITULAR.razonSocial} de cualquier responsabilidad al respecto. Los usuarios garantizan y responden de la exactitud, vigencia y autenticidad de los datos personales facilitados, y se comprometen a mantenerlos debidamente actualizados.</p>
+  </div>
+
+  <div>
+    <h2>Datos personales de terceros</h2>
+    <p>En el caso de que los datos personales aportados pertenecieran a un tercero (por ejemplo, un familiar al que representa), garantiza que ha informado a dicho tercero de esta Política de privacidad y ha obtenido su autorización para facilitar sus datos a {TITULAR.razonSocial} con las finalidades señaladas. Igualmente, garantiza que los datos aportados son exactos y actualizados, siendo responsable de cualquier daño o perjuicio, directo o indirecto, que pudiera ocasionarse como consecuencia del incumplimiento de tal obligación.</p>
+  </div>
+
+  <div>
+    <h2>Cambios en la política de privacidad</h2>
+    <p>{TITULAR.razonSocial} se reserva el derecho a modificar la presente política para adaptarla a novedades legislativas o jurisprudenciales, así como a prácticas del sector. En dichos supuestos, anunciará en esta página los cambios introducidos con razonable antelación a su puesta en práctica.</p>
+  </div>
+
+  <div>
+    <h2>Información adicional</h2>
+    <p>Si necesita información adicional sobre protección de datos, puede enviarnos un correo electrónico a <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a> o una comunicación dirigida a {TITULAR.domicilio} y, en función del tipo de relación que tenga con nuestra entidad y el tratamiento de datos personales que realicemos, le facilitaremos la información adicional que corresponda.</p>
+  </div>
+</PaginaLegal>

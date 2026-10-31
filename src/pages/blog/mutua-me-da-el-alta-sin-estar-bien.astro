@@ -1,0 +1,82 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const RD1430 = 'https://www.boe.es/buscar/act.php?id=BOE-A-2009-15442';
+const LRJS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2011-15936';
+const ALTA_CANAL_SALUT = 'https://canalsalut.gencat.cat/ca/salut-a-z/a/avaluacions-mediques/alta-medica/';
+---
+
+<BlogPostLayout
+  title="La mutua me da el alta pero no estoy bien: qué hacer y en qué plazo"
+  pageTitle="La Mutua Me Da el Alta pero No Estoy Bien: Qué Hacer"
+  description="Si la mutua le da el alta sin estar recuperado, tiene 10 días hábiles para pedir la revisión al INSS. Pasos, plazos y qué cambia si la baja es por enfermedad común."
+  date="2026-10-31"
+  readingTime="7"
+  category="Alta Médica"
+  faqs={[
+    { question: '¿La mutua puede darme el alta si mi baja es por enfermedad común?', answer: 'No. En una baja por enfermedad común en Cataluña el alta solo la pueden dar su médico de familia o un médico evaluador del ICAM. La mutua puede enviar al ICAM una propuesta motivada de alta, que el ICAM tramita en un máximo de 5 días, y su médico de familia puede mostrarse de acuerdo o no.' },
+    { question: '¿Cobro mientras el INSS revisa el alta de la mutua?', answer: 'Sí, en principio. Según el artículo 4.3 del Real Decreto 1430/2009, iniciar la revisión suspende los efectos del alta y la baja se entiende prorrogada, con el pago delegado de la prestación. Si al final se confirma el alta, el INSS puede considerar indebidas las cantidades cobradas durante la revisión.' },
+    { question: '¿Tengo que avisar a la empresa?', answer: 'Sí. Quien pide la revisión del alta tiene que comunicarlo a la empresa el mismo día en que presenta la solicitud o el siguiente día hábil (artículo 4.2 del Real Decreto 1430/2009).' },
+    { question: '¿Necesito abogado para impugnar el alta?', answer: 'Para la solicitud de revisión ante el INSS, no: es un formulario. Si después hay juicio, la Ley 36/2011 (artículo 21) permite ir sin abogado en la primera instancia, aunque es recomendable contar con un abogado laboralista o un graduado social.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Si su baja es por accidente de trabajo o enfermedad profesional y la mutua le da el alta sin estar recuperado, puede pedir al INSS la revisión del alta en los 10 días hábiles siguientes a la notificación (artículo 4 del Real Decreto 1430/2009). Mientras se resuelve, el alta queda en suspenso y la baja se considera prorrogada.
+  </p>
+
+  <h2 class={h2}>Primero: ¿quién le ha dado el alta?</h2>
+  <p class={p}>El camino y el plazo dependen de quién firma el alta y de si la baja es por una contingencia profesional (accidente de trabajo o enfermedad profesional) o común.</p>
+  <div class="overflow-x-auto mb-4">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Quién da el alta</th><th class="p-3 border-b">Qué puede hacer</th><th class="p-3 border-b">Plazo</th><th class="p-3 border-b">Norma</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b">La mutua, en una baja por accidente de trabajo o enfermedad profesional</td><td class="p-3 border-b">Pedir la revisión del alta al INSS</td><td class="p-3 border-b whitespace-nowrap">10 días hábiles</td><td class="p-3 border-b"><a href={RD1430} target="_blank" rel="noopener" class={a}>RD 1430/2009, art. 4</a></td></tr>
+        <tr><td class="p-3 border-b">El INSS (por ejemplo, al llegar a los 365 días de baja)</td><td class="p-3 border-b">Manifestar disconformidad ante la inspección médica del servicio público de salud (en Cataluña, el ICAM)</td><td class="p-3 border-b whitespace-nowrap">4 días naturales</td><td class="p-3 border-b"><a href={RD1430} target="_blank" rel="noopener" class={a}>RD 1430/2009, art. 3</a></td></tr>
+        <tr><td class="p-3 border-b">Su médico de familia o el ICAM, en una baja por enfermedad común</td><td class="p-3 border-b">Reclamación administrativa previa ante la Direcció General d'Ordenació i Regulació Sanitària</td><td class="p-3 border-b whitespace-nowrap">11 días hábiles</td><td class="p-3 border-b"><a href={ALTA_CANAL_SALUT} target="_blank" rel="noopener" class={a}>Canal Salut</a></td></tr>
+        <tr><td class="p-3">La mutua, en una baja por enfermedad común</td><td class="p-3" colspan="3">No puede darle el alta. Solo puede proponerla al ICAM.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-xs text-gray-500 mb-6">Los plazos se cuentan desde la notificación del alta. No espere al último día.</p>
+
+  <h2 class={h2}>Cómo pedir la revisión del alta de la mutua, paso a paso</h2>
+  <ol class="list-decimal pl-5 space-y-3 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">Presente la solicitud al INSS en los 10 días hábiles siguientes a la notificación del alta.</strong> El formulario está en la web de la Seguridad Social. En él explica por qué no está de acuerdo con el alta.</li>
+    <li><strong class="text-primary-900">Adjunte su historial médico del proceso.</strong> La norma exige acompañar el historial médico previo relacionado con la baja o, si no lo tiene, una copia de la petición de ese historial a la mutua.</li>
+    <li><strong class="text-primary-900">Avise a su empresa</strong> el mismo día en que presenta la solicitud o el siguiente día hábil.</li>
+    <li><strong class="text-primary-900">Espere la resolución.</strong> La mutua tiene 4 días hábiles para enviar sus antecedentes al INSS, y el INSS resuelve en 15 días hábiles desde que los recibe, con un informe previo de su equipo de valoración. Si la mutua reconoce que el alta no procedía, el expediente se archiva.</li>
+    <li><strong class="text-primary-900">Si el INSS confirma el alta, la siguiente vía es el Juzgado de lo Social.</strong> En los procesos de impugnación de altas médicas, la Ley 36/2011 fija un plazo de 20 días para presentar la demanda (<a href={LRJS} target="_blank" rel="noopener" class={a}>art. 71.6</a>). Confirme el cómputo con su abogado.</li>
+  </ol>
+
+  <h2 class={h2}>¿Tengo que volver a trabajar mañana?</h2>
+  <p class={p}>
+    Si ha pedido la revisión del alta de la mutua por una contingencia profesional, <strong>no</strong>: iniciar el procedimiento suspende los efectos del alta y la baja se entiende prorrogada mientras dura (artículo 4.3 del Real Decreto 1430/2009). Fuera de ese caso, el alta produce efectos y, según Canal Salut, hay que reincorporarse al día siguiente o al primer día hábil, y entregar el alta a la empresa en las 24 horas siguientes a su emisión.
+  </p>
+
+  <h2 class={h2}>¿Qué tiene que demostrar el informe médico?</h2>
+  <p class={p}>
+    La pregunta que resuelve el INSS o el juez es concreta: ¿puede usted hacer hoy las tareas de su puesto? Por eso no basta con un diagnóstico. El informe tiene que describir las limitaciones que persisten (movilidad, fuerza, dolor, tolerancia a la carga o a la bipedestación, efectos de la medicación), apoyarlas en pruebas objetivas y compararlas con las exigencias reales de su trabajo. Si el alta llegó con tratamientos o pruebas pendientes, conviene dejarlo por escrito.
+  </p>
+  <p class={p}>
+    El procedimiento es el mismo sea cual sea su mutua (Asepeyo, Fremap, MC Mutual, Mutua Universal, Mútua Terrassa, Egarsat u otra). Si además se discute si la lesión es laboral o común, el punto de partida es otro: la <a href={url('/servicios/determinacion-contingencia/')} class={a}>determinación de contingencia</a>.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Elaboramos el <a href={url('/servicios/impugnacion-alta-medica/')} class={a}>informe pericial para impugnar el alta médica</a> en el plazo que marca su caso, y el perito lo ratifica en juicio si llega a la vía judicial. Si no sabe si su alta se puede discutir, pida una <a href={url('/revision-alta-medica-gratuita/')} class={a}>revisión telefónica de su alta</a>. Si le han citado en el ICAM, lea antes
+    <a href={url('/blog/tribunal-medico-icam-barcelona/')} class={a}>cómo funciona el tribunal médico de Barcelona</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={RD1430} target="_blank" rel="noopener" class={a}>Real Decreto 1430/2009, de 11 de septiembre (incapacidad temporal), arts. 3 y 4</a></li>
+    <li><a href={LRJS} target="_blank" rel="noopener" class={a}>Ley 36/2011, reguladora de la jurisdicción social, arts. 21, 71 y 140</a></li>
+    <li><a href={ALTA_CANAL_SALUT} target="_blank" rel="noopener" class={a}>Canal Salut: el alta médica</a></li>
+  </ul>
+</BlogPostLayout>

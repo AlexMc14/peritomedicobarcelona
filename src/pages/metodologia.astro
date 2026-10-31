@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CTASection from '../components/CTASection.astro';
+import Revision from '../components/Revision.astro';
+import { url } from '../utils/links';
+import { FUENTES } from '../data/fuentes';
+import { REVISION_SERVICIOS } from '../data/site';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-12 mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+
+const pasos = [
+  { titulo: 'Estudio de la documentación', texto: 'Revisamos la historia clínica, las pruebas, los partes y las resoluciones (del INSS, la mutua o la aseguradora) para saber qué hay que acreditar y si el caso tiene base médica. Si le falta documentación, le indicamos cómo pedirla: el paciente tiene derecho a acceder a su historia clínica y a obtener copia (Ley 41/2002, art. 18).' },
+  { titulo: 'Valoración telefónica y presupuesto', texto: 'Le explicamos por teléfono qué puede aportar un informe en su caso. Si decide seguir, le damos el presupuesto del informe antes de empezar ningún trabajo.' },
+  { titulo: 'Exploración médica', texto: 'Cuando el informe lo exige, exploramos al paciente en consulta en Barcelona para comprobar las limitaciones que no siempre constan en los informes previos: movilidad, fuerza, dolor, secuelas.' },
+  { titulo: 'Informe pericial', texto: 'Redactamos el informe con la metodología y la norma que corresponden al procedimiento: lesiones, relación causal, secuelas y conclusiones claras. El perito manifiesta en el dictamen que actúa con la mayor objetividad posible, como exige la Ley de Enjuiciamiento Civil (art. 335.2).' },
+  { titulo: 'Ratificación en juicio', texto: 'Si el procedimiento llega a juicio, el perito acude a ratificar el informe y responde a las preguntas del juez y de las partes. El tribunal valora el dictamen según las reglas de la sana crítica (LEC, art. 348).' },
+];
+
+const normas = [
+  { ambito: 'Accidentes de tráfico y daño corporal', norma: FUENTES.ley35 },
+  { ambito: 'Incapacidad temporal y altas médicas', norma: FUENTES.rd1430 },
+  { ambito: 'Incapacidad permanente y prestaciones', norma: FUENTES.lgss },
+  { ambito: 'Juicios ante los Juzgados de lo Social', norma: FUENTES.lrjs },
+  { ambito: 'Dictamen de peritos en procesos civiles', norma: FUENTES.lec },
+  { ambito: 'Historia clínica y consentimiento informado', norma: FUENTES.ley41 },
+  { ambito: 'Reclamaciones a la sanidad pública', norma: FUENTES.ley40 },
+  { ambito: 'Grado de discapacidad', norma: FUENTES.rd888 },
+];
+---
+
+<Layout
+  title="Cómo Trabajamos: Metodología del Informe Pericial Médico"
+  description="Cómo elaboramos un informe pericial médico en Barcelona: estudio de la documentación, exploración, informe, ratificación en juicio y normativa que aplicamos."
+  dateModified={REVISION_SERVICIOS}
+>
+  <section class="bg-primary-950 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <Breadcrumb migas={[{ nombre: 'Sobre Nosotros', href: '/sobre-nosotros/' }, { nombre: 'Cómo trabajamos' }]} />
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">Cómo trabajamos</h1>
+        <p class="text-lg text-primary-200 leading-relaxed">
+          Un informe pericial médico se hace en cinco pasos: estudio de la documentación, valoración telefónica y presupuesto, exploración del paciente cuando hace falta, redacción del informe con la norma aplicable y ratificación en juicio. Trabajamos con independencia de aseguradoras, mutuas y organismos públicos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-600 leading-relaxed">
+      <h2 class="font-heading text-2xl font-bold text-primary-900 mb-6">El proceso pericial, paso a paso</h2>
+      <ol class="space-y-6">
+        {pasos.map((paso, i) => (
+          <li class="flex gap-5">
+            <span class="w-10 h-10 bg-primary-900 rounded-xl flex items-center justify-center flex-shrink-0 text-accent-300 font-bold text-sm">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3 class="font-semibold text-primary-900 mb-1">{paso.titulo}</h3>
+              <p class="text-sm">{paso.texto}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <h2 class={h2}>Qué normativa aplicamos</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left border border-gray-200">
+          <thead class="bg-gray-50 text-primary-900"><tr><th class="p-3 border-b">Ámbito</th><th class="p-3 border-b">Norma (texto oficial)</th></tr></thead>
+          <tbody>
+            {normas.map((n) => (
+              <tr><td class="p-3 border-b">{n.ambito}</td><td class="p-3 border-b"><a href={n.norma.url} target="_blank" rel="noopener" class={a}>{n.norma.nombre}</a></td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class={h2}>Independencia</h2>
+      <p class="mb-4">
+        No trabajamos para aseguradoras, mutuas, el INSS ni el ICAM, y no tenemos vinculación con ninguna entidad médica. El informe refleja lo que muestra la documentación y la exploración, también cuando no favorece a quien lo encarga: si el caso no tiene base médica, se lo decimos antes de hacer el informe.
+      </p>
+
+      <h2 class={h2}>Presupuesto y confidencialidad</h2>
+      <p class="mb-4">
+        El precio depende del tipo de informe, del volumen de documentación y de si hace falta exploración o ratificación en juicio. Por eso le damos el presupuesto cuando conocemos el caso y antes de empezar. Orientación general en la guía de <a href={url('/informes/precios-plazos-informe-pericial-2026/')} class={a}>precios y plazos del informe pericial</a>.
+      </p>
+      <p class="mb-4">
+        Los datos de salud son una categoría especial de datos personales. Solo los usamos para estudiar su caso y elaborar el informe, y no los cedemos a terceros salvo obligación legal. Detalle en la <a href={url('/politica-privacidad/')} class={a}>política de privacidad</a>.
+      </p>
+      <p class="mb-8">
+        Más dudas sobre el servicio en <a href={url('/preguntas-frecuentes/')} class={a}>preguntas frecuentes</a> y sobre cómo redactamos y revisamos la web en la <a href={url('/politica-editorial/')} class={a}>política editorial</a>.
+      </p>
+
+      <Revision fecha={REVISION_SERVICIOS} />
+    </div>
+  </section>
+
+  <CTASection title="¿Quiere saber si su caso tiene base médica?" subtitle="Cuéntenos su caso por teléfono y le explicamos qué puede aportar un informe pericial." />
+</Layout>

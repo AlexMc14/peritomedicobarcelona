@@ -2,13 +2,22 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/ContactModal.astro';
+import BotonesFlotantes from '../components/BotonesFlotantes.astro';
+import { SITE, ORG_ID, TITULAR } from '../data/site';
+import { especialidades } from '../data/servicios';
+import { servicios } from '../data/servicios';
+import { zonas } from '../data/zonas';
 
 interface Props {
   title: string;
   description?: string;
+  noindex?: boolean;
+  /** ISO: fecha de última revisión de la página (WebPage.dateModified) */
+  dateModified?: string;
 }
 
-const { title, description = 'Perito Médico en Barcelona. Informes periciales médicos, valoración del daño corporal, negligencias médicas e incapacidad laboral. Consulta telefónica gratuita.' } = Astro.props;
+const { title, noindex = false, dateModified, description = 'Perito Médico en Barcelona. Informes periciales médicos, valoración del daño corporal, negligencias médicas e incapacidad laboral. Consulta telefónica gratuita.' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <!doctype html>
@@ -20,6 +29,7 @@ const { title, description = 'Perito Médico en Barcelona. Informes periciales m
     <meta name="geo.region" content="ES-CT" />
     <meta name="geo.placename" content="Barcelona" />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,60 +43,59 @@ const { title, description = 'Perito Médico en Barcelona. Informes periciales m
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <!-- Schema.org LocalBusiness -->
+    <meta property="og:site_name" content={SITE.nombre} />
+    <!-- JSON-LD global: organización (NAP único desde src/data/site.ts), web y página -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "Perito Médico Barcelona",
-      "description": description,
-      "url": "https://www.peritomedicobarcelona.com",
-      "telephone": "+34 692 36 61 04",
-      "email": "info@peritomedicobarcelona.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Barcelona",
-        "addressLocality": "Barcelona",
-        "addressRegion": "Cataluña",
-        "postalCode": "08001",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 41.3851,
-        "longitude": 2.1734
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "09:00",
-          "closes": "19:00"
+          "@type": "ProfessionalService",
+          "@id": ORG_ID,
+          "name": SITE.nombre,
+          "legalName": TITULAR.razonSocial,
+          "url": `${SITE.url}/`,
+          "telephone": SITE.telefono,
+          "email": SITE.email,
+          "description": "Peritaje médico independiente en Barcelona y Cataluña: informes periciales de daño corporal, negligencia médica, incapacidad permanente, altas médicas y discapacidad.",
+          // ponytail: sin calle ni código postal porque el repo no los tiene (aviso legal pendiente); añadirlos aquí cuando existan
+          "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES" },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          }],
+          "areaServed": [
+            { "@type": "City", "name": "Barcelona" },
+            ...zonas.map((z) => ({ "@type": "Place", "name": z.nombre })),
+            { "@type": "AdministrativeArea", "name": "Cataluña" }
+          ],
+          "knowsAbout": ["Medicina legal y forense", "Valoración del daño corporal", "Negligencia médica", "Incapacidad permanente", "Incapacidad temporal", "Discapacidad", "Baremo de tráfico (Ley 35/2015)", ...especialidades.map((e) => e.nombre)],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de peritaje médico",
+            "itemListElement": servicios.map((s) => ({ "@type": "Offer", "itemOffered": { "@type": "Service", "name": s.nombre, "url": new URL(s.href, SITE.url).href } }))
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": `${SITE.url}/#web`,
+          "url": `${SITE.url}/`,
+          "name": SITE.nombre,
+          "inLanguage": "es-ES",
+          "publisher": { "@id": ORG_ID }
+        },
+        {
+          "@type": "WebPage",
+          "@id": canonical,
+          "url": canonical,
+          "name": title,
+          "description": description,
+          "inLanguage": "es-ES",
+          "isPartOf": { "@id": `${SITE.url}/#web` },
+          "about": { "@id": ORG_ID },
+          ...(dateModified ? { "dateModified": dateModified } : {})
         }
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Barcelona" },
-        { "@type": "State", "name": "Cataluña" }
-      ],
-      "serviceType": [
-        "Informes Periciales Médicos",
-        "Valoración del Daño Corporal",
-        "Negligencia Médica",
-        "Incapacidad Laboral",
-        "Peritaje Traumatológico",
-        "Peritaje Neurológico",
-        "Peritaje Psiquiátrico",
-        "Accidente de Trabajo",
-        "Seguridad Social"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios de Peritaje Médico",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Valoración telefónica gratuita del caso" } }
-        ]
-      },
-      "sameAs": [
-        "https://www.peritomedicobarcelona.com"
       ]
     })} />
   </head>
@@ -97,17 +106,7 @@ const { title, description = 'Perito Médico en Barcelona. Informes periciales m
     </main>
     <Footer />
     <ContactModal />
-    <a
-      href="https://wa.me/34692366104"
-      target="_blank"
-      rel="noopener"
-      aria-label="Contactar por WhatsApp"
-      class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110"
-    >
-      <svg viewBox="0 0 24 24" fill="white" class="h-8 w-8" aria-hidden="true">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-    </a>
+    <BotonesFlotantes />
   </body>
 </html>
 

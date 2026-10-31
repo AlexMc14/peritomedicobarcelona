@@ -1,87 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { url } from '../utils/links';
+import PaginaLegal from '../components/PaginaLegal.astro';
+import { SITE, TITULAR, telHref } from '../data/site';
+const dominio = 'www.peritomedicobarcelona.com';
 ---
 
-<Layout
+<PaginaLegal
   title="Aviso Legal | Perito Médico Barcelona"
-  description="Aviso legal y condiciones de uso del sitio web peritomedicobarcelona.com."
+  description="Aviso legal y condiciones de uso de peritomedicobarcelona.com: datos del titular, propiedad intelectual, responsabilidad y enlaces."
+  h1="Aviso legal"
+  actualizado="2026-10-31"
 >
-  <section class="bg-primary-950 py-16 lg:py-20 relative overflow-hidden">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <nav class="flex items-center gap-2 text-sm text-primary-400 mb-6">
-          <a href={url('/')} class="hover:text-primary-200 transition-colors">Inicio</a>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          <span class="text-primary-200">Aviso Legal</span>
-        </nav>
-        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">Aviso Legal</h1>
-      </div>
-    </div>
-  </section>
+  <div>
+    <h2>Introducción</h2>
+    <p>
+      El presente documento tiene como finalidad establecer y regular las normas de uso de este portal web, entendiendo por este todas las páginas y sus contenidos, propiedad de {TITULAR.razonSocial}, a las cuales se accede a través del dominio {dominio}. La utilización del portal web atribuye la condición de usuario del mismo e implica la aceptación de todas las condiciones incluidas en el presente aviso legal. El usuario se compromete a leer atentamente el presente aviso legal en cada una de las ocasiones en que se proponga utilizar nuestro portal web, ya que este y sus condiciones de uso pueden sufrir modificaciones.
+    </p>
+  </div>
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-gray-600 leading-relaxed text-sm">
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">1. Datos identificativos</h2>
-        <p>
-          En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la
-          Información y de Comercio Electrónico (LSSI-CE), se informa de los siguientes datos: el titular de este
-          sitio web es <strong>[Nombre o razón social del titular]</strong>, con NIF/CIF <strong>[NIF/CIF]</strong>,
-          domicilio en <strong>[Dirección completa, código postal, Barcelona]</strong> y correo de contacto
-          <a href="mailto:info@peritomedicobarcelona.com" class="text-accent-600 hover:underline">info@peritomedicobarcelona.com</a>.
-        </p>
-      </div>
+  <div>
+    <h2>Datos identificativos</h2>
+    <p>En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se reflejan los siguientes datos:</p>
+    <ul>
+      <li>Razón social: {TITULAR.razonSocial}</li>
+      <li>CIF: {TITULAR.cif}</li>
+      <li>Domicilio: {TITULAR.domicilio}</li>
+      <li>Teléfono: <a href={telHref}>{SITE.telefono}</a></li>
+      <li>Correo electrónico: <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a></li>
+      <li>Nombre del dominio: {dominio}</li>
+      <li>Nombre comercial: {SITE.nombre}</li>
+    </ul>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">2. Objeto</h2>
-        <p>
-          El presente sitio web tiene por objeto informar sobre los servicios de peritaje médico ofrecidos por el
-          titular (informes periciales médicos, valoración del daño corporal, negligencia médica, incapacidad
-          laboral y servicios relacionados) y facilitar el contacto de los usuarios interesados.
-        </p>
-      </div>
+  <div>
+    <h2>Usuarias y usuarios</h2>
+    <p>El acceso y uso de este portal atribuye la condición de usuaria o usuario, que acepta, desde dicho acceso y uso, las condiciones generales de uso aquí reflejadas. Las citadas condiciones serán de aplicación independientemente de las condiciones generales de contratación que, en su caso, resulten de obligado cumplimiento.</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">3. Condiciones de uso</h2>
-        <p>
-          El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación de las
-          condiciones incluidas en este Aviso Legal. El usuario se compromete a hacer un uso adecuado y lícito del
-          sitio web, de conformidad con la legislación aplicable, la buena fe y el orden público, absteniéndose de
-          cualquier conducta que pudiera dañar la imagen, los intereses o los derechos del titular o de terceros.
-        </p>
-      </div>
+  <div>
+    <h2>Uso del portal</h2>
+    <p>El portal proporciona el acceso a diversas informaciones sobre nuestra entidad y sus servicios de peritaje médico, apartados de contacto y otros contenidos pertenecientes a {TITULAR.razonSocial} o a sus licenciadores, a los que la usuaria o el usuario pueda tener acceso. La usuaria o el usuario asume la responsabilidad del uso del portal. Dicha responsabilidad se extiende a los datos que facilite para posibilitar la respuesta a sus consultas en los apartados de contacto de la presente página web. La usuaria o el usuario será responsable de aportar información veraz y lícita.</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">4. Propiedad intelectual e industrial</h2>
-        <p>
-          Todos los contenidos del sitio web (textos, imágenes, marcas, logotipos, diseño y código fuente) son
-          titularidad del titular del sitio o de terceros que han autorizado su uso, y están protegidos por la
-          normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución o
-          comunicación pública total o parcial sin autorización previa y por escrito.
-        </p>
-      </div>
+  <div>
+    <h2>Propiedad intelectual e industrial</h2>
+    <p>{TITULAR.razonSocial}, por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo: imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.). Todos los derechos reservados. En virtud de lo dispuesto en los artículos 8 y 32.2, párrafo segundo, de la Ley de Propiedad Intelectual, quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de {TITULAR.razonSocial}.</p>
+    <p>En ningún momento, salvo manifestación expresa de lo contrario, el acceso, navegación o utilización del sitio web o de sus contenidos confiere a la usuaria o al usuario derecho alguno sobre signos distintivos en él incluidos. La usuaria o el usuario se compromete a respetar los derechos de propiedad intelectual e industrial titularidad de {TITULAR.razonSocial}. En el caso de que la usuaria o el usuario envíe información de cualquier tipo a {TITULAR.razonSocial} a través de cualquiera de los canales habilitados para ello dentro de nuestro portal web, declara, garantiza y acepta que tiene derecho a hacerlo con total libertad, que dicha información no infringe ningún derecho de propiedad intelectual, industrial o cualesquiera otros derechos de terceras personas, y que dicha información no es perjudicial para terceras personas.</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">5. Exclusión de responsabilidad</h2>
-        <p>
-          Los contenidos de este sitio web tienen carácter meramente informativo y no constituyen asesoramiento
-          jurídico ni médico-legal sobre ningún caso concreto. El titular no garantiza la ausencia de errores en
-          el acceso al sitio web ni que su contenido esté siempre actualizado, sin perjuicio de adoptar las medidas
-          necesarias para evitarlo y, en su caso, subsanarlo con la mayor brevedad posible.
-        </p>
-      </div>
+  <div>
+    <h2>Exclusión de garantías y responsabilidad</h2>
+    <p>{TITULAR.razonSocial} no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que se pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo. El contenido, la información y los consejos expresados en este portal web deben entenderse como simplemente orientativos y no sustituyen la valoración individual de cada caso ni el asesoramiento jurídico. {TITULAR.razonSocial} no responde de ninguna forma de la efectividad o exactitud de los mismos, quedando exenta de cualquier responsabilidad con los usuarios y usuarias que hagan uso de ellos.</p>
+    <p>{TITULAR.razonSocial} se reserva el derecho de modificar el contenido del sitio sin previo aviso y sin ningún tipo de limitación. Asimismo, declina cualquier responsabilidad por los eventuales daños y perjuicios que puedan ocasionarse por la falta de disponibilidad o continuidad de este sitio y de los servicios que se ofrecen en él. Tampoco puede garantizar la ausencia de virus ni de otros elementos en la web que puedan producir alteraciones en su sistema informático. {TITULAR.razonSocial} declina cualquier responsabilidad por los servicios e información que se presten en otros sitios enlazados con este, ya que no controla ni ejerce ningún tipo de supervisión en sitios web de terceras personas. Aconsejamos a las usuarias y a los usuarios de los mismos que actúen con prudencia y que consulten las eventuales condiciones legales que se expongan en dichas webs.</p>
+    <p>Las usuarias y los usuarios que remitan cualquier tipo de información a {TITULAR.razonSocial} se asegurarán de que la misma sea veraz y de que no vulnere cualquier derecho de terceras personas ni la legalidad vigente. Si cree que cualquier contenido o información de este sitio vulnera un derecho legítimo o la legalidad vigente, le agradeceremos que se ponga en contacto con nosotros en la dirección de correo electrónico <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a> o en el teléfono <a href={telHref}>{SITE.telefono}</a> para que podamos tomar las medidas oportunas.</p>
+  </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-bold text-primary-900 mb-3">6. Legislación aplicable y jurisdicción</h2>
-        <p>
-          Las presentes condiciones se rigen por la legislación española. Para la resolución de cualquier
-          controversia, las partes se someten a los Juzgados y Tribunales de Barcelona, salvo que la normativa de
-          consumidores y usuarios establezca otro fuero.
-        </p>
-      </div>
+  <div>
+    <h2>Modificaciones</h2>
+    <p>{TITULAR.razonSocial} se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que estos aparezcan presentados o localizados en su portal.</p>
+  </div>
 
-      <p class="text-xs text-gray-400">Última actualización: [fecha].</p>
-    </div>
-  </section>
-</Layout>
+  <div>
+    <h2>Enlaces</h2>
+    <p>En el caso de que en este dominio se pusieran en funcionamiento enlaces o hipervínculos que recayeran en otros sitios de Internet (por ejemplo, a normativa oficial u organismos públicos), {TITULAR.razonSocial} no ejercerá ningún tipo de control sobre dichos sitios y contenidos. En ningún caso asumirá responsabilidad alguna por los contenidos de algún enlace perteneciente a un sitio web ajeno, ni garantizará la disponibilidad técnica, calidad, fiabilidad, exactitud, amplitud, veracidad, validez y constitucionalidad de cualquier material o información contenida en ninguno de dichos hipervínculos u otros sitios de Internet. Igualmente, la inclusión de estas conexiones externas no implicará ningún tipo de asociación, fusión o participación con las entidades conectadas.</p>
+    <p>La usuaria o el usuario reconoce y acepta que {TITULAR.razonSocial} no será responsable de las pérdidas o daños en que pueda incurrir a consecuencia de la disponibilidad de los mencionados sitios web o recursos externos, o a consecuencia de la credibilidad que otorgue a la exhaustividad, precisión o existencia de cualquier tipo de publicidad, productos u otros materiales ofrecidos a través de dicho sitio web u otros recursos.</p>
+  </div>
+</PaginaLegal>
