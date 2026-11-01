@@ -1,0 +1,74 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LRCSCVM = 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-18911';
+---
+
+<BlogPostLayout
+  title="Latigazo cervical: indemnización y cómo acreditarlo ante la aseguradora"
+  pageTitle="Latigazo Cervical: Indemnización y Cómo Acreditarlo"
+  description="El latigazo cervical se indemniza si cumple los 4 criterios de causalidad del art. 135 del baremo; las secuelas, con informe médico concluyente."
+  date="2026-11-01"
+  readingTime="7"
+  category="Accidentes de Tráfico"
+  faqs={[
+    { question: '¿Me pueden negar la indemnización si fui al médico días después del accidente?', answer: 'Puede ser más difícil. El baremo da especial relevancia a que los síntomas aparezcan, o a que usted reciba atención médica, en las 72 horas posteriores al accidente (artículo 135.1.b). No es un plazo de caducidad, pero ir tarde obliga a explicar mejor el retraso.' },
+    { question: '¿El latigazo cervical deja secuelas indemnizables?', answer: 'Sí, si persisten tras el periodo de curación y un informe médico concluyente acredita su existencia (artículo 135.2). Sin ese informe, la secuela de un traumatismo cervical menor no se indemniza.' },
+    { question: '¿Qué es un informe biomecánico y quién lo hace?', answer: 'Es un estudio de la energía del impacto que algunas aseguradoras usan para discutir el criterio de intensidad. No es un informe médico: no valora sus lesiones ni su evolución. Frente a él pesa la documentación clínica y un informe pericial médico.' },
+    { question: '¿Se cobra lo mismo con baja laboral que sin ella?', answer: 'No hay una cantidad fija por latigazo. Se indemnizan los días de lesión temporal y su grado de perjuicio; el impedimento para trabajar se reconduce a uno de esos grados (artículo 138.5). Además se pueden reclamar los gastos y el lucro cesante acreditados.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    El latigazo cervical se indemniza como lesión temporal si el accidente pudo causarlo según cuatro criterios del baremo: exclusión, cronología, topografía e intensidad (artículo 135 de la Ley sobre responsabilidad civil y seguro en la circulación). Si quedan secuelas, solo se indemnizan cuando un informe médico concluyente acredita que existen tras el periodo de curación.
+  </p>
+
+  <h2 class={h2}>¿Por qué la aseguradora pone pegas al latigazo cervical?</h2>
+  <p class={p}>
+    Porque suele diagnosticarse por el dolor que refiere el lesionado y no siempre se ve en una radiografía o una resonancia. Para esos «traumatismos cervicales menores», la ley exige que la naturaleza del accidente pueda producir el daño según cuatro criterios de causalidad (<a href={LRCSCVM + '#a135'} target="_blank" rel="noopener" class={a}>artículo 135.1</a>). Cada uno es un punto donde la aseguradora puede discutir, y donde un informe médico bien hecho responde:
+  </p>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Criterio</th><th class="p-3 border-b">Qué exige la ley</th><th class="p-3 border-b">Qué lo acredita</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Exclusión</td><td class="p-3 border-b">Que no haya otra causa que explique totalmente la patología</td><td class="p-3 border-b">Historia clínica previa sin patología cervical, o con una distinta de la actual</td></tr>
+        <tr><td class="p-3 border-b font-medium">Cronológico</td><td class="p-3 border-b">Que los síntomas aparezcan en un tiempo médicamente explicable; pesa especialmente la atención médica en las primeras 72 horas</td><td class="p-3 border-b">Informe de urgencias o del CAP con fecha y hora</td></tr>
+        <tr><td class="p-3 border-b font-medium">Topográfico</td><td class="p-3 border-b">Que la zona afectada por el accidente coincida con la lesión</td><td class="p-3 border-b">Atestado o parte amistoso (tipo de choque) y exploración clínica</td></tr>
+        <tr><td class="p-3 font-medium">Intensidad</td><td class="p-3">Que la lesión sea adecuada al mecanismo y a la intensidad del accidente</td><td class="p-3">Daños del vehículo, posición del ocupante y valoración médica del mecanismo lesional</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class={h2}>¿Cómo se calcula la indemnización del latigazo cervical?</h2>
+  <p class={p}>
+    No hay una cifra fija. El baremo indemniza por separado:
+  </p>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">Los días de lesión temporal</strong>, desde el accidente hasta la curación o la estabilización (<a href={LRCSCVM + '#a134'} target="_blank" rel="noopener" class={a}>artículo 134</a>). Cada día tiene un importe básico y, si hubo pérdida de calidad de vida, un grado moderado, grave o muy grave (<a href={LRCSCVM + '#a138'} target="_blank" rel="noopener" class={a}>artículo 138</a>).</li>
+    <li><strong class="text-primary-900">Las secuelas</strong>, si las hay y se acreditan con un informe médico concluyente (artículo 135.2).</li>
+    <li><strong class="text-primary-900">Los gastos y el perjuicio patrimonial</strong>: rehabilitación, desplazamientos, ingresos perdidos.</li>
+  </ul>
+  <p class={p}>
+    Por eso dos latigazos «iguales» pueden tener indemnizaciones muy distintas: depende de cuántos días, en qué grado y con qué secuelas. Los criterios y conceptos que se aplican son los vigentes en la fecha del accidente (<a href={LRCSCVM + '#a38'} target="_blank" rel="noopener" class={a}>artículo 38</a>).
+  </p>
+
+  <h2 class={h2}>¿Qué tiene que tener el «informe médico concluyente»?</h2>
+  <p class={p}>
+    Tiene que emitirse <strong>después</strong> del periodo de lesión temporal y explicar qué secuela queda, cómo se ha explorado, con qué pruebas y por qué se relaciona con el accidente. Un informe que solo dice «cervicalgia persistente» suele quedarse corto. El perito revisa la evolución completa (urgencias, médico de familia o mutua, rehabilitación, pruebas de imagen) y la traduce al baremo.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Valoramos su latigazo cervical con criterios de <a href={url('/especialidades/traumatologia/')} class={a}>traumatología pericial</a> y elaboramos el informe de <a href={url('/servicios/valoracion-dano-corporal/')} class={a}>valoración del daño corporal</a> que sostiene su reclamación. Si ya tiene la cifra de la aseguradora, lea <a href={url('/blog/oferta-motivada-insuficiente/')} class={a}>qué hacer si la oferta motivada es insuficiente</a>. Para saber si su caso merece la pena, pida una <a href={url('/valoracion-dano-corporal-gratuita/')} class={a}>valoración telefónica de sus lesiones</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LRCSCVM} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2004, Ley sobre responsabilidad civil y seguro en la circulación de vehículos a motor (texto consolidado), arts. 38, 134, 135 y 138</a></li>
+  </ul>
+</BlogPostLayout>

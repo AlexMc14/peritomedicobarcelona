@@ -1,0 +1,75 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LGSS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724';
+const LRCSCVM = 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-18911';
+---
+
+<BlogPostLayout
+  title="Accidente in itinere: requisitos, baja e indemnización"
+  pageTitle="Accidente In Itinere: Requisitos, Baja e Indemnización"
+  description="El accidente al ir o volver del trabajo es accidente laboral (art. 156 LGSS), también para autónomos. Requisitos, mutua, aseguradora y qué probar."
+  date="2026-11-01"
+  readingTime="7"
+  category="Accidente de Trabajo"
+  faqs={[
+    { question: '¿El accidente in itinere es un accidente laboral?', answer: 'Sí. La Ley General de la Seguridad Social considera accidente de trabajo el que sufre el trabajador al ir o al volver del lugar de trabajo (artículo 156.2.a). Lo cubre la mutua de la empresa como contingencia profesional.' },
+    { question: '¿Los autónomos tienen accidente in itinere?', answer: 'Sí. Según el artículo 316.2 de la LGSS, es accidente de trabajo el sufrido al ir o volver del lugar de la actividad, siempre que ese lugar no sea su domicilio y sea el local, nave u oficina declarado como afecto a la actividad a efectos fiscales.' },
+    { question: '¿Puedo cobrar de la mutua y de la aseguradora del coche a la vez?', answer: 'Son vías distintas: la mutua paga las prestaciones de la Seguridad Social y la aseguradora del vehículo responsable indemniza el daño según el baremo de tráfico. Cómo se coordinan en su caso concreto depende de quién tuvo la culpa y de lo que ya se haya cobrado; consúltelo con su abogado.' },
+    { question: '¿Y si me desvié para hacer un recado?', answer: 'Es el punto que más se discute. La ley solo dice «al ir o al volver del lugar de trabajo», y los tribunales valoran caso por caso si el trayecto, el tiempo y la finalidad seguían vinculados al trabajo. Documente el recorrido y los horarios.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    El accidente in itinere es el que sufre un trabajador al ir o al volver del trabajo, y la ley lo considera accidente de trabajo (artículo 156.2.a de la Ley General de la Seguridad Social). Da derecho a las prestaciones profesionales de la mutua y, si fue un accidente de tráfico causado por otro, a reclamar también a su aseguradora.
+  </p>
+
+  <h2 class={h2}>¿Qué requisitos tiene que cumplir?</h2>
+  <p class={p}>
+    La ley se limita a la frase «al ir o al volver del lugar de trabajo» (<a href={LGSS + '#a156'} target="_blank" rel="noopener" class={a}>artículo 156.2.a</a>), y los tribunales la interpretan con estos elementos. A diferencia del accidente en el centro de trabajo, aquí no juega la presunción de laboralidad del artículo 156.3: hay que acreditarlos.
+  </p>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Elemento</th><th class="p-3 border-b">Qué se valora</th><th class="p-3 border-b">Cómo se prueba</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Finalidad</td><td class="p-3 border-b">Que el desplazamiento sea para ir o volver del trabajo</td><td class="p-3 border-b">Horario laboral, fichajes, cuadrante</td></tr>
+        <tr><td class="p-3 border-b font-medium">Trayecto</td><td class="p-3 border-b">Que sea el recorrido habitual o razonable entre domicilio y trabajo</td><td class="p-3 border-b">Domicilio, dirección del centro, atestado del accidente</td></tr>
+        <tr><td class="p-3 border-b font-medium">Tiempo</td><td class="p-3 border-b">Que ocurra en un momento próximo a la entrada o la salida</td><td class="p-3 border-b">Hora del atestado, del aviso o de la atención en urgencias</td></tr>
+        <tr><td class="p-3 font-medium">Medio</td><td class="p-3">Que el medio de transporte sea adecuado</td><td class="p-3">Atestado, parte amistoso, testigos</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class={p}>
+    No es accidente de trabajo el debido a dolo o imprudencia temeraria del trabajador. En cambio, la imprudencia profesional que nace de la confianza en un trabajo habitual, o la culpa de un tercero, no impiden la calificación (artículo 156.4 y 156.5).
+  </p>
+
+  <h2 class={h2}>¿Qué indemnización o prestación me corresponde?</h2>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">Por la vía laboral (mutua)</strong>: la incapacidad temporal por contingencia profesional y, si quedan secuelas, las prestaciones por lesiones permanentes no invalidantes o por incapacidad permanente.</li>
+    <li><strong class="text-primary-900">Por la vía de tráfico (aseguradora)</strong>: si otro vehículo causó el accidente, la indemnización por días de lesión, secuelas y gastos según el <a href={LRCSCVM} target="_blank" rel="noopener" class={a}>baremo de tráfico</a>, con su propia oferta motivada.</li>
+  </ul>
+  <p class={p}>
+    Por eso el informe médico tiene que servir a las dos: describir lesiones y secuelas con el lenguaje del baremo de tráfico y, a la vez, la limitación funcional para su trabajo que valora la Seguridad Social.
+  </p>
+
+  <h2 class={h2}>¿Qué hago si la mutua dice que no es in itinere?</h2>
+  <p class={p}>
+    Si la mutua lo trata como contingencia común, puede pedir al INSS que determine la contingencia (lo explicamos en <a href={url('/blog/mutua-no-me-da-la-baja/')} class={a}>qué hacer si la mutua no le da la baja</a>). Reúna cuanto antes la hora y el lugar del accidente, el trayecto y su horario laboral: son los datos que deciden si fue in itinere.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Como <a href={url('/accidente-laboral/')} class={a}>perito médico de accidentes laborales</a>, documentamos el nexo entre el accidente y las lesiones, y valoramos las secuelas para la mutua, el INSS o el juzgado. Si además hay reclamación a la aseguradora del vehículo, el mismo análisis sirve para la <a href={url('/accidentes-de-trafico/')} class={a}>reclamación por accidente de tráfico</a>. Para empezar, pida una <a href={url('/accidente-trabajo-gratuita/')} class={a}>consulta telefónica sobre su accidente de trabajo</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LGSS} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social, arts. 156 y 316</a></li>
+    <li><a href={LRCSCVM} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2004, Ley sobre responsabilidad civil y seguro en la circulación de vehículos a motor</a></li>
+  </ul>
+</BlogPostLayout>
