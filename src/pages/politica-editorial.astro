@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { url } from '../utils/links';
-import { SITE, REVISION_SERVICIOS } from '../data/site';
+import { SITE, REVISION_SERVICIOS, telHref } from '../data/site';
 import { FUENTES } from '../data/fuentes';
 
 const h2 = 'font-heading text-xl font-bold text-primary-900 mb-3';
@@ -58,7 +58,7 @@ const fuentes = [FUENTES.lgss, FUENTES.lrjs, FUENTES.ley35, FUENTES.inssIP, FUEN
 
       <div>
         <h2 class={h2}>Cómo comunicarnos un error</h2>
-        <p>Escríbanos a <a href={`mailto:${SITE.email}`} class={a}>{SITE.email}</a> indicando la página y el dato. Lo comprobamos en la fuente oficial y, si procede, corregimos la página y actualizamos su fecha de revisión.</p>
+        <p>Escríbanos desde el <a href={url('/contacto/')} class={a}>formulario de contacto</a> o por teléfono o WhatsApp al <a href={telHref} class={a}>{SITE.telefono}</a> indicando la página y el dato. Lo comprobamos en la fuente oficial y, si procede, corregimos la página y actualizamos su fecha de revisión.</p>
       </div>
 
       <div>

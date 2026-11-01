@@ -14,7 +14,7 @@ export const GET: APIRoute = () => {
 
 > Servicio independiente de peritaje médico en Barcelona, su área metropolitana y el resto de Cataluña. Elabora informes periciales médicos para juzgados, aseguradoras, el INSS y mutuas (daño corporal, negligencia médica, incapacidad permanente, altas médicas, discapacidad, accidentes de tráfico y de trabajo) y los ratifica en juicio. La primera valoración se hace por teléfono.
 
-Contacto: teléfono y WhatsApp ${SITE.telefono}, correo ${SITE.email}. La web es privada e independiente: no pertenece al INSS, al ICAM/SGAM, a ninguna mutua ni a ningún juzgado.
+Contacto: teléfono y WhatsApp ${SITE.telefono}, o el formulario de ${abs('/contacto/')}. La web es privada e independiente: no pertenece al INSS, al ICAM/SGAM, a ninguna mutua ni a ningún juzgado.
 
 ## Servicios
 ${servicios.map((s) => linea(s.nombre, s.href, s.descripcion)).join('\n')}

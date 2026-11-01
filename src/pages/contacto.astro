@@ -67,7 +67,7 @@ import { SITE, TITULAR, telHref, whatsappHref } from '../data/site';
             </button>
           </form>
           <p class="mt-6 text-xs text-gray-500 leading-relaxed">
-            <strong>Información básica sobre protección de datos.</strong> Responsable: {TITULAR.razonSocial}. Finalidad: responder a su consulta y, si nos encarga el informe, elaborarlo. Los datos de salud que nos envíe se tratan de forma confidencial y solo para su caso. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad, escribiendo a {TITULAR.email}. Más información en la <a href={url('/politica-privacidad')} class="text-primary-700 underline">política de privacidad</a>.
+            <strong>Información básica sobre protección de datos.</strong> Responsable: {TITULAR.razonSocial}. Finalidad: responder a su consulta y, si nos encarga el informe, elaborarlo. Los datos de salud que nos envíe se tratan de forma confidencial y solo para su caso. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad, como se indica en la <a href={url('/politica-privacidad')} class="text-primary-700 underline">política de privacidad</a>.
           </p>
         </div>
 
@@ -78,7 +78,6 @@ import { SITE, TITULAR, telHref, whatsappHref } from '../data/site';
             <ul class="space-y-3 text-sm text-gray-700">
               <li>Teléfono: <a href={telHref} class="text-primary-700 underline">{SITE.telefono}</a></li>
               <li>WhatsApp: <a href={whatsappHref} target="_blank" rel="noopener" class="text-primary-700 underline">{SITE.telefono}</a></li>
-              <li>Correo: <a href={`mailto:${SITE.email}`} class="text-primary-700 underline">{SITE.email}</a></li>
             </ul>
             <p class="text-sm text-gray-600 leading-relaxed mt-5">
               <strong class="text-primary-900">Presupuesto:</strong> se lo damos cuando conocemos el caso y antes de empezar ningún trabajo. Así trabajamos: <a href={url('/metodologia/')} class="text-primary-700 underline">cómo trabajamos</a>.

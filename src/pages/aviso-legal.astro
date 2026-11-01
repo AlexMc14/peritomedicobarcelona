@@ -25,7 +25,7 @@ const dominio = 'www.peritomedicobarcelona.com';
       <li>CIF: {TITULAR.cif}</li>
       <li>Domicilio: {TITULAR.domicilio}</li>
       <li>Teléfono: <a href={telHref}>{SITE.telefono}</a></li>
-      <li>Correo electrónico: <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a></li>
+      <li>Correo electrónico: <a href={`mailto:${TITULAR.emailTitular}`}>{TITULAR.emailTitular}</a></li>
       <li>Nombre del dominio: {dominio}</li>
       <li>Nombre comercial: {SITE.nombre}</li>
     </ul>
@@ -51,7 +51,7 @@ const dominio = 'www.peritomedicobarcelona.com';
     <h2>Exclusión de garantías y responsabilidad</h2>
     <p>{TITULAR.razonSocial} no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que se pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo. El contenido, la información y los consejos expresados en este portal web deben entenderse como simplemente orientativos y no sustituyen la valoración individual de cada caso ni el asesoramiento jurídico. {TITULAR.razonSocial} no responde de ninguna forma de la efectividad o exactitud de los mismos, quedando exenta de cualquier responsabilidad con los usuarios y usuarias que hagan uso de ellos.</p>
     <p>{TITULAR.razonSocial} se reserva el derecho de modificar el contenido del sitio sin previo aviso y sin ningún tipo de limitación. Asimismo, declina cualquier responsabilidad por los eventuales daños y perjuicios que puedan ocasionarse por la falta de disponibilidad o continuidad de este sitio y de los servicios que se ofrecen en él. Tampoco puede garantizar la ausencia de virus ni de otros elementos en la web que puedan producir alteraciones en su sistema informático. {TITULAR.razonSocial} declina cualquier responsabilidad por los servicios e información que se presten en otros sitios enlazados con este, ya que no controla ni ejerce ningún tipo de supervisión en sitios web de terceras personas. Aconsejamos a las usuarias y a los usuarios de los mismos que actúen con prudencia y que consulten las eventuales condiciones legales que se expongan en dichas webs.</p>
-    <p>Las usuarias y los usuarios que remitan cualquier tipo de información a {TITULAR.razonSocial} se asegurarán de que la misma sea veraz y de que no vulnere cualquier derecho de terceras personas ni la legalidad vigente. Si cree que cualquier contenido o información de este sitio vulnera un derecho legítimo o la legalidad vigente, le agradeceremos que se ponga en contacto con nosotros en la dirección de correo electrónico <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a> o en el teléfono <a href={telHref}>{SITE.telefono}</a> para que podamos tomar las medidas oportunas.</p>
+    <p>Las usuarias y los usuarios que remitan cualquier tipo de información a {TITULAR.razonSocial} se asegurarán de que la misma sea veraz y de que no vulnere cualquier derecho de terceras personas ni la legalidad vigente. Si cree que cualquier contenido o información de este sitio vulnera un derecho legítimo o la legalidad vigente, le agradeceremos que se ponga en contacto con nosotros en la dirección de correo electrónico <a href={`mailto:${TITULAR.emailTitular}`}>{TITULAR.emailTitular}</a> o en el teléfono <a href={telHref}>{SITE.telefono}</a> para que podamos tomar las medidas oportunas.</p>
   </div>
 
   <div>

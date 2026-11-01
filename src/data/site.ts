@@ -3,7 +3,6 @@ export const SITE = {
   nombre: 'Perito Médico Barcelona',
   url: 'https://www.peritomedicobarcelona.com',
   telefono: '+34 692 36 61 04',
-  email: 'info@peritomedicobarcelona.com',
 };
 
 const telefonoDigitos = SITE.telefono.replace(/\D/g, '');
@@ -19,7 +18,8 @@ export const TITULAR = {
   razonSocial: 'Lukeraibra SL',
   cif: 'B10753648',
   domicilio: 'Calle De la Lírica, 13, CP 28905 Getafe, Madrid',
-  email: 'lsanchezamo@yahoo.es',
+  /** Solo para identificar al titular en aviso legal, privacidad y cookies: nunca como canal de contacto */
+  emailTitular: 'lsanchezamo@yahoo.es',
 };
 /** Última revisión general de servicios (cambiar al revisar el contenido) */
 export const REVISION_SERVICIOS = '2026-10-31';

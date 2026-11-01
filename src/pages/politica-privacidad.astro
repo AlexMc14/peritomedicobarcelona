@@ -22,7 +22,7 @@ import { SITE, TITULAR, telHref } from '../data/site';
       <li>Identidad del responsable: {TITULAR.razonSocial}</li>
       <li>NIF/CIF: {TITULAR.cif}</li>
       <li>Dirección: {TITULAR.domicilio}</li>
-      <li>Correo electrónico: <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a></li>
+      <li>Correo electrónico: <a href={`mailto:${TITULAR.emailTitular}`}>{TITULAR.emailTitular}</a></li>
       <li>Teléfono: <a href={telHref}>{SITE.telefono}</a></li>
     </ul>
   </div>
@@ -82,7 +82,7 @@ import { SITE, TITULAR, telHref } from '../data/site';
       <li>Solicitar la portabilidad de los datos.</li>
     </ul>
     <p>Si ha otorgado su consentimiento para alguna finalidad concreta, tiene derecho a retirarlo en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada.</p>
-    <p>Para ejercitar estos derechos, puede escribir a <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a> o enviar una carta a {TITULAR.domicilio}. En caso de que actúe a través de representación legal, deberá aportar además el DNI y el documento acreditativo de la representación. Será necesario aportar copia del DNI o documento equivalente cuando el responsable tenga dudas sobre su identidad.</p>
+    <p>Para ejercitar estos derechos, puede escribir a <a href={`mailto:${TITULAR.emailTitular}`}>{TITULAR.emailTitular}</a> o enviar una carta a {TITULAR.domicilio}. En caso de que actúe a través de representación legal, deberá aportar además el DNI y el documento acreditativo de la representación. Será necesario aportar copia del DNI o documento equivalente cuando el responsable tenga dudas sobre su identidad.</p>
     <p>Si considera vulnerados sus derechos, especialmente cuando no haya obtenido satisfacción en su ejercicio, puede presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es/" target="_blank" rel="noopener">www.aepd.es</a>).</p>
   </div>
 
@@ -126,6 +126,6 @@ import { SITE, TITULAR, telHref } from '../data/site';
 
   <div>
     <h2>Información adicional</h2>
-    <p>Si necesita información adicional sobre protección de datos, puede enviarnos un correo electrónico a <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a> o una comunicación dirigida a {TITULAR.domicilio} y, en función del tipo de relación que tenga con nuestra entidad y el tratamiento de datos personales que realicemos, le facilitaremos la información adicional que corresponda.</p>
+    <p>Si necesita información adicional sobre protección de datos, puede enviarnos un correo electrónico a <a href={`mailto:${TITULAR.emailTitular}`}>{TITULAR.emailTitular}</a> o una comunicación dirigida a {TITULAR.domicilio} y, en función del tipo de relación que tenga con nuestra entidad y el tratamiento de datos personales que realicemos, le facilitaremos la información adicional que corresponda.</p>
   </div>
 </PaginaLegal>
