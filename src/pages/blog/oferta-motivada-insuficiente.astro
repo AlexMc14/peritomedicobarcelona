@@ -1,0 +1,85 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LRCSCVM = 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-18911';
+const LO1_2025 = 'https://www.boe.es/buscar/act.php?id=BOE-A-2025-76';
+---
+
+<BlogPostLayout
+  title="Oferta motivada insuficiente: cómo rebatirla tras un accidente de tráfico"
+  pageTitle="Oferta Motivada Insuficiente: Cómo Rebatirla con un Informe"
+  description="La aseguradora tiene 3 meses para enviar la oferta motivada con su informe médico. Qué revisar si es baja, el informe complementario y qué vías quedan."
+  date="2026-11-01"
+  readingTime="7"
+  category="Accidentes de Tráfico"
+  faqs={[
+    { question: '¿Si cobro la oferta motivada pierdo el derecho a reclamar más?', answer: 'No necesariamente. La oferta debe hacer constar que el pago no se condiciona a renunciar a futuras acciones si la indemnización resulta inferior a la que corresponde en derecho (artículo 7.3.d de la Ley sobre responsabilidad civil y seguro en la circulación). Lea bien lo que firma: un finiquito es otra cosa.' },
+    { question: '¿Qué pasa si la aseguradora no envía nada en tres meses?', answer: 'Si no presenta la oferta o la respuesta motivada sin causa justificada, se devengan intereses de demora (artículo 7.2). Usted puede acudir a un medio adecuado de solución de controversias o a la vía judicial con la reclamación previa como documento (artículo 7.8).' },
+    { question: '¿Cuánto tiempo tengo para reclamar si no estoy conforme?', answer: 'Cuando se notifica la oferta o la respuesta motivada empieza un nuevo plazo de prescripción de un año (artículo 7.1). No lo apure: el informe pericial y la negociación llevan tiempo.' },
+    { question: '¿Puedo pedir que me vea el médico forense?', answer: 'Sí. Si no está conforme con la oferta, o si la respuesta motivada dice que no tiene lesiones por el accidente, puede pedir un informe al Instituto de Medicina Legal, a cargo de la aseguradora y sin necesidad de su acuerdo (artículo 7.5). El Instituto debe reconocerle en tres meses y emitir el informe en un mes (artículo 7.6).' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Si la oferta motivada de la aseguradora le parece baja, no tiene que aceptarla. Tiene un año desde la notificación para reclamar. En ese tiempo puede pedir un informe pericial complementario, incluso al Instituto de Medicina Legal a cargo de la aseguradora, y después negociar o demandar (artículo 7 de la Ley sobre responsabilidad civil y seguro en la circulación).
+  </p>
+
+  <h2 class={h2}>¿Qué es la oferta motivada y en qué plazo llega?</h2>
+  <p class={p}>
+    Es la propuesta de indemnización que la aseguradora del vehículo responsable tiene que enviarle en los <strong>tres meses</strong> siguientes a recibir su reclamación (<a href={LRCSCVM + '#a7'} target="_blank" rel="noopener" class={a}>artículo 7.2</a>). Si cree que no debe pagar, o que todavía no puede cuantificar el daño, en lugar de oferta le envía una <strong>respuesta motivada</strong> explicando por qué. Desde la reforma de la Ley 5/2025 (vigente desde el 26 de julio de 2025), las dos tienen que adjuntar el informe médico pericial definitivo en el que se basan.
+  </p>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Momento</th><th class="p-3 border-b">Qué ocurre</th><th class="p-3 border-b">Plazo</th><th class="p-3 border-b">Norma</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b">Reclamación a la aseguradora</td><td class="p-3 border-b">Interrumpe la prescripción. No hace falta cuantificarla</td><td class="p-3 border-b">Acción directa: 1 año</td><td class="p-3 border-b">Art. 7.1</td></tr>
+        <tr><td class="p-3 border-b">Oferta o respuesta motivada</td><td class="p-3 border-b">Con el informe médico pericial definitivo</td><td class="p-3 border-b whitespace-nowrap">3 meses</td><td class="p-3 border-b">Art. 7.2 a 7.4</td></tr>
+        <tr><td class="p-3 border-b">Informe del Instituto de Medicina Legal (si lo pide)</td><td class="p-3 border-b">Reconocimiento e informe, a cargo de la aseguradora</td><td class="p-3 border-b">3 meses + 1 mes</td><td class="p-3 border-b">Art. 7.5 y 7.6</td></tr>
+        <tr><td class="p-3 border-b">Nueva oferta tras el informe complementario</td><td class="p-3 border-b">La aseguradora debe revisar su oferta</td><td class="p-3 border-b whitespace-nowrap">1 mes</td><td class="p-3 border-b">Art. 7.5</td></tr>
+        <tr><td class="p-3">Tras notificarse la oferta o la respuesta</td><td class="p-3">Empieza un nuevo plazo de prescripción</td><td class="p-3 whitespace-nowrap">1 año</td><td class="p-3">Art. 7.1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class={h2}>¿Cómo sé si la oferta motivada es insuficiente?</h2>
+  <p class={p}>
+    La cifra sale del <a href={LRCSCVM} target="_blank" rel="noopener" class={a}>baremo de tráfico</a>, así que lo que hay que revisar es el informe médico que la sostiene. Es lo que hace el perito, punto por punto:
+  </p>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">Días de lesión temporal</strong>: si se han contado hasta su curación o estabilización real, y en qué grado (moderado, grave o muy grave). La estancia hospitalaria cuenta como perjuicio grave, y el impedimento para trabajar se reconduce a uno de los tres grados (<a href={LRCSCVM + '#a138'} target="_blank" rel="noopener" class={a}>artículo 138</a>).</li>
+    <li><strong class="text-primary-900">Secuelas omitidas o infravaloradas</strong>: limitaciones de movilidad, dolor persistente, secuelas psíquicas o perjuicio estético que constan en su historia clínica y no aparecen en el informe.</li>
+    <li><strong class="text-primary-900">Fecha de estabilización</strong>: si se ha adelantado, se pierden días y puede quedar fuera una secuela.</li>
+    <li><strong class="text-primary-900">Gastos y perjuicio patrimonial</strong>: tratamientos, desplazamientos o ayudas que no se han incluido.</li>
+  </ul>
+  <p class={p}>
+    Si la oferta no adjunta el informe médico definitivo, la ley la considera sin validez a estos efectos, salvo que el informe se le hubiera entregado antes (<a href={LRCSCVM + '#a37'} target="_blank" rel="noopener" class={a}>artículo 37.3</a>). Si la aseguradora no aporta ese informe con la oferta, después no podrá aportar en el juicio sus propios informes periciales definitivos (artículo 7.3.c).
+  </p>
+
+  <h2 class={h2}>¿Qué puedo hacer si no estoy de acuerdo?</h2>
+  <ol class="list-decimal pl-5 space-y-3 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">No firme con prisa.</strong> El pago de la oferta no debe exigirle renunciar a acciones futuras (artículo 7.3.d), pero un documento de finiquito sí puede cerrarlas.</li>
+    <li><strong class="text-primary-900">Pida un informe pericial complementario.</strong> Puede ser de un perito médico elegido por usted, a su costa, o del Instituto de Medicina Legal y Ciencias Forenses, a cargo de la aseguradora y sin necesidad de su acuerdo (artículo 7.5). En los dos casos, la aseguradora tiene que hacer una nueva oferta en el plazo de un mes desde que se entrega el informe.</li>
+    <li><strong class="text-primary-900">Negocie con un medio adecuado de solución de controversias</strong>, como la mediación (<a href={LRCSCVM + '#a14'} target="_blank" rel="noopener" class={a}>artículo 14</a>), o acuda a la vía judicial. La demanda tiene que acompañar la oferta o la respuesta motivada o, si no las hubo, la reclamación previa (artículo 7.8).</li>
+  </ol>
+
+  <h2 class={h2}>¿Qué cambia con el MASC?</h2>
+  <p class={p}>
+    Desde la <a href={LO1_2025 + '#a5'} target="_blank" rel="noopener" class={a}>Ley Orgánica 1/2025</a>, en la vía civil hay que intentar con carácter general un medio adecuado de solución de controversias antes de demandar (artículo 5). En tráfico, la propia ley del seguro ya prevé ese paso tras la oferta o la respuesta motivada (artículos 7.8 y 14). Cómo se cumple el requisito en su caso concreto es una cuestión para su abogado. Lo que no cambia es que la negociación se gana con un informe médico mejor que el de la aseguradora.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Revisamos el informe de la aseguradora frente a su historia clínica y, si la oferta se queda corta, elaboramos el informe de <a href={url('/servicios/valoracion-dano-corporal/')} class={a}>valoración del daño corporal</a> conforme al baremo. Lo puede usar en la negociación, en la mediación o en el juicio, donde el perito lo ratifica. Para empezar, pida una <a href={url('/valoracion-dano-corporal-gratuita/')} class={a}>valoración telefónica de sus lesiones</a>. Si la lesión es cervical, lea también <a href={url('/blog/latigazo-cervical-indemnizacion/')} class={a}>cómo se indemniza el latigazo cervical</a>. Y si quien regatea es otro seguro (de accidentes, de vida o de invalidez), vea nuestro servicio de <a href={url('/perito-medico-para-seguros/')} class={a}>perito médico para reclamaciones a seguros</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LRCSCVM} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2004, Ley sobre responsabilidad civil y seguro en la circulación de vehículos a motor (texto consolidado), arts. 7, 14, 37 y 138</a></li>
+    <li><a href={LO1_2025} target="_blank" rel="noopener" class={a}>Ley Orgánica 1/2025, de medidas en materia de eficiencia del Servicio Público de Justicia, art. 5</a></li>
+  </ul>
+</BlogPostLayout>

@@ -1,0 +1,76 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LEC = 'https://www.boe.es/buscar/act.php?id=BOE-A-2000-323';
+const LOPJ = 'https://www.boe.es/buscar/act.php?id=BOE-A-1985-12666';
+const LRCSCVM = 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-18911';
+---
+
+<BlogPostLayout
+  title="¿Médico forense o perito médico? Diferencias y cuándo necesita cada uno"
+  pageTitle="Médico Forense o Perito Médico: ¿Es lo Mismo? Diferencias"
+  description="El médico forense es un funcionario al servicio de los juzgados; el perito de parte lo elige usted. Diferencias según la LEC y la LOPJ."
+  date="2026-11-01"
+  readingTime="6"
+  category="Informes Periciales"
+  faqs={[
+    { question: '¿El informe de un perito de parte vale menos que el del forense?', answer: 'No por definición. El juez valora todos los dictámenes según las reglas de la sana crítica (artículo 348 de la Ley de Enjuiciamiento Civil). Pesan la fundamentación, la exploración y la documentación revisada, y cómo el perito defiende el informe en el juicio.' },
+    { question: '¿Qué es un perito médico judicial?', answer: 'Es el perito que designa el juzgado, a petición de una parte o de las dos (artículo 339 de la Ley de Enjuiciamiento Civil). Su informe lo paga quien lo pide, salvo lo que se decida en costas. No es lo mismo que el médico forense, que es un funcionario.' },
+    { question: '¿Puedo pedir que me vea el forense en un accidente de tráfico sin ir a juicio?', answer: 'Sí. Si no está conforme con la oferta motivada de la aseguradora, puede pedir un informe al Instituto de Medicina Legal y Ciencias Forenses, a cargo de la aseguradora (artículo 7.5 de la Ley sobre responsabilidad civil y seguro en la circulación).' },
+    { question: '¿Qué hago si el informe del forense me perjudica?', answer: 'Se puede rebatir con un informe pericial médico de parte que analice el del forense punto por punto, y con la intervención del perito en el juicio, donde puede criticar el dictamen contrario (artículo 347 de la LEC).' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    No son lo mismo. El médico forense es un funcionario del Instituto de Medicina Legal que asesora a jueces y fiscales (artículo 479 de la Ley Orgánica del Poder Judicial). El perito médico de parte es un médico que usted elige para dictaminar sobre su caso (artículo 336 de la Ley de Enjuiciamiento Civil). Ambos deben ser objetivos.
+  </p>
+
+  <div class="bg-gray-50 border-l-4 border-primary-700 rounded-r-lg p-4 mb-8 text-sm text-gray-600">
+    Perito Médico Barcelona es un servicio privado de peritaje médico de parte. No somos médicos forenses ni pertenecemos al Institut de Medicina Legal i Ciències Forenses de Catalunya ni a ningún juzgado.
+  </div>
+
+  <h2 class={h2}>¿Qué diferencia hay entre forense, perito judicial y perito de parte?</h2>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b"></th><th class="p-3 border-b">Médico forense</th><th class="p-3 border-b">Perito judicial</th><th class="p-3 border-b">Perito de parte</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium text-primary-900">Quién es</td><td class="p-3 border-b">Funcionario de carrera al servicio de la Administración de Justicia</td><td class="p-3 border-b">Profesional que designa el juzgado</td><td class="p-3 border-b">Médico elegido por una de las partes</td></tr>
+        <tr><td class="p-3 border-b font-medium text-primary-900">Cuándo interviene</td><td class="p-3 border-b">Cuando lo piden jueces, tribunales o fiscales (penal, lesiones, Registro Civil…)</td><td class="p-3 border-b">Cuando una parte lo pide en la demanda o en la contestación</td><td class="p-3 border-b">Cuando la parte quiere aportar su dictamen, normalmente con la demanda o la contestación</td></tr>
+        <tr><td class="p-3 border-b font-medium text-primary-900">Quién lo paga</td><td class="p-3 border-b">La Administración</td><td class="p-3 border-b">Quien lo pide, sin perjuicio de las costas</td><td class="p-3 border-b">La parte que lo encarga</td></tr>
+        <tr><td class="p-3 font-medium text-primary-900">Norma</td><td class="p-3"><a href={LOPJ} target="_blank" rel="noopener" class={a}>LOPJ, art. 479</a></td><td class="p-3"><a href={LEC + '#a339'} target="_blank" rel="noopener" class={a}>LEC, art. 339</a></td><td class="p-3"><a href={LEC + '#a336'} target="_blank" rel="noopener" class={a}>LEC, arts. 335 y 336</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class={p}>
+    Todo perito, sea quien sea quien lo designa, declara bajo juramento o promesa que actúa con la mayor objetividad posible y tiene en cuenta tanto lo que favorece como lo que perjudica a cada parte (<a href={LEC + '#a335'} target="_blank" rel="noopener" class={a}>artículo 335.2 de la LEC</a>).
+  </p>
+
+  <h2 class={h2}>¿Cuándo interviene el médico forense?</h2>
+  <p class={p}>
+    Según la Ley Orgánica del Poder Judicial, los médicos forenses dan asistencia técnica a juzgados, tribunales y fiscalías, asisten a detenidos y lesionados bajo su jurisdicción, informan al Registro Civil y, en las condiciones que se fijen por reglamento, pueden emitir informes a petición de particulares. En Cataluña trabajan en el Institut de Medicina Legal i Ciències Forenses de Catalunya. Es habitual verlos en procedimientos penales por lesiones y, en tráfico, cuando el lesionado pide un informe complementario tras la oferta de la aseguradora (<a href={LRCSCVM + '#a7'} target="_blank" rel="noopener" class={a}>artículo 7.5 de la ley del seguro</a>).
+  </p>
+
+  <h2 class={h2}>¿Cuándo conviene un perito médico de parte?</h2>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">Antes de demandar</strong>: en la vía civil, los dictámenes de parte se aportan con la demanda o con la contestación (artículo 336.1 de la LEC). Hay que tenerlo antes.</li>
+    <li><strong class="text-primary-900">En la vía social</strong> (incapacidad permanente, altas médicas, contingencia): no hay forense, y frente al informe del INSS o de la mutua el trabajador necesita su propia prueba médica.</li>
+    <li><strong class="text-primary-900">Cuando el informe del forense o de la otra parte le perjudica</strong>: un perito de parte puede rebatirlo y, en el juicio, explicar su dictamen y criticar el contrario (<a href={LEC + '#a347'} target="_blank" rel="noopener" class={a}>artículo 347 de la LEC</a>).</li>
+  </ul>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Somos <a href={url('/servicios/informes-periciales-medicos/')} class={a}>perito médico judicial y de parte en Barcelona</a>: elaboramos el dictamen, lo ratificamos en juicio y, si ya hay un informe forense o de la otra parte, preparamos el <a href={url('/para-abogados/contrainforme-pericial/')} class={a}>contrainforme pericial</a>. Si solo quiere saber si un informe que ya tiene se sostiene, pida una <a href={url('/servicios/segunda-opinion-medico-legal/')} class={a}>segunda opinión médico-legal</a> o una <a href={url('/segunda-opinion-medico-legal-gratuita/')} class={a}>consulta telefónica sobre su informe</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LOPJ} target="_blank" rel="noopener" class={a}>Ley Orgánica 6/1985, del Poder Judicial (texto consolidado), art. 479</a></li>
+    <li><a href={LEC} target="_blank" rel="noopener" class={a}>Ley 1/2000, de Enjuiciamiento Civil, arts. 335, 336, 339 y 347</a></li>
+    <li><a href={LRCSCVM} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2004, Ley sobre responsabilidad civil y seguro en la circulación de vehículos a motor, art. 7</a></li>
+  </ul>
+</BlogPostLayout>

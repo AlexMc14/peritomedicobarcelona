@@ -1,0 +1,71 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LGSS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724';
+const RD1300 = 'https://www.boe.es/buscar/act.php?id=BOE-A-1995-19848';
+const LRJS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2011-15936';
+---
+
+<BlogPostLayout
+  title="Recargo de prestaciones por accidente de trabajo: qué es y qué papel tiene el perito médico"
+  pageTitle="Recargo de Prestaciones por Accidente de Trabajo (30-50 %)"
+  description="Si el accidente se debió a falta de medidas de seguridad, las prestaciones suben del 30 % al 50 % a cargo de la empresa (art. 164 LGSS)."
+  date="2026-11-01"
+  readingTime="6"
+  category="Accidente de Trabajo"
+  faqs={[
+    { question: '¿Quién paga el recargo de prestaciones?', answer: 'La empresa infractora, directamente. No puede asegurarlo: es nulo cualquier pacto o contrato para cubrirlo, compensarlo o transmitirlo (artículo 164.2 de la Ley General de la Seguridad Social).' },
+    { question: '¿Sobre qué prestaciones se aplica?', answer: 'Sobre todas las prestaciones económicas que tengan su causa en el accidente de trabajo o la enfermedad profesional (artículo 164.1), como la incapacidad temporal o la incapacidad permanente.' },
+    { question: '¿Es compatible con la indemnización por daños?', answer: 'Sí. La ley dice que la responsabilidad del recargo es independiente y compatible con las de todo orden, incluso penal (artículo 164.3). La indemnización civil por daños y perjuicios se reclama aparte.' },
+    { question: '¿Quién decide el porcentaje?', answer: 'Lo declara el INSS, que fija el porcentaje según la gravedad de la falta (artículo 1.1.e del Real Decreto 1300/1995). Si no se está de acuerdo, se puede reclamar y después acudir al Juzgado de lo Social.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    El recargo de prestaciones aumenta entre un 30 % y un 50 % las prestaciones económicas de un accidente de trabajo o una enfermedad profesional cuando la lesión se debe a falta de medidas de seguridad. Lo paga la empresa infractora, no se puede asegurar y lo declara el INSS (artículo 164 de la Ley General de la Seguridad Social).
+  </p>
+
+  <h2 class={h2}>¿Cuándo hay recargo de prestaciones?</h2>
+  <p class={p}>
+    Según el <a href={LGSS + '#a164'} target="_blank" rel="noopener" class={a}>artículo 164.1</a>, cuando la lesión se produce por equipos o lugares de trabajo que carecen de los medios de protección reglamentarios, los tienen inutilizados o en malas condiciones, o cuando no se han observado las medidas de seguridad y salud o las de adecuación del puesto a la persona trabajadora. El porcentaje depende de la gravedad de la falta.
+  </p>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Cuestión</th><th class="p-3 border-b">Respuesta</th><th class="p-3 border-b">Norma</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b">Cuánto</td><td class="p-3 border-b">Del 30 % al 50 % de las prestaciones económicas</td><td class="p-3 border-b">LGSS, art. 164.1</td></tr>
+        <tr><td class="p-3 border-b">Quién paga</td><td class="p-3 border-b">La empresa infractora, sin seguro posible</td><td class="p-3 border-b">LGSS, art. 164.2</td></tr>
+        <tr><td class="p-3 border-b">Quién lo declara</td><td class="p-3 border-b">El INSS, que fija el porcentaje</td><td class="p-3 border-b"><a href={RD1300} target="_blank" rel="noopener" class={a}>RD 1300/1995, art. 1.1.e</a></td></tr>
+        <tr><td class="p-3 border-b">Compatibilidad</td><td class="p-3 border-b">Con cualquier otra responsabilidad, incluida la penal y la civil</td><td class="p-3 border-b">LGSS, art. 164.3</td></tr>
+        <tr><td class="p-3">Si no está de acuerdo</td><td class="p-3">Reclamación previa (30 días) y demanda ante el Juzgado de lo Social</td><td class="p-3"><a href={LRJS + '#a71'} target="_blank" rel="noopener" class={a}>LRJS, art. 71</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class={h2}>¿Qué tiene que ver un perito médico con el recargo?</h2>
+  <p class={p}>
+    La infracción de seguridad (si faltaba una protección o una formación) la valoran normalmente la Inspección de Trabajo y técnicos de prevención, no el médico. El perito médico interviene en lo que el recargo multiplica y en el vínculo con el accidente:
+  </p>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">El nexo causal</strong>: que la lesión concreta se explica por el mecanismo del accidente (por ejemplo, una caída desde altura sin protección colectiva), y no por una patología previa.</li>
+    <li><strong class="text-primary-900">El alcance de las secuelas</strong>: cuanto mayor sea la prestación (una incapacidad permanente frente a una baja corta), mayor es el efecto del recargo. Que el grado de incapacidad esté bien valorado es la base de todo.</li>
+    <li><strong class="text-primary-900">La indemnización civil complementaria</strong>, que se reclama aparte y se cuantifica con un informe de daño corporal.</li>
+  </ul>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Somos <a href={url('/accidente-laboral/')} class={a}>perito médico de accidentes laborales</a> en Barcelona: documentamos el nexo entre el accidente y las lesiones, valoramos las secuelas y, si procede, la <a href={url('/servicios/incapacidad-laboral/')} class={a}>incapacidad permanente</a>. Si el accidente fue en el trayecto, lea antes <a href={url('/blog/accidente-in-itinere/')} class={a}>cómo funciona el accidente in itinere</a>. Para empezar, pida una <a href={url('/accidente-trabajo-gratuita/')} class={a}>consulta telefónica sobre su accidente de trabajo</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LGSS} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social, art. 164</a></li>
+    <li><a href={RD1300} target="_blank" rel="noopener" class={a}>Real Decreto 1300/1995, de incapacidades laborales, art. 1.1.e</a></li>
+    <li><a href={LRJS} target="_blank" rel="noopener" class={a}>Ley 36/2011, reguladora de la jurisdicción social, art. 71</a></li>
+  </ul>
+</BlogPostLayout>

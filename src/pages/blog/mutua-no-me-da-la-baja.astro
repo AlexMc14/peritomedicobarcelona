@@ -1,0 +1,72 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const RD1430 = 'https://www.boe.es/buscar/act.php?id=BOE-A-2009-15442';
+const LGSS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724';
+const INSS_IT = 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10952';
+---
+
+<BlogPostLayout
+  title="La mutua no me da la baja tras un accidente laboral: qué hacer"
+  pageTitle="La Mutua No Me Da la Baja: Qué Hacer tras un Accidente Laboral"
+  description="Si la mutua no le da la baja, vaya a su médico de familia y pida al INSS que determine si es accidente de trabajo. Pasos y plazos del RD 1430/2009."
+  date="2026-11-01"
+  readingTime="7"
+  category="Accidente de Trabajo"
+  faqs={[
+    { question: '¿Puedo ir a mi médico de cabecera si la mutua no me da la baja?', answer: 'Sí. Si su médico de familia considera que no puede trabajar, puede darle la baja por contingencia común. Después usted puede pedir al INSS que determine si el origen es laboral (artículo 6 del Real Decreto 1430/2009).' },
+    { question: '¿Cobro mientras el INSS decide si es accidente de trabajo?', answer: 'Sí, si tiene una baja por contingencia común: se le paga la prestación por enfermedad común hasta que el INSS resuelva. Si después declara que es laboral, la mutua le abona la diferencia a su favor (artículo 6.3 del Real Decreto 1430/2009).' },
+    { question: '¿Y si la mutua dice que mi lesión no es del trabajo sino previa?', answer: 'Una enfermedad o defecto anterior que se agrava por el accidente sigue siendo accidente de trabajo (artículo 156.2.f de la Ley General de la Seguridad Social). Hay que documentar cómo estaba usted antes y qué cambió con el accidente.' },
+    { question: '¿Qué pasa si el INSS también dice que no es laboral?', answer: 'Su resolución puede tener los efectos de la resolución de una reclamación previa (artículo 6.8 del Real Decreto 1430/2009), así que la siguiente vía es el Juzgado de lo Social. Consulte el plazo para demandar con su abogado o graduado social.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Si la mutua no le da la baja tras un accidente de trabajo, pida su informe de asistencia y acuda a su médico de familia, que puede darle la baja por enfermedad común. Después pida al INSS que determine si la contingencia es laboral: resuelve en 15 días hábiles desde que tiene la documentación (artículo 6 del Real Decreto 1430/2009).
+  </p>
+
+  <h2 class={h2}>¿Por qué la mutua no me da la baja?</h2>
+  <p class={p}>
+    La mutua cubre los accidentes de trabajo de su empresa, y suele negar la baja por uno de estos dos motivos: considera que la lesión no le impide trabajar («asistencia sin baja») o considera que no es laboral (una lumbalgia, una tendinitis o una cervicalgia que atribuye a un problema previo o común). Son dos discusiones distintas y conviene saber cuál es la suya. Pida que la decisión conste por escrito en el informe de asistencia.
+  </p>
+  <p class={p}>
+    Recuerde que la ley presume que es accidente de trabajo toda lesión sufrida durante el tiempo y en el lugar de trabajo, salvo prueba en contrario (<a href={LGSS + '#a156'} target="_blank" rel="noopener" class={a}>artículo 156.3 de la Ley General de la Seguridad Social</a>). También lo es la enfermedad previa que se agrava por el accidente (artículo 156.2.f).
+  </p>
+
+  <h2 class={h2}>¿Qué pasos tengo que dar?</h2>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Paso</th><th class="p-3 border-b">Qué hacer</th><th class="p-3 border-b">Plazo</th><th class="p-3 border-b">Norma</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b">1. Mutua</td><td class="p-3 border-b">Pedir el informe de asistencia con la decisión por escrito; puede presentar una reclamación ante la mutua</td><td class="p-3 border-b">Cuanto antes</td><td class="p-3 border-b">—</td></tr>
+        <tr><td class="p-3 border-b">2. Médico de familia (CAP)</td><td class="p-3 border-b">Si no puede trabajar, baja por contingencia común. Cobra mientras se decide el origen</td><td class="p-3 border-b">—</td><td class="p-3 border-b"><a href={RD1430 + '#a6'} target="_blank" rel="noopener" class={a}>RD 1430/2009, art. 6.3</a></td></tr>
+        <tr><td class="p-3 border-b">3. INSS</td><td class="p-3 border-b">Solicitud de determinación de contingencia, con informes y pruebas médicas</td><td class="p-3 border-b">Desde la fecha de la baja</td><td class="p-3 border-b">RD 1430/2009, art. 6.1</td></tr>
+        <tr><td class="p-3 border-b">4. Alegaciones de la mutua</td><td class="p-3 border-b">La mutua aporta sus antecedentes</td><td class="p-3 border-b whitespace-nowrap">4 días hábiles</td><td class="p-3 border-b">RD 1430/2009, art. 6.2</td></tr>
+        <tr><td class="p-3">5. Resolución del INSS</td><td class="p-3">Con informe del equipo de valoración de incapacidades</td><td class="p-3 whitespace-nowrap">15 días hábiles</td><td class="p-3">RD 1430/2009, art. 6.4 y 6.5</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-xs text-gray-500 mb-6">Si el procedimiento lo inicia otro (el INSS de oficio o la propia mutua), a usted le dan 10 días hábiles para aportar documentación y alegar (art. 6.2).</p>
+
+  <h2 class={h2}>¿Qué tiene que demostrar el informe médico?</h2>
+  <p class={p}>
+    Dos cosas, según lo que discuta la mutua. Si niega el origen laboral, el <strong>nexo causal</strong>: cómo ocurrió el accidente, qué lesión produjo, cuándo aparecieron los síntomas y por qué no se explican por otra causa. Si niega la baja, la <strong>limitación funcional</strong>: qué tareas concretas de su puesto no puede hacer hoy y con qué pruebas se objetiva. Sirven los partes de urgencias, las pruebas de imagen, la declaración del accidente en la empresa y cualquier testigo. La <a href={INSS_IT} target="_blank" rel="noopener" class={a}>información de la Seguridad Social sobre incapacidad temporal</a> recoge las cuantías y requisitos de la prestación.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Elaboramos el informe pericial para la <a href={url('/servicios/determinacion-contingencia/')} class={a}>determinación de contingencia</a> ante el INSS y, si hace falta, lo ratificamos en el Juzgado de lo Social. Si su caso es un accidente de trabajo con lesiones o secuelas, vea también nuestro servicio de <a href={url('/accidente-laboral/')} class={a}>perito médico para accidentes laborales</a>. Para empezar, pida una <a href={url('/determinacion-contingencia-gratuita/')} class={a}>consulta telefónica sobre la contingencia</a>. Si lo que tiene es un alta de la mutua sin estar recuperado, lea <a href={url('/blog/mutua-me-da-el-alta-sin-estar-bien/')} class={a}>qué hacer si la mutua le da el alta</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={RD1430} target="_blank" rel="noopener" class={a}>Real Decreto 1430/2009 (incapacidad temporal), art. 6: determinación de la contingencia</a></li>
+    <li><a href={LGSS} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social, art. 156</a></li>
+    <li><a href={INSS_IT} target="_blank" rel="noopener" class={a}>Seguridad Social: incapacidad temporal</a></li>
+  </ul>
+</BlogPostLayout>

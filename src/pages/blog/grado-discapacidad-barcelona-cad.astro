@@ -1,0 +1,76 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const TRAMIT = 'https://tramits.gencat.cat/ca/tramits/tramits-temes/Reconeixement-del-grau-de-discapacitat';
+const TERMINIS = 'https://dretssocials.gencat.cat/ca/ambits_tematics/persones_amb_discapacitat/reconeixement/terminis/';
+const RD888 = 'https://www.boe.es/buscar/act.php?id=BOE-A-2022-17105';
+---
+
+<BlogPostLayout
+  title="Grado de discapacidad en Barcelona: cómo solicitarlo, el CAD y cómo reclamar"
+  pageTitle="Grado de Discapacidad en Barcelona: Solicitud, CAD y Reclamación"
+  description="En Barcelona el grado de discapacidad lo reconoce la Generalitat tras valorarle un CAD. Cómo pedirlo o revisarlo y 30 días para reclamar."
+  date="2026-11-01"
+  readingTime="7"
+  category="Discapacidad"
+  faqs={[
+    { question: '¿Dónde se solicita el grado de discapacidad si vivo en Barcelona?', answer: 'Ante la Generalitat de Catalunya, que es la competente. Se puede pedir en línea (con certificado digital o idCAT Mòbil), con cita previa en una oficina de atención ciudadana, por videoatención o en cualquier registro oficial. Después le citan en el CAD que le corresponde.' },
+    { question: '¿Cuándo puedo pedir la revisión del grado?', answer: 'Según Tràmits Gencat, dos años después de la última resolución. Antes, solo si ha habido cambios importantes en su situación o un error que afecte al grado reconocido.' },
+    { question: '¿Qué informes médicos tengo que aportar?', answer: 'Los informes médicos o psicológicos de los últimos dos años que acrediten la discapacidad. Cuanto más describan las limitaciones en la vida diaria, y no solo el diagnóstico, mejor reflejan lo que mide el baremo.' },
+    { question: '¿Es lo mismo el grado de discapacidad que la incapacidad permanente?', answer: 'No. El grado de discapacidad lo reconoce la Generalitat con el baremo del Real Decreto 888/2022 y sirve para acceder a recursos y beneficios. La incapacidad permanente la reconoce el INSS y valora su capacidad para trabajar. Son procedimientos distintos.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Si vive en Barcelona, el grado de discapacidad lo reconoce la Generalitat de Catalunya tras valorarle en un Centre d'Atenció a Persones amb Discapacitat (CAD). Se solicita en línea o con cita previa. Si no está de acuerdo con la resolución, puede reclamar en 30 días desde el día siguiente a recibirla y después ir al juzgado de lo social.
+  </p>
+
+  <div class="bg-gray-50 border-l-4 border-primary-700 rounded-r-lg p-4 mb-8 text-sm text-gray-600">
+    Perito Médico Barcelona es un servicio privado e independiente: no pertenece a la Generalitat ni a ningún CAD. Para la cita, las sedes y los horarios, consulte siempre <a href={TRAMIT} target="_blank" rel="noopener" class={a}>la web oficial del trámite</a>.
+  </div>
+
+  <h2 class={h2}>¿Cómo se solicita el grado de discapacidad en Barcelona?</h2>
+  <ol class="list-decimal pl-5 space-y-3 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">Presente la solicitud</strong> en línea (certificado digital o idCAT Mòbil), con cita en una oficina de atención ciudadana, por videoatención o en un registro oficial. La puede presentar un representante.</li>
+    <li><strong class="text-primary-900">Adjunte los informes médicos o psicológicos de los últimos dos años</strong> que acrediten la discapacidad.</li>
+    <li><strong class="text-primary-900">Acuda a la valoración en el CAD.</strong> La fecha depende de cada centro, y la Generalitat publica unos <a href={TERMINIS} target="_blank" rel="noopener" class={a}>plazos orientativos de las citas</a>.</li>
+    <li><strong class="text-primary-900">Reciba la resolución</strong>, que según Tràmits Gencat llega por correo certificado uno o dos meses después de la valoración.</li>
+  </ol>
+
+  <h2 class={h2}>¿Qué mide el baremo y por qué importa el informe?</h2>
+  <p class={p}>
+    El grado se expresa en porcentaje y desde el 33 % da acceso a recursos y beneficios. Con el <a href={RD888} target="_blank" rel="noopener" class={a}>Real Decreto 888/2022</a> ya no se valora solo la deficiencia: se combinan la deficiencia, las limitaciones en la actividad y las restricciones en la participación, y se añade una puntuación por barreras ambientales de hasta 24 puntos (artículo 4). Por eso un informe que solo pone un diagnóstico se queda corto. Lo que pesa es describir qué no puede hacer la persona y cómo afecta a su día a día.
+  </p>
+
+  <h2 class={h2}>¿Qué hago si el grado reconocido es menor del que me corresponde?</h2>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Situación</th><th class="p-3 border-b">Qué hacer</th><th class="p-3 border-b">Plazo</th><th class="p-3 border-b">Fuente</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b">No está de acuerdo con la resolución</td><td class="p-3 border-b">Reclamación (formulario de petición genérica de la Generalitat)</td><td class="p-3 border-b whitespace-nowrap">30 días</td><td class="p-3 border-b"><a href={TRAMIT} target="_blank" rel="noopener" class={a}>Tràmits Gencat</a></td></tr>
+        <tr><td class="p-3 border-b">Se desestima la reclamación</td><td class="p-3 border-b">Demanda ante el juzgado de lo social</td><td class="p-3 border-b">Consulte con su abogado</td><td class="p-3 border-b"><a href={TRAMIT} target="_blank" rel="noopener" class={a}>Tràmits Gencat</a></td></tr>
+        <tr><td class="p-3">Ha empeorado o hubo un error</td><td class="p-3">Solicitud de revisión del grado</td><td class="p-3">2 años desde la última resolución (antes, si hay cambios importantes o error)</td><td class="p-3"><a href={TRAMIT} target="_blank" rel="noopener" class={a}>Tràmits Gencat</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class={p}>
+    En la reclamación, y sobre todo en el juicio, ayuda un informe pericial que aplique el mismo baremo que el CAD, apartado por apartado, y explique dónde la valoración se ha quedado corta. En Barcelona las demandas se presentan en los Jutjats Socials: vea cómo trabajamos como <a href={url('/perito-medico-juzgado-social-barcelona/')} class={a}>perito médico en el Juzgado de lo Social de Barcelona</a>.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Elaboramos el <a href={url('/servicios/discapacidad/')} class={a}>informe pericial para el grado de discapacidad</a> con el baremo del Real Decreto 888/2022, para la solicitud, la revisión o la reclamación, y lo ratificamos en juicio. Si no sabe si su grado está bien valorado, pida una <a href={url('/valoracion-discapacidad-gratuita/')} class={a}>valoración telefónica del grado de discapacidad</a>. Si lo que discute es su capacidad para trabajar, el procedimiento es otro: la <a href={url('/servicios/incapacidad-laboral/')} class={a}>incapacidad permanente</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={TRAMIT} target="_blank" rel="noopener" class={a}>Tràmits Gencat: reconeixement o revisió del grau de discapacitat</a></li>
+    <li><a href={TERMINIS} target="_blank" rel="noopener" class={a}>Departament de Drets Socials: terminis orientatius de les cites de valoració</a></li>
+    <li><a href={RD888} target="_blank" rel="noopener" class={a}>Real Decreto 888/2022, de reconocimiento, declaración y calificación del grado de discapacidad, art. 4</a></li>
+  </ul>
+</BlogPostLayout>

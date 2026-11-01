@@ -1,0 +1,70 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LGSS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724';
+const INSS_IP = 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10960';
+const SALUT_IP = 'https://canalsalut.gencat.cat/ca/salut-a-z/a/avaluacions-mediques/incapacitat-permanent-per-treballar/';
+---
+
+<BlogPostLayout
+  title="Incapacidad permanente por ansiedad y depresión: qué se valora y cómo acreditarla"
+  pageTitle="Incapacidad Permanente por Ansiedad y Depresión: Qué se Valora"
+  description="La ansiedad o la depresión dan incapacidad permanente si dejan limitaciones graves, objetivables y definitivas (art. 193 LGSS). Qué se valora."
+  date="2026-11-01"
+  readingTime="7"
+  category="Incapacidad Permanente"
+  faqs={[
+    { question: '¿Basta con el diagnóstico de depresión o ansiedad para la incapacidad permanente?', answer: 'No. La ley no reconoce la incapacidad por diagnósticos sino por reducciones funcionales graves, objetivables y previsiblemente definitivas que disminuyan o anulen la capacidad de trabajo (artículo 193.1 de la Ley General de la Seguridad Social).' },
+    { question: '¿Qué grado se puede reconocer por un trastorno psiquiátrico?', answer: 'Cualquiera de los grados de la ley: parcial, total, absoluta o gran incapacidad (artículo 194). Depende de cómo afecten las limitaciones a su profesión habitual o a cualquier trabajo, no del nombre del trastorno.' },
+    { question: '¿Tengo que haber agotado todos los tratamientos?', answer: 'Como regla, la incapacidad permanente se valora después del tratamiento prescrito. La ley permite no exigirlo cuando, por la patología, su evolución y la gravedad, las limitaciones ya estén objetivadas y sean previsiblemente definitivas (artículo 193.1).' },
+    { question: '¿Quién me valora en Barcelona?', answer: 'Resuelve el INSS a partir de un dictamen previo, necesario pero no vinculante, del Institut Català d\'Avaluacions Mèdiques (ICAM), que es el organismo que hace en Cataluña las valoraciones médicas de la incapacidad permanente, según Canal Salut.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    La ansiedad y la depresión pueden dar lugar a una incapacidad permanente, pero no por el diagnóstico. Hace falta que, tras el tratamiento, dejen limitaciones graves, objetivables y previsiblemente definitivas que reduzcan o anulen su capacidad de trabajo (artículo 193 de la Ley General de la Seguridad Social). El grado depende de cómo afecten a su profesión habitual.
+  </p>
+
+  <h2 class={h2}>¿Qué valora el INSS en un trastorno de ansiedad o depresión?</h2>
+  <p class={p}>
+    La definición legal es la misma que para cualquier otra enfermedad (<a href={LGSS + '#a193'} target="_blank" rel="noopener" class={a}>artículo 193.1</a>). En patología psiquiátrica, cada uno de sus requisitos se traduce en preguntas concretas:
+  </p>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Requisito legal</th><th class="p-3 border-b">Qué se mira en ansiedad o depresión</th><th class="p-3 border-b">Qué lo documenta</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Tras el tratamiento prescrito</td><td class="p-3 border-b">Fármacos, dosis y cambios; psicoterapia; adherencia; ingresos u hospital de día</td><td class="p-3 border-b">Informes del psiquiatra y del centro de salud mental, historia de prescripciones</td></tr>
+        <tr><td class="p-3 border-b font-medium">Reducciones graves</td><td class="p-3 border-b">Concentración, memoria, tolerancia al estrés y al trato con público, ritmo, absentismo</td><td class="p-3 border-b">Exploración psicopatológica y escalas clínicas validadas</td></tr>
+        <tr><td class="p-3 border-b font-medium">Determinación objetiva</td><td class="p-3 border-b">Que las limitaciones consten de forma coherente y continuada, no solo como queja</td><td class="p-3 border-b">Seguimiento longitudinal y coherencia entre informes</td></tr>
+        <tr><td class="p-3 font-medium">Previsiblemente definitivas</td><td class="p-3">Cronicidad, recaídas, respuesta parcial al tratamiento</td><td class="p-3">Evolución a lo largo del tiempo y pronóstico razonado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class={h2}>¿Qué grado de incapacidad se puede reconocer?</h2>
+  <p class={p}>
+    La ley clasifica la incapacidad en parcial, total, absoluta y gran incapacidad, y para fijar el grado tiene en cuenta cómo afecta la reducción de capacidad a la profesión que se ejercía (<a href={LGSS + '#a194'} target="_blank" rel="noopener" class={a}>artículo 194</a>). Un trastorno que impide trabajar de cara al público, con responsabilidad sobre terceros o bajo presión de tiempos puede justificar una incapacidad total para esa profesión aunque no impida cualquier trabajo. La absoluta, en cambio, exige que inhabilite por completo para toda profesión u oficio (definiciones de la <a href={LGSS + '#dtvigesimasexta'} target="_blank" rel="noopener" class={a}>disposición transitoria 26.ª</a>, que se aplican mientras no se desarrolle el artículo 194). Explicamos los grados y el procedimiento en la <a href={url('/blog/perito-medico-incapacidad-permanente/')} class={a}>guía de incapacidad permanente</a>.
+  </p>
+
+  <h2 class={h2}>¿Por qué se deniegan tantas incapacidades por ansiedad o depresión?</h2>
+  <p class={p}>
+    Porque el expediente suele llegar con diagnósticos y bajas, pero sin una descripción de qué no puede hacer la persona y por qué no va a mejorar. También pesan un seguimiento irregular, informes contradictorios o un tratamiento que no se ha intensificado. Si ya se la han denegado, la vía es la reclamación previa y el Juzgado de lo Social: lo explicamos en <a href={url('/blog/incapacidad-permanente-denegada-que-hacer/')} class={a}>incapacidad permanente denegada: qué hacer</a>. Si el trastorno viene de un acoso o de la carga de trabajo, también se puede discutir el origen laboral con una <a href={url('/servicios/determinacion-contingencia/')} class={a}>determinación de contingencia</a>.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    El <a href={url('/especialidades/psiquiatria/')} class={a}>perito médico psiquiatra</a> explora y documenta las limitaciones funcionales y las contrasta con las tareas de su profesión. Con eso elaboramos el informe pericial de <a href={url('/servicios/incapacidad-laboral/')} class={a}>incapacidad permanente</a> para el INSS o el juzgado, y lo ratificamos en juicio. Si le han citado en el ICAM, lea <a href={url('/blog/tribunal-medico-icam-barcelona/')} class={a}>cómo preparar el tribunal médico</a>. Para empezar, pida una <a href={url('/incapacidad-permanente-consulta-gratuita/')} class={a}>consulta telefónica sobre incapacidad permanente</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LGSS} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social, arts. 193, 194 y disposición transitoria 26.ª</a></li>
+    <li><a href={INSS_IP} target="_blank" rel="noopener" class={a}>Seguridad Social: incapacidad permanente</a></li>
+    <li><a href={SALUT_IP} target="_blank" rel="noopener" class={a}>Canal Salut: incapacitat permanent per treballar</a></li>
+  </ul>
+</BlogPostLayout>
