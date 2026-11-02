@@ -1,0 +1,86 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LPAC = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565';
+const LRJSP = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-10566';
+const LBRL = 'https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392';
+const CCCAT = 'https://www.boe.es/buscar/act.php?id=BOE-A-2003-2410';
+const TRAMIT = 'https://seuelectronica.ajuntament.barcelona.cat/oficinavirtual/ca/tramit/19970000427';
+---
+
+<BlogPostLayout
+  title="Caída en la vía pública en Barcelona: cómo reclamar al Ayuntamiento"
+  pageTitle="Caída en la Vía Pública en Barcelona: Reclamar al Ayuntamiento"
+  description="Tiene un año para reclamar al Ajuntament de Barcelona por una caída en la calle. Qué pruebas pide, cómo se cuantifican las lesiones y qué pasa si no responde."
+  date="2026-11-02"
+  readingTime="7"
+  category="Daño Corporal"
+  faqs={[
+    { question: '¿Cuánto tiempo tengo para reclamar al Ayuntamiento por una caída?', answer: 'Un año. Si hay lesiones físicas o psíquicas, se cuenta desde la curación o desde que se determina el alcance de las secuelas (artículo 67.1 de la Ley 39/2015), como recoge la propia ficha del trámite del Ajuntament de Barcelona.' },
+    { question: '¿Y si me caigo en un supermercado o en un local privado?', answer: 'No se reclama al Ayuntamiento sino al titular del local y a su aseguradora, por la vía civil. En Cataluña, la responsabilidad extracontractual prescribe a los tres años (artículo 121-21.d del Código civil de Cataluña).' },
+    { question: '¿Necesito un informe pericial para reclamar?', answer: 'No es obligatorio, pero la ficha del trámite lo incluye entre la documentación que se puede aportar y pide cuantificar económicamente los daños. El informe pericial es lo que permite justificar esa cifra con el baremo.' },
+    { question: '¿Qué pasa si el Ayuntamiento no contesta?', answer: 'El plazo máximo para resolver es de seis meses. Si pasa sin resolución expresa, puede entenderse desestimada (artículo 91.3 de la Ley 39/2015) y se puede acudir a la vía contencioso-administrativa.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Si se cae en la calle en Barcelona por un desperfecto (una baldosa suelta, un socavón, una tapa mal colocada), puede reclamar al Ajuntament por responsabilidad patrimonial en el plazo de un año desde la curación o la estabilización de las secuelas (artículo 67.1 de la Ley 39/2015). Tendrá que probar el lugar exacto, el desperfecto, las lesiones y cuantificar los daños.
+  </p>
+
+  <div class="bg-primary-50 rounded-xl p-5 border-l-4 border-primary-500 mb-8">
+    <p class="text-sm text-primary-800 leading-relaxed">
+      Esta web es un servicio privado e independiente de peritaje médico, sin relación con el Ajuntament de Barcelona. La reclamación se presenta por el trámite oficial que enlazamos.
+    </p>
+  </div>
+
+  <h2 class={h2}>¿Por qué responde el Ayuntamiento?</h2>
+  <p class={p}>
+    Porque la infraestructura viaria es competencia del municipio (<a href={LBRL + '#a25'} target="_blank" rel="noopener" class={a}>artículo 25.2.d de la Ley de Bases de Régimen Local</a>) y las entidades locales responden directamente de los daños que causa el funcionamiento de sus servicios (<a href={LBRL + '#a54'} target="_blank" rel="noopener" class={a}>artículo 54</a>). Se indemnizan las lesiones que usted no tenga el deber jurídico de soportar (<a href={LRJSP + '#a32'} target="_blank" rel="noopener" class={a}>artículo 32.1 de la Ley 40/2015</a>). Lo que se discute casi siempre es si el desperfecto tenía entidad suficiente y si la caída se debió a él o a un descuido.
+  </p>
+
+  <h2 class={h2}>¿Qué documentación pide el Ajuntament?</h2>
+  <p class={p}>
+    La <a href={TRAMIT} target="_blank" rel="noopener" class={a}>ficha oficial del trámite</a> se puede presentar en línea o con cita previa en una oficina de atención ciudadana, y pide:
+  </p>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Qué pide</th><th class="p-3 border-b">Para qué sirve</th><th class="p-3 border-b">Consejo</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Instancia con los daños y el lugar exacto</td><td class="p-3 border-b">Identificar el desperfecto</td><td class="p-3 border-b">Calle, número y referencia visible</td></tr>
+        <tr><td class="p-3 border-b font-medium">Fotografías y datos de testigos</td><td class="p-3 border-b">Probar el desperfecto y la caída</td><td class="p-3 border-b">Fotos el mismo día, con algo que dé escala</td></tr>
+        <tr><td class="p-3 border-b font-medium">Informe de la Guàrdia Urbana, ambulancia u otros servicios</td><td class="p-3 border-b">Acreditar que la caída ocurrió allí y entonces</td><td class="p-3 border-b">Si acudieron, pida que conste</td></tr>
+        <tr><td class="p-3 border-b font-medium">Informes médicos, altas y bajas, facturas, nóminas</td><td class="p-3 border-b">Acreditar las lesiones y los gastos</td><td class="p-3 border-b">Empezando por el de urgencias</td></tr>
+        <tr><td class="p-3 font-medium">Cuantificación económica desglosada y, si lo hay, dictamen médico pericial</td><td class="p-3">Justificar la cifra que reclama</td><td class="p-3">Separar días de lesión, secuelas y gastos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class={h2}>¿Cómo se calcula la indemnización?</h2>
+  <p class={p}>
+    En los casos de lesiones, la ley permite tomar como referencia el baremo de los seguros obligatorios (<a href={LRJSP + '#a34'} target="_blank" rel="noopener" class={a}>artículo 34.2 de la Ley 40/2015</a>), es decir, el de tráfico: días de lesión temporal según su gravedad, puntos por secuelas y gastos acreditados. Las caídas en la calle suelen causar fracturas de muñeca, cadera o tobillo y esguinces; el informe pericial fija cuánto duró la curación, qué secuela queda y si está relacionada con la caída o con un problema previo.
+  </p>
+
+  <h2 class={h2}>¿Qué plazos hay que respetar?</h2>
+  <p class={p}>
+    Un año para presentar la reclamación, contado desde la curación o la estabilización de las secuelas (<a href={LPAC + '#a67'} target="_blank" rel="noopener" class={a}>artículo 67.1 de la Ley 39/2015</a>), y seis meses como máximo para que el Ajuntament resuelva. Si no lo hace, la reclamación puede entenderse desestimada (<a href={LPAC + '#a91'} target="_blank" rel="noopener" class={a}>artículo 91.3</a>) y se abre la vía contencioso-administrativa. Si la caída fue en un local privado, la reclamación es civil y el plazo en Cataluña es de tres años (<a href={CCCAT + '#a12121'} target="_blank" rel="noopener" class={a}>artículo 121-21.d del Código civil de Cataluña</a>).
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Elaboramos el informe de <a href={url('/servicios/valoracion-dano-corporal/')} class={a}>valoración del daño corporal</a> que cuantifica sus lesiones para la reclamación al Ajuntament o para el juicio, con criterios de <a href={url('/especialidades/traumatologia/')} class={a}>traumatología pericial</a>. Si la caída ocurrió en el trabajo o al ir o volver de él, puede ser un <a href={url('/blog/accidente-in-itinere/')} class={a}>accidente in itinere</a>. Para empezar, pida una <a href={url('/valoracion-dano-corporal-gratuita/')} class={a}>valoración telefónica de sus lesiones</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LPAC} target="_blank" rel="noopener" class={a}>Ley 39/2015, del Procedimiento Administrativo Común, arts. 67.1 y 91.3</a></li>
+    <li><a href={LRJSP} target="_blank" rel="noopener" class={a}>Ley 40/2015, de Régimen Jurídico del Sector Público, arts. 32.1 y 34.2</a></li>
+    <li><a href={LBRL} target="_blank" rel="noopener" class={a}>Ley 7/1985, reguladora de las Bases del Régimen Local, arts. 25.2.d y 54</a></li>
+    <li><a href={CCCAT} target="_blank" rel="noopener" class={a}>Ley 29/2002, primera ley del Código civil de Cataluña, art. 121-21.d</a></li>
+    <li><a href={TRAMIT} target="_blank" rel="noopener" class={a}>Ajuntament de Barcelona: reclamació per responsabilitat patrimonial</a></li>
+  </ul>
+</BlogPostLayout>

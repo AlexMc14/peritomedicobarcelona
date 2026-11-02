@@ -1,0 +1,90 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LRCSCVM = 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-18911';
+const LEY5 = 'https://www.boe.es/buscar/act.php?id=BOE-A-2025-15424';
+const RD52 = 'https://www.boe.es/buscar/doc.php?id=BOE-A-2026-2140';
+const RGC = 'https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514';
+const CCCAT = 'https://www.boe.es/buscar/act.php?id=BOE-A-2003-2410';
+const DGT_VMP = 'https://www.dgt.es/nuestros-servicios/tu-vehiculo/vehiculos-de-movilidad-personal-vmp/';
+const GUB = 'https://seuelectronica.ajuntament.barcelona.cat/oficinavirtual/es/tramit/20230001662';
+const MOSSOS = 'https://tramits.gencat.cat/ca/tramits/tramits-temes/10039_-_Informes-policials-daccidents-de-transit-lleus';
+const BAN = 'https://ajuntament.barcelona.cat/premsa/2025/02/01/ban-de-lexcellentissim-senyor-alcalde-endrecem-la-circulacio-a-barcelona/';
+---
+
+<BlogPostLayout
+  title="Atropellos y accidentes en bici o patinete en Barcelona: indemnización"
+  pageTitle="Atropello o Accidente de Patinete en Barcelona: Indemnización"
+  description="Quién paga si le atropella un coche, una bici o un patinete en Barcelona, el seguro obligatorio del patinete desde 2026 y el plazo de un año para reclamar."
+  date="2026-11-02"
+  readingTime="8"
+  category="Accidentes de Tráfico"
+  faqs={[
+    { question: '¿Me pueden rebajar la indemnización si cruzaba fuera del paso de peatones?', answer: 'Puede reducirse si su conducta contribuyó al daño, hasta un máximo del 75 % (artículo 1.2 de la ley de tráfico). El conductor solo queda exonerado del todo si prueba que la culpa fue exclusivamente suya o que hubo fuerza mayor ajena a la conducción.' },
+    { question: '¿Y si el atropellado es un niño?', answer: 'Si la víctima no conducía un vehículo a motor y es menor de 14 años, su propia culpa no suprime ni reduce la indemnización por secuelas y lesiones temporales, salvo que contribuyera dolosamente al daño (artículo 1.2).' },
+    { question: '¿Ir sin casco en bici o patinete reduce la indemnización?', answer: 'Puede hacerlo. La ley considera que contribuye al daño no usar el casco u otros elementos de protección, o usarlos mal, cuando eso agrava las lesiones (artículo 1.2). Por eso el informe médico debe analizar si el casco habría cambiado la lesión.' },
+    { question: '¿Cuánto tiempo tengo para reclamar?', answer: 'La acción frente a la aseguradora del vehículo prescribe en un año (artículo 7.1). La reclamación previa interrumpe el plazo y, cuando le notifican la oferta o la respuesta motivada, empieza a contar un nuevo año.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Si le atropella un coche o una moto en Barcelona, paga la aseguradora del vehículo, salvo que pruebe que la culpa fue exclusivamente suya (artículo 1 de la ley de tráfico). Si el causante es un patinete eléctrico, responde su seguro obligatorio, exigible desde el 2 de enero de 2026. En todos los casos tiene un año para reclamar y la cifra depende del informe médico.
+  </p>
+
+  <h2 class={h2}>¿Quién paga según el vehículo que causó el accidente?</h2>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Causante</th><th class="p-3 border-b">Quién responde</th><th class="p-3 border-b">Norma</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Coche, moto, autobús o camión</td><td class="p-3 border-b">La aseguradora del vehículo; si no tiene seguro o se dio a la fuga, el Consorcio de Compensación de Seguros</td><td class="p-3 border-b"><a href={LRCSCVM + '#a1'} target="_blank" rel="noopener" class={a}>Ley de tráfico, arts. 1</a> y <a href={LRCSCVM + '#a11'} target="_blank" rel="noopener" class={a}>11</a></td></tr>
+        <tr><td class="p-3 border-b font-medium">Patinete eléctrico (vehículo personal ligero)</td><td class="p-3 border-b">Su seguro obligatorio; el Consorcio solo cubre los daños personales que requieran atención sanitaria, con los límites de la ley</td><td class="p-3 border-b"><a href={LEY5 + '#da'} target="_blank" rel="noopener" class={a}>Ley 5/2025, disposición adicional primera</a></td></tr>
+        <tr><td class="p-3 font-medium">Bicicleta convencional</td><td class="p-3">El ciclista (o su seguro de responsabilidad civil, si lo tiene): no es un vehículo a motor</td><td class="p-3">Vía civil; en Cataluña, <a href={CCCAT + '#a12121'} target="_blank" rel="noopener" class={a}>tres años (art. 121-21.d del Código civil catalán)</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class={h2}>¿Qué cambió en 2026 con los patinetes?</h2>
+  <p class={p}>
+    La <a href={LEY5} target="_blank" rel="noopener" class={a}>Ley 5/2025</a> creó un seguro obligatorio para los «vehículos personales ligeros», que entró en vigor el 2 de enero de 2026, y el <a href={RD52} target="_blank" rel="noopener" class={a}>Real Decreto 52/2026</a> puso en marcha su registro en la DGT. Con el certificado de inscripción se contrata el seguro, según la <a href={DGT_VMP} target="_blank" rel="noopener" class={a}>DGT</a>. Los patinetes vendidos antes del 22 de enero de 2024 sin certificado tienen una inscripción provisional que deja de surtir efectos el 22 de enero de 2027. Si le atropella un patinete sin seguro, conserve todos los datos del conductor: la cobertura del Consorcio se limita a los daños personales que requieran atención sanitaria.
+  </p>
+  <p class={p}>
+    Desde el 1 de octubre de 2026, el Reglamento General de Circulación exige casco a quien conduce un patinete, prohíbe conducirlo a los menores de quince años y prohíbe circular por las aceras (<a href={RGC} target="_blank" rel="noopener" class={a}>arts. 118.3, 152.1 y 155.3</a>). En Barcelona, el <a href={BAN} target="_blank" rel="noopener" class={a}>bando municipal de 2025</a> fija que los conductores de patinete deben tener más de 16 años, llevar casco y circular solo por calles 30, carriles bici y calles pacificadas. Estas infracciones pesan en el reparto de culpas.
+  </p>
+
+  <h2 class={h2}>¿Me reducen la indemnización si yo también tuve culpa?</h2>
+  <p class={p}>
+    Puede ocurrir. Si su conducta contribuyó al daño, la indemnización se reduce hasta un máximo del 75 % (<a href={LRCSCVM + '#a1'} target="_blank" rel="noopener" class={a}>artículo 1.2</a>), y no usar el casco cuenta como contribución si agravó la lesión. Hay una protección especial: si la víctima no conducía un vehículo a motor y es menor de 14 años o no tiene capacidad culposa, su culpa no reduce la indemnización por secuelas y lesiones temporales, salvo dolo. En un caso hipotético de un ciclista sin casco con una fractura de muñeca, el casco no habría cambiado esa lesión; con un traumatismo craneal, sí puede discutirse. Esa distinción es médica.
+  </p>
+
+  <h2 class={h2}>¿Qué hacer después del atropello?</h2>
+  <ol class="list-decimal pl-5 space-y-2 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">Acuda a urgencias el mismo día</strong>, aunque crea que no es grave: el informe con fecha y hora es la prueba de la relación entre el accidente y la lesión.</li>
+    <li><strong class="text-primary-900">Pida el atestado.</strong> En la ciudad lo hace la Guàrdia Urbana, que tiene un <a href={GUB} target="_blank" rel="noopener" class={a}>trámite para solicitar el informe de accidente</a>; en los accidentes leves con intervención de los Mossos d'Esquadra, el informe se pide por <a href={MOSSOS} target="_blank" rel="noopener" class={a}>Tràmits Gencat</a> a partir de los 15 días. La ley obliga a facilitar copia del atestado a las víctimas (<a href={LRCSCVM + '#a7'} target="_blank" rel="noopener" class={a}>artículo 7.1</a>).</li>
+    <li><strong class="text-primary-900">Reclame a la aseguradora.</strong> Tiene tres meses para enviarle una oferta o una respuesta motivada (artículo 7.2). Si no le convence, lea <a href={url('/blog/oferta-motivada-insuficiente/')} class={a}>qué hacer si la oferta motivada es insuficiente</a>.</li>
+    <li><strong class="text-primary-900">Si se cayó por un desperfecto de la calzada</strong> y no intervino otro vehículo, la reclamación es al Ajuntament: lo explicamos en <a href={url('/blog/caida-via-publica-reclamar-ayuntamiento-barcelona/')} class={a}>caída en la vía pública en Barcelona</a>.</li>
+    <li><strong class="text-primary-900">Siga el tratamiento hasta el alta</strong> y guarde cada informe: las secuelas se valoran al final, cuando se estabilizan.</li>
+  </ol>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Las lesiones de peatones, ciclistas y usuarios de patinete suelen ser fracturas de muñeca, codo o tobillo y traumatismos craneales. Las valoramos con criterios de <a href={url('/especialidades/traumatologia/')} class={a}>traumatología</a> y <a href={url('/especialidades/neurologia/')} class={a}>neurología pericial</a> y elaboramos el informe de <a href={url('/servicios/valoracion-dano-corporal/')} class={a}>valoración del daño corporal</a> con el baremo de tráfico. Si el atropello fue al ir o volver del trabajo, lea también <a href={url('/blog/accidente-in-itinere/')} class={a}>accidente in itinere</a>. Para empezar, pida una <a href={url('/valoracion-dano-corporal-gratuita/')} class={a}>valoración telefónica de sus lesiones</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LRCSCVM} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2004, Ley sobre responsabilidad civil y seguro en la circulación de vehículos a motor (texto consolidado), arts. 1, 7 y 11</a></li>
+    <li><a href={LEY5} target="_blank" rel="noopener" class={a}>Ley 5/2025, disposición adicional primera y disposición final novena</a></li>
+    <li><a href={RD52} target="_blank" rel="noopener" class={a}>Real Decreto 52/2026, del Registro de Vehículos Personales Ligeros</a></li>
+    <li><a href={RGC} target="_blank" rel="noopener" class={a}>Reglamento General de Circulación (texto consolidado), arts. 118.3, 152.1 y 155.3</a></li>
+    <li><a href={CCCAT} target="_blank" rel="noopener" class={a}>Ley 29/2002, primera ley del Código civil de Cataluña, art. 121-21.d</a></li>
+    <li><a href={DGT_VMP} target="_blank" rel="noopener" class={a}>DGT: vehículos de movilidad personal</a></li>
+    <li><a href={BAN} target="_blank" rel="noopener" class={a}>Ajuntament de Barcelona: ban «Endrecem la circulació a Barcelona» (2025)</a></li>
+    <li><a href={GUB} target="_blank" rel="noopener" class={a}>Ajuntament de Barcelona: informe de accidente de tráfico de la Guàrdia Urbana</a></li>
+    <li><a href={MOSSOS} target="_blank" rel="noopener" class={a}>Tràmits Gencat: informes policials d'accidents de trànsit lleus</a></li>
+  </ul>
+</BlogPostLayout>

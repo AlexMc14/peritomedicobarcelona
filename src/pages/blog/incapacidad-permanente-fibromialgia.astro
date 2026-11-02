@@ -1,0 +1,90 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LGSS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724';
+const LRJS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2011-15936';
+const SALUT_SSC = 'https://canalsalut.gencat.cat/ca/salut-a-z/s/sindromes-sensibilitzacio-central/';
+const SALUT_FM = 'https://canalsalut.gencat.cat/ca/salut-a-z/f/fibromialgia/';
+const SALUT_IP = 'https://canalsalut.gencat.cat/ca/salut-a-z/a/avaluacions-mediques/incapacitat-permanent-per-treballar/';
+const GUIA_ICAM = 'https://scientiasalut.gencat.cat/bitstream/handle/11351/5652/guia_per_a_l_avaluacio_de_la_fibromialgia_i_de_la_sindrome_de_fatiga_cronica_2017.pdf';
+---
+
+<BlogPostLayout
+  title="Incapacidad permanente por fibromialgia: cómo se valora y cómo acreditarla"
+  pageTitle="Incapacidad Permanente por Fibromialgia: Cómo se Valora"
+  description="La fibromialgia da incapacidad permanente si deja limitaciones graves, objetivables y definitivas (art. 193 LGSS). Qué valora el ICAM y qué aportar."
+  date="2026-11-02"
+  readingTime="7"
+  category="Incapacidad Permanente"
+  faqs={[
+    { question: '¿La fibromialgia da derecho a la incapacidad permanente?', answer: 'No de forma automática. La ley no reconoce la incapacidad por diagnósticos, sino por reducciones funcionales graves, objetivables y previsiblemente definitivas que disminuyan o anulen la capacidad de trabajo (artículo 193.1 de la Ley General de la Seguridad Social).' },
+    { question: '¿Qué grado se puede reconocer por fibromialgia?', answer: 'Cualquiera de los grados legales: parcial, total, absoluta o gran incapacidad. Depende de cómo afecten las limitaciones a su profesión habitual o a cualquier trabajo, no del nombre de la enfermedad.' },
+    { question: '¿Sirve el informe de la unidad de sensibilización central?', answer: 'Sí, es de los documentos que más pesan, porque Canal Salut sitúa en esas unidades de experiencia la atención especializada de la fibromialgia en Cataluña. Conviene que describa el tratamiento seguido, la evolución y las limitaciones concretas, no solo el diagnóstico.' },
+    { question: '¿Y si además tengo síndrome de fatiga crónica o depresión?', answer: 'Se valoran todas las patologías en conjunto. La guía del ICAM indica que el resultado depende de la evaluación de todas ellas y de si existe limitación funcional orgánica o psíquica.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    La fibromialgia puede dar lugar a una incapacidad permanente, pero no por el diagnóstico. Hace falta que, tras el tratamiento, deje limitaciones graves, objetivables y previsiblemente definitivas que reduzcan o anulen su capacidad de trabajo (artículo 193 de la Ley General de la Seguridad Social). En Cataluña, el ICAM valora el grado de limitación funcional con una guía propia.
+  </p>
+
+  <h2 class={h2}>¿Por qué es difícil conseguir la incapacidad por fibromialgia?</h2>
+  <p class={p}>
+    Porque el diagnóstico es «bàsicament clínic», como recuerda <a href={SALUT_FM} target="_blank" rel="noopener" class={a}>Canal Salut</a>: no hay una analítica ni una prueba de imagen que la confirme o mida su intensidad. La ley, en cambio, exige reducciones «susceptibles de determinación objetiva» (<a href={LGSS + '#a193'} target="_blank" rel="noopener" class={a}>artículo 193.1</a>). El expediente se gana o se pierde en cómo se documenta la limitación funcional: qué no puede hacer la persona, desde cuándo, con qué tratamientos y por qué no mejora.
+  </p>
+
+  <h2 class={h2}>¿Qué valora el ICAM en la fibromialgia?</h2>
+  <p class={p}>
+    El ICAM tiene una <a href={GUIA_ICAM} target="_blank" rel="noopener" class={a}>guía para la evaluación de la fibromialgia y del síndrome de fatiga crónica</a> (2017) cuyo objetivo es «valorar el grau de limitació funcional de les persones afectades». Traducido a los requisitos de la ley, esto es lo que se mira y lo que lo acredita:
+  </p>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Requisito legal</th><th class="p-3 border-b">Qué se mira en la fibromialgia</th><th class="p-3 border-b">Qué lo documenta</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Diagnóstico establecido</td><td class="p-3 border-b">Que lo haya hecho un especialista con criterios clínicos reconocidos</td><td class="p-3 border-b">Informe de reumatología o de la unidad de sensibilización central</td></tr>
+        <tr><td class="p-3 border-b font-medium">Tras el tratamiento prescrito</td><td class="p-3 border-b">Fármacos, ejercicio terapéutico, abordaje psicológico, adherencia</td><td class="p-3 border-b">Historia de prescripciones e informes de seguimiento</td></tr>
+        <tr><td class="p-3 border-b font-medium">Reducciones graves</td><td class="p-3 border-b">Tolerancia al esfuerzo, a la bipedestación y a la sedestación, fatiga, sueño, concentración</td><td class="p-3 border-b">Escalas funcionales validadas y exploración física y psíquica</td></tr>
+        <tr><td class="p-3 border-b font-medium">Determinación objetiva</td><td class="p-3 border-b">Coherencia entre lo que se refiere, lo que se explora y lo que consta a lo largo del tiempo</td><td class="p-3 border-b">Seguimiento longitudinal sin contradicciones entre informes</td></tr>
+        <tr><td class="p-3 font-medium">Previsiblemente definitivas</td><td class="p-3">Años de evolución sin mejoría pese al tratamiento</td><td class="p-3">Evolución documentada y pronóstico razonado</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class={p}>
+    Si coexisten otras patologías (depresión, artrosis, síndrome de fatiga crónica), la misma guía indica que el resultado depende de la evaluación del conjunto y de si existe limitación funcional «orgànica i/o psíquica». Por eso conviene que el expediente las recoja todas.
+  </p>
+
+  <h2 class={h2}>¿Dónde se trata la fibromialgia en Cataluña?</h2>
+  <p class={p}>
+    Según <a href={SALUT_SSC} target="_blank" rel="noopener" class={a}>Canal Salut</a>, la fibromialgia, el síndrome de fatiga crónica y la sensibilidad química múltiple forman el grupo de los síndromes de sensibilización central, y Cataluña cuenta con dieciocho unidades de experiencia repartidas por el territorio. Su informe, junto con el del médico de familia y el de reumatología, es la base clínica del expediente. Las consultas sobre derivación se hacen en su CAP: esta web es un servicio privado e independiente y no pertenece al ICAM, al INSS ni al CatSalut.
+  </p>
+
+  <h2 class={h2}>¿Qué grado de incapacidad se puede reconocer?</h2>
+  <p class={p}>
+    Los grados son los mismos que para cualquier enfermedad (<a href={LGSS + '#a194'} target="_blank" rel="noopener" class={a}>artículo 194</a> y <a href={LGSS + '#dtvigesimasexta'} target="_blank" rel="noopener" class={a}>disposición transitoria 26.ª</a>): la <strong>total</strong> si le impide las tareas fundamentales de su profesión habitual pero puede dedicarse a otra, y la <strong>absoluta</strong> si le inhabilita para toda profesión u oficio. Una limitación para estar de pie, cargar peso o mantener un ritmo sostenido pesa más en un trabajo físico o con turnos que en uno sedentario y flexible. Explicamos los grados y el procedimiento en la <a href={url('/blog/perito-medico-incapacidad-permanente/')} class={a}>guía de incapacidad permanente</a>.
+  </p>
+
+  <h2 class={h2}>¿Qué hago si me deniegan la incapacidad?</h2>
+  <p class={p}>
+    Presentar una reclamación previa ante el INSS en el plazo de treinta días desde la notificación y, si se desestima, la demanda ante el Juzgado de lo Social en otros treinta días (<a href={LRJS + '#a71'} target="_blank" rel="noopener" class={a}>artículo 71 de la Ley reguladora de la jurisdicción social</a>). En el juicio, un informe pericial que explique la limitación funcional con escalas y con la evolución completa es lo que permite al juez apartarse del dictamen del ICAM. Lo detallamos en <a href={url('/blog/incapacidad-permanente-denegada-que-hacer/')} class={a}>incapacidad permanente denegada: qué hacer</a>.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Revisamos su historia clínica, valoramos la limitación funcional con escalas validadas y la contrastamos con las tareas de su profesión. Con eso elaboramos el informe pericial de <a href={url('/servicios/incapacidad-laboral/')} class={a}>incapacidad permanente</a> para el INSS o el juzgado, con apoyo de <a href={url('/especialidades/psiquiatria/')} class={a}>psiquiatría pericial</a> si hay afectación psíquica. Si le han citado en el ICAM, lea <a href={url('/blog/tribunal-medico-icam-barcelona/')} class={a}>cómo preparar el tribunal médico</a>. Para empezar, pida una <a href={url('/incapacidad-permanente-consulta-gratuita/')} class={a}>consulta telefónica sobre incapacidad permanente</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LGSS} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social, arts. 193, 194 y disposición transitoria 26.ª</a></li>
+    <li><a href={LRJS} target="_blank" rel="noopener" class={a}>Ley 36/2011, reguladora de la jurisdicción social, art. 71</a></li>
+    <li><a href={GUIA_ICAM} target="_blank" rel="noopener" class={a}>ICAM (Generalitat de Catalunya): Guia per a l'avaluació de la fibromiàlgia i de la síndrome de fatiga crònica, 2017</a></li>
+    <li><a href={SALUT_SSC} target="_blank" rel="noopener" class={a}>Canal Salut: síndromes de sensibilització central</a></li>
+    <li><a href={SALUT_FM} target="_blank" rel="noopener" class={a}>Canal Salut: fibromiàlgia</a></li>
+    <li><a href={SALUT_IP} target="_blank" rel="noopener" class={a}>Canal Salut: incapacitat permanent per treballar</a></li>
+  </ul>
+</BlogPostLayout>
