@@ -1,0 +1,90 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LGSS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724';
+const LRJS = 'https://www.boe.es/buscar/act.php?id=BOE-A-2011-15936';
+const GUIA_IT = 'https://repisalud.isciii.es/entities/publication/b093d2bf-d6d1-4006-9e75-f14fc76a98e3';
+const SALUT_IP = 'https://canalsalut.gencat.cat/ca/salut-a-z/a/avaluacions-mediques/incapacitat-permanent-per-treballar/';
+---
+
+<BlogPostLayout
+  title="Incapacidad permanente por hernia discal (L4-L5, L5-S1): cuándo se concede"
+  pageTitle="Incapacidad Permanente por Hernia Discal L4-L5 y L5-S1"
+  description="La hernia discal da incapacidad permanente si deja limitaciones graves y definitivas para su profesión (art. 193 LGSS). Qué pruebas pesan y qué grado."
+  date="2026-11-02"
+  readingTime="7"
+  category="Incapacidad Permanente"
+  faqs={[
+    { question: '¿Una hernia discal L5-S1 da la incapacidad permanente total?', answer: 'Puede darla si, tras el tratamiento, deja limitaciones que impiden las tareas fundamentales de su profesión habitual (disposición transitoria 26.ª de la Ley General de la Seguridad Social). El nivel de la hernia no decide por sí solo: decide la limitación funcional frente a su trabajo.' },
+    { question: '¿Me tienen que operar antes de pedir la incapacidad?', answer: 'Como regla, la incapacidad se valora tras el tratamiento prescrito. Desde 2024 la ley permite no exigirlo cuando las limitaciones ya están suficientemente objetivadas (artículo 193.1). Si rechaza una cirugía, conviene que conste por qué y con qué criterio médico.' },
+    { question: '¿Y si me operaron y sigo con dolor?', answer: 'Las secuelas tras la cirugía (dolor persistente, radiculopatía residual, limitación de movilidad) se valoran igual que cualquier otra limitación: con la exploración, las pruebas posteriores a la operación y su repercusión en el trabajo.' },
+    { question: '¿Puedo pedir que la hernia se considere accidente de trabajo?', answer: 'Sí, si se produjo durante el tiempo y en el lugar de trabajo (se presume laboral, artículo 156.3) o si una lesión previa se agravó por un accidente laboral (artículo 156.2.f). Se discute con una determinación de contingencia.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Una hernia discal L4-L5 o L5-S1 puede dar lugar a una incapacidad permanente si, tras el tratamiento, deja limitaciones graves, objetivables y previsiblemente definitivas para trabajar (artículo 193 de la Ley General de la Seguridad Social). La resonancia magnética y el electromiograma objetivan la lesión; el grado depende de cómo afecte a su profesión habitual.
+  </p>
+
+  <h2 class={h2}>¿Basta con tener una hernia discal en la resonancia?</h2>
+  <p class={p}>
+    No. Muchas hernias se ven en la imagen y no limitan; otras, pequeñas, comprimen una raíz nerviosa y sí lo hacen. La ley pide reducciones funcionales graves y definitivas (<a href={LGSS + '#a193'} target="_blank" rel="noopener" class={a}>artículo 193.1</a>), no un hallazgo radiológico. Lo que se valora es la correlación entre la imagen, la exploración y los síntomas: dolor irradiado, pérdida de fuerza o de sensibilidad, reflejos alterados, limitación para flexionar, cargar o estar sentado.
+  </p>
+
+  <h2 class={h2}>¿Qué pruebas pesan en la valoración?</h2>
+  <p class={p}>
+    La <a href={GUIA_IT} target="_blank" rel="noopener" class={a}>guía de valoración de la incapacidad laboral de la Escuela Nacional de Medicina del Trabajo y el INSS</a> señala la resonancia magnética como prueba de imagen de elección en las radiculopatías, y el electromiograma y los estudios de conducción nerviosa como útiles para confirmar la radiculopatía y localizar la raíz afectada.
+  </p>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Prueba o documento</th><th class="p-3 border-b">Qué aporta</th><th class="p-3 border-b">Qué conviene que conste</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Resonancia magnética</td><td class="p-3 border-b">Nivel, tamaño y relación de la hernia con la raíz</td><td class="p-3 border-b">Que sea reciente y que se compare con las anteriores</td></tr>
+        <tr><td class="p-3 border-b font-medium">Electromiograma (EMG)</td><td class="p-3 border-b">Afectación nerviosa objetiva y raíz afectada</td><td class="p-3 border-b">Signos de radiculopatía y si es aguda o crónica</td></tr>
+        <tr><td class="p-3 border-b font-medium">Informes de traumatología, neurocirugía o unidad del dolor</td><td class="p-3 border-b">Tratamientos realizados y respuesta</td><td class="p-3 border-b">Infiltraciones, cirugía, rehabilitación y resultado</td></tr>
+        <tr><td class="p-3 font-medium">Descripción del puesto</td><td class="p-3">Qué exige su profesión habitual</td><td class="p-3">Cargas, posturas, conducción, bipedestación, turnos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class={h2}>¿Qué grado de incapacidad se puede conseguir?</h2>
+  <p class={p}>
+    Mientras no se desarrolle el <a href={LGSS + '#a194'} target="_blank" rel="noopener" class={a}>artículo 194</a>, los grados se definen en la <a href={LGSS + '#dtvigesimasexta'} target="_blank" rel="noopener" class={a}>disposición transitoria 26.ª</a>:
+  </p>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+    <li><strong class="text-primary-900">Parcial</strong>: disminución no inferior al 33 % del rendimiento normal en su profesión, sin impedirle las tareas fundamentales.</li>
+    <li><strong class="text-primary-900">Total</strong>: le inhabilita para todas o las fundamentales tareas de su profesión habitual, aunque pueda dedicarse a otra. Es el grado más frecuente en la patología lumbar de trabajos físicos: mozos de almacén, construcción, limpieza, conducción profesional o sanidad.</li>
+    <li><strong class="text-primary-900">Absoluta</strong>: le inhabilita por completo para toda profesión u oficio. Exige una afectación más grave, por ejemplo una radiculopatía severa con dolor que no cede o secuelas neurológicas importantes.</li>
+  </ul>
+  <p class={p}>
+    Por eso el mismo informe médico puede justificar una incapacidad total para un oficio con cargas y no para un trabajo de oficina. La profesión habitual es la que se ejercía al surgir la incapacidad; documentarla bien es tan importante como documentar la lesión.
+  </p>
+
+  <h2 class={h2}>¿La hernia discal puede ser accidente de trabajo?</h2>
+  <p class={p}>
+    Sí. Se presume accidente de trabajo la lesión que se sufre durante el tiempo y en el lugar de trabajo, salvo prueba en contrario (<a href={LGSS + '#a156'} target="_blank" rel="noopener" class={a}>artículo 156.3</a>), y también lo es la enfermedad previa que se agrava por un accidente (artículo 156.2.f). Si la hernia empezó con un esfuerzo en el trabajo y la mutua la trata como enfermedad común, se puede pedir una <a href={url('/servicios/determinacion-contingencia/')} class={a}>determinación de contingencia</a>. El origen laboral cambia la prestación: no exige periodo previo de cotización (<a href={LGSS + '#a195'} target="_blank" rel="noopener" class={a}>artículo 195</a>).
+  </p>
+
+  <h2 class={h2}>¿Qué hago si me deniegan la incapacidad?</h2>
+  <p class={p}>
+    Reclamación previa ante el INSS en el plazo de treinta días desde la notificación y, si se desestima, demanda ante el Juzgado de lo Social en otros treinta (<a href={LRJS + '#a71'} target="_blank" rel="noopener" class={a}>artículo 71 de la Ley reguladora de la jurisdicción social</a>). Le explicamos cada paso en <a href={url('/blog/incapacidad-permanente-denegada-que-hacer/')} class={a}>incapacidad permanente denegada: qué hacer</a>.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Con criterios de <a href={url('/especialidades/traumatologia/')} class={a}>traumatología pericial</a> correlacionamos sus pruebas con la exploración y con las exigencias de su puesto, y elaboramos el informe pericial de <a href={url('/servicios/incapacidad-laboral/')} class={a}>incapacidad permanente</a> para el INSS o el juzgado. Si la afectación es neurológica, contamos con <a href={url('/especialidades/neurologia/')} class={a}>neurología pericial</a>. Para empezar, pida una <a href={url('/incapacidad-permanente-consulta-gratuita/')} class={a}>consulta telefónica sobre incapacidad permanente</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LGSS} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social, arts. 156, 193, 194, 195 y disposición transitoria 26.ª</a></li>
+    <li><a href={LRJS} target="_blank" rel="noopener" class={a}>Ley 36/2011, reguladora de la jurisdicción social, art. 71</a></li>
+    <li><a href={GUIA_IT} target="_blank" rel="noopener" class={a}>Escuela Nacional de Medicina del Trabajo (ISCIII) e INSS: Guía de valoración de incapacidad laboral temporal para médicos de atención primaria, 2.ª ed.</a></li>
+    <li><a href={SALUT_IP} target="_blank" rel="noopener" class={a}>Canal Salut: incapacitat permanent per treballar</a></li>
+  </ul>
+</BlogPostLayout>

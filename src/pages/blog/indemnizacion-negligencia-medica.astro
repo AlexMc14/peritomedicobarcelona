@@ -1,0 +1,72 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LRJSP = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-10566';
+const LEY35 = 'https://www.boe.es/buscar/doc.php?id=BOE-A-2015-10197';
+const LRCSCVM = 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-18911';
+---
+
+<BlogPostLayout
+  title="Indemnización por negligencia médica: cómo se calcula"
+  pageTitle="Indemnización por Negligencia Médica: Cómo se Calcula"
+  description="No hay baremo sanitario propio: la indemnización por negligencia médica se calcula con el baremo de tráfico como referencia. Conceptos y papel del perito."
+  date="2026-11-02"
+  readingTime="7"
+  category="Negligencia Médica"
+  faqs={[
+    { question: '¿Existe una tabla de indemnizaciones por negligencia médica?', answer: 'No. No hay un baremo sanitario aprobado. La Ley 35/2015 prevé que el baremo de tráfico sirva de referencia para uno futuro (disposición adicional tercera) y, en la sanidad pública, la Ley 40/2015 permite tomarlo como referencia (artículo 34.2).' },
+    { question: '¿Cuánto se cobra de media por una negligencia médica?', answer: 'No hay una media fiable: cada indemnización depende de los días de lesión, las secuelas, la edad, los perjuicios económicos y, si es el caso, de que solo se haya perdido una oportunidad de curación. Desconfíe de cifras genéricas.' },
+    { question: '¿Qué es la pérdida de oportunidad?', answer: 'Es el daño que se indemniza cuando no puede probarse que una asistencia correcta habría evitado el resultado, pero sí que le privó de una posibilidad razonable de evitarlo o de mejorar. La indemnización se ajusta a esa probabilidad perdida, que debe razonar el informe médico.' },
+    { question: '¿Se puede reclamar por el fallecimiento de un familiar?', answer: 'Sí. Los familiares perjudicados pueden reclamar los daños por el fallecimiento. El baremo de tráfico, usado como referencia, tiene un apartado propio para las indemnizaciones por causa de muerte.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    La indemnización por negligencia médica no tiene un baremo propio: se calcula tomando como referencia el baremo de los accidentes de tráfico, que valora por separado los días de lesión, las secuelas y los perjuicios económicos. Así lo permite la Ley 40/2015 en la sanidad pública (artículo 34.2). La cifra la fija el informe pericial médico, que traduce el daño a esos conceptos.
+  </p>
+
+  <h2 class={h2}>¿Por qué se usa el baremo de tráfico?</h2>
+  <p class={p}>
+    Porque es el único sistema legal y detallado de valoración del daño corporal. La <a href={LEY35} target="_blank" rel="noopener" class={a}>Ley 35/2015</a> dice en su disposición adicional tercera que su sistema «servirá como referencia para una futura regulación del baremo indemnizatorio de los daños y perjuicios sobrevenidos con ocasión de la actividad sanitaria», pero ese baremo sanitario no se ha aprobado. Para la sanidad pública, la <a href={LRJSP + '#a34'} target="_blank" rel="noopener" class={a}>Ley 40/2015 (artículo 34.2)</a> permite tomar como referencia los baremos de los seguros obligatorios en los casos de muerte o lesiones. Es una referencia, no una obligación: el juez puede apartarse de ella si lo justifica.
+  </p>
+
+  <h2 class={h2}>¿Qué conceptos se indemnizan?</h2>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Concepto</th><th class="p-3 border-b">Qué es</th><th class="p-3 border-b">Qué debe acreditar el informe</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Lesión temporal</td><td class="p-3 border-b">Los días desde el daño hasta la curación o la estabilización, con su grado de pérdida de calidad de vida (<a href={LRCSCVM + '#a134'} target="_blank" rel="noopener" class={a}>arts. 134</a> y <a href={LRCSCVM + '#a138'} target="_blank" rel="noopener" class={a}>138</a> del baremo)</td><td class="p-3 border-b">Qué días se deben a la negligencia y no a la enfermedad de base</td></tr>
+        <tr><td class="p-3 border-b font-medium">Secuelas</td><td class="p-3 border-b">El daño permanente que queda tras la estabilización, puntuado según el baremo</td><td class="p-3 border-b">Qué secuela es atribuible a la mala praxis y cuál habría quedado igualmente</td></tr>
+        <tr><td class="p-3 border-b font-medium">Perjuicio patrimonial</td><td class="p-3 border-b">Gastos médicos, ayudas técnicas, adaptación de la vivienda, ingresos perdidos</td><td class="p-3 border-b">Necesidad médica de cada gasto y su relación con el daño</td></tr>
+        <tr><td class="p-3 font-medium">Fallecimiento</td><td class="p-3">Perjuicio de los familiares, con un apartado propio en el baremo</td><td class="p-3">Que la muerte se debe a la asistencia y no a la evolución natural de la enfermedad</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class={h2}>¿Qué cambia respecto a un accidente de tráfico?</h2>
+  <p class={p}>
+    Que el paciente ya estaba enfermo. En un accidente, casi todo el daño viene del accidente; en una negligencia, el perito tiene que separar lo que habría ocurrido de todas formas por la enfermedad (el «estado anterior») de lo que añadió la mala praxis. Por ejemplo, en un caso hipotético de diagnóstico tardío de una fractura, no se indemniza la fractura, sino lo que empeoró por no tratarla a tiempo: más días de baja, una consolidación defectuosa o una secuela que no habría existido.
+  </p>
+
+  <h2 class={h2}>¿Qué es la pérdida de oportunidad y cómo afecta a la cifra?</h2>
+  <p class={p}>
+    Cuando no se puede afirmar que una asistencia correcta habría evitado el daño, pero sí que lo habría hecho más improbable, se habla de pérdida de oportunidad. Ocurre a menudo en los retrasos diagnósticos de enfermedades graves. La indemnización no es la del daño completo, sino una parte proporcional a la probabilidad perdida, y esa probabilidad la tiene que razonar el informe médico con la literatura científica y los datos del caso.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Elaboramos el informe de <a href={url('/servicios/negligencia-medica/')} class={a}>negligencia médica</a> que analiza la lex artis, separa el estado anterior del daño causado y lo cuantifica con criterios de <a href={url('/servicios/valoracion-dano-corporal/')} class={a}>valoración del daño corporal</a>. Si la asistencia fue en la sanidad pública, lea <a href={url('/blog/negligencia-medica-sanidad-publica-catalunya/')} class={a}>la reclamación patrimonial al CatSalut</a>; si fue privada, <a href={url('/blog/como-reclamar-negligencia-medica-barcelona/')} class={a}>cómo reclamar una negligencia médica en Barcelona</a>. Para empezar, pida una <a href={url('/negligencia-medica-consulta-gratuita/')} class={a}>consulta telefónica sobre su caso</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LRJSP} target="_blank" rel="noopener" class={a}>Ley 40/2015, de Régimen Jurídico del Sector Público, art. 34.2</a></li>
+    <li><a href={LEY35} target="_blank" rel="noopener" class={a}>Ley 35/2015, de reforma del sistema de valoración de daños en accidentes de circulación, disposición adicional tercera</a></li>
+    <li><a href={LRCSCVM} target="_blank" rel="noopener" class={a}>Real Decreto Legislativo 8/2004, Ley sobre responsabilidad civil y seguro en la circulación de vehículos a motor (texto consolidado), arts. 134 y 138</a></li>
+  </ul>
+</BlogPostLayout>

@@ -1,0 +1,97 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { url } from '../../utils/links';
+
+const h2 = 'font-heading text-2xl font-bold text-primary-900 mt-10 mb-4';
+const p = 'text-gray-600 leading-relaxed mb-4';
+const a = 'text-primary-700 underline hover:text-primary-900';
+const LPAC = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565';
+const LRJSP = 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-10566';
+const LJCA = 'https://www.boe.es/buscar/act.php?id=BOE-A-1998-16718';
+const CJA = 'https://www.boe.es/buscar/act.php?id=BOE-A-2005-8459';
+const TRAMIT = 'https://tramits.gencat.cat/ca/tramits/tramits-temes/22778-reclamacio-responsabilitat-patrimonial-danys-derivats-assistencia-sanitaria-rebuda-carrec-catsalut';
+const QUEIXES = 'https://catsalut.gencat.cat/ca/coneix-catsalut/acces-sistema-salut/reclamacions-i-suggeriments/';
+const ICS = 'https://ics.gencat.cat/ca/Ciutadania/atencio-hospitalaria/';
+const SISCAT = 'https://catsalut.gencat.cat/ca/coneix-catsalut/presentacio/model-sanitari-catala/siscat/';
+---
+
+<BlogPostLayout
+  title="Negligencia médica en la sanidad pública catalana: reclamación patrimonial al CatSalut"
+  pageTitle="Reclamación Patrimonial al CatSalut por Negligencia Médica"
+  description="Plazo de un año, quién resuelve y qué aportar en la reclamación patrimonial al CatSalut o al ICS por una negligencia en la sanidad pública catalana."
+  date="2026-11-02"
+  readingTime="8"
+  category="Negligencia Médica"
+  faqs={[
+    { question: '¿La hoja de reclamación del hospital sirve como reclamación patrimonial?', answer: 'No. La queja en el centro es un trámite de atención a la ciudadanía y no interrumpe el plazo para pedir una indemnización. Para reclamar daños por mala praxis hay que iniciar el procedimiento de responsabilidad patrimonial, según explica el propio CatSalut.' },
+    { question: '¿Puedo reclamar si me atendieron en un hospital concertado, como el Clínic o Sant Pau?', answer: 'Si la asistencia fue a cargo del CatSalut, el trámite oficial de la Generalitat cubre los centros y servicios del SISCAT, que incluye centros de titularidad diversa. Qué entidad debe responder y por qué vía lo tiene que valorar su abogado.' },
+    { question: '¿Tengo que demandar al médico que me atendió?', answer: 'No. En la responsabilidad patrimonial se reclama directamente a la Administración por los daños que cause su personal (artículo 36.1 de la Ley 40/2015).' },
+    { question: '¿Qué pasa si no me contestan en seis meses?', answer: 'Puede entender desestimada la reclamación por silencio (artículo 91.3 de la Ley 39/2015) y acudir a la vía contencioso-administrativa. Su abogado le indicará el plazo que se aplica a su caso.' },
+  ]}
+>
+  <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+    Para reclamar una negligencia en la sanidad pública catalana se presenta una reclamación de responsabilidad patrimonial ante el CatSalut (o ante el ICS si le atendió uno de sus hospitales) en el plazo de un año desde la curación o desde que se conoce el alcance de las secuelas (artículo 67.1 de la Ley 39/2015). Hay que acreditar el daño, la mala praxis y la relación entre ambos.
+  </p>
+
+  <div class="bg-primary-50 rounded-xl p-5 border-l-4 border-primary-500 mb-8">
+    <p class="text-sm text-primary-800 leading-relaxed">
+      Esta web es un servicio privado e independiente de peritaje médico. No pertenece al CatSalut, al ICS ni a ningún hospital. Para presentar la reclamación, use los canales oficiales que enlazamos.
+    </p>
+  </div>
+
+  <h2 class={h2}>¿Queja en el hospital o reclamación patrimonial?</h2>
+  <p class={p}>
+    Son dos cosas distintas. La <a href={QUEIXES} target="_blank" rel="noopener" class={a}>queja o reclamación de atención a la ciudadanía</a> se presenta en el centro, en la región sanitaria o en línea, y el CatSalut se compromete a responderla en un máximo de tres meses. Pero no da derecho a una indemnización: el mismo CatSalut indica que, cuando el motivo es una presunta mala praxis, se inicia un procedimiento por la vía patrimonial. Si quiere que le indemnicen, tiene que presentar la reclamación patrimonial dentro de plazo.
+  </p>
+
+  <h2 class={h2}>¿Ante quién se reclama: CatSalut, ICS o el hospital?</h2>
+  <p class={p}>
+    Depende del centro. El ICS es una empresa pública de la Generalitat con sus propios hospitales: según su <a href={ICS} target="_blank" rel="noopener" class={a}>web oficial</a>, Vall d'Hebron, Germans Trias, Bellvitge y Viladecans en el área de Barcelona, además del Trueta, Joan XXIII, Arnau de Vilanova y el de Tortosa. Sus reclamaciones patrimoniales las resuelve la dirección gerente del ICS. El resto de la red pública forma el <a href={SISCAT} target="_blank" rel="noopener" class={a}>SISCAT</a>, con centros de titularidad diversa (consorcios, fundaciones, empresas públicas). Para la asistencia a cargo del CatSalut en cualquier centro del SISCAT, la Generalitat tiene un <a href={TRAMIT} target="_blank" rel="noopener" class={a}>trámite oficial de reclamación de responsabilidad patrimonial</a>.
+  </p>
+
+  <h2 class={h2}>¿Cuáles son los plazos?</h2>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-50 text-primary-900">
+        <tr><th class="p-3 border-b">Paso</th><th class="p-3 border-b">Plazo</th><th class="p-3 border-b">Norma</th></tr>
+      </thead>
+      <tbody class="text-gray-600">
+        <tr><td class="p-3 border-b font-medium">Presentar la reclamación</td><td class="p-3 border-b">Un año desde la curación o la determinación del alcance de las secuelas</td><td class="p-3 border-b"><a href={LPAC + '#a67'} target="_blank" rel="noopener" class={a}>Ley 39/2015, art. 67.1</a></td></tr>
+        <tr><td class="p-3 border-b font-medium">Informe del servicio implicado</td><td class="p-3 border-b">Diez días; siempre preceptivo</td><td class="p-3 border-b"><a href={LPAC + '#a81'} target="_blank" rel="noopener" class={a}>Ley 39/2015, art. 81.1</a></td></tr>
+        <tr><td class="p-3 border-b font-medium">Dictamen de la Comissió Jurídica Assessora</td><td class="p-3 border-b">Si se reclaman 50.000 € o más</td><td class="p-3 border-b"><a href={CJA + '#a8'} target="_blank" rel="noopener" class={a}>Ley 5/2005, art. 8.3.a</a></td></tr>
+        <tr><td class="p-3 border-b font-medium">Resolución</td><td class="p-3 border-b">Seis meses; sin respuesta, se puede entender desestimada</td><td class="p-3 border-b"><a href={LPAC + '#a91'} target="_blank" rel="noopener" class={a}>Ley 39/2015, art. 91.3</a></td></tr>
+        <tr><td class="p-3 font-medium">Recurso contencioso tras resolución expresa</td><td class="p-3">Dos meses desde la notificación</td><td class="p-3"><a href={LJCA + '#a46'} target="_blank" rel="noopener" class={a}>Ley 29/1998, art. 46.1</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class={p}>
+    El año no empieza el día de la asistencia, sino cuando el daño está curado o sus secuelas estabilizadas. Aun así, conviene no apurar: el informe pericial necesita tiempo para reunir y estudiar la historia clínica.
+  </p>
+
+  <h2 class={h2}>¿Qué hay que demostrar?</h2>
+  <p class={p}>
+    La Administración indemniza las lesiones causadas por el funcionamiento de los servicios públicos que el paciente no tenga el deber jurídico de soportar (<a href={LRJSP + '#a32'} target="_blank" rel="noopener" class={a}>artículo 32.1 de la Ley 40/2015</a>). No son indemnizables los daños que no se pudieron prever o evitar según el estado de la ciencia en ese momento (<a href={LRJSP + '#a34'} target="_blank" rel="noopener" class={a}>artículo 34.1</a>). En la práctica, eso obliga a probar con criterio médico tres cosas: que la asistencia se apartó de la buena práctica (lex artis), que ese apartamiento causó el daño y cuál es el daño. Es exactamente el contenido de un informe pericial médico.
+  </p>
+
+  <h2 class={h2}>¿Y si la reclamación se desestima?</h2>
+  <p class={p}>
+    Se acude a la jurisdicción contencioso-administrativa, también cuando se demanda a la vez a la aseguradora de la Administración (<a href={LJCA + '#a2'} target="_blank" rel="noopener" class={a}>artículo 2.e de la Ley 29/1998</a>). Para las reclamaciones contra la Generalitat, los Juzgados de lo Contencioso conocen de las de hasta 30.050 € (<a href={LJCA + '#a8'} target="_blank" rel="noopener" class={a}>artículo 8.2.c</a>) y el Tribunal Superior de Justicia de Cataluña, del resto (<a href={LJCA + '#a10'} target="_blank" rel="noopener" class={a}>artículo 10.1.a</a>). Las vías civil y penal, frente a centros y profesionales privados, las explicamos en <a href={url('/blog/como-reclamar-negligencia-medica-barcelona/')} class={a}>cómo reclamar una negligencia médica en Barcelona</a>.
+  </p>
+
+  <h2 class={h2}>Cómo le ayudamos</h2>
+  <p class={p}>
+    Estudiamos su historia clínica, analizamos si la asistencia se ajustó a la lex artis y cuantificamos el daño para la reclamación patrimonial o el juicio. Es el informe de <a href={url('/servicios/negligencia-medica/')} class={a}>negligencia médica</a> que acompaña a la reclamación y, si hace falta, se ratifica ante el juzgado. Para saber cómo se calcula la cifra, lea <a href={url('/blog/indemnizacion-negligencia-medica/')} class={a}>indemnización por negligencia médica: cómo se calcula</a>. Para empezar, pida una <a href={url('/negligencia-medica-consulta-gratuita/')} class={a}>consulta telefónica sobre su caso</a>.
+  </p>
+
+  <h2 class={h2}>Fuentes</h2>
+  <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
+    <li><a href={LPAC} target="_blank" rel="noopener" class={a}>Ley 39/2015, del Procedimiento Administrativo Común, arts. 67.1, 81 y 91.3</a></li>
+    <li><a href={LRJSP} target="_blank" rel="noopener" class={a}>Ley 40/2015, de Régimen Jurídico del Sector Público, arts. 32, 34 y 36</a></li>
+    <li><a href={LJCA} target="_blank" rel="noopener" class={a}>Ley 29/1998, reguladora de la jurisdicción contencioso-administrativa, arts. 2.e, 8.2.c, 10.1.a y 46.1</a></li>
+    <li><a href={CJA} target="_blank" rel="noopener" class={a}>Ley 5/2005, de la Comissió Jurídica Assessora, art. 8.3.a</a></li>
+    <li><a href={TRAMIT} target="_blank" rel="noopener" class={a}>Tràmits Gencat: reclamació de responsabilitat patrimonial per l'assistència sanitària a càrrec del CatSalut</a></li>
+    <li><a href={QUEIXES} target="_blank" rel="noopener" class={a}>CatSalut: reclamacions i suggeriments</a></li>
+    <li><a href={ICS} target="_blank" rel="noopener" class={a}>Institut Català de la Salut: atenció hospitalària</a></li>
+    <li><a href={SISCAT} target="_blank" rel="noopener" class={a}>CatSalut: el SISCAT</a></li>
+  </ul>
+</BlogPostLayout>
